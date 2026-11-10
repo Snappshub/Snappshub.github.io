@@ -500,7 +500,7 @@ Join Telegram Community
 <!-- Styled View More Button -->
 <div class="text-center mt-5">
 <button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-amber-500 hover:text-black border border-[#1f273d] hover:border-amber-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-android" onclick="expandCategory('android')">
-            View More Android Apps ▾
+            View More
           </button>
 </div>
 </section>
@@ -539,7 +539,7 @@ Join Telegram Community
 </div>
 <div class="text-center mt-5">
 <button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-[#1f273d] hover:border-cyan-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-androidtv" onclick="expandCategory('androidtv')">
-            View More Android TV APKs ▾
+            View More
           </button>
 </div>
 </section>
@@ -565,7 +565,7 @@ Join Telegram Community
 </div>
 <div class="text-center mt-5">
 <button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-indigo-500 hover:text-white border border-[#1f273d] hover:border-indigo-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-desktop" onclick="expandCategory('desktop')">
-            View More Desktop Softwares ▾
+            View More
           </button>
 </div>
 </section>
@@ -611,7 +611,7 @@ Join Telegram Community
 </div>
 <div class="text-center mt-5">
 <button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-cyan-700/60 hover:border-cyan-400 text-xs font-semibold text-cyan-300 transition shadow" id="viewMore-router" onclick="expandCategory('router')">
-            View More Router Binaries ▾
+            View More
           </button>
 </div>
 </section>
@@ -1058,7 +1058,7 @@ Join Telegram Community
 
     // Expand category when View More.. ▾ is clicked
     function expandCategory(cat) {
-      categoryLimits[cat] += 8;
+      categoryLimits[cat] += 4;
       renderCatalog();
     }
 
