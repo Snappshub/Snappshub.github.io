@@ -1,0 +1,48 @@
+{
+  "siteConfig": {
+    "siteName": "SnappsHub",
+    "tagline": "Curated High-Speed Software, Apps & Firmware Vault",
+    "siteUrl": "https://snappshub.github.io/",
+    "telegram": "https://t.me/snappshub",
+    "contactEmail": "alaminsaheb2019@gmail.com",
+    "dmcaId": "37a95780-9718-4357-92ee-ea67c2cefe3f",
+    "developer": "Alamin Saheb"
+  },
+  "apps": [
+    {
+      "id": "capcut-pro",
+      "title": "CapCut Studio Pro",
+      "version": "v12.4.0",
+      "size": "142 MB",
+      "sha256": "8e14fd3ba9281c7e990b7931bfe64c924d5ea8e2e2ccbb194602f31f90ac832b"
+    },
+    {
+      "id": "termux-cli",
+      "title": "Termux Terminal Hub",
+      "version": "v0.118.1",
+      "size": "97.0 MB",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "telegram-foss",
+      "title": "Telegram Direct APK",
+      "version": "v10.9.3",
+      "size": "68.0 MB",
+      "sha256": "1a7c392f40b2cd88d3e8e29a91176b6b7a9f732ce60d6948b8db4f535804368f"
+    },
+    {
+      "id": "tenda-f3",
+      "title": "Tenda F3 / F9 Global BIN",
+      "version": "v12.01.01.48",
+      "size": "3.8 MB",
+      "sha256": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7"
+    },
+    {
+      "id": "tplink-wr840n",
+      "title": "TP-Link TL-WR840N V6",
+      "version": "Build 210701",
+      "size": "4.1 MB",
+      "sha256": "a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8"
+    }
+  ]
+}

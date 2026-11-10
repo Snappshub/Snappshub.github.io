@@ -1,0 +1,49 @@
+/* SnappsHub Cyberpunk Production CSS Tokens */
+:root {
+  --cyber-bg: #070a12;
+  --cyber-surface: #0d1322;
+  --cyber-card: #11182a;
+  --cyber-border: #1c2844;
+  --cyber-gold: #f59e0b;
+  --cyber-cyan: #06b6d4;
+  --cyber-green: #10b981;
+}
+
+body {
+  background-color: var(--cyber-bg);
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.glass-card {
+  background: rgba(17, 24, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(28, 40, 68, 0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -8px rgba(6, 182, 212, 0.2);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

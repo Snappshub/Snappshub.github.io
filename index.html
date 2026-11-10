@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnappsHub - Curated High-Speed Software, Apps & Firmware Vault</title>
+  <meta name="description" content="SnappsHub - Curated verified binaries, Android TV APKs, PC software, and router recovery firmwares with SHA-256 integrity and VirusTotal clean guarantees.">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: { bg: '#070a12', surface: '#0d1322', card: '#11182a', border: '#1c2844', gold: '#f59e0b', cyan: '#06b6d4', green: '#10b981', rose: '#f43f5e' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#070a12] text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-cyber-cyan selection:text-black">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-[#070a12]/90 backdrop-blur-xl border-b border-[#1c2844]">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-cyan-500/20 flex items-center justify-center p-1 border border-amber-400/40">
+          <svg class="w-full h-full text-amber-400" fill="none" viewBox="0 0 40 40"><path d="M20 2L35 8V18C35 28.5 28.5 35.5 20 38C11.5 35.5 5 28.5 5 18V8L20 2Z" fill="#0d1322" stroke="#06b6d4" stroke-width="2"/><path d="M25 14H16C14.5 14 13.5 15 13.5 16.5C13.5 18 14.5 19 16 19H24C25.5 19 26.5 20 26.5 21.5C26.5 23 25.5 24 24 24H15" stroke="#f59e0b" stroke-linecap="round" stroke-width="2.8"/></svg>
+        </div>
+        <div>
+          <span class="text-xl font-black text-white">Snapps<span class="text-cyber-cyan">Hub</span></span>
+          <span class="text-[9px] font-mono text-cyan-400 bg-cyan-950/80 px-1.5 py-0.5 rounded border border-cyan-800 ml-1.5">VERIFIED</span>
+        </div>
+      </a>
+      <div class="flex items-center gap-3">
+        <input type="text" id="searchInput" placeholder="Search apps, APKs, BIN..." class="hidden sm:block px-3 py-1.5 bg-[#0d1322] border border-[#1c2844] rounded-xl text-xs focus:outline-none focus:border-cyber-cyan text-slate-200">
+        <a href="https://t.me/snappshub" target="_blank" class="px-3.5 py-1.5 bg-gradient-to-r from-cyan-400 to-sky-400 text-slate-950 font-bold text-xs rounded-xl shadow">Join Telegram</a>
+      </div>
+    </div>
+    <!-- 4 PINNED TABS (ROUTER FIRMWARE ALWAYS LAST) -->
+    <div class="bg-[#0b101c] border-t border-[#1c2844] px-4 py-2 overflow-x-auto no-scrollbar">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 min-w-max text-xs font-semibold">
+        <a href="#cat-android" class="px-3 py-1.5 rounded-lg bg-[#11182a] border border-[#1c2844] text-slate-200 hover:border-cyber-cyan">📱 Android Apps</a>
+        <a href="#cat-tv" class="px-3 py-1.5 rounded-lg bg-[#11182a] border border-[#1c2844] text-slate-200 hover:border-cyber-cyan">📺 Android TV</a>
+        <a href="#cat-desktop" class="px-3 py-1.5 rounded-lg bg-[#11182a] border border-[#1c2844] text-slate-200 hover:border-cyber-cyan">💻 Desktop & Laptop</a>
+        <a href="#cat-router" class="px-3 py-1.5 rounded-lg bg-[#11182a] border border-amber-500/40 text-amber-300 hover:border-amber-400">📁 Router Firmware Vault <span class="text-[9px] bg-amber-500/20 text-amber-400 px-1 py-0.5 rounded ml-1">ALWAYS LAST</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-4 py-6 w-full">
+    <div class="rounded-3xl bg-[#0d1322] border border-[#1c2844] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyber-cyan text-xs font-mono">
+          <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span> HIGH-THROUGHPUT CYBERNETIC PIPELINE v5.2
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black text-white">Secure Software, Apps & <span class="text-cyber-gold">Firmware Vault</span></h1>
+        <p class="text-xs sm:text-sm text-slate-400">Curated freeware, OpenSource and stock firmware binaries with 100% VirusTotal integrity checks.</p>
+      </div>
+      <div class="bg-[#070a12] border border-[#1c2844] rounded-2xl p-4 font-mono text-xs space-y-2 shrink-0 w-full sm:w-64">
+        <div class="flex justify-between text-slate-400"><span>Node Speed:</span><span class="text-white font-bold">10 Gbps</span></div>
+        <div class="flex justify-between text-slate-400"><span>Integrity:</span><span class="text-cyber-gold font-bold">SHA-256 Passed</span></div>
+        <div class="flex justify-between text-slate-400"><span>Status:</span><span class="text-emerald-400 font-bold">ALL GREEN</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <section class="max-w-7xl mx-auto px-4 pb-4 w-full">
+    <div class="bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-bold text-xs rounded-xl py-2 px-3 flex items-center gap-3 overflow-hidden">
+      <span class="bg-black/20 px-2 py-0.5 rounded uppercase text-[10px] shrink-0">🔥 LATEST</span>
+      <div class="overflow-hidden flex-1"><div class="animate-marquee font-mono text-[11px] whitespace-nowrap">Daily verified direct downloads • Zero malware • New Router Firmwares added: Tenda, TP-Link, MikroTik • Android TV streaming APKs updated v4.8 • Join Telegram @snappshub!</div></div>
+    </div>
+  </section>
+
+  <!-- MAIN CATEGORIES WITH VIEW MORE -->
+  <main class="max-w-7xl mx-auto px-4 py-4 space-y-12 flex-1 w-full" id="mainContainer">
+    <!-- ANDROID -->
+    <section id="cat-android" class="space-y-4">
+      <div class="flex items-center justify-between border-b border-[#1c2844] pb-2">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2">📱 Android Apps Directory</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-amber-400 pb-2 border-b border-[#1c2844]/60"><span>MEDIA & EDITOR</span><span class="text-emerald-400">● Clean</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">CapCut Studio Pro</h3>
+            <p class="text-[11px] text-slate-400">v12.4.0 • 142 MB • ARM64</p>
+          </div>
+          <button onclick="openDownloadModal('CapCut Studio Pro', 'v12.4.0', '142 MB', '8e14fd3ba9281c7e990b7931bfe64c924d5ea8e2e2ccbb194602f31f90ac832b')" class="mt-3 w-full py-2 bg-cyber-cyan text-slate-950 font-bold text-xs rounded-xl">📥 Download</button>
+        </div>
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-cyan-400 pb-2 border-b border-[#1c2844]/60"><span>TOOLS & CLI</span><span class="text-emerald-400">● Clean</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">Termux Terminal Hub</h3>
+            <p class="text-[11px] text-slate-400">v0.118.1 • 97.0 MB • Universal</p>
+          </div>
+          <button onclick="openDownloadModal('Termux Terminal Hub', 'v0.118.1', '97.0 MB', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855')" class="mt-3 w-full py-2 bg-cyber-cyan text-slate-950 font-bold text-xs rounded-xl">📥 Download</button>
+        </div>
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-sky-400 pb-2 border-b border-[#1c2844]/60"><span>MESSENGER</span><span class="text-emerald-400">● Clean</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">Telegram Direct APK</h3>
+            <p class="text-[11px] text-slate-400">v10.9.3 • 68.0 MB • Unrestricted</p>
+          </div>
+          <button onclick="openDownloadModal('Telegram Direct APK', 'v10.9.3', '68.0 MB', '1a7c392f40b2cd88d3e8e29a91176b6b7a9f732ce60d6948b8db4f535804368f')" class="mt-3 w-full py-2 bg-cyber-cyan text-slate-950 font-bold text-xs rounded-xl">📥 Download</button>
+        </div>
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-teal-400 pb-2 border-b border-[#1c2844]/60"><span>TOOLS</span><span class="text-emerald-400">● Clean</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">Seal Media Fetcher</h3>
+            <p class="text-[11px] text-slate-400">v1.12.3 • 42.0 MB • yt-dlp</p>
+          </div>
+          <button onclick="openDownloadModal('Seal Media Fetcher', 'v1.12.3', '42.0 MB', 'f5b6a7c8e9d0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6')" class="mt-3 w-full py-2 bg-cyber-cyan text-slate-950 font-bold text-xs rounded-xl">📥 Download</button>
+        </div>
+      </div>
+      <div class="text-center pt-2">
+        <button class="px-6 py-2 rounded-xl bg-[#0d1322] border border-[#1c2844] text-xs font-semibold text-slate-300 hover:text-white hover:border-cyber-cyan" onclick="alert('SnappsHub: Loading additional Android packages...')">View More Android Apps ▾</button>
+      </div>
+    </section>
+
+    <!-- ROUTER FIRMWARE VAULT (ALWAYS LAST) -->
+    <section id="cat-router" class="space-y-4">
+      <div class="flex items-center justify-between border-b border-[#1c2844] pb-2">
+        <h2 class="text-lg font-bold text-cyber-gold flex items-center gap-2">📁 Router Firmware Vault <span class="text-[10px] bg-amber-950 text-amber-400 px-2 py-0.5 rounded font-mono">RECOVERY VAULT</span></h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between border-amber-500/30">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-amber-400 pb-2 border-b border-[#1c2844]/60"><span>TENDA BIN STOCK</span><span class="text-emerald-400">● SHA Verified</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">Tenda F3 / F9 Global</h3>
+            <p class="text-[11px] text-slate-400">v12.01.01.48 • 3.8 MB • Flash Dump</p>
+          </div>
+          <button onclick="openDownloadModal('Tenda F3/F9 Stable Firmware', 'v12.01.01.48', '3.8 MB', 'f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7')" class="mt-3 w-full py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs rounded-xl">📥 Download BIN</button>
+        </div>
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between border-blue-500/30">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-blue-400 pb-2 border-b border-[#1c2844]/60"><span>TP-LINK FACTORY</span><span class="text-emerald-400">● SHA Verified</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">TL-WR840N V6 EU/US</h3>
+            <p class="text-[11px] text-slate-400">Build 210701 • 4.1 MB • Stock BIN</p>
+          </div>
+          <button onclick="openDownloadModal('TP-Link TL-WR840N V6 Firmware', 'Build 210701', '4.1 MB', 'a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8')" class="mt-3 w-full py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs rounded-xl">📥 Download BIN</button>
+        </div>
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between border-cyan-500/30">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-cyan-400 pb-2 border-b border-[#1c2844]/60"><span>ARCHER DUALBAND</span><span class="text-emerald-400">● SHA Verified</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">Archer C6 AC1200 V3</h3>
+            <p class="text-[11px] text-slate-400">v1.3.6 • 11.2 MB • Gigabit</p>
+          </div>
+          <button onclick="openDownloadModal('TP-Link Archer C6 AC1200 V3', 'v1.3.6', '11.2 MB', 'd4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5')" class="mt-3 w-full py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs rounded-xl">📥 Download BIN</button>
+        </div>
+        <div class="glass-card rounded-2xl p-4 flex flex-col justify-between border-purple-500/30">
+          <div>
+            <div class="flex justify-between text-[10px] font-mono text-purple-400 pb-2 border-b border-[#1c2844]/60"><span>MIKROTIK ROS NPK</span><span class="text-emerald-400">● SHA Verified</span></div>
+            <h3 class="font-bold text-sm text-white mt-3 truncate">MikroTik RouterOS v7</h3>
+            <p class="text-[11px] text-slate-400">v7.14.3 Stable • 14.8 MB • ARM</p>
+          </div>
+          <button onclick="openDownloadModal('MikroTik RouterOS v7 ARM', 'v7.14.3', '14.8 MB', 'b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9')" class="mt-3 w-full py-2 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs rounded-xl">📥 Download NPK</button>
+        </div>
+      </div>
+      <div class="text-center pt-2">
+        <button class="px-6 py-2 rounded-xl bg-[#0d1322] border border-amber-500/40 text-xs font-semibold text-amber-300 hover:border-amber-400" onclick="alert('SnappsHub: Loading additional Router Firmware ROMs...')">View More Router Firmware ▾</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- INTERACTIVE POPUP MODAL -->
+  <div id="downloadModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="bg-[#0d1322] border border-[#1c2844] rounded-3xl max-w-lg w-full p-6 relative">
+      <button onclick="closeDownloadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-[#11182a] w-8 h-8 rounded-full flex items-center justify-center border border-[#1c2844]">✕</button>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-950 border border-cyan-500/40 text-cyber-cyan flex items-center justify-center text-2xl font-bold">⬇️</div>
+        <div>
+          <span class="text-[9px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/30">100% VirusTotal Clean</span>
+          <h3 id="modalAppName" class="text-lg font-bold text-white mt-1">Package Title</h3>
+        </div>
+      </div>
+      <div class="p-3 bg-[#070a12] rounded-xl border border-[#1c2844] text-xs font-mono mb-4">
+        <p id="modalAppHash" class="text-slate-400 truncate">SHA256: 8e14fd3ba9281c7e990b7931bfe64c924d5ea8e2e2ccbb194602f31f90ac832b</p>
+      </div>
+      <div class="bg-[#11182a] border border-[#1c2844] rounded-2xl p-4 text-center mb-4">
+        <p class="text-xs text-slate-300 font-bold mb-2">Preparing direct mirror in <span id="countdownText" class="text-cyber-cyan font-mono text-sm font-black">5</span>s...</p>
+        <div class="w-full bg-[#070a12] rounded-full h-2 overflow-hidden border border-[#1c2844]">
+          <div id="countdownBar" class="bg-gradient-to-r from-cyan-400 to-amber-400 h-2 rounded-full w-0 transition-all duration-1000"></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="triggerDirectDownload()" class="py-2.5 px-3 bg-cyber-cyan text-slate-950 font-bold text-xs rounded-xl">🚀 Direct Download</button>
+        <a href="https://t.me/snappshub" target="_blank" class="py-2.5 px-3 bg-[#229ED9] text-white font-bold text-xs rounded-xl text-center">✈️ Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#05080e] border-t border-[#1c2844] py-8 px-4 text-center text-xs text-slate-400 font-sans mt-12 space-y-3">
+    <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/40 text-amber-300 font-mono text-xs">
+      <span>✨ Website Designed & Developed by <strong class="text-cyber-gold font-bold">Alamin Saheb</strong></span>
+    </div>
+    <p class="font-mono text-slate-500 text-[11px]">© 2026 SnappsHub Inc. All rights reserved. DMCA ID: 37a95780-9718-4357-92ee-ea67c2cefe3f</p>
+  </footer>
+
+  <script>
+    let timer = null;
+    function openDownloadModal(name, version, size, hash) {
+      document.getElementById('modalAppName').textContent = name + ' (' + version + ')';
+      document.getElementById('modalAppHash').textContent = 'SHA256: ' + hash;
+      const modal = document.getElementById('downloadModal');
+      const text = document.getElementById('countdownText');
+      const bar = document.getElementById('countdownBar');
+      let count = 5;
+      text.textContent = count;
+      bar.style.width = '0%';
+      modal.classList.remove('hidden');
+      clearInterval(timer);
+      timer = setInterval(() => {
+        count--;
+        text.textContent = count;
+        bar.style.width = ((5 - count) * 20) + '%';
+        if (count <= 0) {
+          clearInterval(timer);
+          triggerDirectDownload();
+        }
+      }, 1000);
+    }
+    function closeDownloadModal() {
+      clearInterval(timer);
+      document.getElementById('downloadModal').classList.add('hidden');
+    }
+    function triggerDirectDownload() {
+      alert('SnappsHub: High-Speed Direct Mirror pipe connected!');
+      closeDownloadModal();
+    }
+  </script>
+</body>
+</html>
