@@ -79,6 +79,7 @@
       animation: tickerLabelPulse 1.8s ease-in-out infinite;
     }
     .brand-pulse-name { animation: brandNamePulse 2.2s ease-in-out infinite; font-size: 1.2rem; }
+    .brand-pulse-icon { animation: brandNamePulse 2.2s ease-in-out infinite; filter: drop-shadow(0 0 7px rgba(34, 211, 238, .65)); }
     @keyframes brandNamePulse {
       0%, 100% { color: #22d3ee; text-shadow: 0 0 8px rgba(34, 211, 238, .9), 0 0 18px rgba(34, 211, 238, .45); }
       50% { color: #fbbf24; text-shadow: 0 0 12px rgba(251, 191, 36, 1), 0 0 24px rgba(251, 191, 36, .65); }
@@ -92,7 +93,7 @@
       50% { color: #fbbf24; text-shadow: 0 0 9px rgba(251, 191, 36, .8); opacity: .72; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .ticker-pulse-label, .brand-pulse-name { animation: none; color: #22d3ee; }
+      .ticker-pulse-label, .brand-pulse-name, .brand-pulse-icon { animation: none; color: #22d3ee; filter: none; }
     }
   </style>
 <style data-purpose="responsive-layout-fixes">
@@ -173,7 +174,7 @@
 <!-- Drawer Menu Toggle & Official Logo -->
 <div class="flex items-center gap-3">
 <button class="p-2 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-300 hover:text-amber-400 focus:outline-none transition" id="mobileMenuBtn" onclick="toggleDrawer()">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<svg class="w-5 h-5 brand-pulse-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 <!-- Brand Mark using provided SVG logo data -->
 <a class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5 group z-10" href="#home" onclick="showCatalogView()">
@@ -245,7 +246,7 @@
 <div>
 <div class="flex items-center justify-between pb-4 border-b border-[#1f273d]">
 <div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-mono">S</div>
+<div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center font-bold font-mono brand-pulse-icon">S</div>
 <span class="font-bold text-slate-100 text-sm">SnappsHub Navigation</span>
 </div>
 <button class="text-slate-400 hover:text-white" onclick="toggleDrawer()">×</button>
