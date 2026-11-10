@@ -75,6 +75,16 @@
     .glow-cyan {
       box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.25);
     }
+    .ticker-pulse-label {
+      animation: tickerLabelPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes tickerLabelPulse {
+      0%, 100% { color: #22d3ee; text-shadow: 0 0 5px rgba(34, 211, 238, .65); opacity: 1; }
+      50% { color: #fbbf24; text-shadow: 0 0 9px rgba(251, 191, 36, .8); opacity: .72; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-pulse-label { animation: none; color: #22d3ee; }
+    }
   </style>
 <style data-purpose="responsive-layout-fixes">
   /* Responsive-only layout safeguards; preserve the existing visual theme. */
@@ -278,9 +288,9 @@
 <!-- BEGIN: ScrollingMarqueeTicker -->
 <aside class="bg-[#0f1523] border-b border-[#1f273d]/80 py-2 overflow-hidden select-none" data-purpose="marquee-announcement">
 <div class="flex items-center">
-<div class="px-3 py-0.5 bg-amber-500/20 border-r border-amber-500/30 text-amber-400 text-xs font-mono font-bold shrink-0 z-10 flex items-center gap-1.5">
+<div class="px-3 py-0.5 bg-amber-500/20 border-r border-amber-500/30 text-xs font-mono font-bold shrink-0 z-10 flex items-center gap-1.5">
 <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-        DISPATCH
+        <span class="ticker-pulse-label">HUB PULSE</span>
       </div>
 <div class="overflow-hidden whitespace-nowrap w-full">
 <div class="inline-block animate-marquee text-xs font-medium text-slate-300 space-x-12">
