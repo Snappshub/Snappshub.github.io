@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://snappshub.github.io/sitemap.xml
