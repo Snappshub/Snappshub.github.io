@@ -76,6 +76,58 @@
       box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.25);
     }
   </style>
+<style data-purpose="responsive-layout-fixes">
+  /* Responsive-only layout safeguards; preserve the existing visual theme. */
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, canvas { max-width: 100%; }
+  body { width: 100%; min-width: 0; }
+  main, header, footer, section, aside { min-width: 0; }
+  h1, h2, h3, p, a, button, span { overflow-wrap: anywhere; }
+  #grid-android, #grid-androidtv, #grid-desktop, #grid-router {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+  #downloadModal { overflow-y: auto; }
+  #downloadModal > div { max-height: calc(100dvh - 2rem); overflow-y: auto; }
+  #pushNotificationBanner { width: min(24rem, calc(100vw - 2rem)); }
+  @media (max-width: 639px) {
+    header > div { gap: .5rem; padding-left: .75rem; padding-right: .75rem; }
+    header > div > div:first-child { min-width: 0; gap: .5rem; }
+    header .group { min-width: 0; gap: .4rem; }
+    header .group > div:last-child { min-width: 0; }
+    header .group > div:last-child > p { display: none; }
+    header .group > div:last-child .inline-flex { display: none; }
+    header .group > div:last-child > div > span:first-child { font-size: 1rem; }
+    header > div > div:last-child a { padding: .45rem .6rem; }
+    #appDetailsView > div { padding: 1rem; }
+    #appDetailsView #detailBreadcrumb { max-width: 45%; text-align: right; overflow-wrap: anywhere; }
+    #cat-android > div:first-child,
+    #cat-androidtv > div:first-child,
+    #cat-desktop > div:first-child { align-items: flex-start; gap: .5rem; }
+    #cat-android > div:first-child > span:last-child,
+    #cat-androidtv > div:first-child > span:last-child,
+    #cat-desktop > div:first-child > span:last-child { display: none; }
+    #downloadModal { align-items: flex-start; padding: .75rem; }
+    #downloadModal > div { padding: 1rem; margin: auto 0; }
+    #downloadModal > div > div:last-child { flex-wrap: wrap; gap: .5rem; }
+    #pushNotificationBanner { right: 1rem; bottom: 1rem; }
+  }
+  @media (max-width: 360px) {
+    header > div > div:first-child > button { padding: .4rem; }
+    header .group > div:last-child > div > span:first-child { font-size: .9rem; }
+    main { padding-left: .75rem; padding-right: .75rem; }
+    #appDetailsView #detailBreadcrumb { display: none; }
+  }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    #grid-android, #grid-androidtv, #grid-desktop, #grid-router {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1024px) {
+    #grid-android, #grid-androidtv, #grid-desktop, #grid-router {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
