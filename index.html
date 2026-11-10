@@ -162,11 +162,6 @@
 <svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
 <span class="hidden sm:inline">Join Telegram</span>
 </a>
-<!-- Admin Studio Button -->
-<button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#111728] border border-[#1f273d] text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/40 text-xs font-mono transition" onclick="toggleAdminModal()" title="Admin Control Panel">
-<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span class="hidden md:inline">Admin Studio</span>
-</button>
 </div>
 </div>
 </header>
@@ -610,126 +605,6 @@
 </div>
 </div>
 <!-- END: DownloadCountdownModal -->
-<!-- BEGIN: AdminStudioControlPanel -->
-<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md hidden p-4" id="adminModal">
-<div class="bg-[#111728] border border-amber-500/50 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto custom-scroll p-6 relative shadow-2xl">
-<div class="flex items-center justify-between border-b border-[#1f273d] pb-4 mb-5">
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">⚡</div>
-<div>
-<h3 class="text-base font-bold text-white">SnappsHub Admin Studio</h3>
-<p class="text-xs text-slate-400">Live Management Engine • In-Memory Database</p>
-</div>
-</div>
-<button class="text-slate-400 hover:text-white text-lg" onclick="toggleAdminModal()">×</button>
-</div>
-<!-- Admin Tabs -->
-<div class="flex items-center gap-2 border-b border-[#1f273d] pb-3 mb-4 text-xs font-semibold">
-<button class="px-3 py-1.5 rounded-lg bg-amber-500 text-black" id="tabBtn-addItem" onclick="switchAdminTab('addItem')">Add New Package</button>
-<button class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white" id="tabBtn-manageItems" onclick="switchAdminTab('manageItems')">Manage Items</button>
-<button class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white" id="tabBtn-adSettings" onclick="switchAdminTab('adSettings')">Ad Networks</button>
-<button class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white" id="tabBtn-pushSettings" onclick="switchAdminTab('pushSettings')">Push Alerts</button>
-</div>
-<!-- Tab 1: Add New Item -->
-<div class="space-y-4" id="adminTab-addItem">
-<form class="space-y-4 text-xs" id="addNewItemForm" onsubmit="handleAddNewItem(event)">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div>
-<label class="block text-slate-300 mb-1">Package Title</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs focus:ring-1 focus:ring-amber-500" id="formTitle" placeholder="e.g. Tenda AC10 Firmware v4" required="" type="text"/>
-</div>
-<div>
-<label class="block text-slate-300 mb-1">Category (Vault Target)</label>
-<select class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs focus:ring-1 focus:ring-amber-500" id="formCategory">
-<option value="android">📱 Android Apps</option>
-<option value="androidtv">📺 Android TV</option>
-<option value="desktop">💻 Desktop &amp; Laptop</option>
-<option value="router">📁 Router Firmware Vault (FINAL CATEGORY)</option>
-</select>
-</div>
-<div>
-<label class="block text-slate-300 mb-1">Version String</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="formVersion" placeholder="e.g. v4.19.8" required="" type="text"/>
-</div>
-<div>
-<label class="block text-slate-300 mb-1">Package File Size</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="formSize" placeholder="e.g. 14.8 MB" required="" type="text"/>
-</div>
-<div>
-<label class="block text-slate-300 mb-1">Architecture / Type</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="formArch" placeholder="e.g. arm64 / MIPS / All" type="text"/>
-</div>
-<div>
-<label class="block text-slate-300 mb-1">Icon (Emoji or SVG/URL)</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="formIcon" placeholder="e.g. 📶 or ⚙️" type="text"/>
-</div>
-<div class="sm:col-span-2">
-<label class="block text-slate-300 mb-1">Direct Download Link</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="formUrl" placeholder="https://snappshub.github.io/downloads/file.bin" required="" type="url"/>
-</div>
-<div class="sm:col-span-2">
-<label class="block text-slate-300 mb-1">Cryptographic SHA-256 Hash</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 font-mono text-[11px] text-white" id="formSha" placeholder="e.g. e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" type="text"/>
-</div>
-<div class="sm:col-span-2">
-<label class="block text-slate-300 mb-1">Release Notes / Description</label>
-<textarea class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="formDesc" placeholder="Official description, changes, or router hardware revisions." rows="2"></textarea>
-</div>
-</div>
-<button class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-lg transition" type="submit">
-            Publish Package to Vault
-          </button>
-</form>
-</div>
-<!-- Tab 2: Manage Items List -->
-<div class="space-y-3 hidden" id="adminTab-manageItems">
-<div class="flex items-center justify-between text-xs text-slate-400">
-<span>Existing Items in Cache</span>
-<button class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded border border-slate-700 font-mono" onclick="exportDataJson()">
-            ⬇ Export apps-data.json
-          </button>
-</div>
-<div class="space-y-2 max-h-80 overflow-y-auto custom-scroll pr-1 text-xs" id="adminItemsList">
-<!-- Populated by JS -->
-</div>
-</div>
-<!-- Tab 3: Ad Engine Controller -->
-<div class="space-y-4 hidden text-xs" id="adminTab-adSettings">
-<div>
-<label class="block text-slate-300 mb-1 font-semibold">Active Monetization Network</label>
-<select class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="adminAdNetworkSelect" onchange="handleAdNetworkChange(this.value)">
-<option value="adsterra">Adsterra Smart Direct Link / Popunder</option>
-<option value="monetag">Monetag MultiTag &amp; In-Page Push</option>
-<option value="adsense">Google AdSense Compliant Banner</option>
-<option value="custom">Custom HTML Ad Code</option>
-</select>
-</div>
-<div>
-<label class="block text-slate-300 mb-1">Header Responsive Leaderboard HTML / Script</label>
-<textarea class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 font-mono text-[11px] text-slate-200" id="adminCustomAdCode" placeholder="&lt;!-- Paste Ad Network Script Tag Here --&gt;" rows="3"></textarea>
-</div>
-<button class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-lg" onclick="applyAdSettings()">
-          Apply Ad Engine Settings
-        </button>
-</div>
-<!-- Tab 4: Web Push Notification Controller -->
-<div class="space-y-4 hidden text-xs" id="adminTab-pushSettings">
-<div>
-<label class="block text-slate-300 mb-1 font-semibold">Broadcast Push Notification Message</label>
-<input class="w-full bg-[#0a0e18] border border-[#1f273d] rounded-lg p-2 text-white text-xs" id="adminPushMessageInput" placeholder="New Router firmwares and APK updates released!" type="text"/>
-</div>
-<div class="flex items-center gap-3">
-<button class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-black font-bold rounded-lg" onclick="triggerBroadcastPush()">
-            Broadcast Alert Toast
-          </button>
-<button class="px-3 py-2 bg-slate-800 text-slate-300 hover:text-white rounded-lg" onclick="dismissNotification()">
-            Dismiss Banner
-          </button>
-</div>
-</div>
-</div>
-</div>
-<!-- END: AdminStudioControlPanel -->
 <!-- BEGIN: MainFooter -->
 <footer class="mt-16 bg-[#080c16] border-t border-[#1f273d] text-slate-400 text-xs">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -768,7 +643,6 @@
 <li><a class="hover:text-white transition flex items-center gap-1.5" href="https://snappshub.github.io/"><span>🌐</span> Website: snappshub.github.io</a></li>
 <li><a class="hover:text-sky-400 transition flex items-center gap-1.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank"><span>✈️</span> Telegram Channel @snappshub</a></li>
 <li><a class="hover:text-amber-400 transition flex items-center gap-1.5" href="mailto:alaminsaheb2019@gmail.com"><span>✉️</span> alaminsaheb2019@gmail.com</a></li>
-<li><button class="hover:text-amber-400 transition text-left flex items-center gap-1.5" onclick="toggleAdminModal()"><span>🔒</span> Admin Studio Panel</button></li>
 </ul>
 </div>
 <!-- Col 4: Compliance & Disclaimer -->
@@ -1270,136 +1144,9 @@
       }
     }
   </script>
-<script data-purpose="admin-studio-controller">
-    // Admin Modal Toggle
-    function toggleAdminModal() {
-      const modal = document.getElementById('adminModal');
-      if (modal.classList.contains('hidden')) {
-        modal.classList.remove('hidden');
-        renderAdminItems();
-      } else {
-        modal.classList.add('hidden');
-      }
-    }
 
-    // Admin Tabs Switch
-    function switchAdminTab(tabName) {
-      const tabs = ['addItem', 'manageItems', 'adSettings', 'pushSettings'];
-      tabs.forEach(t => {
-        document.getElementById(`adminTab-${t}`).classList.add('hidden');
-        const btn = document.getElementById(`tabBtn-${t}`);
-        btn.classList.remove('bg-amber-500', 'text-black');
-        btn.classList.add('bg-slate-800', 'text-slate-300');
-      });
-
-      document.getElementById(`adminTab-${tabName}`).classList.remove('hidden');
-      const activeBtn = document.getElementById(`tabBtn-${tabName}`);
-      activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
-      activeBtn.classList.add('bg-amber-500', 'text-black');
-
-      if (tabName === 'manageItems') renderAdminItems();
-    }
-
-    // Add New Package
-    function handleAddNewItem(e) {
-      e.preventDefault();
-      const newItem = {
-        id: 'pkg-' + Date.now(),
-        title: document.getElementById('formTitle').value.trim(),
-        category: document.getElementById('formCategory').value,
-        version: document.getElementById('formVersion').value.trim(),
-        size: document.getElementById('formSize').value.trim(),
-        arch: document.getElementById('formArch').value.trim() || 'Universal',
-        icon: document.getElementById('formIcon').value.trim() || '📦',
-        url: document.getElementById('formUrl').value.trim(),
-        sha256: document.getElementById('formSha').value.trim() || 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
-        desc: document.getElementById('formDesc').value.trim() || 'Official safe release published via SnappsHub Admin Studio.'
-      };
-
-      repositoryData.unshift(newItem);
-      saveRepositoryToStorage();
-      renderCatalog();
-      renderAdminItems();
-      e.target.reset();
-      alert(`Package "${newItem.title}" published successfully to ${newItem.category.toUpperCase()}!`);
-      switchAdminTab('manageItems');
-    }
-
-    // Render Items inside Admin
-    function renderAdminItems() {
-      const container = document.getElementById('adminItemsList');
-      if (!container) return;
-
-      container.innerHTML = repositoryData.map((item, index) => `
-        <div class="p-2.5 bg-[#0a0e18] border border-[#1f273d] rounded-lg flex items-center justify-between gap-2">
-          <div class="flex items-center gap-2 overflow-hidden">
-            <span class="text-base">${item.icon || '📦'}</span>
-            <div class="truncate">
-              <span class="font-bold text-white">${item.title}</span>
-              <span class="text-slate-400 font-mono text-[10px]">(${item.category} • ${item.version})</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <button onclick="deletePackage('${item.id}')" class="px-2 py-1 bg-rose-950 text-rose-300 border border-rose-800 rounded hover:bg-rose-900 transition">Delete</button>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function deletePackage(itemId) {
-      if (confirm('Delete this item from repository data?')) {
-        repositoryData = repositoryData.filter(i => i.id !== itemId);
-        saveRepositoryToStorage();
-        renderCatalog();
-        renderAdminItems();
-      }
-    }
-
-    // Export Data JSON
-    function exportDataJson() {
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(repositoryData, null, 2));
-      const downloadAnchor = document.createElement('a');
-      downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", "snappshub-apps-data.json");
-      document.body.appendChild(downloadAnchor);
-      downloadAnchor.click();
-      downloadAnchor.remove();
-    }
-
-    // Ad Network Controller
-    function handleAdNetworkChange(network) {
-      const customCodeBox = document.getElementById('adminCustomAdCode');
-      if (network === 'adsterra') {
-        customCodeBox.value = `<!-- Adsterra Responsive Direct Stream Node -->\n<script type="text/javascript">atOptions = {'key': 'adsterra-snappshub-unified-key', 'format': 'iframe', 'height': 90, 'width': 728};<\/script>`;
-      } else if (network === 'monetag') {
-        customCodeBox.value = `<!-- Monetag MultiTag Controller -->\n<script src="https://alwingulla.com/88/tag.min.js" data-zone="12345" async data-cfasync="false"><\/script>`;
-      } else if (network === 'adsense') {
-        customCodeBox.value = `<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
-      } else {
-        customCodeBox.value = '';
-      }
-    }
-
-    function applyAdSettings() {
-      const code = document.getElementById('adminCustomAdCode').value.trim();
-      if (code) {
-        document.getElementById('headerAdContent').innerHTML = code;
-      }
-      alert('Ad settings updated live!');
-    }
-
-    // Trigger push alert toast
-    function triggerBroadcastPush() {
-      const msg = document.getElementById('adminPushMessageInput').value.trim();
-      const banner = document.getElementById('pushNotificationBanner');
-      const text = document.getElementById('pushMessageText');
-      if (msg) text.textContent = msg;
-      banner.classList.remove('hidden', 'translate-y-24', 'opacity-0');
-      alert('Push notification alert toast dispatched!');
-    }
-
-    // Initial run
-    document.addEventListener('DOMContentLoaded', () => {
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
       renderCatalog();
     });
   </script>
