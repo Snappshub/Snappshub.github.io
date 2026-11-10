@@ -75,25 +75,50 @@
     .glow-cyan {
       box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.25);
     }
+    /* Lightweight cyberpunk motion: animate compositor-friendly transform/opacity only. */
     .ticker-pulse-label {
-      animation: tickerLabelPulse 1.8s ease-in-out infinite;
+      color: #22d3ee;
+      text-shadow: 0 0 5px rgba(34, 211, 238, .55);
+      animation: tickerLabelPulse 2.4s ease-in-out infinite;
     }
-    .brand-pulse-name { animation: brandNamePulse 2.2s ease-in-out infinite; font-size: 1.2rem; }
-    .brand-pulse-icon { animation: brandNamePulse 2.2s ease-in-out infinite; filter: drop-shadow(0 0 7px rgba(34, 211, 238, .65)); }
+    .brand-pulse-name {
+      display: inline-block;
+      color: #22d3ee;
+      text-shadow: 0 0 8px rgba(34, 211, 238, .65);
+      animation: brandNamePulse 2.8s ease-in-out infinite;
+      font-size: 1.2rem;
+    }
+    .brand-pulse-icon {
+      animation: brandNamePulse 2.8s ease-in-out infinite;
+      filter: drop-shadow(0 0 6px rgba(34, 211, 238, .5));
+    }
+    .search-cyber-icon {
+      color: #22d3ee;
+      filter: drop-shadow(0 0 4px rgba(34, 211, 238, .65));
+      transform-origin: center;
+      animation: searchCyberScan 3s ease-in-out infinite;
+    }
     @keyframes brandNamePulse {
-      0%, 100% { color: #22d3ee; text-shadow: 0 0 8px rgba(34, 211, 238, .9), 0 0 18px rgba(34, 211, 238, .45); }
-      50% { color: #fbbf24; text-shadow: 0 0 12px rgba(251, 191, 36, 1), 0 0 24px rgba(251, 191, 36, .65); }
+      0%, 100% { opacity: 1; transform: translateY(0); }
+      50% { opacity: .78; transform: translateY(-1px); }
+    }
+    @keyframes searchCyberScan {
+      0%, 100% { opacity: 1; transform: rotate(0deg) scale(1); }
+      50% { opacity: .78; transform: rotate(9deg) scale(1.12); }
     }
     .header-search-open { display: block !important; position: absolute; top: calc(100% + .5rem); left: 1rem; right: 1rem; width: auto; max-width: 32rem; margin-left: auto; z-index: 60; padding: .5rem; background: #0a0e18; border: 1px solid #1f273d; border-radius: .75rem; box-shadow: 0 12px 30px rgba(0,0,0,.4); }
     @media (max-width: 767px) {
       .brand-pulse-name { font-size: 1.05rem; }
     }
     @keyframes tickerLabelPulse {
-      0%, 100% { color: #22d3ee; text-shadow: 0 0 5px rgba(34, 211, 238, .65); opacity: 1; }
-      50% { color: #fbbf24; text-shadow: 0 0 9px rgba(251, 191, 36, .8); opacity: .72; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: .68; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .ticker-pulse-label, .brand-pulse-name, .brand-pulse-icon { animation: none; color: #22d3ee; filter: none; }
+      .ticker-pulse-label, .brand-pulse-name, .brand-pulse-icon, .search-cyber-icon {
+        animation: none !important;
+        transform: none !important;
+      }
     }
   </style>
 <style data-purpose="responsive-layout-fixes">
@@ -228,7 +253,7 @@
 </div>
 <!-- Quick Action Controls -->
 <div class="flex items-center gap-2 sm:gap-3">
-<button type="button" onclick="toggleHeaderSearch()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-200 hover:text-cyan-300 hover:border-cyan-500/60 text-xs font-semibold transition" aria-label="Search"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-width="2"></circle><path d="m16 16 5 5" stroke-linecap="round" stroke-width="2"></path></svg><span class="hidden sm:inline">Search</span></button>
+<button type="button" onclick="toggleHeaderSearch()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-200 hover:text-cyan-300 hover:border-cyan-500/60 text-xs font-semibold transition" aria-label="Search"><svg class="w-4 h-4 search-cyber-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-width="2"></circle><path d="m16 16 5 5" stroke-linecap="round" stroke-width="2"></path></svg><span class="hidden sm:inline">Search</span></button>
 
 </div>
 </div>
