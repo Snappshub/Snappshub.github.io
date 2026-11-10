@@ -78,12 +78,21 @@
     .ticker-pulse-label {
       animation: tickerLabelPulse 1.8s ease-in-out infinite;
     }
+    .brand-pulse-name { animation: brandNamePulse 2.2s ease-in-out infinite; font-size: 1.2rem; }
+    @keyframes brandNamePulse {
+      0%, 100% { color: #22d3ee; text-shadow: 0 0 8px rgba(34, 211, 238, .9), 0 0 18px rgba(34, 211, 238, .45); }
+      50% { color: #fbbf24; text-shadow: 0 0 12px rgba(251, 191, 36, 1), 0 0 24px rgba(251, 191, 36, .65); }
+    }
+    @media (max-width: 767px) {
+      .mobile-search-open { display: block !important; position: absolute; top: 100%; left: 1rem; right: 1rem; max-width: none; z-index: 60; padding: .5rem; background: #0a0e18; border: 1px solid #1f273d; border-radius: .75rem; }
+      .brand-pulse-name { font-size: 1.05rem; }
+    }
     @keyframes tickerLabelPulse {
       0%, 100% { color: #22d3ee; text-shadow: 0 0 5px rgba(34, 211, 238, .65); opacity: 1; }
       50% { color: #fbbf24; text-shadow: 0 0 9px rgba(251, 191, 36, .8); opacity: .72; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .ticker-pulse-label { animation: none; color: #22d3ee; }
+      .ticker-pulse-label, .brand-pulse-name { animation: none; color: #22d3ee; }
     }
   </style>
 <style data-purpose="responsive-layout-fixes">
@@ -160,14 +169,14 @@
 <!-- END: WebPushNotificationToast -->
 <!-- BEGIN: MainHeader -->
 <header class="sticky top-0 z-40 bg-[#0a0e18]/90 backdrop-blur-xl border-b border-[#1f273d]">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-3">
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-3">
 <!-- Drawer Menu Toggle & Official Logo -->
 <div class="flex items-center gap-3">
 <button class="p-2 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-300 hover:text-amber-400 focus:outline-none transition" id="mobileMenuBtn" onclick="toggleDrawer()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 <!-- Brand Mark using provided SVG logo data -->
-<a class="flex items-center gap-2.5 group" href="#home" onclick="showCatalogView()">
+<a class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5 group z-10" href="#home" onclick="showCatalogView()">
 <div class="w-10 h-10 shrink-0 transform group-hover:scale-105 transition-transform">
 <svg class="w-full h-full drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 <defs>
@@ -196,7 +205,7 @@
 </div>
 <div>
 <div class="flex items-center gap-1.5">
-<span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-amber-200 to-amber-500 bg-clip-text text-transparent">SnappsHub</span>
+<span class="font-extrabold text-lg tracking-tight brand-pulse-name">SnappsHub</span>
 <span class="inline-flex items-center px-1.5 py-0.2 text-[10px] font-semibold bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 rounded">
 <svg class="w-2.5 h-2.5 mr-0.5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
                 Verified
@@ -207,7 +216,7 @@
 </a>
 </div>
 <!-- Universal Search Bar -->
-<div class="flex-1 max-w-md hidden md:block">
+<div id="headerSearchWrap" class="flex-1 max-w-md hidden md:block">
 <div class="relative">
 <input class="w-full bg-[#111728] border border-[#1f273d] text-sm text-slate-200 rounded-lg pl-9 pr-4 py-2 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition placeholder:text-slate-500" id="globalSearchInput" oninput="handleUniversalSearch(this.value)" placeholder="Search apps, TV APKs, routers, utilities..." type="text"/>
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
@@ -218,6 +227,7 @@
 </div>
 <!-- Quick Action Controls -->
 <div class="flex items-center gap-2 sm:gap-3">
+<button type="button" onclick="toggleHeaderSearch()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-200 hover:text-cyan-300 hover:border-cyan-500/60 text-xs font-semibold transition" aria-label="Search"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-width="2"></circle><path d="m16 16 5 5" stroke-linecap="round" stroke-width="2"></path></svg><span class="hidden sm:inline">Search</span></button>
 <!-- Join Telegram Pill -->
 <a class="relative group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white text-xs font-semibold shadow-md transition transform hover:-translate-y-0.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank">
 <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
@@ -1020,6 +1030,16 @@
         overlay.classList.add('opacity-0');
         setTimeout(() => overlay.classList.add('hidden'), 300);
       }
+    }
+
+    // Header search button: reveal the search field on mobile and focus it everywhere.
+    function toggleHeaderSearch() {
+      const wrap = document.getElementById("headerSearchWrap");
+      const input = document.getElementById("globalSearchInput");
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        wrap.classList.toggle("mobile-search-open");
+        if (wrap.classList.contains("mobile-search-open")) input.focus();
+      } else { input.focus(); }
     }
 
     // Universal Search
