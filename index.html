@@ -1035,11 +1035,8 @@ Join Telegram Community
               </div>
             </div>
 
-            <div class="mt-3.5 pt-1 grid grid-cols-2 gap-1.5">
-              <button onclick="viewAppDetails('${item.id}')" class="py-1.5 px-2 text-center text-xs font-semibold rounded bg-[#162035] hover:bg-slate-700 text-slate-300 transition">
-                Details
-              </button>
-              <button onclick="openDownloadModal('${item.id}')" class="py-1.5 px-2 text-center text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-slate-950 transition flex items-center justify-center gap-1">
+            <div class="mt-3.5 pt-1">
+              <button onclick="openDownloadModal('${item.id}')" class="w-full py-1.5 px-2 text-center text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-slate-950 transition flex items-center justify-center gap-1">
                 <span>Download</span>
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </button>
@@ -1113,9 +1110,8 @@ Join Telegram Community
                 </div>
                 <p class="text-[11px] text-slate-400 mt-1">${item.desc}</p>
               </div>
-              <div class="mt-3 flex gap-2">
-                <button onclick="viewAppDetails('${item.id}')" class="flex-1 py-1 text-xs bg-slate-800 text-white rounded">Details</button>
-                <button onclick="openDownloadModal('${item.id}')" class="flex-1 py-1 text-xs bg-amber-500 text-black font-bold rounded">Download</button>
+              <div class="mt-3">
+                <button onclick="openDownloadModal('${item.id}')" class="w-full py-1.5 text-xs bg-amber-500 text-black font-bold rounded">Download</button>
               </div>
             </div>
           `).join('');
