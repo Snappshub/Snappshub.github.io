@@ -84,8 +84,8 @@
       0%, 100% { color: #22d3ee; text-shadow: 0 0 8px rgba(34, 211, 238, .9), 0 0 18px rgba(34, 211, 238, .45); }
       50% { color: #fbbf24; text-shadow: 0 0 12px rgba(251, 191, 36, 1), 0 0 24px rgba(251, 191, 36, .65); }
     }
+    .header-search-open { display: block !important; position: absolute; top: calc(100% + .5rem); left: 1rem; right: 1rem; width: auto; max-width: 32rem; margin-left: auto; z-index: 60; padding: .5rem; background: #0a0e18; border: 1px solid #1f273d; border-radius: .75rem; box-shadow: 0 12px 30px rgba(0,0,0,.4); }
     @media (max-width: 767px) {
-      .mobile-search-open { display: block !important; position: absolute; top: 100%; left: 1rem; right: 1rem; max-width: none; z-index: 60; padding: .5rem; background: #0a0e18; border: 1px solid #1f273d; border-radius: .75rem; }
       .brand-pulse-name { font-size: 1.05rem; }
     }
     @keyframes tickerLabelPulse {
@@ -217,7 +217,7 @@
 </a>
 </div>
 <!-- Universal Search Bar -->
-<div id="headerSearchWrap" class="flex-1 max-w-md hidden md:block">
+<div id="headerSearchWrap" class="hidden">
 <div class="relative">
 <input class="w-full bg-[#111728] border border-[#1f273d] text-sm text-slate-200 rounded-lg pl-9 pr-4 py-2 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition placeholder:text-slate-500" id="globalSearchInput" oninput="handleUniversalSearch(this.value)" placeholder="Search apps, TV APKs, routers, utilities..." type="text"/>
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
@@ -229,12 +229,7 @@
 <!-- Quick Action Controls -->
 <div class="flex items-center gap-2 sm:gap-3">
 <button type="button" onclick="toggleHeaderSearch()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-200 hover:text-cyan-300 hover:border-cyan-500/60 text-xs font-semibold transition" aria-label="Search"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-width="2"></circle><path d="m16 16 5 5" stroke-linecap="round" stroke-width="2"></path></svg><span class="hidden sm:inline">Search</span></button>
-<!-- Join Telegram Pill -->
-<a class="relative group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white text-xs font-semibold shadow-md transition transform hover:-translate-y-0.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank">
-<span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
-<span class="hidden sm:inline">Join Telegram</span>
-</a>
+
 </div>
 </div>
 </header>
@@ -336,6 +331,11 @@
 <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
             Curated archive of Android applications, TV utilities, cross-platform software, and stock router recovery firmwares. Scanned with VirusTotal API and hosted on high-availability CDN.
           </p>
+<a class="mt-5 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white text-sm font-semibold shadow-md transition transform hover:-translate-y-0.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank">
+<span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.01-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.04.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
+Join Telegram Community
+</a>
 </div>
 </div>
 
@@ -1033,14 +1033,12 @@
       }
     }
 
-    // Header search button: reveal the search field on mobile and focus it everywhere.
+    // Header search button: open a compact search panel on every screen size.
     function toggleHeaderSearch() {
       const wrap = document.getElementById("headerSearchWrap");
       const input = document.getElementById("globalSearchInput");
-      if (window.matchMedia("(max-width: 767px)").matches) {
-        wrap.classList.toggle("mobile-search-open");
-        if (wrap.classList.contains("mobile-search-open")) input.focus();
-      } else { input.focus(); }
+      wrap.classList.toggle("header-search-open");
+      if (wrap.classList.contains("header-search-open")) input.focus();
     }
 
     // Universal Search
