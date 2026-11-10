@@ -114,11 +114,20 @@
       0%, 100% { opacity: 1; }
       50% { opacity: .68; }
     }
+    .footer-neon-item { transition: transform .22s ease, color .22s ease; }
+    .footer-neon-item:hover { transform: translateX(3px); color: #67e8f9; }
+    .footer-neon-icon { display: inline-flex; align-items: center; justify-content: center; width: 1.15rem; min-width: 1.15rem; color: #22d3ee; transition: transform .25s ease, filter .25s ease; }
+    .footer-neon-item:hover .footer-neon-icon { transform: translateY(-2px) scale(1.12); filter: drop-shadow(0 0 5px rgba(34,211,238,.75)); }
+    .footer-dmca-badge { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem .75rem; border: 1px solid rgba(34,211,238,.35); border-radius: .65rem; background: linear-gradient(110deg, rgba(8,145,178,.13), rgba(15,23,42,.8)); color: #a5f3fc; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+    .footer-dmca-badge:hover { border-color: rgba(34,211,238,.8); box-shadow: 0 0 14px rgba(34,211,238,.18); transform: translateY(-2px); }
+    .footer-dmca-shield { animation: footerShieldPulse 2.8s ease-in-out infinite; }
+    @keyframes footerShieldPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .72; transform: scale(1.06); } }
     @media (prefers-reduced-motion: reduce) {
-      .ticker-pulse-label, .brand-pulse-name, .brand-pulse-icon, .search-cyber-icon {
+      .ticker-pulse-label, .brand-pulse-name, .brand-pulse-icon, .search-cyber-icon, .footer-dmca-shield {
         animation: none !important;
         transform: none !important;
       }
+      .footer-neon-item, .footer-neon-icon, .footer-dmca-badge { transition: none !important; }
     }
   </style>
 <style data-purpose="responsive-layout-fixes">
@@ -677,11 +686,11 @@ Join Telegram Community
             The reliable digital distribution repository for verified Android apps, Android TV utilities, desktop systems, and stock router firmware vault.
           </p>
 <div class="pt-2">
-<!-- DMCA Protection Verification Badge -->
-<a class="dmca-badge inline-block" href="//www.dmca.com/Protection/Status.aspx?ID=37a95780-9718-4357-92ee-ea67c2cefe3f" rel="noopener noreferrer" target="_blank" title="DMCA.com Protection Status">
-<img alt="DMCA.com Protection Status" class="rounded opacity-80 hover:opacity-100 transition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPx3z4x4n1I4ZNsMPd6pEcapfp3H075JEl_1854F871op4QVsBvRAc2W4__gA5aES2sorjC7dVBPbxv2BKjNfD3W2vepd7as_5AGi5bt-jKAd-H1Glz9wZUwo_hzWdCu7FLrKU4VHmZofHGuZVjQBOL63BXLNBRjisAtea3eywTapBcJ_-vcJd8pwBTEWcDbTIt11-7mjVmUaltU1dMdqrnXTgkwUIv1oFxMTT0uA"/>
+<!-- Compact DMCA logo-style protection link -->
+<a class="footer-dmca-badge" href="https://www.dmca.com/Protection/Status.aspx?ID=37a95780-9718-4357-92ee-ea67c2cefe3f" rel="noopener noreferrer" target="_blank" title="View DMCA Protection Status">
+<svg class="footer-dmca-shield" width="25" height="27" viewBox="0 0 24 26" fill="none" aria-hidden="true"><path d="M12 1.8 21 5v7.1c0 5.4-3.7 9.7-9 12.1-5.3-2.4-9-6.7-9-12.1V5l9-3.2Z" stroke="currentColor" stroke-width="1.6"/><path d="m7.8 12.7 2.7 2.7 5.8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flex flex-col text-left"><strong class="text-[11px] tracking-[.16em] text-cyan-200">DMCA</strong><span class="text-[9px] tracking-wider text-slate-400">PROTECTION</span></span>
 </a>
-<script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
 </div>
 </div>
 <!-- Col 2: Repository Nav -->
@@ -698,9 +707,9 @@ Join Telegram Community
 <div class="space-y-2">
 <div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Official Links</div>
 <ul class="space-y-1.5">
-<li><a class="hover:text-white transition flex items-center gap-1.5" href="https://snappshub.github.io/"><span>🌐</span> Website: snappshub.github.io</a></li>
-<li><a class="hover:text-sky-400 transition flex items-center gap-1.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank"><span>✈️</span> Telegram Channel @snappshub</a></li>
-<li><a class="hover:text-amber-400 transition flex items-center gap-1.5" href="mailto:alaminsaheb2019@gmail.com"><span>✉️</span> alaminsaheb2019@gmail.com</a></li>
+<li><a class="footer-neon-item flex items-center gap-1.5" href="https://snappshub.github.io/"><span class="footer-neon-icon" aria-hidden="true">◎</span><span>SnappsHub Website</span></a></li>
+<li><a class="footer-neon-item flex items-center gap-1.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank"><span class="footer-neon-icon" aria-hidden="true">✈</span><span>Telegram Community</span></a></li>
+
 </ul>
 </div>
 <!-- Col 4: Compliance & Disclaimer -->
