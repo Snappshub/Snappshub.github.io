@@ -998,17 +998,25 @@ Join Telegram Community
     function safeText(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
     const AUTO_ICON_DOMAINS = {instander:'instagram.com',instagram:'instagram.com',telegram:'telegram.org',smarttube:'smarttubeapp.github.io',kodi:'kodi.tv',tivimate:'tivimate.com',projectivy:'projectivy.hu',rufus:'rufus.ie','7-zip':'7-zip.org','7zip':'7-zip.org',vlc:'videolan.org',wireshark:'wireshark.org',tenda:'tendacn.com','tp-link':'tp-link.com',tplink:'tp-link.com',mikrotik:'mikrotik.com',openwrt:'openwrt.org',adguard:'adguard.com',seal:'github.com',poweramp:'powerampapp.com'};
     function getAutoIconMarkup(item) {
-      const suppliedIcon = String(item.icon || '').trim();
-      if (/^https?:\\/\\//i.test(suppliedIcon) && !suppliedIcon.includes('domain=snappshub.github.io')) return '<img src="' + safeText(suppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" onerror="this.onerror=null;this.outerHTML=\'📦\'">';
-      if (suppliedIcon && suppliedIcon.length <= 8) return safeText(suppliedIcon);
       const title = String(item.title || item.name || '').toLowerCase();
+      const suppliedIcon = String(item.icon || '').trim();
+      const fallback = ({android:'📱',androidtv:'📺',desktop:'💻',router:'📡'})[item.category] || '📦';
+      // Prefer an explicitly supplied image, except the old broken site-wide favicon URL.
+      if (/^https?:\/\//i.test(suppliedIcon) && !/domain=snappshub\.github\.io/i.test(suppliedIcon)) {
+        return '<img src="' + safeText(suppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '">';
+      }
       const key = Object.keys(AUTO_ICON_DOMAINS).sort((a,b) => b.length-a.length).find(k => title.includes(k));
       let domain = key ? AUTO_ICON_DOMAINS[key] : '';
-      if (!domain) { try { const host = new URL(item.url || item.mirror1 || '').hostname; if (host && !host.endsWith('snappshub.github.io')) domain = host; } catch (_) {} }
-      const fallback = ({android:'📱',androidtv:'📺',desktop:'💻',router:'📡'})[item.category] || '📦';
+      if (!domain) {
+        try {
+          const host = new URL(item.url || item.mirror1 || '').hostname.toLowerCase();
+          if (host && !host.endsWith('snappshub.github.io') && !host.endsWith('t.me')) domain = host;
+        } catch (_) {}
+      }
       if (!domain) return safeText(fallback);
-      const src = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
-      return '<img src="' + safeText(src) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" onerror="this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '">';
+      const google = 'https://www.google.com/s2/favicons?domain_url=' + encodeURIComponent('https://' + domain) + '&sz=128';
+      const duckduckgo = 'https://icons.duckduckgo.com/ip3/' + encodeURIComponent(domain) + '.ico';
+      return '<img src="' + safeText(google) + '" data-fallback="' + safeText(duckduckgo) + '" alt="' + safeText(item.title || item.name || 'App') + ' icon" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback=''}else{this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '}">';
     }
     function renderCatalog() {
       const categories = ['android', 'androidtv', 'desktop', 'router'];
