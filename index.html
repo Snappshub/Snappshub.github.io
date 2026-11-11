@@ -1150,7 +1150,7 @@ Join Telegram Community
       currentActiveApp = item;
 
       // Populate details page
-      document.getElementById('detailAppIcon').textContent = item.icon || '📦';
+      document.getElementById('detailAppIcon').innerHTML = getAutoIconMarkup(item);
       document.getElementById('detailAppTitle').textContent = item.title;
       document.getElementById('detailAppBadge').textContent = item.category.toUpperCase();
       document.getElementById('detailAppVersion').textContent = item.version;
@@ -1189,7 +1189,7 @@ Join Telegram Community
       currentActiveApp = item;
 
       // Fill modal info
-      document.getElementById('modalAppIcon').textContent = item.icon || '📦';
+      document.getElementById('modalAppIcon').innerHTML = getAutoIconMarkup(item);
       document.getElementById('modalAppTitle').textContent = item.title;
       document.getElementById('modalAppVersion').textContent = item.version;
       document.getElementById('modalAppSize').textContent = item.size;
