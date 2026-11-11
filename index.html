@@ -295,6 +295,27 @@ input,select,textarea{border-radius:10px}
   }
 </style>
 
+
+<style data-purpose="snappshub-footer-cyber-icons">
+footer{position:relative;overflow:hidden;background:radial-gradient(ellipse at 15% 0%,rgba(6,182,212,.09),transparent 42%),radial-gradient(ellipse at 85% 100%,rgba(245,158,11,.07),transparent 38%),#080c16!important}
+footer:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,#22d3ee,#f59e0b,transparent);opacity:.8}
+footer .grid>div{position:relative}
+footer .grid>div>div:first-child:not(.flex){display:flex;align-items:center;gap:.48rem}
+footer .grid>div>div:first-child:not(.flex):before{content:"";width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:#22d3ee;box-shadow:0 0 9px #22d3ee;animation:footerDotPulse 2s ease-in-out infinite}
+footer .footer-neon-item{min-height:2rem;padding:.22rem .28rem;border:1px solid transparent;border-radius:8px}
+footer .footer-neon-item:hover{transform:translateX(3px);border-color:rgba(34,211,238,.22);background:rgba(6,182,212,.07);box-shadow:0 0 14px rgba(6,182,212,.07)}
+footer .footer-neon-icon{animation:footerIconFloat 3s ease-in-out infinite;filter:drop-shadow(0 0 3px rgba(34,211,238,.24))}
+footer .footer-neon-item:nth-child(2n) .footer-neon-icon{animation-delay:.45s}
+footer .footer-neon-item:nth-child(3n) .footer-neon-icon{animation-delay:.9s}
+footer .footer-dmca-badge{box-shadow:inset 0 0 14px rgba(6,182,212,.04)}
+footer .footer-dmca-shield{filter:drop-shadow(0 0 5px rgba(34,211,238,.35))}
+footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 3s ease-in-out infinite;box-shadow:0 0 14px rgba(245,158,11,.12)}
+@keyframes footerIconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes footerDotPulse{0%,100%{opacity:.65;transform:scale(.85)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes footerBrandGlow{0%,100%{box-shadow:0 0 8px rgba(245,158,11,.1)}50%{box-shadow:0 0 17px rgba(6,182,212,.22)}}
+@media(prefers-reduced-motion:reduce){footer .footer-neon-icon,footer .footer-dmca-shield,footer .grid>div:first-child>div:first-child .rounded,footer .grid>div>div:first-child:not(.flex):before{animation:none!important}}
+</style>
+
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
