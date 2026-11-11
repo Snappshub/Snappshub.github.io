@@ -212,7 +212,39 @@
   @media(prefers-reduced-motion:reduce) { .device-nav-card { transition:none!important; } }
 </style>
 
-</head>
+
+<style data-purpose="snappshub-unified-design-system">
+:root{
+  --sn-bg:#0a0e18;--sn-surface:#111728;--sn-surface-2:#151f33;
+  --sn-border:#26334d;--sn-border-soft:rgba(148,163,184,.14);
+  --sn-cyan:#22d3ee;--sn-cyan-strong:#06b6d4;--sn-gold:#f59e0b;
+  --sn-text:#e2e8f0;--sn-muted:#94a3b8;
+  --sn-radius:14px;--sn-shadow:0 14px 38px rgba(0,0,0,.24);
+  --sn-focus:0 0 0 3px rgba(6,182,212,.18);
+}
+html{scroll-behavior:smooth}
+body{background-color:var(--sn-bg);color:var(--sn-text)}
+:where(button,a,input,select,textarea,[role="button"]){-webkit-tap-highlight-color:transparent}
+:where(button,a,[role="button"]){transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+:where(button,input,select,textarea):focus-visible{outline:2px solid var(--sn-cyan);outline-offset:2px}
+:where(input,select,textarea){accent-color:var(--sn-cyan)}
+::selection{background:rgba(6,182,212,.32);color:#fff}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+<style data-purpose="snappshub-site-design-system">
+body{background-image:radial-gradient(ellipse at 12% -10%,rgba(6,182,212,.075),transparent 38%),radial-gradient(ellipse at 88% 0%,rgba(245,158,11,.065),transparent 34%)}
+header{border-color:var(--sn-border)!important;box-shadow:0 8px 28px rgba(0,0,0,.22)}
+.device-nav{background:rgba(10,14,24,.94);border-bottom-color:var(--sn-border)}
+.device-nav-card{border-color:var(--sn-border);border-radius:10px;box-shadow:inset 0 1px rgba(255,255,255,.025);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.device-nav-card:hover,.device-nav-card:focus-visible{transform:translateY(-1px);box-shadow:0 6px 18px rgba(6,182,212,.10)}
+#pushNotificationBanner{border-radius:var(--sn-radius);box-shadow:var(--sn-shadow);backdrop-filter:blur(18px)}
+button{border-radius:10px}
+input,select,textarea{border-radius:10px}
+@media(max-width:767px){.device-nav-card:hover{transform:none}}
+</style></head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
 <div class="fixed bottom-5 right-5 z-50 max-w-sm w-full bg-[#111728] border border-cyan-500/30 shadow-2xl rounded-xl p-4 transition-all duration-300 transform translate-y-0 flex items-start gap-3 backdrop-blur-md" data-purpose="push-toast" id="pushNotificationBanner">
