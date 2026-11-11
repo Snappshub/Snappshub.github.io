@@ -55,7 +55,40 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offse
 @media(max-width:640px){main{padding:1rem!important;gap:1rem!important}.panel{border-radius:14px;padding:1rem!important}header .max-w-6xl{align-items:flex-start}header .font-black{font-size:1rem}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
-</head>
+
+<style data-purpose="snappshub-unified-design-system">
+:root{
+  --sn-bg:#0a0e18;--sn-surface:#111728;--sn-surface-2:#151f33;
+  --sn-border:#26334d;--sn-border-soft:rgba(148,163,184,.14);
+  --sn-cyan:#22d3ee;--sn-cyan-strong:#06b6d4;--sn-gold:#f59e0b;
+  --sn-text:#e2e8f0;--sn-muted:#94a3b8;
+  --sn-radius:14px;--sn-shadow:0 14px 38px rgba(0,0,0,.24);
+  --sn-focus:0 0 0 3px rgba(6,182,212,.18);
+}
+html{scroll-behavior:smooth}
+body{background-color:var(--sn-bg);color:var(--sn-text)}
+:where(button,a,input,select,textarea,[role="button"]){-webkit-tap-highlight-color:transparent}
+:where(button,a,[role="button"]){transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+:where(button,input,select,textarea):focus-visible{outline:2px solid var(--sn-cyan);outline-offset:2px}
+:where(input,select,textarea){accent-color:var(--sn-cyan)}
+::selection{background:rgba(6,182,212,.32);color:#fff}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+<style data-purpose="snappshub-admin-design-system">
+body{background-image:radial-gradient(ellipse at 12% -10%,rgba(6,182,212,.09),transparent 38%),radial-gradient(ellipse at 88% 0%,rgba(245,158,11,.07),transparent 34%)}
+header{border-color:var(--sn-border)!important}
+.panel{background:linear-gradient(145deg,rgba(17,23,40,.97),rgba(13,21,36,.97));border-color:var(--sn-border);border-radius:var(--sn-radius);box-shadow:0 12px 34px rgba(0,0,0,.2)}
+.panel:hover{border-color:rgba(34,211,238,.38);box-shadow:var(--sn-shadow),0 0 22px rgba(6,182,212,.06)}
+.field{background:rgba(5,11,22,.86);border-color:#2b3a52;border-radius:10px}
+.field:focus{outline:none;border-color:var(--sn-cyan-strong);box-shadow:var(--sn-focus)}
+.btn{border-radius:10px;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.primary{background:var(--sn-cyan-strong);color:#06111d}
+.btn.muted{background:#243247}
+</style></head>
 <body>
 <header class="border-b border-slate-800 px-4 py-3"><div class="max-w-6xl mx-auto flex items-center justify-between gap-3"><div class="flex items-center gap-3 min-w-0"><img src="./assets/snappshub-logo.svg" alt="SnappsHub official logo" class="w-14 h-11 object-contain shrink-0" width="56" height="44"><div><div class="font-black text-lg">SnappsHub <span class="text-cyan-400">Admin</span></div><div class="small">Repository catalog manager</div></div></div><a class="text-xs text-cyan-300 underline shrink-0" href="./index.html">Open website ↗</a></div></header>
 <main class="max-w-6xl mx-auto p-4 space-y-4">
