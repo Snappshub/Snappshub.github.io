@@ -307,6 +307,7 @@
 <span class="text-[10px] font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-800 px-1.5 py-0.5 rounded">LAST</span>
 </a>
 </nav>
+<a class="flex items-center gap-2 text-xs text-cyan-300 hover:text-white py-1" href="./ai_studio_code.html"><span>⚙️</span> Admin Panel</a>
 <div class="mt-6 pt-5 border-t border-[#1f273d]">
 <div class="text-xs uppercase text-slate-500 font-mono mb-2">Network Channels</div>
 <a class="flex items-center gap-2 text-xs text-sky-400 hover:underline py-1" href="https://t.me/snappshub" target="_blank">
@@ -997,6 +998,9 @@ Join Telegram Community
     function safeText(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
     const AUTO_ICON_DOMAINS = {instander:'instagram.com',instagram:'instagram.com',telegram:'telegram.org',smarttube:'smarttubeapp.github.io',kodi:'kodi.tv',tivimate:'tivimate.com',projectivy:'projectivy.hu',rufus:'rufus.ie','7-zip':'7-zip.org','7zip':'7-zip.org',vlc:'videolan.org',wireshark:'wireshark.org',tenda:'tendacn.com','tp-link':'tp-link.com',tplink:'tp-link.com',mikrotik:'mikrotik.com',openwrt:'openwrt.org',adguard:'adguard.com',seal:'github.com',poweramp:'powerampapp.com'};
     function getAutoIconMarkup(item) {
+      const suppliedIcon = String(item.icon || '').trim();
+      if (/^https?:\\/\\//i.test(suppliedIcon)) return '<img src="' + safeText(suppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" onerror="this.onerror=null;this.outerHTML=\'📦\'">';
+      if (suppliedIcon && suppliedIcon.length <= 8) return safeText(suppliedIcon);
       const title = String(item.title || item.name || '').toLowerCase();
       const key = Object.keys(AUTO_ICON_DOMAINS).sort((a,b) => b.length-a.length).find(k => title.includes(k));
       let domain = key ? AUTO_ICON_DOMAINS[key] : '';
