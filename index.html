@@ -1059,7 +1059,7 @@ Join Telegram Community
       if (!domain) return safeText(fallback);
       const google = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
       const duckduckgo = 'https://icons.duckduckgo.com/ip3/' + encodeURIComponent(domain) + '.ico';
-      return '<img src="' + safeText(google) + '" data-fallback="' + safeText(duckduckgo) + '" alt="' + safeText(item.title || item.name || 'App') + ' icon" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback=''}else{this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '}">';
+      return '<img src="' + safeText(google) + '" data-fallback="' + safeText(duckduckgo) + '" alt="' + safeText(item.title || item.name || 'App') + ' icon" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback=&quot;&quot;}else{this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '}">';
     }
     function renderCatalog() {
       const categories = ['android', 'androidtv', 'desktop', 'router'];
