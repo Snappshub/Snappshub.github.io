@@ -978,7 +978,7 @@ Join Telegram Community
     ];
 
     // Local storage persistence or fallback
-    let repositoryData = JSON.parse(localStorage.getItem('snapps_repo_data')) || initialRepositoryData;
+    let repositoryData = initialRepositoryData;
     let categoryLimits = {
       android: 4,
       androidtv: 4,
@@ -994,6 +994,7 @@ Join Telegram Community
   </script>
 <script data-purpose="render-and-ui">
     // Render Items to Category Grids
+    function safeText(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
     function renderCatalog() {
       const categories = ['android', 'androidtv', 'desktop', 'router'];
 
@@ -1015,19 +1016,19 @@ Join Telegram Community
             <div>
               <div class="flex items-start justify-between gap-2 mb-2.5">
                 <div class="w-10 h-10 rounded-lg bg-[#162035] border border-slate-700/60 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
-                  ${item.icon || '📦'}
+                  ${/^https?:\/\//.test(item.icon || '') || /^data:image\//.test(item.icon || '') ? '<img src="' + safeText(item.icon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy">' : safeText(item.icon || '📦')}
                 </div>
                 <div class="text-right">
-                  <span class="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${item.version}</span>
-                  <span class="block text-[10px] font-mono text-slate-400 mt-0.5">${item.size}</span>
+                  <span class="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${safeText(item.version)}</span>
+                  <span class="block text-[10px] font-mono text-slate-400 mt-0.5">${safeText(item.size)}</span>
                 </div>
               </div>
 
-              <h3 class="text-xs font-bold text-white group-hover:text-amber-400 transition truncate" title="${item.title}">${item.title}</h3>
-              <p class="text-[11px] text-slate-400 line-clamp-2 mt-1 leading-snug">${item.desc || 'Verified SnappsHub mirror file.'}</p>
+              <h3 class="text-xs font-bold text-white group-hover:text-amber-400 transition truncate" title="${safeText(item.title)}">${safeText(item.title)}</h3>
+              <p class="text-[11px] text-slate-400 line-clamp-2 mt-1 leading-snug">${safeText(item.desc || 'Verified SnappsHub mirror file.')}</p>
               
               <div class="mt-2.5 flex items-center justify-between text-[10px] text-slate-400 border-t border-[#1f273d]/70 pt-2 font-mono">
-                <span class="truncate max-w-[110px]">${item.arch || 'Universal'}</span>
+                <span class="truncate max-w-[110px]">${safeText(item.arch || 'Universal')}</span>
                 <span class="text-emerald-400 flex items-center gap-0.5">
                   <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                   Clean
@@ -1105,10 +1106,10 @@ Join Telegram Community
             <div class="bg-[#111728] border border-amber-500/40 rounded-xl p-3 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between text-xs">
-                  <span class="font-bold text-white">${item.title}</span>
-                  <span class="text-amber-400 font-mono">${item.version}</span>
+                  <span class="font-bold text-white">${safeText(item.title)}</span>
+                  <span class="text-amber-400 font-mono">${safeText(item.version)}</span>
                 </div>
-                <p class="text-[11px] text-slate-400 mt-1">${item.desc}</p>
+                <p class="text-[11px] text-slate-400 mt-1">${safeText(item.desc)}</p>
               </div>
               <div class="mt-3">
                 <button onclick="openDownloadModal('${item.id}')" class="w-full py-1.5 text-xs bg-amber-500 text-black font-bold rounded">Download</button>
@@ -1134,7 +1135,7 @@ Join Telegram Community
       document.getElementById('detailAppSha256').textContent = `SHA-256: ${item.sha256 || 'Generated on build pipe'}`;
       document.getElementById('detailAppDesc').textContent = item.desc || 'Zero malware verified file hosted on secure SnappsHub repository.';
       document.getElementById('detailArch').textContent = item.arch || 'Multi-platform';
-      document.getElementById('detailBreadcrumb').textContent = `Repository / ${item.category.toUpperCase()} / ${item.title}`;
+      document.getElementById('detailBreadcrumb').textContent = `Repository / ${item.category.toUpperCase()} / ${safeText(item.title)}`;
 
       // Bind button
       const dlBtn = document.getElementById('detailDownloadTriggerBtn');
@@ -1230,8 +1231,21 @@ Join Telegram Community
   </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", async () => {
       renderCatalog();
+      try {
+        const response = await fetch('./apps-data.json?t=' + Date.now(), { cache: 'no-store' });
+        if (!response.ok) throw new Error('App data HTTP ' + response.status);
+        const data = await response.json();
+        if (!Array.isArray(data.apps)) throw new Error('Invalid app list');
+        repositoryData = data.apps.filter(a => /^[a-zA-Z0-9_-]+$/.test(a.id)).map(a => ({...a, title:a.title || a.name, url:a.url || a.mirror1}));
+        renderCatalog();
+        const hero = data.hero || {};
+        if (hero.siteBrandTitle) document.querySelectorAll('.brand-pulse-name').forEach(el => el.textContent = hero.siteBrandTitle);
+        const ticker = document.querySelector('[data-purpose="marquee-announcement"]');
+        if (ticker && hero.tickerActive === false) ticker.hidden = true;
+        if (ticker && hero.tickerText) ticker.querySelector('.animate-marquee').textContent = hero.tickerText;
+      } catch (error) { console.error('Live catalog load failed:', error); }
     });
   </script>
 <!-- END: EmbeddedApplicationLogic -->

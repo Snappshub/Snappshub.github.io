@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SnappsHub — Verified Digital Software, APKs &amp; Firmware Vault</title>
+<meta content="Verified direct downloads for Android APKs, Android TV, Desktop utilities, and secure Router Firmwares. Zero malware guaranteed." name="description"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+<link rel="canonical" href="https://snappshub.github.io/"/>
+<link rel="alternate" hreflang="en" href="https://snappshub.github.io/"/>
+<link rel="alternate" hreflang="x-default" href="https://snappshub.github.io/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="SnappsHub"/>
+<meta property="og:title" content="SnappsHub — Verified Digital Software, APKs &amp; Firmware Vault"/>
+<meta property="og:description" content="Explore Android apps, Android TV utilities, desktop software and router firmware from SnappsHub."/>
+<meta property="og:url" content="https://snappshub.github.io/"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="sitemap" type="application/xml" href="https://snappshub.github.io/sitemap.xml"/>
+<!-- Favicon using provided Cyber S SVG -->
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23fbbf24'/%3E%3Cstop offset='100%25' stop-color='%23d97706'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230b0f19'/%3E%3Cpath d='M60 34 C58 31 52 30 46 32 C39 34 37 39 40 43 C43 47 62 48 64 54 C66 61 60 67 48 68 C40 68 35 64 33 60' fill='none' stroke='url(%23g)' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='15' r='4' fill='%23f59e0b'/%3E%3Ccircle cx='82' cy='60' r='3.5' fill='%2306b6d4'/%3E%3Ccircle cx='18' cy='60' r='3.5' fill='%2306b6d4'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyberDark: '#0a0e18',
+            surfaceCard: '#111728',
+            surfaceBorder: '#1f273d',
+            goldAccent: '#f59e0b',
+            cyanNeon: '#06b6d4',
+            emeraldSafe: '#10b981',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'marquee': 'marquee 28s linear infinite',
+            'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: 1, filter: 'drop-shadow(0 0 10px rgba(245, 158, 11, 0.7))' },
+              '50%': { opacity: 0.6, filter: 'drop-shadow(0 0 3px rgba(6, 182, 212, 0.5))' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-cyber-effects">
+    body {
+      background-color: #0a0e18;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #0a0e18;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #1f273d;
+      border-radius: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+    .glow-gold {
+      box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.25);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.25);
+    }
+    /* Lightweight cyberpunk motion: animate compositor-friendly transform/opacity only. */
+    .ticker-pulse-label {
+      color: #22d3ee;
+      text-shadow: 0 0 5px rgba(34, 211, 238, .55);
+      animation: tickerLabelPulse 2.4s ease-in-out infinite;
+    }
+    .brand-pulse-name {
+      display: inline-block;
+      color: #22d3ee;
+      text-shadow: 0 0 8px rgba(34, 211, 238, .65);
+      animation: brandNamePulse 2.8s ease-in-out infinite;
+      font-size: 1.2rem;
+    }
+    .brand-pulse-icon {
+      animation: brandNamePulse 2.8s ease-in-out infinite;
+      filter: drop-shadow(0 0 6px rgba(34, 211, 238, .5));
+    }
+    .search-cyber-icon {
+      color: #22d3ee;
+      filter: drop-shadow(0 0 4px rgba(34, 211, 238, .65));
+      transform-origin: center;
+      animation: searchCyberScan 3s ease-in-out infinite;
+    }
+    @keyframes brandNamePulse {
+      0%, 100% { opacity: 1; transform: translateY(0); }
+      50% { opacity: .78; transform: translateY(-1px); }
+    }
+    @keyframes searchCyberScan {
+      0%, 100% { opacity: 1; transform: rotate(0deg) scale(1); }
+      50% { opacity: .78; transform: rotate(9deg) scale(1.12); }
+    }
+    .header-search-open { display: block !important; position: absolute; top: calc(100% + .5rem); left: 1rem; right: 1rem; width: auto; max-width: 32rem; margin-left: auto; z-index: 60; padding: .5rem; background: #0a0e18; border: 1px solid #1f273d; border-radius: .75rem; box-shadow: 0 12px 30px rgba(0,0,0,.4); }
+    @media (max-width: 767px) {
+      .brand-pulse-name { font-size: 1.05rem; }
+    }
+    @keyframes tickerLabelPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .68; }
+    }
+    .footer-neon-item { transition: transform .22s ease, color .22s ease; }
+    .footer-neon-item:hover { transform: translateX(3px); color: #67e8f9; }
+    .footer-neon-icon { display: inline-flex; align-items: center; justify-content: center; width: 1.15rem; min-width: 1.15rem; color: #22d3ee; transition: transform .25s ease, filter .25s ease; }
+    .footer-neon-item:hover .footer-neon-icon { transform: translateY(-2px) scale(1.12); filter: drop-shadow(0 0 5px rgba(34,211,238,.75)); }
+    .footer-dmca-badge { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem .75rem; border: 1px solid rgba(34,211,238,.35); border-radius: .65rem; background: linear-gradient(110deg, rgba(8,145,178,.13), rgba(15,23,42,.8)); color: #a5f3fc; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+    .footer-dmca-badge:hover { border-color: rgba(34,211,238,.8); box-shadow: 0 0 14px rgba(34,211,238,.18); transform: translateY(-2px); }
+    .footer-dmca-shield { animation: footerShieldPulse 2.8s ease-in-out infinite; }
+    @keyframes footerShieldPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .72; transform: scale(1.06); } }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-pulse-label, .brand-pulse-name, .brand-pulse-icon, .search-cyber-icon, .footer-dmca-shield {
+        animation: none !important;
+        transform: none !important;
+      }
+      .footer-neon-item, .footer-neon-icon, .footer-dmca-badge { transition: none !important; }
+    }
+  </style>
+<style data-purpose="responsive-layout-fixes">
+  /* Responsive-only layout safeguards; preserve the existing visual theme. */
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, canvas { max-width: 100%; }
+  body { width: 100%; min-width: 0; }
+  main, header, footer, section, aside { min-width: 0; }
+  h1, h2, h3, p, a, button, span { overflow-wrap: anywhere; }
+  #grid-android, #grid-androidtv, #grid-desktop, #grid-router {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+  #downloadModal { overflow-y: auto; }
+  #downloadModal > div { max-height: calc(100dvh - 2rem); overflow-y: auto; }
+  #pushNotificationBanner { width: min(24rem, calc(100vw - 2rem)); }
+  @media (max-width: 639px) {
+    header > div { gap: .5rem; padding-left: .75rem; padding-right: .75rem; }
+    header > div > div:first-child { min-width: 0; gap: .5rem; }
+    header .group { min-width: 0; gap: .4rem; }
+    header .group > div:last-child { min-width: 0; }
+    header .group > div:last-child > p { display: none; }
+    header .group > div:last-child .inline-flex { display: none; }
+    header .group > div:last-child > div > span:first-child { font-size: 1rem; }
+    header > div > div:last-child a { padding: .45rem .6rem; }
+    #appDetailsView > div { padding: 1rem; }
+    #appDetailsView #detailBreadcrumb { max-width: 45%; text-align: right; overflow-wrap: anywhere; }
+    #cat-android > div:first-child,
+    #cat-androidtv > div:first-child,
+    #cat-desktop > div:first-child { align-items: flex-start; gap: .5rem; }
+    #cat-android > div:first-child > span:last-child,
+    #cat-androidtv > div:first-child > span:last-child,
+    #cat-desktop > div:first-child > span:last-child { display: none; }
+    #downloadModal { align-items: flex-start; padding: .75rem; }
+    #downloadModal > div { padding: 1rem; margin: auto 0; }
+    #downloadModal > div > div:last-child { flex-wrap: wrap; gap: .5rem; }
+    #pushNotificationBanner { right: 1rem; bottom: 1rem; }
+  }
+  @media (max-width: 360px) {
+    header > div > div:first-child > button { padding: .4rem; }
+    header .group > div:last-child > div > span:first-child { font-size: .9rem; }
+    main { padding-left: .75rem; padding-right: .75rem; }
+    #appDetailsView #detailBreadcrumb { display: none; }
+  }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    #grid-android, #grid-androidtv, #grid-desktop, #grid-router {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1024px) {
+    #grid-android, #grid-androidtv, #grid-desktop, #grid-router {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
+</head>
+<body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
+<!-- BEGIN: WebPushNotificationToast -->
+<div class="fixed bottom-5 right-5 z-50 max-w-sm w-full bg-[#111728] border border-cyan-500/30 shadow-2xl rounded-xl p-4 transition-all duration-300 transform translate-y-0 flex items-start gap-3 backdrop-blur-md" data-purpose="push-toast" id="pushNotificationBanner">
+<div class="p-2.5 bg-cyan-950/60 text-cyan-400 rounded-lg border border-cyan-800/50 shrink-0">
+<svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="text-xs font-semibold uppercase tracking-wider text-amber-400 font-mono">SnappsHub Alert</h4>
+<button class="text-slate-400 hover:text-white text-xs" onclick="dismissNotification()">×</button>
+</div>
+<p class="text-xs text-slate-300 mt-1" id="pushMessageText">Get real-time push alerts for new Router Firmwares and Zero-Day updates.</p>
+<div class="mt-2.5 flex items-center gap-2">
+<button class="px-2.5 py-1 text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold rounded transition shadow" onclick="dismissNotification()">Enable Alerts</button>
+<button class="px-2.5 py-1 text-xs bg-slate-800 text-slate-400 hover:text-slate-200 rounded" onclick="dismissNotification()">Later</button>
+</div>
+</div>
+</div>
+<!-- END: WebPushNotificationToast -->
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-40 bg-[#0a0e18]/90 backdrop-blur-xl border-b border-[#1f273d]">
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-3">
+<!-- Drawer Menu Toggle & Official Logo -->
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-300 hover:text-amber-400 focus:outline-none transition" id="mobileMenuBtn" onclick="toggleDrawer()">
+<svg class="w-5 h-5 brand-pulse-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<!-- Brand Mark using provided SVG logo data -->
+<a class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5 group z-10" href="#home" onclick="showCatalogView()">
+<div class="w-10 h-10 shrink-0 transform group-hover:scale-105 transition-transform">
+<svg class="w-full h-full drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="goldGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#fbbf24"></stop>
+<stop offset="50%" stop-color="#f59e0b"></stop>
+<stop offset="100%" stop-color="#d97706"></stop>
+</lineargradient>
+<lineargradient id="cyberGrad" x1="0%" x2="100%" y1="100%" y2="0%">
+<stop offset="0%" stop-color="#06b6d4"></stop>
+<stop offset="100%" stop-color="#3b82f6"></stop>
+</lineargradient>
+<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<rect fill="#0b0f19" height="100" rx="22" stroke="#1f293d" stroke-width="2" width="100"></rect>
+<polygon fill="none" points="50,15 82,30 82,60 50,85 18,60 18,30" stroke="url(#cyberGrad)" stroke-dasharray="4,2" stroke-width="2.5"></polygon>
+<path d="M60 34 C58 31 52 30 46 32 C39 34 37 39 40 43 C43 47 62 48 64 54 C66 61 60 67 48 68 C40 68 35 64 33 60 M33 60 L36 57" fill="none" filter="url(#glow)" stroke="url(#goldGrad)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.5"></path>
+<circle cx="50" cy="15" fill="#f59e0b" r="3.5"></circle>
+<circle cx="82" cy="60" fill="#06b6d4" r="3"></circle>
+<circle cx="18" cy="60" fill="#06b6d4" r="3"></circle>
+<circle cx="50" cy="85" fill="#f59e0b" r="3.5"></circle>
+</svg>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-extrabold text-lg tracking-tight brand-pulse-name">SnappsHub</span>
+<span class="inline-flex items-center px-1.5 py-0.2 text-[10px] font-semibold bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 rounded">
+<svg class="w-2.5 h-2.5 mr-0.5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+                Verified
+              </span>
+</div>
+<p class="text-[10px] text-slate-400 tracking-wider font-mono">REPOSITORIES &amp; FIRMWARE</p>
+</div>
+</a>
+</div>
+<!-- Universal Search Bar -->
+<div id="headerSearchWrap" class="hidden">
+<div class="relative">
+<input class="w-full bg-[#111728] border border-[#1f273d] text-sm text-slate-200 rounded-lg pl-9 pr-4 py-2 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition placeholder:text-slate-500" id="globalSearchInput" oninput="handleUniversalSearch(this.value)" placeholder="Search apps, TV APKs, routers, utilities..." type="text"/>
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] text-slate-500 font-mono">ESC</span>
+</div>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-2 sm:gap-3">
+<button type="button" onclick="toggleHeaderSearch()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-200 hover:text-cyan-300 hover:border-cyan-500/60 text-xs font-semibold transition" aria-label="Search"><svg class="w-4 h-4 search-cyber-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-width="2"></circle><path d="m16 16 5 5" stroke-linecap="round" stroke-width="2"></path></svg><span class="hidden sm:inline">Search</span></button>
+
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+
+<!-- BEGIN: OffcanvasDrawer -->
+<div class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300" id="drawerOverlay" onclick="toggleDrawer()"></div>
+<aside class="fixed top-0 left-0 bottom-0 w-72 max-w-[85vw] bg-[#0b0f19] border-r border-[#1f273d] z-50 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between p-5" id="sideDrawer">
+<div>
+<div class="flex items-center justify-between pb-4 border-b border-[#1f273d]">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center font-bold font-mono brand-pulse-icon">S</div>
+<span class="font-bold text-slate-100 text-sm">SnappsHub Navigation</span>
+</div>
+<button class="text-slate-400 hover:text-white" onclick="toggleDrawer()">×</button>
+</div>
+<nav class="mt-5 space-y-1 text-sm font-medium">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-amber-400 transition" href="#cat-android" onclick="toggleDrawer()">
+<span class="text-lg">📱</span> Android Apps
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-amber-400 transition" href="#cat-androidtv" onclick="toggleDrawer()">
+<span class="text-lg">📺</span> Android TV
+        </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-amber-400 transition" href="#cat-desktop" onclick="toggleDrawer()">
+<span class="text-lg">💻</span> Desktop &amp; Laptop
+        </a>
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-cyan-400 transition" href="#cat-router" onclick="toggleDrawer()">
+<span class="flex items-center gap-3"><span class="text-lg">📁</span> Router Firmware Vault</span>
+<span class="text-[10px] font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-800 px-1.5 py-0.5 rounded">LAST</span>
+</a>
+</nav>
+<div class="mt-6 pt-5 border-t border-[#1f273d]">
+<div class="text-xs uppercase text-slate-500 font-mono mb-2">Network Channels</div>
+<a class="flex items-center gap-2 text-xs text-sky-400 hover:underline py-1" href="https://t.me/snappshub" target="_blank">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
+          Telegram Official: @snappshub
+        </a>
+<a class="flex items-center gap-2 text-xs text-slate-400 hover:text-white py-1" href="mailto:alaminsaheb2019@gmail.com">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          alaminsaheb2019@gmail.com
+        </a>
+</div>
+</div>
+<div class="text-[11px] text-slate-500 font-mono border-t border-[#1f273d] pt-3">
+      v3.2 Cyber Vault Edition
+    </div>
+</aside>
+<!-- END: OffcanvasDrawer -->
+<!-- BEGIN: LeaderboardAdSlot -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full">
+<div class="w-full bg-[#111728]/80 border border-dashed border-[#1f273d] rounded-xl p-3 flex flex-col items-center justify-center min-h-[90px] relative overflow-hidden text-center" data-purpose="ad-slot-leaderboard" id="headerAdContainer">
+<span class="absolute top-1 right-2 text-[9px] uppercase tracking-wider text-slate-500 font-mono">Sponsored Banner</span>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3" id="headerAdContent">
+<span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-mono text-xs border border-amber-500/20">Adsterra &amp; Monetag Engine Enabled</span>
+<p class="text-xs text-slate-300">Ultra-fast High Speed CDN Direct Download Nodes • Safe &amp; Verified Mirror</p>
+<a class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1 rounded transition" href="https://t.me/snappshub" target="_blank">Fast Access</a>
+</div>
+</div>
+</div>
+<!-- END: LeaderboardAdSlot -->
+
+<!-- BEGIN: ScrollingMarqueeTicker -->
+<aside class="bg-[#0f1523] border-b border-[#1f273d]/80 py-2 overflow-hidden select-none" data-purpose="marquee-announcement">
+<div class="flex items-center">
+<div class="px-3 py-0.5 bg-amber-500/20 border-r border-amber-500/30 text-xs font-mono font-bold shrink-0 z-10 flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span class="ticker-pulse-label">HUB PULSE</span>
+      </div>
+<div class="overflow-hidden whitespace-nowrap w-full">
+<div class="inline-block animate-marquee text-xs font-medium text-slate-300 space-x-12">
+<span>🔥 <strong class="text-amber-400">LATEST RELEASES:</strong> Daily verified direct downloads • Zero malware checksum guaranteed</span>
+<span>⚡ <strong class="text-cyan-400">ROUTER FIRMWARES ADDED:</strong> Tenda AC10 v4, TP-Link Archer C6 v3.2, Mikrotik RouterOS 7.15</span>
+<span>📺 <strong class="text-amber-400">ANDROID TV APKS:</strong> SmartTube 21.85, Kodi 21.0 Omega, TiviMate 4.8.0 Premium</span>
+<span>🛡️ <strong class="text-emerald-400">VIRUSTOTAL SCANNED:</strong> 100% clean builds with SHA-256 integrity signatures</span>
+<span>💬 Need custom firmware or direct upload? Join Telegram <a class="underline text-sky-400" href="https://t.me/snappshub">@snappshub</a></span>
+<!-- Duplicate for seamless infinite loop -->
+<span>🔥 <strong class="text-amber-400">LATEST RELEASES:</strong> Daily verified direct downloads • Zero malware checksum guaranteed</span>
+<span>⚡ <strong class="text-cyan-400">ROUTER FIRMWARES ADDED:</strong> Tenda AC10 v4, TP-Link Archer C6 v3.2, Mikrotik RouterOS 7.15</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: ScrollingMarqueeTicker -->
+<!-- BEGIN: HeroSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-2">
+<div class="relative rounded-2xl overflow-hidden border border-[#1f273d] bg-gradient-to-br from-[#111728] via-[#0d1322] to-[#0a0e18] shadow-2xl">
+<div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen overflow-hidden">
+<img alt="Cyber Grid Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_gngVmFy7Pz8PM3aQhb1hMRXlEQ-TW5hDqOurY-lHj3T44nGafdVwhuSmLEFKFpnmPhhZ9LtaIWcmtN75_gsFuYgf3AliaNP6cYs6QK1xd7q8EB0QLh2J-8vSg4rBXq4KeyWuUfjyEBmNYRkiTO30jzZZUdy9xEIgT8hLm7pIrQDN3DOqedVp0d3fVMXnBrUEH0BIQdIVb97pNAteh8XDlvmbEqyGAsuq4hv6S90"/>
+</div>
+<div class="relative z-10 p-4 sm:p-5 md:p-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+<div class="max-w-2xl text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-400 text-xs font-mono font-medium mb-4">
+<span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            ZERO MALWARE REPOSITORY PIPELINE
+          </div>
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Direct High-Speed <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-cyan-400 bg-clip-text text-transparent">Apps, TV APKs &amp; Firmware</span>
+</h1>
+<p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+            Curated archive of Android applications, TV utilities, cross-platform software, and stock router recovery firmwares. Scanned with VirusTotal API and hosted on high-availability CDN.
+          </p>
+<a class="mt-5 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white text-sm font-semibold shadow-md transition transform hover:-translate-y-0.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank">
+<span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.01-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.04.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
+Join Telegram Community
+</a>
+</div>
+</div>
+
+</div>
+</section>
+<!-- END: HeroSection -->
+
+<!-- BEGIN: MainContentArea -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-12">
+<!-- PAGE 2: In-Page App Details View (Initially Hidden) -->
+<section class="hidden" data-purpose="page2-app-detail-flow" id="appDetailsView">
+<div class="bg-[#111728] border border-[#1f273d] rounded-2xl p-6 md:p-8">
+<div class="flex items-center justify-between border-b border-[#1f273d] pb-4 mb-6">
+<button class="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 hover:text-amber-300 transition" onclick="showCatalogView()">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Back to All Repositories
+          </button>
+<span class="text-xs font-mono text-slate-400" id="detailBreadcrumb">Repository / Details</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-6">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+<div class="w-20 h-20 rounded-2xl bg-[#162035] border border-slate-700 p-2 flex items-center justify-center text-4xl shadow-lg shrink-0" id="detailAppIcon">
+                📦
+              </div>
+<div>
+<h2 class="text-2xl font-bold text-white tracking-tight" id="detailAppTitle">Application Name</h2>
+<div class="flex flex-wrap items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30" id="detailAppBadge">Category</span>
+<span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300" id="detailAppVersion">v1.0.0</span>
+<span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300" id="detailAppSize">00 MB</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+                    VirusTotal 0/72 Clean
+                  </span>
+</div>
+</div>
+</div>
+<div class="bg-[#0c1220] p-4 rounded-xl border border-[#1f273d] space-y-2">
+<h3 class="text-xs uppercase font-mono tracking-wider text-slate-400">Cryptographic Integrity</h3>
+<div class="text-xs font-mono text-slate-300 break-all bg-[#080c16] p-2.5 rounded border border-slate-800 flex items-center justify-between">
+<span id="detailAppSha256">SHA-256: d5a7f98e72c83b4...</span>
+<button class="ml-2 text-amber-400 hover:text-white shrink-0 text-xs font-sans" onclick="copyDetailSha()">Copy</button>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-sm font-semibold text-white">Package Description &amp; Release Notes</h3>
+<p class="text-sm text-slate-300 leading-relaxed" id="detailAppDesc">
+                Official release verified by the SnappsHub software pipeline. Tested for zero malware, ad-free experience, and multi-architecture compatibility.
+              </p>
+</div>
+<!-- In-Page Specification Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
+<span class="text-slate-400 block font-mono">Architecture</span>
+<span class="font-bold text-white mt-1 block" id="detailArch">armeabi-v7a / arm64</span>
+</div>
+<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
+<span class="text-slate-400 block font-mono">Minimum OS</span>
+<span class="font-bold text-white mt-1 block" id="detailMinOs">Android 5.0+ / Win 10</span>
+</div>
+<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
+<span class="text-slate-400 block font-mono">Licensing</span>
+<span class="font-bold text-emerald-400 mt-1 block">Freeware / Verified</span>
+</div>
+<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
+<span class="text-slate-400 block font-mono">Release Status</span>
+<span class="font-bold text-cyan-400 mt-1 block">Stable Channel</span>
+</div>
+</div>
+</div>
+<!-- Secondary Side Action Column -->
+<div class="space-y-4">
+<div class="bg-[#0e1424] border border-[#1f273d] p-5 rounded-xl space-y-4">
+<h4 class="text-sm font-bold text-white">Direct Download Pipe</h4>
+<p class="text-xs text-slate-400">Initiate safe countdown download with high-speed CDN acceleration.</p>
+<button class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg transition flex items-center justify-center gap-2" id="detailDownloadTriggerBtn">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Instant Download
+              </button>
+<a class="w-full py-2.5 px-4 rounded-xl bg-[#162035] hover:bg-sky-600/30 text-sky-400 font-semibold text-xs border border-sky-500/30 transition flex items-center justify-center gap-2" href="https://t.me/snappshub" target="_blank">
+                Join Telegram Mirror @snappshub
+              </a>
+</div>
+<!-- Page 2 Banner Ad Box -->
+<div class="p-4 rounded-xl bg-[#0a0e18] border border-dashed border-[#1f273d] text-center">
+<span class="text-[9px] uppercase font-mono text-slate-500">Sponsored Ad</span>
+<p class="text-xs text-amber-400 font-medium mt-1">High-Speed Gigabit VPN &amp; Cloud Node</p>
+<p class="text-[11px] text-slate-400 mt-0.5">Secure router configurations and anonymous tunneling.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN CATALOG CONTAINER -->
+<div class="space-y-12" id="catalogView">
+<!-- CATEGORY 1: Android Apps -->
+<!-- BEGIN: CategoryAndroidApps -->
+<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-android">
+<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
+<div class="flex items-center gap-2.5">
+<span class="text-2xl">📱</span>
+<div>
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+                Android Apps
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20" id="count-android">Active Builds</span>
+</h2>
+<p class="text-xs text-slate-400">Smartphones, tablets &amp; arm64 modded utility builds</p>
+</div>
+</div>
+<span class="text-xs font-mono text-slate-500">DIRECT CDN</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-android">
+<!-- Populated by JS -->
+</div>
+<!-- Styled View More Button -->
+<div class="text-center mt-5">
+<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-amber-500 hover:text-black border border-[#1f273d] hover:border-amber-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-android" onclick="expandCategory('android')">
+            View More
+          </button>
+</div>
+</section>
+<!-- END: CategoryAndroidApps -->
+<!-- IN-FEED NATIVE AD BANNER 1 -->
+<div class="p-3 bg-gradient-to-r from-[#111728] via-[#162035] to-[#111728] border border-[#1f273d] rounded-xl flex flex-col md:flex-row items-center justify-between gap-3" data-purpose="infeed-native-ad">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-mono text-xs">AD</div>
+<div>
+<div class="text-xs font-bold text-white">Lightning Fast Premium Hosting Cloud</div>
+<div class="text-[11px] text-slate-400">Zero wait time, unrestricted multi-thread downloads for all SnappsHub users.</div>
+</div>
+</div>
+<a class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-semibold text-xs whitespace-nowrap transition" href="https://t.me/snappshub" target="_blank">
+          Claim Cloud Bandwidth
+        </a>
+</div>
+<!-- CATEGORY 2: Android TV -->
+<!-- BEGIN: CategoryAndroidTV -->
+<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-androidtv">
+<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
+<div class="flex items-center gap-2.5">
+<span class="text-2xl">📺</span>
+<div>
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+                Android TV &amp; TV Box
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20" id="count-androidtv">Active Builds</span>
+</h2>
+<p class="text-xs text-slate-400">Leanback launchers, IPTV players, streaming engines</p>
+</div>
+</div>
+<span class="text-xs font-mono text-slate-500">4K HDR COMPATIBLE</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-androidtv">
+<!-- Populated by JS -->
+</div>
+<div class="text-center mt-5">
+<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-[#1f273d] hover:border-cyan-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-androidtv" onclick="expandCategory('androidtv')">
+            View More
+          </button>
+</div>
+</section>
+<!-- END: CategoryAndroidTV -->
+<!-- CATEGORY 3: Desktop & Laptop -->
+<!-- BEGIN: CategoryDesktop -->
+<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-desktop">
+<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
+<div class="flex items-center gap-2.5">
+<span class="text-2xl">💻</span>
+<div>
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+                Desktop &amp; Laptop
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20" id="count-desktop">Active Builds</span>
+</h2>
+<p class="text-xs text-slate-400">Windows, macOS &amp; Linux portable utilities and system toolkits</p>
+</div>
+</div>
+<span class="text-xs font-mono text-slate-500">x64 / ARM / PORTABLE</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-desktop">
+<!-- Populated by JS -->
+</div>
+<div class="text-center mt-5">
+<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-indigo-500 hover:text-white border border-[#1f273d] hover:border-indigo-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-desktop" onclick="expandCategory('desktop')">
+            View More
+          </button>
+</div>
+</section>
+<!-- END: CategoryDesktop -->
+<!-- IN-FEED NATIVE AD BANNER 2 -->
+<div class="p-3 bg-gradient-to-r from-[#111728] via-[#101b2f] to-[#111728] border border-cyan-900/40 rounded-xl flex flex-col md:flex-row items-center justify-between gap-3" data-purpose="infeed-native-ad">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-mono text-xs">DEV</div>
+<div>
+<div class="text-xs font-bold text-white">Need a Custom Firmware Compilation or ROM?</div>
+<div class="text-[11px] text-slate-400">Submit requests directly to our developer team via Telegram @snappshub.</div>
+</div>
+</div>
+<a class="px-3.5 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-xs whitespace-nowrap transition" href="https://t.me/snappshub" target="_blank">
+          Contact Telegram Devs
+        </a>
+</div>
+<!-- CRITICAL CATEGORY 4: ROUTER FIRMWARE VAULT (MUST ALWAYS BE THE VERY LAST CATEGORY) -->
+<!-- BEGIN: CategoryRouterVault -->
+<section class="scroll-mt-24 pb-4" data-purpose="app-category-section" id="cat-router">
+<div class="p-4 rounded-xl bg-gradient-to-r from-cyan-950/40 via-[#111728] to-cyan-950/40 border border-cyan-500/30 mb-5">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center text-2xl shadow-[0_0_12px_rgba(6,182,212,0.4)]">
+                📁
+              </div>
+<div>
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+                  Router Firmware Vault
+                  <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-black">CRITICAL RECOVERY</span>
+</h2>
+<p class="text-xs text-cyan-300/80">Stock ROMs, OpenWrt, Padavan, Mikrotik RouterOS bin images with verified checksums</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-mono text-slate-400" id="count-router">Vault Count: 4 Files</span>
+<p class="text-[10px] text-amber-400 font-mono">ALWAYS THE FINAL CATEGORY</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-router">
+<!-- Populated by JS -->
+</div>
+<div class="text-center mt-5">
+<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-cyan-700/60 hover:border-cyan-400 text-xs font-semibold text-cyan-300 transition shadow" id="viewMore-router" onclick="expandCategory('router')">
+            View More
+          </button>
+</div>
+</section>
+<!-- END: CategoryRouterVault -->
+</div>
+</main>
+<!-- END: MainContentArea -->
+<!-- BEGIN: DownloadCountdownModal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4" id="downloadModal">
+<div class="bg-[#111728] border border-amber-500/30 rounded-2xl max-w-lg w-full p-6 relative shadow-2xl overflow-hidden">
+<!-- Modal Close Button -->
+<button class="absolute top-4 right-4 text-slate-400 hover:text-white transition" onclick="closeDownloadModal()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<!-- App Header inside modal -->
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-[#162035] border border-slate-700 flex items-center justify-center text-2xl shrink-0" id="modalAppIcon">
+          📦
+        </div>
+<div>
+<h3 class="text-base font-bold text-white" id="modalAppTitle">Application Title</h3>
+<div class="flex items-center gap-2 text-xs text-slate-400 font-mono mt-0.5">
+<span id="modalAppVersion">v1.0.0</span>
+<span>•</span>
+<span id="modalAppSize">24.5 MB</span>
+</div>
+</div>
+</div>
+<!-- 5-Second Countdown Clock & Progress -->
+<div class="my-6 p-4 rounded-xl bg-[#090d16] border border-[#1f273d] text-center">
+<div class="space-y-3" id="timerContainer">
+<div class="text-xs uppercase font-mono tracking-wider text-slate-400">High-Speed CDN Node Preparation</div>
+<div class="flex items-center justify-center gap-2">
+<div class="text-4xl font-extrabold font-mono text-amber-400 drop-shadow-[0_0_10px_rgba(245,158,11,0.6)]" id="countdownNumber">5</div>
+<span class="text-xs text-slate-400">seconds remaining</span>
+</div>
+<!-- Progress bar -->
+<div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-amber-500 to-cyan-400 h-full w-0 transition-all duration-1000 ease-linear" id="countdownBar"></div>
+</div>
+<p class="text-[11px] text-slate-400">Verifying SHA-256 cryptographic hashes against tamper signatures...</p>
+</div>
+<!-- Download Action Button (Appears after countdown) -->
+<div class="hidden space-y-3" id="readyContainer">
+<div class="text-emerald-400 text-xs font-semibold flex items-center justify-center gap-1.5">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
+            CDN Pipe Ready &amp; Authenticated!
+          </div>
+<a class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2" href="#" id="modalDirectDownloadBtn" target="_blank">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Direct High-Speed Download Now
+          </a>
+</div>
+</div>
+<!-- Safe 300x250 Banner Ad Slot inside Modal -->
+<div class="w-full h-36 bg-[#0a0e18] border border-dashed border-[#1f273d] rounded-lg flex flex-col items-center justify-center text-center p-3 relative" data-purpose="modal-ad-banner">
+<span class="absolute top-1 right-2 text-[8px] uppercase font-mono text-slate-500">Advertisement</span>
+<p class="text-xs font-semibold text-cyan-400">Looking for Ultra-Fast Firmware Flashing Tools?</p>
+<p class="text-[11px] text-slate-400 mt-1">Get verified TFTP, Odin, and SP Flash Utilities from Telegram mirror.</p>
+<a class="mt-2 text-xs text-amber-400 hover:underline" href="https://t.me/snappshub" target="_blank">Explore Telegram Vault →</a>
+</div>
+<!-- Security / VirusTotal Guarantee -->
+<div class="mt-4 pt-3 border-t border-[#1f273d] flex items-center justify-between text-xs font-mono">
+<span class="text-emerald-400 flex items-center gap-1">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
+          VirusTotal (0/72 Clean)
+        </span>
+<button class="text-slate-400 hover:text-white underline" onclick="toggleDetailsFromModal()">View Details Page</button>
+</div>
+</div>
+</div>
+<!-- END: DownloadCountdownModal -->
+<!-- BEGIN: MainFooter -->
+<footer class="mt-16 bg-[#080c16] border-t border-[#1f273d] text-slate-400 text-xs">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<!-- Col 1: Identity -->
+<div class="space-y-3 md:col-span-1">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">S</span>
+<span class="font-extrabold text-white text-base">SnappsHub</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed">
+            The reliable digital distribution repository for verified Android apps, Android TV utilities, desktop systems, and stock router firmware vault.
+          </p>
+<div class="pt-2">
+<!-- Compact DMCA logo-style protection link -->
+<a class="footer-dmca-badge" href="https://www.dmca.com/Protection/Status.aspx?ID=37a95780-9718-4357-92ee-ea67c2cefe3f" rel="noopener noreferrer" target="_blank" title="View DMCA Protection Status">
+<svg class="footer-dmca-shield" width="25" height="27" viewBox="0 0 24 26" fill="none" aria-hidden="true"><path d="M12 1.8 21 5v7.1c0 5.4-3.7 9.7-9 12.1-5.3-2.4-9-6.7-9-12.1V5l9-3.2Z" stroke="currentColor" stroke-width="1.6"/><path d="m7.8 12.7 2.7 2.7 5.8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flex flex-col text-left"><strong class="text-[11px] tracking-[.16em] text-cyan-200">DMCA</strong><span class="text-[9px] tracking-wider text-slate-400">PROTECTION</span></span>
+</a>
+</div>
+</div>
+<!-- Col 2: Repository Nav -->
+<div class="space-y-2">
+<div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Vault Index</div>
+<ul class="space-y-1.5">
+<li><a class="hover:text-amber-400 transition" href="#cat-android">Android Applications</a></li>
+<li><a class="hover:text-amber-400 transition" href="#cat-androidtv">Android TV &amp; Leanback</a></li>
+<li><a class="hover:text-amber-400 transition" href="#cat-desktop">Desktop &amp; Laptop Softwares</a></li>
+<li><a class="hover:text-cyan-400 font-medium transition text-cyan-300" href="#cat-router">Router Firmware Vault (Stock/OpenWrt)</a></li>
+</ul>
+</div>
+<!-- Col 3: Direct Official Links -->
+<div class="space-y-2">
+<div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Official Links</div>
+<ul class="grid grid-cols-2 gap-x-4 gap-y-2">
+<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="https://snappshub.github.io/" aria-label="SnappsHub Website"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.9 12h18.2M12 2.8c2.4 2.5 3.6 5.6 3.6 9.2s-1.2 6.7-3.6 9.2c-2.4-2.5-3.6-5.6-3.6-9.2s1.2-6.7 3.6-9.2Z"/></svg><span>SnappsHub Website</span></a></li>
+<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank" aria-label="Telegram Community"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M21.7 4.1 18.5 20c-.24 1.12-.88 1.4-1.78.87l-4.92-3.63-2.38 2.29c-.26.26-.48.48-.98.48l.35-5.01 9.12-8.24c.4-.35-.09-.55-.62-.2L6.02 13.7l-4.85-1.52c-1.05-.33-1.07-1.05.22-1.56L20.36 3.3c.87-.32 1.63.21 1.34.8Z"/></svg><span>Telegram Community</span></a></li>
+<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="mailto:alaminsaheb2019@gmail.com" aria-label="Email SnappsHub"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 6.5L20.5 6"/></svg><span class="min-w-0 break-all">alaminsaheb2019@gmail.com</span></a></li>
+
+</ul>
+</div>
+<!-- Col 4: Compliance & Disclaimer -->
+<div class="space-y-2">
+<div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Safety &amp; Terms</div>
+<p class="text-[11px] text-slate-400 leading-normal">
+            All files are strictly distributed for educational, maintenance, and system restoration purposes. We do not distribute malicious files. Hashes are provided for verification.
+          </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-800/40">
+              ✓ SHA-256 Signatures
+            </span>
+<span class="inline-flex items-center gap-1 text-[10px] text-cyan-400 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-800/40">
+              ✓ Free from Adware
+            </span>
+</div>
+</div>
+</div>
+<!-- Centered Glowing Designer Credit -->
+<div class="pt-6 border-t border-[#1f273d] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+<p class="text-xs text-slate-400">
+          © 2025 <a class="text-slate-300 hover:text-white font-medium" href="https://snappshub.github.io/">SnappsHub</a>. All Rights Reserved.
+        </p>
+<!-- Centered Glowing Designer Credit -->
+<div class="px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 via-cyan-500/10 to-amber-500/10 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] text-center">
+<span class="text-xs font-semibold bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent">
+            Website Designed &amp; Developed by Alamin Saheb
+          </span>
+</div>
+<div class="text-xs font-mono text-slate-400">
+          Node: <span class="text-emerald-400">Online 100%</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: EmbeddedApplicationLogic -->
+<script data-purpose="app-core-store">
+    // Core database with default entries for the 4 categories
+    // CRITICAL: category 'router' is strictly kept as the last category
+    const initialRepositoryData = [
+      // Android Apps
+      {
+        id: "apk-1",
+        title: "Instander Pro",
+        category: "android",
+        version: "v18.0",
+        size: "52.4 MB",
+        arch: "arm64-v8a",
+        icon: "📸",
+        url: "https://snappshub.github.io/#download-instander",
+        sha256: "9f83c18b76a911e2f6932402931441a545582c2b3d84954a243d463fa7907584",
+        desc: "High quality image download, ad-free feed, privacy ghosts, and verified stable build."
+      },
+      {
+        id: "apk-2",
+        title: "Telegram Cyber Mod",
+        category: "android",
+        version: "v10.14",
+        size: "68.1 MB",
+        arch: "Universal",
+        icon: "✈️",
+        url: "https://t.me/snappshub",
+        sha256: "67e1a3b84570fd3385a4983b6329ea1b2e654f6789a2391bf398d249d9494392",
+        desc: "Optimized Telegram client with zero sponsored messages and enhanced download pipes."
+      },
+      {
+        id: "apk-3",
+        title: "AdGuard Premium",
+        category: "android",
+        version: "v4.4.1",
+        size: "34.2 MB",
+        arch: "All Arch",
+        icon: "🛡️",
+        url: "https://snappshub.github.io/#download-adguard",
+        sha256: "2c7d9e4827b5832a819d45a9071286c91a03e6734581f5c645d9894371fa79e2",
+        desc: "System-wide ad blocker, HTTPS traffic filtering, and privacy tracker prevention."
+      },
+      {
+        id: "apk-4",
+        title: "Seal Media Downloader",
+        category: "android",
+        version: "v1.12.3",
+        size: "28.0 MB",
+        arch: "arm64-v8a",
+        icon: "🦭",
+        url: "https://snappshub.github.io/#download-seal",
+        sha256: "b45a8927498c19a9d9845321f54316a89472e391b4890a57e382903b4781ca29",
+        desc: "Open source yt-dlp frontend with custom audio/video conversion and material design."
+      },
+      {
+        id: "apk-5",
+        title: "Poweramp Full Unlock",
+        category: "android",
+        version: "build-976",
+        size: "18.6 MB",
+        arch: "Universal",
+        icon: "🎵",
+        url: "https://snappshub.github.io/#download-poweramp",
+        sha256: "a849301294857201948572019385739103957201948572019385720194857201",
+        desc: "Audiophile music player with custom 64-bit audio engine, equalizer, and high-res output."
+      },
+
+      // Android TV
+      {
+        id: "tv-1",
+        title: "SmartTube TV Stable",
+        category: "androidtv",
+        version: "v21.85",
+        size: "24.5 MB",
+        arch: "Android TV",
+        icon: "📺",
+        url: "https://snappshub.github.io/#download-smarttube",
+        sha256: "d5a7f98e72c83b4092b74051a24d56f91c94b79373950ef256f082e6ef3bc621",
+        desc: "YouTube client for Android TV with SponsorBlock, 4K 60fps AV1 playback, zero video ads."
+      },
+      {
+        id: "tv-2",
+        title: "Kodi 21.0 Omega TV",
+        category: "androidtv",
+        version: "v21.0",
+        size: "74.8 MB",
+        arch: "armeabi-v7a",
+        icon: "❄️",
+        url: "https://snappshub.github.io/#download-kodi",
+        sha256: "7489201928374619283746192837461928374619283746192837461928374619",
+        desc: "Ultimate entertainment center with support for network streaming, TrueHD audio, and skins."
+      },
+      {
+        id: "tv-3",
+        title: "TiviMate IPTV Player",
+        category: "androidtv",
+        version: "v4.8.0",
+        size: "16.2 MB",
+        arch: "Android TV",
+        icon: "📡",
+        url: "https://snappshub.github.io/#download-tivimate",
+        sha256: "1029384756102938475610293847561029384756102938475610293847561029",
+        desc: "Dedicated IPTV client designed specifically for large screens and remote controllers."
+      },
+      {
+        id: "tv-4",
+        title: "Projectivy Launcher",
+        category: "androidtv",
+        version: "v4.52",
+        size: "12.0 MB",
+        arch: "Leanback",
+        icon: "🚀",
+        url: "https://snappshub.github.io/#download-projectivy",
+        sha256: "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+        desc: "Clean Android TV replacement launcher with zero banner recommendations and ultra-fast boot."
+      },
+
+      // Desktop & Laptop
+      {
+        id: "pc-1",
+        title: "Rufus USB Bootmaker",
+        category: "desktop",
+        version: "v4.5 Portable",
+        size: "1.4 MB",
+        arch: "Windows x64",
+        icon: "💾",
+        url: "https://snappshub.github.io/#download-rufus",
+        sha256: "8937102948571029384756102938475610293847561029384756102938475610",
+        desc: "Format and create bootable USB drives such as ISO to USB, Windows 11 TPM bypass enabled."
+      },
+      {
+        id: "pc-2",
+        title: "7-Zip Ultra Cyber Edition",
+        category: "desktop",
+        version: "v24.05",
+        size: "1.9 MB",
+        arch: "Win / Mac / Linux",
+        icon: "🗜️",
+        url: "https://snappshub.github.io/#download-7zip",
+        sha256: "6789012345678901234567890123456789012345678901234567890123456789",
+        desc: "High compression ratio archiver supporting LZMA2 encryption and self-extracting formats."
+      },
+      {
+        id: "pc-3",
+        title: "VLC Media Player Portable",
+        category: "desktop",
+        version: "v3.0.21",
+        size: "42.1 MB",
+        arch: "x86_64",
+        icon: "🟧",
+        url: "https://snappshub.github.io/#download-vlc",
+        sha256: "5678901234567890123456789012345678901234567890123456789012345678",
+        desc: "Cross platform multimedia player that reads all audio, video codecs, streams without extra packs."
+      },
+      {
+        id: "pc-4",
+        title: "Wireshark Network Analyzer",
+        category: "desktop",
+        version: "v4.2.5",
+        size: "82.4 MB",
+        arch: "x64 Native",
+        icon: "🦈",
+        url: "https://snappshub.github.io/#download-wireshark",
+        sha256: "4567890123456789012345678901234567890123456789012345678901234567",
+        desc: "World's foremost network protocol analyzer for packet capture, router debugging, and analysis."
+      },
+
+      // ROUTER FIRMWARE VAULT (ALWAYS FINAL CATEGORY)
+      {
+        id: "rt-1",
+        title: "Tenda AC10 v4 Stock & Breed",
+        category: "router",
+        version: "US_ACT_V16.03.10.20",
+        size: "11.2 MB",
+        arch: "MIPS 16MB SPI",
+        icon: "📶",
+        url: "https://snappshub.github.io/#download-tenda-ac10",
+        sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        desc: "Verified factory recovery image for Tenda AC10 v4.0. Resolves bootloop and bricked flash."
+      },
+      {
+        id: "rt-2",
+        title: "TP-Link Archer C6 v3.2 EU",
+        category: "router",
+        version: "v3.2_Build220414",
+        size: "14.5 MB",
+        arch: "Qualcomm Atheros",
+        icon: "📡",
+        url: "https://snappshub.github.io/#download-archer-c6",
+        sha256: "9823471029384710293847102938471029384710293847102938471029384710",
+        desc: "Official stripped bin file for recovery via TFTP server. Clean firmware with stock bootloader."
+      },
+      {
+        id: "rt-3",
+        title: "MikroTik RouterOS Main",
+        category: "router",
+        version: "v7.15 Stable",
+        size: "26.8 MB",
+        arch: "MMIPS / ARM / x86",
+        icon: "⚙️",
+        url: "https://snappshub.github.io/#download-mikrotik-7",
+        sha256: "1234567890123456789012345678901234567890123456789012345678901234",
+        desc: "RouterOS v7 package file (.npk) with WireGuard native protocol, BGP improvements, and patch."
+      },
+      {
+        id: "rt-4",
+        title: "OpenWrt 23.05.3 Generic",
+        category: "router",
+        version: "v23.05.3-factory",
+        size: "8.9 MB",
+        arch: "MediaTek MT7621",
+        icon: "🌐",
+        url: "https://snappshub.github.io/#download-openwrt",
+        sha256: "3456789012345678901234567890123456789012345678901234567890123456",
+        desc: "Clean OpenWrt factory flashing image. LuCI web interface included with modern kernel."
+      }
+    ];
+
+    // Local storage persistence or fallback
+    let repositoryData = JSON.parse(localStorage.getItem('snapps_repo_data')) || initialRepositoryData;
+    let categoryLimits = {
+      android: 4,
+      androidtv: 4,
+      desktop: 4,
+      router: 4
+    };
+    let currentActiveApp = null;
+    let countdownInterval = null;
+
+    function saveRepositoryToStorage() {
+      localStorage.setItem('snapps_repo_data', JSON.stringify(repositoryData));
+    }
+  </script>
+<script data-purpose="render-and-ui">
+    // Render Items to Category Grids
+    function renderCatalog() {
+      const categories = ['android', 'androidtv', 'desktop', 'router'];
+
+      categories.forEach(cat => {
+        const gridEl = document.getElementById(`grid-${cat}`);
+        const countEl = document.getElementById(`count-${cat}`);
+        if (!gridEl) return;
+
+        // Filter items
+        const items = repositoryData.filter(item => item.category === cat);
+        if (countEl) {
+          countEl.textContent = `${items.length} Files`;
+        }
+
+        const visibleItems = items.slice(0, categoryLimits[cat]);
+
+        gridEl.innerHTML = visibleItems.map(item => `
+          <div data-purpose="app-card" class="bg-[#111728] border border-[#1f273d] hover:border-amber-500/50 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between group">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-2.5">
+                <div class="w-10 h-10 rounded-lg bg-[#162035] border border-slate-700/60 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                  ${item.icon || '📦'}
+                </div>
+                <div class="text-right">
+                  <span class="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${item.version}</span>
+                  <span class="block text-[10px] font-mono text-slate-400 mt-0.5">${item.size}</span>
+                </div>
+              </div>
+
+              <h3 class="text-xs font-bold text-white group-hover:text-amber-400 transition truncate" title="${item.title}">${item.title}</h3>
+              <p class="text-[11px] text-slate-400 line-clamp-2 mt-1 leading-snug">${item.desc || 'Verified SnappsHub mirror file.'}</p>
+              
+              <div class="mt-2.5 flex items-center justify-between text-[10px] text-slate-400 border-t border-[#1f273d]/70 pt-2 font-mono">
+                <span class="truncate max-w-[110px]">${item.arch || 'Universal'}</span>
+                <span class="text-emerald-400 flex items-center gap-0.5">
+                  <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  Clean
+                </span>
+              </div>
+            </div>
+
+            <div class="mt-3.5 pt-1">
+              <button onclick="openDownloadModal('${item.id}')" class="w-full py-1.5 px-2 text-center text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-slate-950 transition flex items-center justify-center gap-1">
+                <span>Download</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+          </div>
+        `).join('');
+
+        // View more button visibility
+        const viewMoreBtn = document.getElementById(`viewMore-${cat}`);
+        if (viewMoreBtn) {
+          if (items.length <= categoryLimits[cat]) {
+            viewMoreBtn.classList.add('hidden');
+          } else {
+            viewMoreBtn.classList.remove('hidden');
+          }
+        }
+      });
+    }
+
+    // Expand category when View More.. ▾ is clicked
+    function expandCategory(cat) {
+      categoryLimits[cat] += 4;
+      renderCatalog();
+    }
+
+    // Toggle off-canvas drawer
+    function toggleDrawer() {
+      const drawer = document.getElementById('sideDrawer');
+      const overlay = document.getElementById('drawerOverlay');
+      if (drawer.classList.contains('-translate-x-full')) {
+        drawer.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+      } else {
+        drawer.classList.add('-translate-x-full');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+      }
+    }
+
+    // Header search button: open a compact search panel on every screen size.
+    function toggleHeaderSearch() {
+      const wrap = document.getElementById("headerSearchWrap");
+      const input = document.getElementById("globalSearchInput");
+      wrap.classList.toggle("header-search-open");
+      if (wrap.classList.contains("header-search-open")) input.focus();
+    }
+
+    // Universal Search
+    function handleUniversalSearch(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        renderCatalog();
+        return;
+      }
+      const categories = ['android', 'androidtv', 'desktop', 'router'];
+      categories.forEach(cat => {
+        const gridEl = document.getElementById(`grid-${cat}`);
+        const items = repositoryData.filter(item => 
+          item.category === cat && 
+          (item.title.toLowerCase().includes(q) || (item.desc && item.desc.toLowerCase().includes(q)) || (item.arch && item.arch.toLowerCase().includes(q)))
+        );
+        gridEl.innerHTML = items.length === 0 
+          ? `<div class="col-span-full py-4 text-center text-xs text-slate-500 font-mono">No matching files in this vault.</div>`
+          : items.map(item => `
+            <div class="bg-[#111728] border border-amber-500/40 rounded-xl p-3 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold text-white">${item.title}</span>
+                  <span class="text-amber-400 font-mono">${item.version}</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1">${item.desc}</p>
+              </div>
+              <div class="mt-3">
+                <button onclick="openDownloadModal('${item.id}')" class="w-full py-1.5 text-xs bg-amber-500 text-black font-bold rounded">Download</button>
+              </div>
+            </div>
+          `).join('');
+      });
+    }
+
+    // In-Page App Details View (Page 2 Flow)
+    function viewAppDetails(itemId) {
+      const item = repositoryData.find(i => i.id === itemId);
+      if (!item) return;
+
+      currentActiveApp = item;
+
+      // Populate details page
+      document.getElementById('detailAppIcon').textContent = item.icon || '📦';
+      document.getElementById('detailAppTitle').textContent = item.title;
+      document.getElementById('detailAppBadge').textContent = item.category.toUpperCase();
+      document.getElementById('detailAppVersion').textContent = item.version;
+      document.getElementById('detailAppSize').textContent = item.size;
+      document.getElementById('detailAppSha256').textContent = `SHA-256: ${item.sha256 || 'Generated on build pipe'}`;
+      document.getElementById('detailAppDesc').textContent = item.desc || 'Zero malware verified file hosted on secure SnappsHub repository.';
+      document.getElementById('detailArch').textContent = item.arch || 'Multi-platform';
+      document.getElementById('detailBreadcrumb').textContent = `Repository / ${item.category.toUpperCase()} / ${item.title}`;
+
+      // Bind button
+      const dlBtn = document.getElementById('detailDownloadTriggerBtn');
+      dlBtn.onclick = () => openDownloadModal(item.id);
+
+      // Toggle views
+      document.getElementById('catalogView').classList.add('hidden');
+      document.getElementById('appDetailsView').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showCatalogView() {
+      document.getElementById('appDetailsView').classList.add('hidden');
+      document.getElementById('catalogView').classList.remove('hidden');
+    }
+
+    function copyDetailSha() {
+      if (!currentActiveApp) return;
+      navigator.clipboard.writeText(currentActiveApp.sha256 || 'Verified Clean');
+      alert('SHA-256 Checksum copied to clipboard!');
+    }
+
+    // 5-Second Countdown Download Modal
+    function openDownloadModal(itemId) {
+      const item = repositoryData.find(i => i.id === itemId);
+      if (!item) return;
+
+      currentActiveApp = item;
+
+      // Fill modal info
+      document.getElementById('modalAppIcon').textContent = item.icon || '📦';
+      document.getElementById('modalAppTitle').textContent = item.title;
+      document.getElementById('modalAppVersion').textContent = item.version;
+      document.getElementById('modalAppSize').textContent = item.size;
+
+      const directBtn = document.getElementById('modalDirectDownloadBtn');
+      directBtn.href = item.url || '#';
+
+      // Reset timer UI
+      const timerContainer = document.getElementById('timerContainer');
+      const readyContainer = document.getElementById('readyContainer');
+      const countdownNumber = document.getElementById('countdownNumber');
+      const countdownBar = document.getElementById('countdownBar');
+
+      timerContainer.classList.remove('hidden');
+      readyContainer.classList.add('hidden');
+      countdownBar.style.width = '0%';
+
+      let seconds = 5;
+      countdownNumber.textContent = seconds;
+
+      // Show modal
+      document.getElementById('downloadModal').classList.remove('hidden');
+
+      if (countdownInterval) clearInterval(countdownInterval);
+
+      setTimeout(() => {
+        countdownBar.style.width = '100%';
+      }, 50);
+
+      countdownInterval = setInterval(() => {
+        seconds--;
+        if (seconds > 0) {
+          countdownNumber.textContent = seconds;
+        } else {
+          clearInterval(countdownInterval);
+          timerContainer.classList.add('hidden');
+          readyContainer.classList.remove('hidden');
+        }
+      }, 1000);
+    }
+
+    function closeDownloadModal() {
+      if (countdownInterval) clearInterval(countdownInterval);
+      document.getElementById('downloadModal').classList.add('hidden');
+    }
+
+    function toggleDetailsFromModal() {
+      if (currentActiveApp) {
+        closeDownloadModal();
+        viewAppDetails(currentActiveApp.id);
+      }
+    }
+
+    // Push notification simulator
+    function dismissNotification() {
+      const banner = document.getElementById('pushNotificationBanner');
+      if (banner) {
+        banner.classList.add('translate-y-24', 'opacity-0');
+        setTimeout(() => banner.classList.add('hidden'), 300);
+      }
+    }
+  </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCatalog();
+    });
+  </script>
+<!-- END: EmbeddedApplicationLogic -->
+</body></html>
