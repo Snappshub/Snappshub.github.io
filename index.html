@@ -999,7 +999,7 @@ Join Telegram Community
     const AUTO_ICON_DOMAINS = {instander:'instagram.com',instagram:'instagram.com',telegram:'telegram.org',smarttube:'smarttubeapp.github.io',kodi:'kodi.tv',tivimate:'tivimate.com',projectivy:'projectivy.hu',rufus:'rufus.ie','7-zip':'7-zip.org','7zip':'7-zip.org',vlc:'videolan.org',wireshark:'wireshark.org',tenda:'tendacn.com','tp-link':'tp-link.com',tplink:'tp-link.com',mikrotik:'mikrotik.com',openwrt:'openwrt.org',adguard:'adguard.com',seal:'github.com',poweramp:'powerampapp.com'};
     function getAutoIconMarkup(item) {
       const suppliedIcon = String(item.icon || '').trim();
-      if (/^https?:\\/\\//i.test(suppliedIcon)) return '<img src="' + safeText(suppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" onerror="this.onerror=null;this.outerHTML=\'📦\'">';
+      if (/^https?:\\/\\//i.test(suppliedIcon) && !suppliedIcon.includes('domain=snappshub.github.io')) return '<img src="' + safeText(suppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" onerror="this.onerror=null;this.outerHTML=\'📦\'">';
       if (suppliedIcon && suppliedIcon.length <= 8) return safeText(suppliedIcon);
       const title = String(item.title || item.name || '').toLowerCase();
       const key = Object.keys(AUTO_ICON_DOMAINS).sort((a,b) => b.length-a.length).find(k => title.includes(k));
