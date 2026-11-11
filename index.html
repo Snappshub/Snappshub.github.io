@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary"/>
 <link rel="sitemap" type="application/xml" href="https://snappshub.github.io/sitemap.xml"/>
 <!-- Favicon using provided Cyber S SVG -->
-<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23fbbf24'/%3E%3Cstop offset='100%25' stop-color='%23d97706'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230b0f19'/%3E%3Cpath d='M60 34 C58 31 52 30 46 32 C39 34 37 39 40 43 C43 47 62 48 64 54 C66 61 60 67 48 68 C40 68 35 64 33 60' fill='none' stroke='url(%23g)' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='15' r='4' fill='%23f59e0b'/%3E%3Ccircle cx='82' cy='60' r='3.5' fill='%2306b6d4'/%3E%3Ccircle cx='18' cy='60' r='3.5' fill='%2306b6d4'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="./assets/snappshub-logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Inter Font -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -243,8 +243,8 @@
 </button>
 <!-- Brand Mark using provided SVG logo data -->
 <a class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5 group z-10" href="#home" onclick="showCatalogView()">
-<div class="w-10 h-10 shrink-0 transform group-hover:scale-105 transition-transform">
-<svg class="w-full h-full drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<div class="w-14 h-11 shrink-0 transform group-hover:scale-105 transition-transform">
+<img src="./assets/snappshub-logo.svg" alt="SnappsHub official logo" class="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(245,158,11,0.45)]" width="56" height="44" decoding="async">
 <defs>
 <lineargradient id="goldGrad" x1="0%" x2="100%" y1="0%" y2="100%">
 <stop offset="0%" stop-color="#fbbf24"></stop>
@@ -267,7 +267,6 @@
 <circle cx="82" cy="60" fill="#06b6d4" r="3"></circle>
 <circle cx="18" cy="60" fill="#06b6d4" r="3"></circle>
 <circle cx="50" cy="85" fill="#f59e0b" r="3.5"></circle>
-</svg>
 </div>
 <div>
 <div class="flex items-center gap-1.5">
@@ -539,7 +538,7 @@ Join Telegram Community
 </div>
 <span class="text-xs font-mono text-slate-500">DIRECT CDN</span>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-android">
+<div class="grid grid-cols-2 gap-3.5" id="grid-android">
 <!-- Populated by JS -->
 </div>
 <!-- Styled View More Button -->
@@ -579,7 +578,7 @@ Join Telegram Community
 </div>
 <span class="text-xs font-mono text-slate-500">4K HDR COMPATIBLE</span>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-androidtv">
+<div class="grid grid-cols-2 gap-3.5" id="grid-androidtv">
 <!-- Populated by JS -->
 </div>
 <div class="text-center mt-5">
@@ -605,7 +604,7 @@ Join Telegram Community
 </div>
 <span class="text-xs font-mono text-slate-500">x64 / ARM / PORTABLE</span>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-desktop">
+<div class="grid grid-cols-2 gap-3.5" id="grid-desktop">
 <!-- Populated by JS -->
 </div>
 <div class="text-center mt-5">
@@ -651,7 +650,7 @@ Join Telegram Community
 </div>
 </div>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="grid-router">
+<div class="grid grid-cols-2 gap-3.5" id="grid-router">
 <!-- Populated by JS -->
 </div>
 <div class="text-center mt-5">
@@ -1046,7 +1045,7 @@ Join Telegram Community
       const suppliedIcon = String(item.icon || '').trim();
       const fallback = ({android:'📱',androidtv:'📺',desktop:'💻',router:'📡'})[item.category] || '📦';
       // Prefer an explicitly supplied image, except the old broken site-wide favicon URL.
-      if (/^https?:\/\//i.test(suppliedIcon) && !/domain=snappshub\.github\.io/i.test(suppliedIcon)) {
+      if ((/^https:\/\//i.test(suppliedIcon) || /^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(suppliedIcon)) && !/domain=snappshub\.github\.io/i.test(suppliedIcon)) {
         return '<img src="' + safeText(suppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '">';
       }
       const key = Object.keys(AUTO_ICON_DOMAINS).sort((a,b) => b.length-a.length).find(k => title.includes(k));
@@ -1058,7 +1057,7 @@ Join Telegram Community
         } catch (_) {}
       }
       if (!domain) return safeText(fallback);
-      const google = 'https://www.google.com/s2/favicons?domain_url=' + encodeURIComponent('https://' + domain) + '&sz=128';
+      const google = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
       const duckduckgo = 'https://icons.duckduckgo.com/ip3/' + encodeURIComponent(domain) + '.ico';
       return '<img src="' + safeText(google) + '" data-fallback="' + safeText(duckduckgo) + '" alt="' + safeText(item.title || item.name || 'App') + ' icon" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback=''}else{this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '}">';
     }
