@@ -1268,6 +1268,21 @@ Join Telegram Community
         const ticker = document.querySelector('[data-purpose="marquee-announcement"]');
         if (ticker && hero.tickerActive === false) ticker.hidden = true;
         if (ticker && hero.tickerText) ticker.querySelector('.animate-marquee').textContent = hero.tickerText;
+        const siteConfig = data.siteConfig || {};
+        if (siteConfig.siteName) {
+          document.title = siteConfig.siteName + ' — Verified Digital Software, APKs & Firmware Vault';
+          document.querySelectorAll('.brand-pulse-name').forEach(el => el.textContent = siteConfig.siteName);
+        }
+        if (siteConfig.tagline) {
+          const description = document.querySelector('meta[name="description"]');
+          if (description) description.content = siteConfig.tagline;
+        }
+        if (siteConfig.telegram) {
+          document.querySelectorAll('a[href*="t.me/snappshub"]').forEach(el => el.href = siteConfig.telegram);
+        }
+        if (siteConfig.contactEmail) {
+          document.querySelectorAll('a[href^="mailto:"]').forEach(el => el.href = 'mailto:' + siteConfig.contactEmail);
+        }
       } catch (error) { console.error('Live catalog load failed:', error); }
     });
   </script>
