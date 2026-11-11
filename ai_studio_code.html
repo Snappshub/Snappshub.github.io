@@ -88,7 +88,33 @@ header{border-color:var(--sn-border)!important}
 .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.primary{background:var(--sn-cyan-strong);color:#06111d}
 .btn.muted{background:#243247}
-</style></head>
+</style>
+<style data-purpose="snappshub-admin-animated-icons">
+header .max-w-6xl>div:first-child>img{filter:drop-shadow(0 0 7px rgba(34,211,238,.22));animation:adminLogoBreathe 3s ease-in-out infinite}
+header .max-w-6xl>a{display:inline-flex;align-items:center;gap:.4rem;padding:.48rem .7rem;border:1px solid rgba(34,211,238,.25);border-radius:9px;background:rgba(6,182,212,.06);text-decoration:none!important;transition:all .22s ease}
+header .max-w-6xl>a:before{content:"⌂";font-size:1rem;color:#22d3ee;text-shadow:0 0 9px rgba(34,211,238,.7);animation:adminNavPulse 2.5s ease-in-out infinite}
+header .max-w-6xl>a:hover{transform:translateY(-2px);border-color:rgba(34,211,238,.7);box-shadow:0 0 16px rgba(6,182,212,.13)}
+main>.panel>.font-bold:first-child{display:flex;align-items:center;gap:.65rem}
+main>.panel:nth-of-type(1)>.font-bold:first-child:before{content:"◈"}
+main>.panel:nth-of-type(2)>.font-bold:first-child{content:""}
+main>.panel:nth-of-type(2)>.flex>.font-bold:first-child:before{content:"▦";color:#22d3ee}
+main>.panel:nth-of-type(3)>.font-bold:first-child:before{content:"⚙";color:#fbbf24}
+main>.panel:nth-of-type(4)>.font-bold:first-child:before{content:"⇧";color:#22d3ee}
+main>.panel>.font-bold:first-child:before,main>.panel>.flex>.font-bold:first-child:before{display:inline-flex;align-items:center;justify-content:center;width:1.8rem;height:1.8rem;flex:0 0 1.8rem;border:1px solid rgba(34,211,238,.25);border-radius:9px;background:rgba(6,182,212,.08);font-size:1rem;text-shadow:0 0 10px currentColor;animation:adminIconDrift 3s ease-in-out infinite}
+main>.panel:nth-of-type(2)>.flex>.font-bold:first-child:before{color:#22d3ee}
+main>.panel:nth-of-type(3)>.font-bold:first-child:before{color:#fbbf24}
+main>.panel:nth-of-type(4)>.font-bold:first-child:before{color:#22d3ee}
+#apps article button{position:relative}
+#apps article button:hover{box-shadow:0 0 12px rgba(6,182,212,.16)}
+#status:before{content:"●";display:inline-block;margin-right:.5rem;color:#22d3ee;text-shadow:0 0 8px #22d3ee;animation:adminStatusPulse 1.8s ease-in-out infinite}
+@keyframes adminIconDrift{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes adminNavPulse{0%,100%{opacity:.7}50%{opacity:1;text-shadow:0 0 13px #22d3ee}}
+@keyframes adminStatusPulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes adminLogoBreathe{0%,100%{filter:drop-shadow(0 0 5px rgba(34,211,238,.18))}50%{filter:drop-shadow(0 0 11px rgba(34,211,238,.42))}}
+@media(prefers-reduced-motion:reduce){header .max-w-6xl>div:first-child>img,header .max-w-6xl>a:before,main>.panel>.font-bold:first-child:before,main>.panel>.flex>.font-bold:first-child:before,#status:before{animation:none!important}}
+</style>
+
+</head>
 <body>
 <header class="border-b border-slate-800 px-4 py-3"><div class="max-w-6xl mx-auto flex items-center justify-between gap-3"><div class="flex items-center gap-3 min-w-0"><img src="./assets/snappshub-logo.svg" alt="SnappsHub official logo" class="w-14 h-11 object-contain shrink-0" width="56" height="44"><div><div class="font-black text-lg">SnappsHub <span class="text-cyan-400">Admin</span></div><div class="small">Repository catalog manager</div></div></div><a class="text-xs text-cyan-300 underline shrink-0" href="./index.html">Open website ↗</a></div></header>
 <main class="max-w-6xl mx-auto p-4 space-y-4">
