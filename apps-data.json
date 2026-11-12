@@ -9,7 +9,7 @@
       "version": "v18.0",
       "size": "52.4 MB",
       "arch": "arm64-v8a",
-      "sha256": "9f83c18b76a911e2f6932402931441a545582c2b3d84954a243d463fa7907584",
+      "sha256": "",
       "desc": "High quality image download, ad-free feed, privacy ghosts, and verified stable build."
     },
     {
@@ -21,7 +21,7 @@
       "version": "v10.14",
       "size": "68.1 MB",
       "arch": "Universal",
-      "sha256": "67e1a3b84570fd3385a4983b6329ea1b2e654f6789a2391bf398d249d9494392",
+      "sha256": "",
       "desc": "Optimized Telegram client with zero sponsored messages and enhanced download pipes."
     },
     {
@@ -33,7 +33,7 @@
       "version": "v4.4.1",
       "size": "34.2 MB",
       "arch": "All Arch",
-      "sha256": "2c7d9e4827b5832a819d45a9071286c91a03e6734581f5c645d9894371fa79e2",
+      "sha256": "",
       "desc": "System-wide ad blocker, HTTPS traffic filtering, and privacy tracker prevention."
     },
     {
@@ -45,7 +45,7 @@
       "version": "v1.12.3",
       "size": "28.0 MB",
       "arch": "arm64-v8a",
-      "sha256": "b45a8927498c19a9d9845321f54316a89472e391b4890a57e382903b4781ca29",
+      "sha256": "",
       "desc": "Open source yt-dlp frontend with custom audio/video conversion and material design."
     },
     {
@@ -57,7 +57,7 @@
       "version": "build-976",
       "size": "18.6 MB",
       "arch": "Universal",
-      "sha256": "a849301294857201948572019385739103957201948572019385720194857201",
+      "sha256": "",
       "desc": "Audiophile music player with custom 64-bit audio engine, equalizer, and high-res output."
     },
     {
@@ -69,7 +69,7 @@
       "version": "v21.85",
       "size": "24.5 MB",
       "arch": "Android TV",
-      "sha256": "d5a7f98e72c83b4092b74051a24d56f91c94b79373950ef256f082e6ef3bc621",
+      "sha256": "",
       "desc": "YouTube client for Android TV with SponsorBlock, 4K 60fps AV1 playback, zero video ads."
     },
     {
@@ -81,7 +81,7 @@
       "version": "v21.0",
       "size": "74.8 MB",
       "arch": "armeabi-v7a",
-      "sha256": "7489201928374619283746192837461928374619283746192837461928374619",
+      "sha256": "",
       "desc": "Ultimate entertainment center with support for network streaming, TrueHD audio, and skins."
     },
     {
@@ -93,7 +93,7 @@
       "version": "v4.8.0",
       "size": "16.2 MB",
       "arch": "Android TV",
-      "sha256": "1029384756102938475610293847561029384756102938475610293847561029",
+      "sha256": "",
       "desc": "Dedicated IPTV client designed specifically for large screens and remote controllers."
     },
     {
@@ -105,7 +105,7 @@
       "version": "v4.52",
       "size": "12.0 MB",
       "arch": "Leanback",
-      "sha256": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+      "sha256": "",
       "desc": "Clean Android TV replacement launcher with zero banner recommendations and ultra-fast boot."
     },
     {
@@ -117,7 +117,7 @@
       "version": "v4.5 Portable",
       "size": "1.4 MB",
       "arch": "Windows x64",
-      "sha256": "8937102948571029384756102938475610293847561029384756102938475610",
+      "sha256": "",
       "desc": "Format and create bootable USB drives such as ISO to USB, Windows 11 TPM bypass enabled."
     },
     {
@@ -129,7 +129,7 @@
       "version": "v24.05",
       "size": "1.9 MB",
       "arch": "Win / Mac / Linux",
-      "sha256": "6789012345678901234567890123456789012345678901234567890123456789",
+      "sha256": "",
       "desc": "High compression ratio archiver supporting LZMA2 encryption and self-extracting formats."
     },
     {
@@ -141,7 +141,7 @@
       "version": "v3.0.21",
       "size": "42.1 MB",
       "arch": "x86_64",
-      "sha256": "5678901234567890123456789012345678901234567890123456789012345678",
+      "sha256": "",
       "desc": "Cross platform multimedia player that reads all audio, video codecs, streams without extra packs."
     },
     {
@@ -153,7 +153,7 @@
       "version": "v4.2.5",
       "size": "82.4 MB",
       "arch": "x64 Native",
-      "sha256": "4567890123456789012345678901234567890123456789012345678901234567",
+      "sha256": "",
       "desc": "World's foremost network protocol analyzer for packet capture, router debugging, and analysis."
     },
     {
@@ -165,7 +165,7 @@
       "version": "US_ACT_V16.03.10.20",
       "size": "11.2 MB",
       "arch": "MIPS 16MB SPI",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "",
       "desc": "Verified factory recovery image for Tenda AC10 v4.0. Resolves bootloop and bricked flash."
     },
     {
@@ -177,7 +177,7 @@
       "version": "v3.2_Build220414",
       "size": "14.5 MB",
       "arch": "Qualcomm Atheros",
-      "sha256": "9823471029384710293847102938471029384710293847102938471029384710",
+      "sha256": "",
       "desc": "Official stripped bin file for recovery via TFTP server. Clean firmware with stock bootloader."
     },
     {
@@ -189,7 +189,7 @@
       "version": "v7.15 Stable",
       "size": "26.8 MB",
       "arch": "MMIPS / ARM / x86",
-      "sha256": "1234567890123456789012345678901234567890123456789012345678901234",
+      "sha256": "",
       "desc": "RouterOS v7 package file (.npk) with WireGuard native protocol, BGP improvements, and patch."
     },
     {
@@ -201,7 +201,7 @@
       "version": "v23.05.3-factory",
       "size": "8.9 MB",
       "arch": "MediaTek MT7621",
-      "sha256": "3456789012345678901234567890123456789012345678901234567890123456",
+      "sha256": "",
       "desc": "Clean OpenWrt factory flashing image. LuCI web interface included with modern kernel."
     },
     {
