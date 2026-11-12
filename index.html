@@ -1426,4 +1426,36 @@ Join Telegram Community
     });
   </script>
 <!-- END: EmbeddedApplicationLogic -->
+<style data-purpose="trusted-source-footer-style">
+.footer-source-link{display:flex;align-items:center;gap:.4rem;min-width:0;padding:.42rem .48rem;border:1px solid rgba(148,163,184,.16);border-radius:.6rem;background:rgba(15,23,42,.65);color:#cbd5e1;font-size:10px;line-height:1.2;transition:border-color .2s ease,background .2s ease}
+.footer-source-link:hover{border-color:rgba(34,211,238,.55);background:rgba(8,145,178,.12);color:#fff}
+.footer-source-link img{flex:0 0 22px;object-fit:contain;border-radius:4px;background:#fff}
+.footer-source-link span{overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){.footer-source-link{transition:none}}
+</style><script data-purpose="trusted-sources-footer">
+(async function renderTrustedSourcesFooter(){
+  const list=document.getElementById('trustedSourcesList');
+  if(!list)return;
+  const esc=(v)=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  try{
+    const response=await fetch('./apps-data.json',{cache:'force-cache'});
+    if(!response.ok)throw new Error('source list unavailable');
+    const data=await response.json();
+    const apps=Array.isArray(data.apps)?data.apps:[];
+    const hosts=new Map();
+    for(const app of apps){
+      try{
+        const u=new URL(app.sourceUrl||app.url,location.origin);
+        if(!['http:','https:'].includes(u.protocol))continue;
+        const host=u.hostname.toLowerCase().replace(/^www\./,'');
+        if(!host||host===location.hostname)continue;
+        if(!hosts.has(host))hosts.set(host,u.origin);
+      }catch(_){}
+    }
+    const entries=[...hosts.entries()].sort((a,b)=>a[0].localeCompare(b[0])).slice(0,12);
+    if(!entries.length){list.textContent='Source links are listed on each app details page.';return;}
+    list.innerHTML=entries.map(([host,origin])=>'<a class="footer-source-link" href="'+esc(origin)+'" target="_blank" rel="noopener noreferrer" title="Open '+esc(host)+'"><img src="https://www.google.com/s2/favicons?domain='+encodeURIComponent(host)+'&sz=64" alt="" width="22" height="22" loading="lazy" decoding="async"><span>'+esc(host)+'</span></a>').join('');
+  }catch(_){list.textContent='Source links are listed on each app details page.';}
+})();
+</script>
 </body></html>
