@@ -879,6 +879,7 @@ Join Telegram Community
 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
             Direct High-Speed Download Now
           </a>
+<div id="alternateMirrors" class="hidden space-y-2 text-left"></div>
 </div>
 </div>
 <!-- Safe 300x250 Banner Ad Slot inside Modal -->
@@ -1392,6 +1393,10 @@ Join Telegram Community
 
       const directBtn = document.getElementById('modalDirectDownloadBtn');
       directBtn.href = item.url || '#';
+      const mirrorContainer=document.getElementById('alternateMirrors');
+      const mirrors=Array.isArray(item.mirrors)?item.mirrors.filter(m=>m&&/^https:\/\//i.test(m.url||'')):[];
+      mirrorContainer.innerHTML=mirrors.map(m=>'<a class="block rounded-lg border border-[#1f273d] bg-[#0a0e18] px-3 py-2 text-xs text-cyan-300" href="'+safeText(m.url)+'" target="_blank" rel="noopener noreferrer">'+(m.primary?'★ Primary · ':'')+safeText(m.label||'Alternative mirror')+' ↗</a>').join('');
+      mirrorContainer.classList.toggle('hidden',mirrors.length===0);
 
       // Reset timer UI
       const timerContainer = document.getElementById('timerContainer');
