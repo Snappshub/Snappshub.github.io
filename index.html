@@ -882,6 +882,7 @@ Join Telegram Community
 <div id="alternateMirrors" class="hidden space-y-2 text-left"></div>
 <div id="downloadFallbacks" class="flex flex-wrap gap-2">
 <button id="copySourceButton" type="button" class="rounded-lg border border-[#1f273d] px-3 py-2 text-xs text-slate-200">Copy publisher link</button>
+<button id="retryDownloadButton" type="button" class="rounded-lg border border-[#1f273d] px-3 py-2 text-xs text-slate-200">Retry</button>
 <a id="telegramSupportLink" class="hidden rounded-lg border border-[#1f273d] px-3 py-2 text-xs text-cyan-300" target="_blank" rel="noopener noreferrer">Telegram Support ↗</a>
 </div>
 </div>
@@ -1397,6 +1398,12 @@ Join Telegram Community
 
       const directBtn = document.getElementById('modalDirectDownloadBtn');
       directBtn.href = item.url || '#';
+      const flowSettings=window.liveDownloadFlow||{};
+      directBtn.classList.toggle('hidden',flowSettings.showOpenLink===false);
+      const retryButton=document.getElementById('retryDownloadButton');
+      retryButton.classList.toggle('hidden',flowSettings.showRetry===false);
+      retryButton.onclick=()=>openDownloadModal(item.id);
+      if(!item.url)directBtn.textContent=flowSettings.failureMessage||'No publisher link is available.';
       const mirrorContainer=document.getElementById('alternateMirrors');
       const mirrors=Array.isArray(item.mirrors)?item.mirrors.filter(m=>m&&/^https:\/\//i.test(m.url||'')):[];
       mirrorContainer.innerHTML=mirrors.map(m=>'<a class="block rounded-lg border border-[#1f273d] bg-[#0a0e18] px-3 py-2 text-xs text-cyan-300" href="'+safeText(m.url)+'" target="_blank" rel="noopener noreferrer">'+(m.primary?'★ Primary · ':'')+safeText(m.label||'Alternative mirror')+' ↗</a>').join('');
