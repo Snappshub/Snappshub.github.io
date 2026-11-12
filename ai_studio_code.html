@@ -201,6 +201,7 @@ $('uploadFile').onclick=async()=>{
  try{
   $('uploadFile').disabled=true;$('uploadStatus').textContent='Reading '+f.name+'…';
   const b64=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=()=>reject(new Error('Could not read selected file.'));reader.readAsDataURL(f)});
+  const digest=await crypto.subtle.digest('SHA-256',await f.arrayBuffer());$('sha256').value=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
   const safe=f.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').replace(/^-+|-+$/g,'')||'app-file',filename=Date.now()+'-'+safe,path='downloads/'+filename;
   $('uploadStatus').textContent='Uploading '+f.name+' to GitHub…';
   const r=await fetch(API+'/repos/'+OWNER+'/'+REPO+'/contents/'+path,{method:'PUT',headers:headers(),body:JSON.stringify({message:'Upload app file '+filename+' from Admin Panel',content:b64})});
