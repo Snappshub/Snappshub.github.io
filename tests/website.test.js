@@ -33,9 +33,11 @@ test("main page has no duplicate DOM IDs", () => {
   assert.equal(new Set(ids).size, ids.length);
 });
 
-test("brand lockup and app details entrypoint exist", () => {
+test("brand lockup and in-page app details entrypoint exist", () => {
   assert.match(html, /SN Apps Hub/);
-  assert.match(html, /app-details\.html/);
+  assert.match(html, /id=["']appDetailsView["']/);
+  assert.match(html, /function viewAppDetails\s*\(/);
+  assert.match(html, /function showCatalogView\s*\(/);
   assert.match(details, /SN Apps Hub|app-details/i);
 });
 
