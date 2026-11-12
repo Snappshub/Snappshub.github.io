@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 980" role="img" aria-labelledby="title desc">
+<title id="title">SN Apps Hub — Trusted &amp; Secure for Your Device</title>
+<desc id="desc">The original crowned winged S emblem with the SN Apps Hub wordmark and tagline.</desc>
+<rect width="720" height="980" rx="40" fill="#080c16"/>
+<svg x="70" y="10" width="580" height="580" viewBox="0 0 720 720">
+<title id="title">SnappsHub Crowned S Emblem</title>
+<desc id="desc">Gold crown, winged shield and letter S on a black background.</desc>
+<defs>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2=".15"><stop offset="0" stop-color="#a87925"/><stop offset=".22" stop-color="#ffe49a"/><stop offset=".48" stop-color="#c18a2d"/><stop offset=".7" stop-color="#fff0b3"/><stop offset="1" stop-color="#9b6b20"/></linearGradient>
+ <linearGradient id="goldSoft" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0b5"/><stop offset="1" stop-color="#bd872b"/></linearGradient>
+</defs>
+<g fill="none" stroke="url(#gold)" stroke-linejoin="round" stroke-linecap="round">
+ <path d="M360 78 L389 132 L453 113 L448 176 L526 153 L505 215 L573 207 L515 284 Q440 326 360 326 Q280 326 205 284 L147 207 L215 215 L194 153 L272 176 L267 113 L331 132 Z" fill="url(#gold)" stroke="none"/>
+ <path d="M360 78 L360 42 M272 176 L260 137 M448 176 L460 137" stroke-width="5"/>
+ <path d="M360 326 L360 285" stroke="#080808" stroke-width="7"/>
+ <path d="M148 210 Q98 190 44 160 Q66 238 130 267 Q82 260 48 244 Q83 307 160 320 Q112 320 77 309 Q126 377 220 373 L244 329" stroke-width="13" fill="url(#gold)"/>
+ <path d="M572 210 Q622 190 676 160 Q654 238 590 267 Q638 260 672 244 Q637 307 560 320 Q608 320 643 309 Q594 377 500 373 L476 329" stroke-width="13" fill="url(#gold)"/>
+ <path d="M235 290 Q360 255 485 290 L485 470 Q485 555 360 635 Q235 555 235 470 Z" fill="#050505" stroke-width="10"/>
+ <path d="M360 306 Q360 306 360 306" stroke-width="4"/>
+</g>
+<g fill="url(#gold)">
+ <path d="M360 42 L365 56 L380 57 L368 66 L372 81 L360 72 L348 81 L352 66 L340 57 L355 56 Z"/>
+ <path d="M260 137 L264 148 L276 149 L267 157 L270 169 L260 162 L250 169 L253 157 L244 149 L256 148 Z"/>
+ <path d="M460 137 L464 148 L476 149 L467 157 L470 169 L460 162 L450 169 L453 157 L444 149 L456 148 Z"/>
+ <path d="M178 205 L182 215 L193 216 L185 223 L188 234 L178 228 L168 234 L171 223 L163 216 L174 215 Z"/>
+ <path d="M542 205 L546 215 L557 216 L549 223 L552 234 L542 228 L532 234 L535 223 L527 216 L538 215 Z"/>
+</g>
+<path d="M420 385 H326 Q278 385 278 431 Q278 473 326 473 H394 Q442 473 442 519 Q442 565 394 565 H292" fill="none" stroke="url(#gold)" stroke-width="57" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<text x="360" y="720" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="82" font-weight="800" fill="#f8fafc"><tspan fill="#fbbf24">SN</tspan><tspan> Apps Hub</tspan></text>
+<path d="M90 770H630" stroke="#1e8fc4" stroke-width="3" opacity=".8"/>
+<text x="360" y="835" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="31" font-weight="700" letter-spacing="1.2" fill="#fbbf24">TRUSTED &amp; SECURE</text>
+<text x="360" y="880" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="500" fill="#dbeafe">FOR YOUR DEVICE</text>
+</svg>
