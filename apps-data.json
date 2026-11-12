@@ -10,7 +10,10 @@
       "size": "52.4 MB",
       "arch": "arm64-v8a",
       "sha256": "",
-      "desc": "High quality image download, ad-free feed, privacy ghosts, and verified stable build."
+      "desc": "High quality image download, ad-free feed, privacy ghosts, and verified stable build.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "apk-2",
@@ -22,7 +25,10 @@
       "size": "68.1 MB",
       "arch": "Universal",
       "sha256": "",
-      "desc": "Optimized Telegram client with zero sponsored messages and enhanced download pipes."
+      "desc": "Optimized Telegram client with zero sponsored messages and enhanced download pipes.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "apk-3",
@@ -34,7 +40,10 @@
       "size": "34.2 MB",
       "arch": "All Arch",
       "sha256": "",
-      "desc": "System-wide ad blocker, HTTPS traffic filtering, and privacy tracker prevention."
+      "desc": "System-wide ad blocker, HTTPS traffic filtering, and privacy tracker prevention.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "apk-4",
@@ -46,7 +55,10 @@
       "size": "28.0 MB",
       "arch": "arm64-v8a",
       "sha256": "",
-      "desc": "Open source yt-dlp frontend with custom audio/video conversion and material design."
+      "desc": "Open source yt-dlp frontend with custom audio/video conversion and material design.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "apk-5",
@@ -58,7 +70,10 @@
       "size": "18.6 MB",
       "arch": "Universal",
       "sha256": "",
-      "desc": "Audiophile music player with custom 64-bit audio engine, equalizer, and high-res output."
+      "desc": "Audiophile music player with custom 64-bit audio engine, equalizer, and high-res output.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "tv-1",
@@ -70,7 +85,10 @@
       "size": "24.5 MB",
       "arch": "Android TV",
       "sha256": "",
-      "desc": "YouTube client for Android TV with SponsorBlock, 4K 60fps AV1 playback, zero video ads."
+      "desc": "YouTube client for Android TV with SponsorBlock, 4K 60fps AV1 playback, zero video ads.",
+      "devices": [
+        "androidtv"
+      ]
     },
     {
       "id": "tv-2",
@@ -82,7 +100,10 @@
       "size": "74.8 MB",
       "arch": "armeabi-v7a",
       "sha256": "",
-      "desc": "Ultimate entertainment center with support for network streaming, TrueHD audio, and skins."
+      "desc": "Ultimate entertainment center with support for network streaming, TrueHD audio, and skins.",
+      "devices": [
+        "androidtv"
+      ]
     },
     {
       "id": "tv-3",
@@ -94,7 +115,10 @@
       "size": "16.2 MB",
       "arch": "Android TV",
       "sha256": "",
-      "desc": "Dedicated IPTV client designed specifically for large screens and remote controllers."
+      "desc": "Dedicated IPTV client designed specifically for large screens and remote controllers.",
+      "devices": [
+        "androidtv"
+      ]
     },
     {
       "id": "tv-4",
@@ -106,7 +130,10 @@
       "size": "12.0 MB",
       "arch": "Leanback",
       "sha256": "",
-      "desc": "Clean Android TV replacement launcher with zero banner recommendations and ultra-fast boot."
+      "desc": "Clean Android TV replacement launcher with zero banner recommendations and ultra-fast boot.",
+      "devices": [
+        "androidtv"
+      ]
     },
     {
       "id": "pc-1",
@@ -118,7 +145,10 @@
       "size": "1.4 MB",
       "arch": "Windows x64",
       "sha256": "",
-      "desc": "Format and create bootable USB drives such as ISO to USB, Windows 11 TPM bypass enabled."
+      "desc": "Format and create bootable USB drives such as ISO to USB, Windows 11 TPM bypass enabled.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "pc-2",
@@ -130,7 +160,10 @@
       "size": "1.9 MB",
       "arch": "Win / Mac / Linux",
       "sha256": "",
-      "desc": "High compression ratio archiver supporting LZMA2 encryption and self-extracting formats."
+      "desc": "High compression ratio archiver supporting LZMA2 encryption and self-extracting formats.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "pc-3",
@@ -142,7 +175,10 @@
       "size": "42.1 MB",
       "arch": "x86_64",
       "sha256": "",
-      "desc": "Cross platform multimedia player that reads all audio, video codecs, streams without extra packs."
+      "desc": "Cross platform multimedia player that reads all audio, video codecs, streams without extra packs.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "pc-4",
@@ -154,7 +190,10 @@
       "size": "82.4 MB",
       "arch": "x64 Native",
       "sha256": "",
-      "desc": "World's foremost network protocol analyzer for packet capture, router debugging, and analysis."
+      "desc": "World's foremost network protocol analyzer for packet capture, router debugging, and analysis.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "rt-1",
@@ -166,7 +205,10 @@
       "size": "11.2 MB",
       "arch": "MIPS 16MB SPI",
       "sha256": "",
-      "desc": "Verified factory recovery image for Tenda AC10 v4.0. Resolves bootloop and bricked flash."
+      "desc": "Verified factory recovery image for Tenda AC10 v4.0. Resolves bootloop and bricked flash.",
+      "devices": [
+        "router"
+      ]
     },
     {
       "id": "rt-2",
@@ -178,7 +220,10 @@
       "size": "14.5 MB",
       "arch": "Qualcomm Atheros",
       "sha256": "",
-      "desc": "Official stripped bin file for recovery via TFTP server. Clean firmware with stock bootloader."
+      "desc": "Official stripped bin file for recovery via TFTP server. Clean firmware with stock bootloader.",
+      "devices": [
+        "router"
+      ]
     },
     {
       "id": "rt-3",
@@ -190,7 +235,10 @@
       "size": "26.8 MB",
       "arch": "MMIPS / ARM / x86",
       "sha256": "",
-      "desc": "RouterOS v7 package file (.npk) with WireGuard native protocol, BGP improvements, and patch."
+      "desc": "RouterOS v7 package file (.npk) with WireGuard native protocol, BGP improvements, and patch.",
+      "devices": [
+        "router"
+      ]
     },
     {
       "id": "rt-4",
@@ -202,7 +250,10 @@
       "size": "8.9 MB",
       "arch": "MediaTek MT7621",
       "sha256": "",
-      "desc": "Clean OpenWrt factory flashing image. LuCI web interface included with modern kernel."
+      "desc": "Clean OpenWrt factory flashing image. LuCI web interface included with modern kernel.",
+      "devices": [
+        "router"
+      ]
     },
     {
       "id": "browser-firefox",
@@ -216,7 +267,11 @@
       "size": "Varies",
       "arch": "Android / Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Mozilla's open-source browser with tracking protection. Official download page; choose the build for your device."
+      "desc": "Mozilla's open-source browser with tracking protection. Official download page; choose the build for your device.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
     },
     {
       "id": "browser-brave",
@@ -229,7 +284,11 @@
       "size": "Varies",
       "arch": "Android / Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Privacy-focused Chromium browser with built-in tracker and ad blocking. Download from Brave."
+      "desc": "Privacy-focused Chromium browser with built-in tracker and ad blocking. Download from Brave.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
     },
     {
       "id": "browser-fennec",
@@ -242,7 +301,10 @@
       "size": "Varies",
       "arch": "Android",
       "sha256": "",
-      "desc": "F-Droid-distributed Firefox-derived browser build. Review the package details and signing information on F-Droid."
+      "desc": "F-Droid-distributed Firefox-derived browser build. Review the package details and signing information on F-Droid.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "security-bitwarden",
@@ -255,7 +317,11 @@
       "size": "Varies",
       "arch": "Android / Desktop / Browser",
       "sha256": "",
-      "desc": "Cross-platform password manager. Use the official Bitwarden download page."
+      "desc": "Cross-platform password manager. Use the official Bitwarden download page.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
     },
     {
       "id": "security-keepassdx",
@@ -268,7 +334,10 @@
       "size": "Varies",
       "arch": "Android",
       "sha256": "",
-      "desc": "Open-source offline password manager for Android. F-Droid package listing and release details."
+      "desc": "Open-source offline password manager for Android. F-Droid package listing and release details.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "security-keepassxc",
@@ -281,7 +350,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Open-source desktop password manager. Verify installer signatures using the publisher's instructions."
+      "desc": "Open-source desktop password manager. Verify installer signatures using the publisher's instructions.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "popular-7zip",
@@ -294,7 +366,10 @@
       "size": "Varies",
       "arch": "Windows / Linux",
       "sha256": "",
-      "desc": "File archiver supporting 7z, ZIP and many other formats. Official download page."
+      "desc": "File archiver supporting 7z, ZIP and many other formats. Official download page.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "popular-localsend",
@@ -307,7 +382,11 @@
       "size": "Varies",
       "arch": "Android",
       "sha256": "",
-      "desc": "Open-source local-network file sharing. F-Droid listing for Android; other platforms are linked from the project site."
+      "desc": "Open-source local-network file sharing. F-Droid listing for Android; other platforms are linked from the project site.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
     },
     {
       "id": "popular-termux",
@@ -320,7 +399,10 @@
       "size": "Varies",
       "arch": "Android",
       "sha256": "",
-      "desc": "Terminal emulator and Linux environment for Android. Install from the linked F-Droid source; do not mix signatures from different sources."
+      "desc": "Terminal emulator and Linux environment for Android. Install from the linked F-Droid source; do not mix signatures from different sources.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "popular-vlc",
@@ -333,7 +415,12 @@
       "size": "Varies",
       "arch": "Android / Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Open-source multimedia player for a wide range of audio and video formats. Official VideoLAN downloads."
+      "desc": "Open-source multimedia player for a wide range of audio and video formats. Official VideoLAN downloads.",
+      "devices": [
+        "android",
+        "androidtv",
+        "desktop"
+      ]
     },
     {
       "id": "network-wireshark",
@@ -346,7 +433,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Network protocol analyzer for inspecting packet captures on networks you own or are authorized to troubleshoot."
+      "desc": "Network protocol analyzer for inspecting packet captures on networks you own or are authorized to troubleshoot.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "network-nmap",
@@ -359,7 +449,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Network discovery and security auditing utility. Scan only systems and networks you own or have permission to test."
+      "desc": "Network discovery and security auditing utility. Scan only systems and networks you own or have permission to test.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "network-termux",
@@ -372,7 +465,10 @@
       "size": "Varies",
       "arch": "Android",
       "sha256": "",
-      "desc": "Android terminal environment for networking utilities. Tools are installed separately; use only on authorized networks."
+      "desc": "Android terminal environment for networking utilities. Tools are installed separately; use only on authorized networks.",
+      "devices": [
+        "android"
+      ]
     },
     {
       "id": "video-kdenlive",
@@ -385,7 +481,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Open-source non-linear video editor with multi-track timeline, effects and transitions."
+      "desc": "Open-source non-linear video editor with multi-track timeline, effects and transitions.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "video-shotcut",
@@ -398,7 +497,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Free, open-source video editor with broad format support and timeline editing."
+      "desc": "Free, open-source video editor with broad format support and timeline editing.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "video-openshot",
@@ -411,7 +513,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Open-source video editor for basic timeline editing, titles and transitions."
+      "desc": "Open-source video editor for basic timeline editing, titles and transitions.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "photo-gimp",
@@ -424,7 +529,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Free, open-source image editor for retouching, compositing and graphics work."
+      "desc": "Free, open-source image editor for retouching, compositing and graphics work.",
+      "devices": [
+        "desktop"
+      ]
     },
     {
       "id": "photo-krita",
@@ -437,7 +545,11 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux / Android",
       "sha256": "",
-      "desc": "Open-source digital painting and illustration application. Official downloads and platform builds."
+      "desc": "Open-source digital painting and illustration application. Official downloads and platform builds.",
+      "devices": [
+        "desktop",
+        "android"
+      ]
     },
     {
       "id": "photo-darktable",
@@ -450,7 +562,10 @@
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
       "sha256": "",
-      "desc": "Open-source photography workflow and RAW image developer."
+      "desc": "Open-source photography workflow and RAW image developer.",
+      "devices": [
+        "desktop"
+      ]
     }
   ],
   "siteConfig": {
@@ -466,12 +581,6 @@
     "android",
     "androidtv",
     "desktop",
-    "browser",
-    "security",
-    "popular",
-    "network",
-    "video",
-    "photo",
     "router"
   ]
 }
