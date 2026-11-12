@@ -2,9 +2,21 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>SnappsHub - App Details</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+<style data-purpose="app-details-responsive">
+*,*::before,*::after{box-sizing:border-box}
+html,body{width:100%;min-width:320px;min-height:100%;overflow-x:clip}
+body{padding:clamp(.75rem,3vw,2rem)!important}
+body>div{width:min(100%,56rem);margin-inline:auto}
+.glass-card{min-width:0;overflow-wrap:anywhere}
+h1{font-size:clamp(1.35rem,4vw,2rem);line-height:1.2}
+p{line-height:1.65}
+@media(max-width:639px){body{padding:.85rem!important}.glass-card{padding:1rem!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body class="bg-[#070a12] text-slate-100 p-8 font-sans">
   <div class="max-w-4xl mx-auto space-y-6">
