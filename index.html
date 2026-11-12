@@ -323,6 +323,60 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 @media(prefers-reduced-motion:reduce){footer .footer-neon-icon,footer .footer-dmca-shield,footer .grid>div:first-child>div:first-child .rounded,footer .grid>div>div:first-child:not(.flex):before{animation:none!important}}
 </style>
 
+<style data-purpose="snappshub-cross-device-responsive-v2">
+/* Cross-device layout: phone, tablet, laptop and wide desktop */
+*,*::before,*::after{box-sizing:border-box}
+html{width:100%;min-width:320px;scroll-padding-top:8rem}
+body{width:100%;min-width:320px;max-width:100%;overflow-x:clip}
+img,svg,video,canvas,iframe{max-width:100%;height:auto}
+header,main,footer,section,nav,aside,article{min-width:0;max-width:100%}
+main{width:100%}
+#grid-android,#grid-androidtv,#grid-desktop,#grid-router{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:clamp(.55rem,1.4vw,1rem)}
+.device-nav{position:sticky;top:72px;z-index:35}
+.device-nav-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%}
+.device-nav-card{min-width:0}
+#downloadModal{overflow-y:auto;overscroll-behavior:contain}
+#downloadModal>div{width:min(100%,32rem);max-height:calc(100dvh - 2rem);overflow-y:auto}
+#pushNotificationBanner{width:min(24rem,calc(100vw - 2rem));max-width:calc(100vw - 2rem)}
+input,select,textarea,button{max-width:100%}
+@media(min-width:640px){
+  #grid-android,#grid-androidtv,#grid-desktop,#grid-router{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .device-nav-card{min-height:2.8rem}
+}
+@media(min-width:1024px){
+  #grid-android,#grid-androidtv,#grid-desktop,#grid-router{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  main{padding-left:clamp(1.5rem,3vw,3rem);padding-right:clamp(1.5rem,3vw,3rem)}
+}
+@media(min-width:1440px){
+  #grid-android,#grid-androidtv,#grid-desktop,#grid-router{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+}
+@media(max-width:639px){
+  header{z-index:45}
+  header>div{min-height:4rem}
+  .device-nav{top:64px}
+  .device-nav-grid{gap:.2rem}
+  .device-nav-card{min-height:2.5rem;padding:.35rem .08rem}
+  .device-nav-icon{width:.85rem;min-width:.85rem;height:.85rem}
+  .device-nav-title{font-size:clamp(.5rem,2.4vw,.68rem)}
+  main{padding-left:.75rem;padding-right:.75rem}
+  #appDetailsView>div{padding:1rem}
+  #downloadModal{padding:.75rem}
+  #downloadModal>div{padding:1rem}
+  #pushNotificationBanner{right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom))}
+  footer .grid{gap:1.25rem}
+  :where(button,a,[role="button"]){touch-action:manipulation}
+}
+@media(max-width:380px){
+  .device-nav-grid{gap:.12rem}
+  .device-nav-card{padding-inline:.03rem}
+  .device-nav-icon{display:none!important}
+  .device-nav-title{font-size:.53rem;letter-spacing:-.03em}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
