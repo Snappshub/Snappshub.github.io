@@ -1450,12 +1450,21 @@ Join Telegram Community
   </script>
 
 <script>
+    async function fetchPublishedCatalogue(){
+      const endpoint='https://sqnbahirvbcympmjqkkc.supabase.co/rest/v1/rpc/get_website_catalogue';
+      try{
+        const live=await fetch(endpoint,{method:'POST',headers:{apikey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxbmJhaGlydmJjeW1wbWpxa2tjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ1MDk4ODEsImV4cCI6MjExMDA4NTg4MX0.ObmvDHOQIVnO0Y4yMQuzhIa16CHTHg-EQ0KxhCl8m6k',Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxbmJhaGlydmJjeW1wbWpxa2tjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ1MDk4ODEsImV4cCI6MjExMDA4NTg4MX0.ObmvDHOQIVnO0Y4yMQuzhIa16CHTHg-EQ0KxhCl8m6k','Content-Type':'application/json'},body:'{}',cache:'no-store'});
+        if(live.ok){const data=await live.json();if(data&&Array.isArray(data.apps))return data;}
+      }catch(error){console.warn('Live catalogue unavailable; using the preview snapshot.',error);}
+      const fallback=await fetch('./apps-data.json?t='+Date.now(),{cache:'no-store'});
+      if(!fallback.ok)throw new Error('Catalogue source unavailable');
+      return await fallback.json();
+    }
+    window.fetchPublishedCatalogue=fetchPublishedCatalogue;
     document.addEventListener("DOMContentLoaded", async () => {
       renderCatalog();
       try {
-        const response = await fetch('./apps-data.json?t=' + Date.now(), { cache: 'no-store' });
-        if (!response.ok) throw new Error('App data HTTP ' + response.status);
-        const data = await response.json();
+        const data = await fetchPublishedCatalogue();
         if (!Array.isArray(data.apps)) throw new Error('Invalid app list');
         repositoryData = data.apps.filter(a => /^[a-zA-Z0-9_-]+$/.test(a.id)).map(a => ({...a, title:a.title || a.name, url:a.url || a.mirror1}));
         renderCatalog();
@@ -1492,9 +1501,7 @@ Join Telegram Community
   if(!list)return;
   const esc=(v)=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   try{
-    const response=await fetch('./apps-data.json',{cache:'force-cache'});
-    if(!response.ok)throw new Error('source list unavailable');
-    const data=await response.json();
+    const data=await window.fetchPublishedCatalogue();
     const apps=Array.isArray(data.apps)?data.apps:[];
     const hosts=new Map();
     for(const app of apps){
