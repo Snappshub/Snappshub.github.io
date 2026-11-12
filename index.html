@@ -323,6 +323,20 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 @media(prefers-reduced-motion:reduce){footer .footer-neon-icon,footer .footer-dmca-shield,footer .grid>div:first-child>div:first-child .rounded,footer .grid>div>div:first-child:not(.flex):before{animation:none!important}}
 </style>
 
+
+<style data-purpose="nested-device-category-menu">
+.device-nav-grid{align-items:start}
+.device-nav-item{position:relative;min-width:0}
+.device-nav-card{width:100%;cursor:pointer}
+.device-nav-arrow{display:inline!important;font-size:.8rem;color:#94a3b8;transition:transform .2s ease}
+.device-nav-card[aria-expanded="true"] .device-nav-arrow{transform:rotate(180deg)}
+.device-category-menu{position:absolute;top:calc(100% + .45rem);left:0;right:0;z-index:80;display:flex;flex-wrap:wrap;gap:.4rem;min-width:min(20rem,calc(100vw - 2rem));padding:.7rem;background:rgba(10,14,24,.98);border:1px solid #26334d;border-radius:12px;box-shadow:0 16px 36px rgba(0,0,0,.45);backdrop-filter:blur(16px)}
+.device-category-menu.hidden{display:none}
+.device-category-menu button{border:1px solid #26334d;border-radius:999px;padding:.42rem .7rem;background:#111728;color:#cbd5e1;font-size:.7rem;font-weight:700;white-space:nowrap}
+.device-category-menu button:hover,.device-category-menu button:focus-visible{border-color:#22d3ee;color:#22d3ee;background:#0e2531}
+.app-category-label{display:inline-flex;margin-top:.45rem;padding:.2rem .48rem;border:1px solid rgba(34,211,238,.25);border-radius:999px;background:rgba(6,182,212,.08);color:#67e8f9;font-size:9px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+@media(max-width:767px){.device-category-menu{left:50%;right:auto;transform:translateX(-50%);width:min(19rem,calc(100vw - 1.5rem));}.device-nav-card{flex-wrap:nowrap}.device-nav-icon{display:inline-flex!important}}
+</style>
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
@@ -409,31 +423,17 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 </header>
 <!-- END: MainHeader -->
 
-<!-- Pinned Device Catalogue Navigation -->
-<nav class="device-nav" aria-label="Device catalogues">
+<!-- Pinned Device + Nested Category Navigation -->
+<nav class="device-nav" aria-label="Device and category navigation">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
     <div class="device-nav-grid">
-      <a class="device-nav-card" style="--device-accent:#fbbf24" href="#cat-android" aria-label="Browse Android Apps catalogue">
-        <span class="device-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.2"/><path d="M10 18.5h4M9 6h6"/></svg></span>
-        <span class="min-w-0"><span class="device-nav-title">Android Apps</span><span class="device-nav-sub">Apps Catalogue</span></span><span class="device-nav-arrow">↗</span>
-      </a>
-      <a class="device-nav-card" style="--device-accent:#22d3ee" href="#cat-androidtv" aria-label="Browse Android TV catalogue">
-        <span class="device-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="14" rx="2"/><path d="m9 21 3-3 3 3M8 8l4 3 4-3"/></svg></span>
-        <span class="min-w-0"><span class="device-nav-title">Android TV</span><span class="device-nav-sub">TV Apps Catalogue</span></span><span class="device-nav-arrow">↗</span>
-      </a>
-      <a class="device-nav-card" style="--device-accent:#a5b4fc" href="#cat-desktop" aria-label="Browse Desktop and Laptop catalogue">
-        <span class="device-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8m-4-4v4M2 17h20"/></svg></span>
-        <span class="min-w-0"><span class="device-nav-title">Desktop</span><span class="device-nav-sub">PC Software Catalogue</span></span><span class="device-nav-arrow">↗</span>
-      </a>
-      <a class="device-nav-card" style="--device-accent:#34d399" href="#cat-router" aria-label="Browse Router Firmware catalogue">
-        <span class="device-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="10" rx="2"/><path d="M7 10V7m10 3V7M5 6c1.2-1.2 2.4-1.8 4-2m10 2c-1.2-1.2-2.4-1.8-4-2M8 15h.01M12 15h.01M16 15h.01"/></svg></span>
-        <span class="min-w-0"><span class="device-nav-title">Router</span><span class="device-nav-sub">Firmware Catalogue</span></span><span class="device-nav-arrow">↗</span>
-      </a>
+      <div class="device-nav-item"><button class="device-nav-card" style="--device-accent:#fbbf24" type="button" aria-expanded="false" aria-controls="device-menu-android" onclick="toggleDeviceMenu('android')"><span class="device-nav-icon">📱</span><span class="device-nav-title">Android</span><span class="device-nav-arrow">⌄</span></button><div class="device-category-menu hidden" id="device-menu-android"></div></div>
+      <div class="device-nav-item"><button class="device-nav-card" style="--device-accent:#22d3ee" type="button" aria-expanded="false" aria-controls="device-menu-androidtv" onclick="toggleDeviceMenu('androidtv')"><span class="device-nav-icon">📺</span><span class="device-nav-title">Android TV</span><span class="device-nav-arrow">⌄</span></button><div class="device-category-menu hidden" id="device-menu-androidtv"></div></div>
+      <div class="device-nav-item"><button class="device-nav-card" style="--device-accent:#a5b4fc" type="button" aria-expanded="false" aria-controls="device-menu-desktop" onclick="toggleDeviceMenu('desktop')"><span class="device-nav-icon">💻</span><span class="device-nav-title">Windows</span><span class="device-nav-arrow">⌄</span></button><div class="device-category-menu hidden" id="device-menu-desktop"></div></div>
+      <div class="device-nav-item"><button class="device-nav-card" style="--device-accent:#34d399" type="button" aria-expanded="false" aria-controls="device-menu-router" onclick="toggleDeviceMenu('router')"><span class="device-nav-icon">🌐</span><span class="device-nav-title">Web / Router</span><span class="device-nav-arrow">⌄</span></button><div class="device-category-menu hidden" id="device-menu-router"></div></div>
     </div>
   </div>
 </nav>
-
-
 <!-- BEGIN: OffcanvasDrawer -->
 <div class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300" id="drawerOverlay" onclick="toggleDrawer()"></div>
 <aside class="fixed top-0 left-0 bottom-0 w-72 max-w-[85vw] bg-[#0b0f19] border-r border-[#1f273d] z-50 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between p-5" id="sideDrawer">
@@ -1190,6 +1190,24 @@ Join Telegram Community
     const activeDeviceCategory = { android:'all', androidtv:'all', desktop:'all', router:'all' };
     let activeSearchQuery = '';
 
+    function toggleDeviceMenu(device) {
+      const menu = document.getElementById('device-menu-' + device);
+      const button = document.querySelector('[aria-controls="device-menu-' + device + '"]');
+      if (!menu || !button) return;
+      const willOpen = menu.classList.contains('hidden');
+      document.querySelectorAll('.device-category-menu').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.device-nav-card[aria-expanded]').forEach(el => el.setAttribute('aria-expanded','false'));
+      if (willOpen) { menu.classList.remove('hidden'); button.setAttribute('aria-expanded','true'); }
+    }
+
+    function selectDeviceCategory(device, category) {
+      filterDeviceCategory(device, category);
+      document.querySelectorAll('.device-category-menu').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.device-nav-card[aria-expanded]').forEach(el => el.setAttribute('aria-expanded','false'));
+      const section = document.getElementById('cat-' + device);
+      if (section) section.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
     function filterDeviceCategory(device, category) {
       activeDeviceCategory[device] = category;
       renderCatalog();
@@ -1205,8 +1223,11 @@ Join Telegram Community
           repositoryData.some(item => item.category === cat && (item.devices || [item.category]).includes(device))
         );
         const selected = activeDeviceCategory[device];
-        tabsEl.innerHTML = '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'all\')" class="subcategory-chip ' + (selected === 'all' ? 'active' : '') + '">All</button>' +
-          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'' + cat + '\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
+        tabsEl.innerHTML = '<button type="button" onclick="filterDeviceCategory(\\'' + device + '\\',\\'all\\')" class="subcategory-chip ' + (selected === 'all' ? 'active' : '') + '">All</button>' +
+          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\\'' + device + '\\',\\'' + cat + '\\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
+        const headerMenu = document.getElementById('device-menu-' + device);
+        if (headerMenu) headerMenu.innerHTML = '<button type="button" onclick="selectDeviceCategory(\\'' + device + '\\',\\'all\\')">All</button>' +
+          supported.map(cat => '<button type="button" onclick="selectDeviceCategory(\\'' + device + '\\',\\'' + cat + '\\')">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('') || '<span class="text-xs text-slate-500">No categories yet</span>';
         let items = repositoryData.filter(item => (item.devices || [item.category]).includes(device) &&
           (selected === 'all' || item.category === selected));
         if (activeSearchQuery) {
@@ -1225,6 +1246,7 @@ Join Telegram Community
                 <div class="text-right"><span class="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${safeText(item.version)}</span><span class="block text-[10px] font-mono text-slate-400 mt-0.5">${safeText(item.size)}</span></div>
               </div>
               <h3 class="text-xs font-bold text-white group-hover:text-amber-400 transition truncate" title="${safeText(item.title)}">${safeText(item.title)}</h3>
+              <span class="app-category-label">${safeText(subcategoryNames[item.category] || item.category || "Tools")}</span>
               <p class="text-[11px] text-slate-400 line-clamp-2 mt-1 leading-snug">${safeText(item.desc || 'Publisher-linked software listing.')}</p>
               <div class="mt-2.5 flex items-center justify-between text-[10px] text-slate-400 border-t border-[#1f273d]/70 pt-2 font-mono"><span class="truncate max-w-[110px]">${safeText(item.arch || 'Universal')}</span><span class="text-emerald-400">${safeText(item.sourceLabel || 'Source linked')}</span></div>
             </div>
