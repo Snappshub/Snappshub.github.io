@@ -784,11 +784,10 @@
     }
   ],
   "siteConfig": {
-    "siteName": "SnappsHub",
-    "tagline": "Curated High-Speed Software, Apps & Firmware Vault",
+    "siteName": "SN Apps Hub",
+    "tagline": "Trusted & Secure for Your Device",
     "siteUrl": "https://snappshub.github.io/",
     "telegram": "https://t.me/snappshub",
-    "contactEmail": "alaminsaheb2019@gmail.com",
     "dmcaId": "37a95780-9718-4357-92ee-ea67c2cefe3f",
     "developer": "Alamin Saheb"
   },
