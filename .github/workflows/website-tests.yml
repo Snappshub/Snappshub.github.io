@@ -1,0 +1,26 @@
+name: Website regression tests
+
+on:
+  push:
+    branches:
+      - preview/website-demo
+  pull_request:
+    branches:
+      - preview/website-demo
+
+permissions:
+  contents: read
+
+jobs:
+  website-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Website source
+        uses: actions/checkout@v5
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Run Website regression tests
+        run: npm test
