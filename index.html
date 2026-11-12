@@ -1223,11 +1223,21 @@ Join Telegram Community
           repositoryData.some(item => item.category === cat && (item.devices || [item.category]).includes(device))
         );
         const selected = activeDeviceCategory[device];
-        tabsEl.innerHTML = '<button type="button" onclick="filterDeviceCategory(\\'' + device + '\\',\\'all\\')" class="subcategory-chip ' + (selected === 'all' ? 'active' : '') + '">All</button>' +
-          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\\'' + device + '\\',\\'' + cat + '\\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
+        tabsEl.innerHTML = '<button type="button" data-category="all" class="subcategory-chip ' + (selected === 'all' ? 'active' : '') + '">All</button>' +
+          supported.map(cat => '<button type="button" data-category="' + safeText(cat) + '" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
+        tabsEl.onclick = event => {
+          const button = event.target.closest('button[data-category]');
+          if (button && tabsEl.contains(button)) filterDeviceCategory(device, button.dataset.category);
+        };
         const headerMenu = document.getElementById('device-menu-' + device);
-        if (headerMenu) headerMenu.innerHTML = '<button type="button" onclick="selectDeviceCategory(\\'' + device + '\\',\\'all\\')">All</button>' +
-          supported.map(cat => '<button type="button" onclick="selectDeviceCategory(\\'' + device + '\\',\\'' + cat + '\\')">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('') || '<span class="text-xs text-slate-500">No categories yet</span>';
+        if (headerMenu) {
+          headerMenu.innerHTML = '<button type="button" data-category="all">All</button>' +
+            supported.map(cat => '<button type="button" data-category="' + safeText(cat) + '">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
+          headerMenu.onclick = event => {
+            const button = event.target.closest('button[data-category]');
+            if (button && headerMenu.contains(button)) selectDeviceCategory(device, button.dataset.category);
+          };
+        }
         let items = repositoryData.filter(item => (item.devices || [item.category]).includes(device) &&
           (selected === 'all' || item.category === selected));
         if (activeSearchQuery) {
