@@ -119,7 +119,7 @@ main>.panel:nth-of-type(4)>.font-bold:first-child:before{color:#22d3ee}
 <header class="border-b border-slate-800 px-4 py-3"><div class="max-w-6xl mx-auto flex items-center justify-between gap-3"><div class="flex items-center gap-3 min-w-0"><img src="./assets/snappshub-logo.svg" alt="SnappsHub official logo" class="w-14 h-11 object-contain shrink-0" width="56" height="44"><div><div class="font-black text-lg">SnappsHub <span class="text-cyan-400">Admin</span></div><div class="small">Repository catalog manager</div></div></div><a class="text-xs text-cyan-300 underline shrink-0" href="./index.html">Open website ↗</a></div></header>
 <main class="max-w-6xl mx-auto p-4 space-y-4">
 <section class="panel p-4 space-y-3"><div class="font-bold text-sm">1. Secure GitHub connection</div>
-<p class="small">Connect with a fine-grained GitHub Personal Access Token restricted to <b>Snappshub/snappshub.github.io</b> and <b>Contents: Read and write</b>. The token stays in this tab's memory only; it is not written to localStorage, cookies, or repository files. Disconnect or close this tab to clear it.</p><p class="small text-amber-300">Security note: GitHub Pages serves this HTML publicly. This page is not a private login wall; write access is enforced by your repository-scoped GitHub token. Never paste a token from an untrusted device.</p>
+<p class="small">Digital repository connection: use a fine-grained GitHub Personal Access Token restricted to <b>Snappshub/snappshub.github.io</b> with <b>Contents: Read and write</b>. The token is held in page memory only; it is never saved to browser storage or repository files. Disconnect or close this tab to clear it.</p><p class="small text-amber-300">Security note: GitHub Pages serves this HTML publicly. This page is not a private login wall; write access is enforced by your repository-scoped GitHub token. Never paste a token from an untrusted device.</p>
 <div class="grid md:grid-cols-[1fr_auto_auto] gap-2"><input id="token" type="password" autocomplete="off" spellcheck="false" class="field" placeholder="github_pat_…"><button id="connect" class="btn primary">Connect & Load</button><button id="disconnect" class="btn muted" disabled>Disconnect</button></div><div id="status" class="small" role="status" aria-live="polite">Not connected.</div>
 </section>
 <section class="panel p-4 space-y-3"><div class="flex items-center justify-between gap-2"><div class="font-bold text-sm">2. Apps catalog</div><button id="add" class="btn primary" disabled>+ Add App</button></div>
@@ -128,7 +128,7 @@ main>.panel:nth-of-type(4)>.font-bold:first-child:before{color:#22d3ee}
 <section class="panel p-4 space-y-3"><div class="font-bold text-sm">3. Site settings</div><div class="grid md:grid-cols-2 gap-3">
 <label class="small">Site name<input id="siteName" class="field mt-1"></label><label class="small">Tagline<input id="tagline" class="field mt-1"></label><label class="small">Telegram URL<input id="telegram" type="url" class="field mt-1"></label><label class="small">Contact email<input id="email" type="email" class="field mt-1"></label>
 </div><button id="saveSettings" class="btn primary" disabled>Stage site settings</button></section>
-<section class="panel p-4 space-y-2"><div class="font-bold text-sm">4. Publish changes</div><p class="small">Catalog edits commit to apps-data.json on main. Uploaded files are committed separately to /downloads/ and GitHub Pages publishes after its normal deployment delay.</p><div class="flex flex-wrap gap-2"><button id="publish" class="btn primary" disabled>Commit catalog changes</button><button id="export" class="btn muted">Export JSON</button></div></section>
+<section class="panel p-4 space-y-2"><div class="font-bold text-sm">4. Publish changes</div><p class="small">All catalog and site-setting changes are staged in memory, validated, then committed through the GitHub Contents API to <b>main/apps-data.json</b>. File uploads are committed to <b>/downloads/</b> and their URL is inserted into the app form. GitHub Pages deploys after its normal build delay. Reload discards staged changes.</p><div class="flex flex-wrap gap-2"><button id="publish" class="btn primary" disabled>Commit catalog changes</button><button id="export" class="btn muted">Export JSON</button></div></section>
 </main>
 <div id="modal" class="fixed inset-0 hidden bg-black/80 p-3 items-center justify-center"><form id="appForm" class="panel w-full max-w-2xl max-h-[95vh] overflow-auto p-4 space-y-3"><div class="flex justify-between"><b id="modalTitle">Add app</b><button type="button" id="close" class="text-xl">×</button></div><input id="appId" type="hidden"><div class="grid sm:grid-cols-2 gap-2">
 <label class="small">App name<input id="name" required class="field mt-1" maxlength="100"></label><label class="small">Category<select id="category" class="field mt-1"><option value="android">Android</option><option value="androidtv">Android TV</option><option value="desktop">Desktop</option><option value="router">Router</option></select></label>
@@ -174,11 +174,11 @@ $('connect').onclick=async()=>{
  const candidate=$('token').value.trim();if(!candidate){status('Enter a GitHub token.',true);return}
  token=candidate;$('connect').disabled=true;status('Verifying repository access…');
  try{const check=await fetch(API+'/repos/'+OWNER+'/'+REPO,{headers:headers(),cache:'no-store'});if(!check.ok)throw Error('Repository access failed ('+check.status+'). Check token repository access and Contents permission.');await load();$('token').value=''}
- catch(e){token='';setConnected(false);status(e.message,true)}
+ catch(e){token='';$('token').value='';setConnected(false);status(e.message,true)}
  finally{$('connect').disabled=false}
 };
 $('disconnect').onclick=()=>{token='';data=null;fileSha='';dirty=false;$('token').value='';setConnected(false);$('publish').disabled=true;$('apps').innerHTML='<p class="small">Disconnected. Connect GitHub to load apps-data.json.</p>';status('Disconnected. Token cleared from this tab.')};
-$('reload').onclick=async()=>{try{status('Reloading…');await load()}catch(e){status(e.message,true)}};
+$('reload').onclick=async()=>{if(dirty&&!confirm('Discard all staged catalog and settings changes and reload from GitHub?'))return;try{status('Reloading latest repository data…');await load()}catch(e){status(e.message,true)}};
 $('add').onclick=()=>openModal(null);$('close').onclick=$('cancel').onclick=closeModal;$('filter').oninput=render;$('categoryFilter').onchange=render;
 $('apps').onclick=e=>{
  const edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]');
@@ -191,7 +191,7 @@ $('appForm').onsubmit=e=>{
  const downloadUrl=$('url').value.trim();if(!validDownloadUrl(downloadUrl)){alert('Enter a valid HTTP(S) URL or a local ./downloads/filename path.');return}
  const iconValue=$('icon').value.trim();if(iconValue&&!safeIcon(iconValue)&&!/^\p{Extended_Pictographic}$/u.test(iconValue)){alert('Icon must be an HTTPS image URL, an asset path, or a single emoji.');return}
  const item={id,title:$('name').value.trim(),category:$('category').value,version:$('version').value.trim(),size:$('size').value.trim(),arch:$('arch').value.trim(),icon:iconValue,url:downloadUrl,sha256:$('sha256').value.trim(),desc:$('desc').value.trim()};
- const i=data.apps.findIndex(x=>x.id===id);if(i>=0)data.apps[i]={...data.apps[i],...item};else data.apps.push(item);mark();render();closeModal();
+ if(!existingId&&data.apps.some(x=>x.id===id)){alert('An app with this generated ID already exists. Change the app name and try again.');return}if(item.sha256&&!/^[a-f0-9]{64}$/i.test(item.sha256)){alert('SHA-256 must contain exactly 64 hexadecimal characters.');return}const i=data.apps.findIndex(x=>x.id===id);if(i>=0)data.apps[i]={...data.apps[i],...item};else data.apps.push(item);mark();render();closeModal();
 };
 $('uploadFile').onclick=async()=>{
  const f=$('localFile').files[0];if(!f){$('uploadStatus').textContent='Choose a local file first.';return}
@@ -209,10 +209,10 @@ $('uploadFile').onclick=async()=>{
  }catch(e){$('uploadStatus').textContent=e.message;status(e.message,true)}
  finally{$('uploadFile').disabled=false}
 };
-$('saveSettings').onclick=()=>{data.siteConfig={...(data.siteConfig||{}),siteName:$('siteName').value.trim(),tagline:$('tagline').value.trim(),telegram:$('telegram').value.trim(),contactEmail:$('email').value.trim()};mark();status('Site settings staged. Commit changes to publish.')};
+$('saveSettings').onclick=()=>{const siteName=$('siteName').value.trim(),tagline=$('tagline').value.trim(),telegram=$('telegram').value.trim(),contactEmail=$('email').value.trim();if(!siteName||!tagline){status('Site name and tagline are required.',true);return}if(telegram){try{const u=new URL(telegram);if(u.protocol!=='https:')throw Error()}catch(_){status('Telegram URL must be a valid HTTPS URL.',true);return}}if(contactEmail&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(contactEmail)){status('Enter a valid contact email address.',true);return}data.siteConfig={...(data.siteConfig||{}),siteName,tagline,telegram,contactEmail};mark();status('Site settings validated and staged. Commit changes to publish.')};
 $('publish').onclick=async()=>{
  if(!token||!data||!dirty)return;
- if(!Array.isArray(data.apps)||data.apps.some(a=>!a.id||!a.title||!['android','androidtv','desktop','router'].includes(a.category)||!validDownloadUrl(a.url))){status('Publish blocked: catalog contains an invalid ID, title, category, or download URL.',true);return}
+ const ids=data.apps.map(a=>String(a.id||''));if(!Array.isArray(data.apps)||data.apps.some(a=>!a.id||!a.title||!['android','androidtv','desktop','router'].includes(a.category)||!validDownloadUrl(a.url)||(a.sha256&&!/^[a-f0-9]{64}$/i.test(a.sha256)))||new Set(ids).size!==ids.length){status('Publish blocked: check required fields, unique app IDs, valid download URLs, and 64-character SHA-256 values.',true);return}if(!data.siteConfig||!String(data.siteConfig.siteName||'').trim()||!String(data.siteConfig.tagline||'').trim()){status('Publish blocked: site name and tagline are required.',true);return}
  try{
   $('publish').disabled=true;status('Committing apps-data.json…');
   const bytes=new TextEncoder().encode(JSON.stringify(data,null,2)+'\n');
