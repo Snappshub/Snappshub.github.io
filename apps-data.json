@@ -2,258 +2,292 @@
   "apps": [
     {
       "id": "apk-1",
-      "title": "Instander Pro",
+      "title": "Instagram (Publisher Link)",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-instander",
+      "url": "https://www.instagram.com/",
       "category": "android",
       "version": "v18.0",
       "size": "52.4 MB",
       "arch": "arm64-v8a",
       "sha256": "",
-      "desc": "High quality image download, ad-free feed, privacy ghosts, and verified stable build.",
+      "desc": "Open the official Instagram site to access the publisher's current app links. No modified APK is hosted here.",
       "devices": [
         "android"
-      ]
+      ],
+      "sourceUrl": "https://www.instagram.com/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "apk-2",
-      "title": "Telegram Cyber Mod",
+      "title": "Telegram Messenger",
       "icon": "https://www.google.com/s2/favicons?domain=t.me&sz=128",
-      "url": "https://t.me/snappshub",
+      "url": "https://telegram.org/apps",
       "category": "android",
       "version": "v10.14",
       "size": "68.1 MB",
       "arch": "Universal",
       "sha256": "",
-      "desc": "Optimized Telegram client with zero sponsored messages and enhanced download pipes.",
+      "desc": "Official Telegram apps and installation links. Avoid unofficial modified builds and verify the publisher.",
       "devices": [
         "android"
-      ]
+      ],
+      "sourceUrl": "https://telegram.org/apps",
+      "sourceLabel": "Official site"
     },
     {
       "id": "apk-3",
-      "title": "AdGuard Premium",
+      "title": "AdGuard for Android",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-adguard",
+      "url": "https://adguard.com/en/adguard-android/overview.html",
       "category": "android",
       "version": "v4.4.1",
       "size": "34.2 MB",
       "arch": "All Arch",
       "sha256": "",
-      "desc": "System-wide ad blocker, HTTPS traffic filtering, and privacy tracker prevention.",
+      "desc": "AdGuard's official Android product page and installation guidance. Check plan and platform compatibility.",
       "devices": [
         "android"
-      ]
+      ],
+      "sourceUrl": "https://adguard.com/en/adguard-android/overview.html",
+      "sourceLabel": "Official site"
     },
     {
       "id": "apk-4",
       "title": "Seal Media Downloader",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-seal",
+      "url": "https://github.com/JunkFood02/Seal/releases",
       "category": "android",
       "version": "v1.12.3",
       "size": "28.0 MB",
       "arch": "arm64-v8a",
       "sha256": "",
-      "desc": "Open source yt-dlp frontend with custom audio/video conversion and material design.",
+      "desc": "Open-source yt-dlp Android frontend. Review release notes and package assets in the project's official repository.",
       "devices": [
         "android"
-      ]
+      ],
+      "sourceUrl": "https://github.com/JunkFood02/Seal/releases",
+      "sourceLabel": "GitHub releases"
     },
     {
       "id": "apk-5",
-      "title": "Poweramp Full Unlock",
+      "title": "Poweramp Music Player",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-poweramp",
+      "url": "https://powerampapp.com/",
       "category": "android",
       "version": "build-976",
       "size": "18.6 MB",
       "arch": "Universal",
       "sha256": "",
-      "desc": "Audiophile music player with custom 64-bit audio engine, equalizer, and high-res output.",
+      "desc": "Poweramp's official music-player website and purchase or installation information. No unlocked or modified package is distributed.",
       "devices": [
         "android"
-      ]
+      ],
+      "sourceUrl": "https://powerampapp.com/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "tv-1",
-      "title": "SmartTube TV Stable",
+      "title": "SmartTube",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-smarttube",
+      "url": "https://github.com/yuliskov/SmartTube/releases",
       "category": "androidtv",
       "version": "v21.85",
       "size": "24.5 MB",
       "arch": "Android TV",
       "sha256": "",
-      "desc": "YouTube client for Android TV with SponsorBlock, 4K 60fps AV1 playback, zero video ads.",
+      "desc": "SmartTube project releases for Android TV. Check the official repository and release notes before installing.",
       "devices": [
         "androidtv"
-      ]
+      ],
+      "sourceUrl": "https://github.com/yuliskov/SmartTube/releases",
+      "sourceLabel": "GitHub releases"
     },
     {
       "id": "tv-2",
-      "title": "Kodi 21.0 Omega TV",
+      "title": "Kodi Media Center",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-kodi",
+      "url": "https://kodi.tv/download/",
       "category": "androidtv",
       "version": "v21.0",
       "size": "74.8 MB",
       "arch": "armeabi-v7a",
       "sha256": "",
-      "desc": "Ultimate entertainment center with support for network streaming, TrueHD audio, and skins.",
+      "desc": "Official Kodi downloads for supported devices. Select the correct Android TV architecture and release.",
       "devices": [
         "androidtv"
-      ]
+      ],
+      "sourceUrl": "https://kodi.tv/download/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "tv-3",
       "title": "TiviMate IPTV Player",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-tivimate",
+      "url": "https://tivimate.com/",
       "category": "androidtv",
       "version": "v4.8.0",
       "size": "16.2 MB",
       "arch": "Android TV",
       "sha256": "",
-      "desc": "Dedicated IPTV client designed specifically for large screens and remote controllers.",
+      "desc": "TiviMate's official product information. IPTV playlists and subscriptions are provided separately by their respective services.",
       "devices": [
         "androidtv"
-      ]
+      ],
+      "sourceUrl": "https://tivimate.com/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "tv-4",
       "title": "Projectivy Launcher",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-projectivy",
+      "url": "https://projectivy.hu/",
       "category": "androidtv",
       "version": "v4.52",
       "size": "12.0 MB",
       "arch": "Leanback",
       "sha256": "",
-      "desc": "Clean Android TV replacement launcher with zero banner recommendations and ultra-fast boot.",
+      "desc": "Official Projectivy Launcher website and project information for Android TV.",
       "devices": [
         "androidtv"
-      ]
+      ],
+      "sourceUrl": "https://projectivy.hu/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "pc-1",
       "title": "Rufus USB Bootmaker",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-rufus",
+      "url": "https://rufus.ie/",
       "category": "desktop",
       "version": "v4.5 Portable",
       "size": "1.4 MB",
       "arch": "Windows x64",
       "sha256": "",
-      "desc": "Format and create bootable USB drives such as ISO to USB, Windows 11 TPM bypass enabled.",
+      "desc": "Official Rufus download page. Verify the release and digital signature before running the utility.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "sourceUrl": "https://rufus.ie/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "pc-2",
-      "title": "7-Zip Ultra Cyber Edition",
+      "title": "7-Zip File Archiver",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-7zip",
+      "url": "https://www.7-zip.org/download.html",
       "category": "desktop",
       "version": "v24.05",
       "size": "1.9 MB",
       "arch": "Win / Mac / Linux",
       "sha256": "",
-      "desc": "High compression ratio archiver supporting LZMA2 encryption and self-extracting formats.",
+      "desc": "Official 7-Zip downloads for supported Windows architectures.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "sourceUrl": "https://www.7-zip.org/download.html",
+      "sourceLabel": "Official site"
     },
     {
       "id": "pc-3",
-      "title": "VLC Media Player Portable",
+      "title": "VLC Media Player",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-vlc",
+      "url": "https://www.videolan.org/vlc/",
       "category": "desktop",
       "version": "v3.0.21",
       "size": "42.1 MB",
       "arch": "x86_64",
       "sha256": "",
-      "desc": "Cross platform multimedia player that reads all audio, video codecs, streams without extra packs.",
+      "desc": "Official VideoLAN VLC downloads for desktop and supported mobile platforms.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "sourceUrl": "https://www.videolan.org/vlc/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "pc-4",
       "title": "Wireshark Network Analyzer",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-wireshark",
+      "url": "https://www.wireshark.org/download.html",
       "category": "desktop",
       "version": "v4.2.5",
       "size": "82.4 MB",
       "arch": "x64 Native",
       "sha256": "",
-      "desc": "World's foremost network protocol analyzer for packet capture, router debugging, and analysis.",
+      "desc": "Official Wireshark downloads. Capture or inspect only networks and systems you are authorized to administer.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "sourceUrl": "https://www.wireshark.org/download.html",
+      "sourceLabel": "Official site"
     },
     {
       "id": "rt-1",
-      "title": "Tenda AC10 v4 Stock & Breed",
+      "title": "Tenda AC10 v4 Firmware Support",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-tenda-ac10",
+      "url": "https://www.tendacn.com/",
       "category": "router",
       "version": "US_ACT_V16.03.10.20",
       "size": "11.2 MB",
       "arch": "MIPS 16MB SPI",
       "sha256": "",
-      "desc": "Verified factory recovery image for Tenda AC10 v4.0. Resolves bootloop and bricked flash.",
+      "desc": "Start at Tenda's official support portal and confirm the exact AC10 hardware revision and region before downloading firmware.",
       "devices": [
         "router"
-      ]
+      ],
+      "sourceUrl": "https://www.tendacn.com/",
+      "sourceLabel": "Official support site"
     },
     {
       "id": "rt-2",
-      "title": "TP-Link Archer C6 v3.2 EU",
+      "title": "TP-Link Archer C6 Firmware Support",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-archer-c6",
+      "url": "https://www.tp-link.com/en/support/download/archer-c6/",
       "category": "router",
       "version": "v3.2_Build220414",
       "size": "14.5 MB",
       "arch": "Qualcomm Atheros",
       "sha256": "",
-      "desc": "Official stripped bin file for recovery via TFTP server. Clean firmware with stock bootloader.",
+      "desc": "Official Archer C6 support downloads. Match hardware version and region exactly; never flash a firmware image for a different revision.",
       "devices": [
         "router"
-      ]
+      ],
+      "sourceUrl": "https://www.tp-link.com/en/support/download/archer-c6/",
+      "sourceLabel": "Official support site"
     },
     {
       "id": "rt-3",
-      "title": "MikroTik RouterOS Main",
+      "title": "MikroTik RouterOS Downloads",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-mikrotik-7",
+      "url": "https://mikrotik.com/download",
       "category": "router",
       "version": "v7.15 Stable",
       "size": "26.8 MB",
       "arch": "MMIPS / ARM / x86",
       "sha256": "",
-      "desc": "RouterOS v7 package file (.npk) with WireGuard native protocol, BGP improvements, and patch.",
+      "desc": "Official RouterOS packages and firmware downloads. Select the correct device architecture and release channel.",
       "devices": [
         "router"
-      ]
+      ],
+      "sourceUrl": "https://mikrotik.com/download",
+      "sourceLabel": "Official site"
     },
     {
       "id": "rt-4",
-      "title": "OpenWrt 23.05.3 Generic",
+      "title": "OpenWrt Firmware Selector",
       "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
-      "url": "https://snappshub.github.io/#download-openwrt",
+      "url": "https://firmware-selector.openwrt.org/",
       "category": "router",
       "version": "v23.05.3-factory",
       "size": "8.9 MB",
       "arch": "MediaTek MT7621",
       "sha256": "",
-      "desc": "Clean OpenWrt factory flashing image. LuCI web interface included with modern kernel.",
+      "desc": "Use the official OpenWrt Firmware Selector to choose the exact device model and hardware revision before downloading.",
       "devices": [
         "router"
-      ]
+      ],
+      "sourceUrl": "https://firmware-selector.openwrt.org/",
+      "sourceLabel": "Official site"
     },
     {
       "id": "browser-firefox",
@@ -563,6 +597,187 @@
       "arch": "Windows / macOS / Linux",
       "sha256": "",
       "desc": "Open-source photography workflow and RAW image developer.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "browser-tvbro",
+      "title": "TV Bro Browser",
+      "category": "browser",
+      "url": "https://github.com/truefedex/tv-bro/releases",
+      "sourceUrl": "https://github.com/truefedex/tv-bro/releases",
+      "sourceLabel": "GitHub releases",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android TV",
+      "sha256": "",
+      "desc": "Remote-friendly web browser designed for Android TV. Check the official release page for compatible builds.",
+      "devices": [
+        "androidtv"
+      ]
+    },
+    {
+      "id": "security-protonpass",
+      "title": "Proton Pass",
+      "category": "security",
+      "url": "https://proton.me/pass/download",
+      "sourceUrl": "https://proton.me/pass/download",
+      "sourceLabel": "Official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / Windows / macOS / Linux",
+      "sha256": "",
+      "desc": "End-to-end encrypted password manager with official downloads for supported platforms.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
+    },
+    {
+      "id": "security-malwarebytes",
+      "title": "Malwarebytes",
+      "category": "security",
+      "url": "https://www.malwarebytes.com/",
+      "sourceUrl": "https://www.malwarebytes.com/",
+      "sourceLabel": "Official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / Windows / macOS",
+      "sha256": "",
+      "desc": "Security software from Malwarebytes. Review the official product page for supported platforms and current plans.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
+    },
+    {
+      "id": "popular-kdeconnect",
+      "title": "KDE Connect",
+      "category": "popular",
+      "url": "https://kdeconnect.kde.org/download.html",
+      "sourceUrl": "https://kdeconnect.kde.org/download.html",
+      "sourceLabel": "Official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / Windows / Linux",
+      "sha256": "",
+      "desc": "Connect Android devices and computers for file sharing, notifications and remote controls over your local network.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
+    },
+    {
+      "id": "popular-obtainium",
+      "title": "Obtainium",
+      "category": "popular",
+      "url": "https://github.com/ImranR98/Obtainium/releases",
+      "sourceUrl": "https://github.com/ImranR98/Obtainium/releases",
+      "sourceLabel": "GitHub releases",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android",
+      "sha256": "",
+      "desc": "Open-source Android app updater that tracks releases from upstream project sources. Review app sources before adding them.",
+      "devices": [
+        "android"
+      ]
+    },
+    {
+      "id": "network-wifiman",
+      "title": "WiFiman",
+      "category": "network",
+      "url": "https://ui.com/download",
+      "sourceUrl": "https://ui.com/download",
+      "sourceLabel": "Official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / iOS / Desktop",
+      "sha256": "",
+      "desc": "Ubiquiti network discovery and diagnostics utility. Use only on networks you own or are authorized to troubleshoot.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
+    },
+    {
+      "id": "video-vn",
+      "title": "VN Video Editor",
+      "category": "video",
+      "url": "https://www.vlognow.me/",
+      "sourceUrl": "https://www.vlognow.me/",
+      "sourceLabel": "Official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / iOS / Desktop",
+      "sha256": "",
+      "desc": "Multi-track video editor with timeline, effects and export tools. Check the official site for platform availability.",
+      "devices": [
+        "android"
+      ]
+    },
+    {
+      "id": "video-nova-tv",
+      "title": "Nova Video Player",
+      "category": "video",
+      "url": "https://github.com/nova-video-player/aos-AVP/releases",
+      "sourceUrl": "https://github.com/nova-video-player/aos-AVP/releases",
+      "sourceLabel": "GitHub releases",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / Android TV",
+      "sha256": "",
+      "desc": "Open-source media player with Android TV support. Download builds from the project's official release page.",
+      "devices": [
+        "androidtv",
+        "android"
+      ]
+    },
+    {
+      "id": "photo-snapseed",
+      "title": "Snapseed",
+      "category": "photo",
+      "url": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",
+      "sourceLabel": "Google Play",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android",
+      "sha256": "",
+      "desc": "Google's photo editor with selective adjustments, filters and RAW editing support. Install from Google Play.",
+      "devices": [
+        "android"
+      ]
+    },
+    {
+      "id": "photo-photopea",
+      "title": "Photopea",
+      "category": "photo",
+      "url": "https://www.photopea.com/",
+      "sourceUrl": "https://www.photopea.com/",
+      "sourceLabel": "Official site",
+      "version": "Web app",
+      "size": "Browser-based",
+      "arch": "Web / Desktop browser",
+      "sha256": "",
+      "desc": "Browser-based image editor supporting layered documents and common raster and vector formats.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "popular-powertoys",
+      "title": "Microsoft PowerToys",
+      "category": "popular",
+      "url": "https://learn.microsoft.com/en-us/windows/powertoys/",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows/powertoys/",
+      "sourceLabel": "Official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows 10 / 11",
+      "sha256": "",
+      "desc": "Microsoft's Windows productivity utilities. Review system requirements and install from official Microsoft channels.",
       "devices": [
         "desktop"
       ]
