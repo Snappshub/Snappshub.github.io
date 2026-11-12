@@ -880,6 +880,10 @@ Join Telegram Community
             Direct High-Speed Download Now
           </a>
 <div id="alternateMirrors" class="hidden space-y-2 text-left"></div>
+<div id="downloadFallbacks" class="flex flex-wrap gap-2">
+<button id="copySourceButton" type="button" class="rounded-lg border border-[#1f273d] px-3 py-2 text-xs text-slate-200">Copy publisher link</button>
+<a id="telegramSupportLink" class="hidden rounded-lg border border-[#1f273d] px-3 py-2 text-xs text-cyan-300" target="_blank" rel="noopener noreferrer">Telegram Support ↗</a>
+</div>
 </div>
 </div>
 <!-- Safe 300x250 Banner Ad Slot inside Modal -->
@@ -1396,7 +1400,16 @@ Join Telegram Community
       const mirrorContainer=document.getElementById('alternateMirrors');
       const mirrors=Array.isArray(item.mirrors)?item.mirrors.filter(m=>m&&/^https:\/\//i.test(m.url||'')):[];
       mirrorContainer.innerHTML=mirrors.map(m=>'<a class="block rounded-lg border border-[#1f273d] bg-[#0a0e18] px-3 py-2 text-xs text-cyan-300" href="'+safeText(m.url)+'" target="_blank" rel="noopener noreferrer">'+(m.primary?'★ Primary · ':'')+safeText(m.label||'Alternative mirror')+' ↗</a>').join('');
-      mirrorContainer.classList.toggle('hidden',mirrors.length===0);
+      const flow=window.liveDownloadFlow||{};
+      mirrorContainer.classList.toggle('hidden',mirrors.length===0||flow.showAlternateMirrors===false);
+      const copySourceButton=document.getElementById('copySourceButton');
+      copySourceButton.classList.toggle('hidden',flow.showCopyLink===false||!item.url);
+      copySourceButton.onclick=async()=>{try{await navigator.clipboard.writeText(item.url);copySourceButton.textContent='Link copied';}catch(_){copySourceButton.textContent='Copy unavailable';}};
+      const telegramLink=document.getElementById('telegramSupportLink');
+      const supportUrl=item.telegramSupportUrl||flow.telegramSupportUrl||'';
+      const validSupport=/^https:\/\//i.test(supportUrl);
+      telegramLink.href=validSupport?supportUrl:'#';
+      telegramLink.classList.toggle('hidden',flow.showTelegramSupport===false||!validSupport);
 
       // Reset timer UI
       const timerContainer = document.getElementById('timerContainer');
@@ -1414,7 +1427,10 @@ Join Telegram Community
         timerContainer.classList.remove('hidden');
         readyContainer.classList.add('hidden');
         countdownBar.style.width = '0%';
-        let seconds = 5;
+        const flow=window.liveDownloadFlow||{};
+        const timerLabel=document.querySelector('#timerContainer .text-xs.uppercase');
+        if(timerLabel)timerLabel.textContent=flow.introMessage||'Preparing publisher source…';
+        let seconds = Math.max(1,Math.min(30,Number(flow.delaySeconds)||3));
         countdownNumber.textContent = seconds;
         setTimeout(() => { countdownBar.style.width = '100%'; }, 50);
         countdownInterval = setInterval(() => {
@@ -1471,6 +1487,7 @@ Join Telegram Community
       try {
         const data = await fetchPublishedCatalogue();
         if (!Array.isArray(data.apps)) throw new Error('Invalid app list');
+        window.liveDownloadFlow=data.downloadFlow||{};
         repositoryData = data.apps.filter(a => /^[a-zA-Z0-9_-]+$/.test(a.id)).map(a => ({...a, title:a.title || a.name, url:a.url || a.mirror1}));
         renderCatalog();
         const hero = data.hero || {};
