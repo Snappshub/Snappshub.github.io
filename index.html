@@ -1267,7 +1267,7 @@ Join Telegram Community
                 <span class="truncate max-w-[110px]">${safeText(item.arch || 'Universal')}</span>
                 <span class="text-emerald-400 flex items-center gap-0.5">
                   <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  Source linked
+                  ${safeText(item.sourceLabel || 'Source linked')}
                 </span>
               </div>
             </div>
@@ -1416,32 +1416,32 @@ Join Telegram Community
       const countdownNumber = document.getElementById('countdownNumber');
       const countdownBar = document.getElementById('countdownBar');
 
-      timerContainer.classList.remove('hidden');
-      readyContainer.classList.add('hidden');
-      countdownBar.style.width = '0%';
-
-      let seconds = 5;
-      countdownNumber.textContent = seconds;
+      // Publisher/F-Droid links open directly; the countdown is only for SnappsHub-hosted mirrors.
+      if (countdownInterval) clearInterval(countdownInterval);
+      if (item.sourceLabel) {
+        timerContainer.classList.add('hidden');
+        readyContainer.classList.remove('hidden');
+        directBtn.textContent = 'Open ' + item.sourceLabel;
+      } else {
+        timerContainer.classList.remove('hidden');
+        readyContainer.classList.add('hidden');
+        countdownBar.style.width = '0%';
+        let seconds = 5;
+        countdownNumber.textContent = seconds;
+        setTimeout(() => { countdownBar.style.width = '100%'; }, 50);
+        countdownInterval = setInterval(() => {
+          seconds--;
+          if (seconds > 0) countdownNumber.textContent = seconds;
+          else {
+            clearInterval(countdownInterval);
+            timerContainer.classList.add('hidden');
+            readyContainer.classList.remove('hidden');
+          }
+        }, 1000);
+      }
 
       // Show modal
       document.getElementById('downloadModal').classList.remove('hidden');
-
-      if (countdownInterval) clearInterval(countdownInterval);
-
-      setTimeout(() => {
-        countdownBar.style.width = '100%';
-      }, 50);
-
-      countdownInterval = setInterval(() => {
-        seconds--;
-        if (seconds > 0) {
-          countdownNumber.textContent = seconds;
-        } else {
-          clearInterval(countdownInterval);
-          timerContainer.classList.add('hidden');
-          readyContainer.classList.remove('hidden');
-        }
-      }, 1000);
     }
 
     function closeDownloadModal() {
