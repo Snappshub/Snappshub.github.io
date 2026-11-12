@@ -1,17 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
-<title id="title">SnappsHub Royal S Brand Mark</title><desc id="desc">Gold crowned shield with wings and an S monogram.</desc>
-<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b98225"/><stop offset=".22" stop-color="#ffe59a"/><stop offset=".48" stop-color="#fff0bd"/><stop offset=".72" stop-color="#d5a447"/><stop offset="1" stop-color="#9b681c"/></linearGradient><linearGradient id="shield" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffdf8a"/><stop offset=".5" stop-color="#c28b2d"/><stop offset="1" stop-color="#ffe6a0"/></linearGradient></defs>
-<g fill="url(#gold)" stroke="none">
-<path d="M55 206 Q110 225 181 260 Q151 245 119 246 Q157 278 202 282 Q151 283 105 271 Q144 313 207 315 Q161 324 125 311 Q163 350 221 354 L226 306 Q188 270 55 206Z"/>
-<path d="M585 206 Q530 225 459 260 Q489 245 521 246 Q483 278 438 282 Q489 283 535 271 Q496 313 433 315 Q479 324 515 311 Q477 350 419 354 L414 306 Q452 270 585 206Z"/>
-<path d="M190 183 Q250 213 320 202 Q390 213 450 183 L416 253 Q320 233 224 253Z"/>
-<path d="M192 184 Q177 169 160 154 L181 158 L191 125 L214 157 L229 116 L254 158 Q320 180 386 158 L411 116 L426 157 L449 125 L459 158 L480 154 Q463 169 448 184 Q320 224 192 184Z"/>
-<path d="M320 22 L329 48 L356 48 L334 64 L343 90 L320 74 L297 90 L306 64 L284 48 L311 48Z"/>
-<path d="M231 75 L237 92 L255 92 L240 103 L246 121 L231 110 L216 121 L222 103 L207 92 L225 92Z" transform="translate(-26 5)"/>
-<path d="M231 75 L237 92 L255 92 L240 103 L246 121 L231 110 L216 121 L222 103 L207 92 L225 92Z" transform="translate(204 5)"/>
-<path d="M231 75 L237 92 L255 92 L240 103 L246 121 L231 110 L216 121 L222 103 L207 92 L225 92Z" transform="translate(-102 42) scale(.72)"/>
-<path d="M231 75 L237 92 L255 92 L240 103 L246 121 L231 110 L216 121 L222 103 L207 92 L225 92Z" transform="translate(306 42) scale(.72)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+<title id="title">SnappsHub Crowned S Emblem</title>
+<desc id="desc">Gold crown, winged shield and letter S on a black background.</desc>
+<defs>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2=".15"><stop offset="0" stop-color="#a87925"/><stop offset=".22" stop-color="#ffe49a"/><stop offset=".48" stop-color="#c18a2d"/><stop offset=".7" stop-color="#fff0b3"/><stop offset="1" stop-color="#9b6b20"/></linearGradient>
+ <linearGradient id="goldSoft" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0b5"/><stop offset="1" stop-color="#bd872b"/></linearGradient>
+</defs>
+<g fill="none" stroke="url(#gold)" stroke-linejoin="round" stroke-linecap="round">
+ <path d="M360 78 L389 132 L453 113 L448 176 L526 153 L505 215 L573 207 L515 284 Q440 326 360 326 Q280 326 205 284 L147 207 L215 215 L194 153 L272 176 L267 113 L331 132 Z" fill="url(#gold)" stroke="none"/>
+ <path d="M360 78 L360 42 M272 176 L260 137 M448 176 L460 137" stroke-width="5"/>
+ <path d="M360 326 L360 285" stroke="#080808" stroke-width="7"/>
+ <path d="M148 210 Q98 190 44 160 Q66 238 130 267 Q82 260 48 244 Q83 307 160 320 Q112 320 77 309 Q126 377 220 373 L244 329" stroke-width="13" fill="url(#gold)"/>
+ <path d="M572 210 Q622 190 676 160 Q654 238 590 267 Q638 260 672 244 Q637 307 560 320 Q608 320 643 309 Q594 377 500 373 L476 329" stroke-width="13" fill="url(#gold)"/>
+ <path d="M235 290 Q360 255 485 290 L485 470 Q485 555 360 635 Q235 555 235 470 Z" fill="#050505" stroke-width="10"/>
+ <path d="M360 306 Q360 306 360 306" stroke-width="4"/>
 </g>
-<path d="M202 259 Q320 221 438 259 L438 365 Q438 425 320 474 Q202 425 202 365Z" fill="#050505" stroke="url(#shield)" stroke-width="9"/>
-<path d="M250 302 Q250 280 274 280 H363 Q389 280 389 307 V324 H345 V314 H294 V337 H358 Q391 337 391 368 V402 Q391 429 362 429 H278 Q250 429 250 400 V382 H295 V396 H346 V375 H282 Q250 375 250 345Z" fill="url(#gold)"/>
+<g fill="url(#gold)">
+ <path d="M360 42 L365 56 L380 57 L368 66 L372 81 L360 72 L348 81 L352 66 L340 57 L355 56 Z"/>
+ <path d="M260 137 L264 148 L276 149 L267 157 L270 169 L260 162 L250 169 L253 157 L244 149 L256 148 Z"/>
+ <path d="M460 137 L464 148 L476 149 L467 157 L470 169 L460 162 L450 169 L453 157 L444 149 L456 148 Z"/>
+ <path d="M178 205 L182 215 L193 216 L185 223 L188 234 L178 228 L168 234 L171 223 L163 216 L174 215 Z"/>
+ <path d="M542 205 L546 215 L557 216 L549 223 L552 234 L542 228 L532 234 L535 223 L527 216 L538 215 Z"/>
+</g>
+<path d="M420 385 H326 Q278 385 278 431 Q278 473 326 473 H394 Q442 473 442 519 Q442 565 394 565 H292" fill="none" stroke="url(#gold)" stroke-width="57" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
