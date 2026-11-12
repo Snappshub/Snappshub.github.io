@@ -1512,4 +1512,34 @@ Join Telegram Community
   }catch(_){list.textContent='Source links are listed on each app details page.';}
 })();
 </script>
+
+<style data-purpose="snappshub-catalog-grid-breakpoints">
+  /* Final responsive catalogue grid: phone 2, tablet 3, desktop 4, wide desktop 5. */
+  #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:clamp(.65rem,1.5vw,1rem);
+  }
+  @media (min-width:640px) {
+    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    }
+  }
+  @media (min-width:1024px) {
+    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+      grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    }
+  }
+  @media (min-width:1440px) {
+    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+      grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    #grid-android *,#grid-androidtv *,#grid-desktop *,#grid-router * {
+      scroll-behavior:auto!important;
+    }
+  }
+</style>
+
 </body></html>
