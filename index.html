@@ -1449,14 +1449,19 @@ Join Telegram Community
       document.getElementById('catalogView').classList.remove('hidden');
     }
 
-    function copyDetailSha() {
+    async function copyDetailSha() {
       if (!currentActiveApp) return;
       if (!currentActiveApp.sha256) {
         alert('No publisher-provided SHA-256 checksum is available for this listing.');
         return;
       }
-      navigator.clipboard.writeText(currentActiveApp.sha256);
-      alert('SHA-256 checksum copied to clipboard.');
+      try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(currentActiveApp.sha256);
+        alert('SHA-256 checksum copied to clipboard.');
+      } catch (_) {
+        alert('Clipboard access is unavailable in this browser. Copy the checksum manually from the details page.');
+      }
     }
 
     // 5-Second Countdown Download Modal
@@ -1473,7 +1478,17 @@ Join Telegram Community
       document.getElementById('modalAppSize').textContent = item.size;
 
       const directBtn = document.getElementById('modalDirectDownloadBtn');
-      directBtn.href = item.url || '#';
+      let publisherUrl = '';
+      try {
+        const parsedUrl = new URL(String(item.url || item.mirror1 || ''));
+        if (parsedUrl.protocol === 'https:' && parsedUrl.hostname) publisherUrl = parsedUrl.href;
+      } catch (_) {}
+      directBtn.href = publisherUrl || '#';
+      directBtn.rel = 'noopener noreferrer';
+      directBtn.setAttribute('aria-disabled', publisherUrl ? 'false' : 'true');
+      directBtn.classList.toggle('opacity-50', !publisherUrl);
+      directBtn.classList.toggle('pointer-events-none', !publisherUrl);
+      directBtn.textContent = publisherUrl ? 'Download' : 'Publisher link unavailable';
 
       // Reset timer UI
       const timerContainer = document.getElementById('timerContainer');
