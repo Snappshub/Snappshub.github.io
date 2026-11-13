@@ -58,3 +58,20 @@ test("all local stylesheet and script references resolve", () => {
     assert.ok(fs.existsSync(path.join(root, clean)), "Missing local asset: " + ref);
   }
 });
+
+
+test("official Telegram and Gmail contacts use the configured destinations without exposing raw email text", () => {
+  assert.match(html, /href=["']https:\/\/t\.me\/snappshub["']/);
+  assert.match(html, /href=["']https:\/\/t\.me\/SnappsHubBot["']/);
+  assert.match(html, /href=["']mailto:alaminsaheb2019@gmail\.com["']/);
+  assert.match(html, /href=["']mailto:alaminsahebweb@gmail\.com["']/);
+  assert.match(html, />\s*Gmail Support\s*</);
+  assert.match(html, />\s*Gmail\s*</);
+  assert.match(html, />\s*Gmail \(Alternate\)\s*</);
+  const visibleText = html.replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]*>/g, " ");
+  assert.doesNotMatch(visibleText, /alaminsaheb(?:2019|web)@gmail\.com/i);
+  assert.match(html, /href=["']https:\/\/t\.me\/snappshub["'][^>]*rel=["']noopener noreferrer["']/);
+  assert.match(html, /href=["']https:\/\/t\.me\/SnappsHubBot["'][^>]*rel=["']noopener noreferrer["']/);
+});
