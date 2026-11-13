@@ -47,3 +47,18 @@ body {
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* SN Apps Hub footer identity and icon motion */
+.footer-brand-mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(245,158,11,.55);border-radius:12px;background:linear-gradient(145deg,rgba(245,158,11,.18),rgba(6,182,212,.08));box-shadow:0 0 18px rgba(245,158,11,.16);animation:footerBrandFloat 4.8s ease-in-out infinite;overflow:hidden}
+.footer-brand-mark img{width:34px;height:34px;object-fit:contain}
+.footer-neon-item{min-height:34px;padding:5px 6px;border:1px solid transparent;border-radius:9px;transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease}
+.footer-neon-item:hover{color:#fde68a;border-color:rgba(245,158,11,.32);background:rgba(245,158,11,.07);transform:translateY(-2px)}
+.footer-neon-icon{flex:none;filter:drop-shadow(0 0 4px currentColor);animation:footerIconPulse 3.2s ease-in-out infinite}
+.footer-neon-item:nth-child(2) .footer-neon-icon{animation-delay:.35s}.footer-neon-item:nth-child(3) .footer-neon-icon{animation-delay:.7s}
+.footer-dmca-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid rgba(6,182,212,.3);border-radius:10px;background:linear-gradient(120deg,rgba(6,182,212,.08),rgba(245,158,11,.06));transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.footer-dmca-badge:hover{transform:translateY(-2px);border-color:rgba(6,182,212,.65);box-shadow:0 0 18px rgba(6,182,212,.12)}
+.footer-dmca-shield{flex:none;filter:drop-shadow(0 0 5px rgba(6,182,212,.25))}
+@keyframes footerBrandFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes footerIconPulse{0%,100%{opacity:.72;transform:translateY(0) scale(1)}50%{opacity:1;transform:translateY(-2px) scale(1.06)}}
+@media(prefers-reduced-motion:reduce){.footer-brand-mark,.footer-neon-icon{animation:none!important}.footer-neon-item,.footer-dmca-badge{transition:none!important}.footer-neon-item:hover,.footer-dmca-badge:hover{transform:none}}
