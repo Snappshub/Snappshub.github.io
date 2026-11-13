@@ -44,5 +44,15 @@ for (const required of [
 ]) {
   assert.ok(html.includes(required), `index.html is missing required catalogue element/reference: ${required}`);
 }
+
+for (const device of allowedDevices) {
+  for (const id of [`cat-${device}`, `subcategories-${device}`, `grid-${device}`, `count-${device}`, `viewMore-${device}`]) {
+    assert.ok(html.includes(`id="${id}"`), `index.html is missing the ${device} device catalogue element: ${id}`);
+  }
+}
+assert.match(html, /router:\s*\{\s*label:\s*['"]Router Firmware['"]/,
+  'device renderer must include the router device group');
+assert.match(html, /const discovered = apps[\s\S]*?deviceCatalogs\[slug\]\.categories = \[\.\.\.new Set\(\[\.\.\.assigned, \.\.\.discovered\]\)\]/,
+  'device categories must be discovered from published app assignments, including static fallback data');
 assert.doesNotMatch(html, /SHA-256 Signatures|Free from Adware|Online 100%|VirusTotal|100% clean builds|tamper signatures|Scanned with VirusTotal|high-availability CDN|d5a7f98e72c83b4|Direct High-Speed|DIRECT CDN|High-Speed CDN|Zero wait time|unrestricted multi-thread|Lightning Fast Premium Hosting Cloud|High-Speed Gigabit VPN|Instant Download|Active Builds|CRITICAL RECOVERY|modded utility builds|CDN Pipe Ready|Authenticated!|TFTP, Odin|SP Flash utilities/i, 'Website must not claim unverified security scans, delivery infrastructure, modified builds, or download verification');
 console.log(`Catalogue validation passed: ${catalog.apps.length} apps, ${ids.size} unique IDs.`);
