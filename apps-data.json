@@ -1315,7 +1315,7 @@
     {
       "id": "photo-fossify-gallery",
       "title": "Fossify Gallery",
-      "category": "photo",
+      "category": "media",
       "url": "https://f-droid.org/packages/org.fossify.gallery/",
       "sourceUrl": "https://f-droid.org/packages/org.fossify.gallery/",
       "sourceLabel": "F-Droid project package",
@@ -1589,6 +1589,16 @@
       "enabled": true,
       "deviceId": "",
       "description": "System maintenance, file and storage utilities."
+    },
+    {
+      "id": "category-media",
+      "icon": "🖼️",
+      "name": "Media & Gallery",
+      "slug": "media",
+      "order": 16,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Media players, galleries and media library tools."
     }
   ]
 }
