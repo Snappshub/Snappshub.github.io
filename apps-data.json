@@ -1073,6 +1073,346 @@
         "android",
         "desktop"
       ]
+    },
+    {
+      "id": "developer-vscode",
+      "title": "Visual Studio Code",
+      "category": "developer",
+      "url": "https://code.visualstudio.com/download",
+      "sourceUrl": "https://code.visualstudio.com/download",
+      "sourceLabel": "Official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "💻",
+      "sha256": "",
+      "desc": "Code editor with extensions, debugging, source control and optional AI features.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "developer-vscodium",
+      "title": "VSCodium",
+      "category": "developer",
+      "url": "https://github.com/VSCodium/vscodium/releases",
+      "sourceUrl": "https://github.com/VSCodium/vscodium/releases",
+      "sourceLabel": "Official project releases",
+      "version": "1.143.17232",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "🧑‍💻",
+      "sha256": "",
+      "desc": "Community-built binaries of VS Code without Microsoft branding and telemetry defaults.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "developer-postman",
+      "title": "Postman",
+      "category": "developer",
+      "url": "https://www.postman.com/downloads/",
+      "sourceUrl": "https://www.postman.com/downloads/",
+      "sourceLabel": "Official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "📮",
+      "sha256": "",
+      "desc": "API platform for sending requests, organizing collections and testing APIs.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "developer-insomnia",
+      "title": "Insomnia",
+      "category": "developer",
+      "url": "https://insomnia.rest/download",
+      "sourceUrl": "https://insomnia.rest/download",
+      "sourceLabel": "Official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "🔌",
+      "sha256": "",
+      "desc": "API client for designing, testing and debugging HTTP and GraphQL APIs.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "developer-podman-desktop",
+      "title": "Podman Desktop",
+      "category": "developer",
+      "url": "https://podman-desktop.io/downloads",
+      "sourceUrl": "https://podman-desktop.io/downloads",
+      "sourceLabel": "Official downloads",
+      "version": "1.30.5",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "📦",
+      "sha256": "",
+      "desc": "Graphical interface for managing containers, images, pods and Kubernetes contexts.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "developer-dbeaver",
+      "title": "DBeaver Community",
+      "category": "developer",
+      "url": "https://dbeaver.io/download/",
+      "sourceUrl": "https://dbeaver.io/download/",
+      "sourceLabel": "Official Community downloads",
+      "version": "26.2.3",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "🗄️",
+      "sha256": "",
+      "desc": "Open-source database client with SQL editor, data browsing and support for many database engines.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "productivity-joplin",
+      "title": "Joplin",
+      "category": "productivity",
+      "url": "https://joplinapp.org/help/install/",
+      "sourceUrl": "https://joplinapp.org/help/install/",
+      "sourceLabel": "Official installation guide",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / iOS / Windows / macOS / Linux",
+      "icon": "📝",
+      "sha256": "",
+      "desc": "Open-source notes and to-do app with synchronization options across devices.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "productivity-github-desktop",
+      "title": "GitHub Desktop",
+      "category": "productivity",
+      "url": "https://desktop.github.com/",
+      "sourceUrl": "https://desktop.github.com/",
+      "sourceLabel": "Official GitHub download",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS",
+      "icon": "🔀",
+      "sha256": "",
+      "desc": "Desktop Git client for reviewing changes, committing and syncing repositories.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "education-zotero",
+      "title": "Zotero",
+      "category": "education",
+      "url": "https://www.zotero.org/download/",
+      "sourceUrl": "https://www.zotero.org/download/",
+      "sourceLabel": "Official downloads",
+      "version": "10",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux / Android / iOS",
+      "icon": "📚",
+      "sha256": "",
+      "desc": "Research reference manager for collecting, organizing, citing and sharing sources.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "education-anki",
+      "title": "Anki",
+      "category": "education",
+      "url": "https://apps.ankiweb.net/",
+      "sourceUrl": "https://apps.ankiweb.net/",
+      "sourceLabel": "Official downloads",
+      "version": "26.09.4",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux / Android / iOS",
+      "icon": "🧠",
+      "sha256": "",
+      "desc": "Flashcard learning tool with spaced-repetition scheduling.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "documents-calibre",
+      "title": "Calibre",
+      "category": "documents",
+      "url": "https://calibre-ebook.com/download",
+      "sourceUrl": "https://calibre-ebook.com/download",
+      "sourceLabel": "Official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "📖",
+      "sha256": "",
+      "desc": "E-book library manager and format conversion tool.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "documents-okular",
+      "title": "Okular",
+      "category": "documents",
+      "url": "https://okular.kde.org/download/",
+      "sourceUrl": "https://okular.kde.org/download/",
+      "sourceLabel": "Official KDE download guidance",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Linux / Windows",
+      "icon": "📄",
+      "sha256": "",
+      "desc": "Document viewer for PDF and many other formats; use the publisher-recommended platform packages.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "communication-element",
+      "title": "Element",
+      "category": "communication",
+      "url": "https://element.io/download",
+      "sourceUrl": "https://element.io/download",
+      "sourceLabel": "Official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / iOS / Windows / macOS / Linux / Web",
+      "icon": "💬",
+      "sha256": "",
+      "desc": "Secure messaging and collaboration client built on the Matrix network.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "communication-jitsi",
+      "title": "Jitsi Meet",
+      "category": "communication",
+      "url": "https://download.jitsi.org/",
+      "sourceUrl": "https://download.jitsi.org/",
+      "sourceLabel": "Official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / iOS / Web / Linux",
+      "icon": "🎥",
+      "sha256": "",
+      "desc": "Video meeting application and platform with mobile app downloads and self-hosting options.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "photo-fossify-gallery",
+      "title": "Fossify Gallery",
+      "category": "photo",
+      "url": "https://f-droid.org/packages/org.fossify.gallery/",
+      "sourceUrl": "https://f-droid.org/packages/org.fossify.gallery/",
+      "sourceLabel": "F-Droid project package",
+      "version": "Current F-Droid release",
+      "size": "Varies",
+      "arch": "Android",
+      "icon": "🖼️",
+      "sha256": "",
+      "desc": "Open-source local photo and video gallery from the Fossify app collection.",
+      "devices": [
+        "android"
+      ]
+    },
+    {
+      "id": "productivity-fossify-calendar",
+      "title": "Fossify Calendar",
+      "category": "productivity",
+      "url": "https://f-droid.org/packages/org.fossify.calendar/",
+      "sourceUrl": "https://f-droid.org/packages/org.fossify.calendar/",
+      "sourceLabel": "F-Droid project package",
+      "version": "Current F-Droid release",
+      "size": "Varies",
+      "arch": "Android",
+      "icon": "🗓️",
+      "sha256": "",
+      "desc": "Open-source calendar with events, reminders and recurring schedules.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "system-fossify-file-manager",
+      "title": "Fossify File Manager",
+      "category": "system",
+      "url": "https://f-droid.org/packages/org.fossify.filemanager/",
+      "sourceUrl": "https://f-droid.org/packages/org.fossify.filemanager/",
+      "sourceLabel": "F-Droid project package",
+      "version": "Current F-Droid release",
+      "size": "Varies",
+      "arch": "Android",
+      "icon": "📁",
+      "sha256": "",
+      "desc": "Open-source local file manager for browsing and organizing device storage.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "system-everything",
+      "title": "Everything Search",
+      "category": "system",
+      "url": "https://www.voidtools.com/downloads/",
+      "sourceUrl": "https://www.voidtools.com/downloads/",
+      "sourceLabel": "Official downloads",
+      "version": "1.4.1.1032",
+      "size": "Varies",
+      "arch": "Windows",
+      "icon": "🔎",
+      "sha256": "",
+      "desc": "Fast filename search utility for Windows with installer and portable packages.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "system-crystaldiskinfo",
+      "title": "CrystalDiskInfo",
+      "category": "system",
+      "url": "https://crystalmark.info/en/download/",
+      "sourceUrl": "https://crystalmark.info/en/download/",
+      "sourceLabel": "Official downloads",
+      "version": "9.9.4",
+      "size": "Varies",
+      "arch": "Windows",
+      "icon": "💽",
+      "sha256": "",
+      "desc": "Storage health monitoring utility for supported HDD, SSD and NVMe drives.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "system-bleachbit",
+      "title": "BleachBit",
+      "category": "system",
+      "url": "https://www.bleachbit.org/download",
+      "sourceUrl": "https://www.bleachbit.org/download",
+      "sourceLabel": "Official downloads",
+      "version": "6.0.6",
+      "size": "Varies",
+      "arch": "Windows / Linux",
+      "icon": "🧹",
+      "sha256": "",
+      "desc": "Open-source disk space and privacy cleanup utility; review each cleanup option before use.",
+      "devices": [
+        "desktop"
+      ]
     }
   ],
   "siteConfig": {
@@ -1089,5 +1429,167 @@
     "androidtv",
     "desktop",
     "router"
+  ],
+  "categoryDefinitions": [
+    {
+      "id": "category-android",
+      "icon": "📱",
+      "name": "Android Apps",
+      "slug": "android",
+      "order": 0,
+      "enabled": true,
+      "deviceId": "device-android",
+      "description": "Curated Android Apps from verified publisher sources."
+    },
+    {
+      "id": "category-androidtv",
+      "icon": "📺",
+      "name": "Android TV Apps",
+      "slug": "androidtv",
+      "order": 1,
+      "enabled": true,
+      "deviceId": "device-androidtv",
+      "description": "Curated Android TV Apps from verified publisher sources."
+    },
+    {
+      "id": "category-desktop",
+      "icon": "💻",
+      "name": "Desktop Software",
+      "slug": "desktop",
+      "order": 2,
+      "enabled": true,
+      "deviceId": "device-desktop",
+      "description": "Curated Desktop Software from verified publisher sources."
+    },
+    {
+      "id": "category-router",
+      "icon": "📡",
+      "name": "Router Firmware",
+      "slug": "router",
+      "order": 3,
+      "enabled": true,
+      "deviceId": "device-router",
+      "description": "Curated Router Firmware from verified publisher sources."
+    },
+    {
+      "id": "category-browser",
+      "icon": "🌐",
+      "name": "Browsers",
+      "slug": "browser",
+      "order": 4,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Curated Browsers from verified publisher sources."
+    },
+    {
+      "id": "category-security",
+      "icon": "🛡️",
+      "name": "Security",
+      "slug": "security",
+      "order": 5,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Curated Security from verified publisher sources."
+    },
+    {
+      "id": "category-popular",
+      "icon": "⭐",
+      "name": "Popular Tools",
+      "slug": "popular",
+      "order": 6,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Curated Popular Tools from verified publisher sources."
+    },
+    {
+      "id": "category-network",
+      "icon": "🛜",
+      "name": "Network Tools",
+      "slug": "network",
+      "order": 7,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Curated Network Tools from verified publisher sources."
+    },
+    {
+      "id": "category-video",
+      "icon": "🎬",
+      "name": "Video Editors",
+      "slug": "video",
+      "order": 8,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Curated Video Editors from verified publisher sources."
+    },
+    {
+      "id": "category-photo",
+      "icon": "🖼️",
+      "name": "Photo Editors",
+      "slug": "photo",
+      "order": 9,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Curated Photo Editors from verified publisher sources."
+    },
+    {
+      "id": "category-developer",
+      "icon": "🧑‍💻",
+      "name": "Developer Tools",
+      "slug": "developer",
+      "order": 10,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Developer tools, API clients and database software."
+    },
+    {
+      "id": "category-productivity",
+      "icon": "📝",
+      "name": "Productivity",
+      "slug": "productivity",
+      "order": 11,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Notes, planning and everyday productivity software."
+    },
+    {
+      "id": "category-education",
+      "icon": "🎓",
+      "name": "Education",
+      "slug": "education",
+      "order": 12,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Study, flashcards and research tools."
+    },
+    {
+      "id": "category-documents",
+      "icon": "📚",
+      "name": "Documents & Reading",
+      "slug": "documents",
+      "order": 13,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Document viewers and e-book management tools."
+    },
+    {
+      "id": "category-communication",
+      "icon": "💬",
+      "name": "Communication",
+      "slug": "communication",
+      "order": 14,
+      "enabled": true,
+      "deviceId": "",
+      "description": "Messaging and video meeting applications."
+    },
+    {
+      "id": "category-system",
+      "icon": "🛠️",
+      "name": "System Utilities",
+      "slug": "system",
+      "order": 15,
+      "enabled": true,
+      "deviceId": "",
+      "description": "System maintenance, file and storage utilities."
+    }
   ]
 }
