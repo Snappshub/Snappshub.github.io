@@ -39,6 +39,9 @@ test("brand lockup and in-page app details entrypoint exist", () => {
   assert.match(html, /function viewAppDetails\s*\(/);
   assert.match(html, /function showCatalogView\s*\(/);
   assert.match(details, /SN Apps Hub|app-details/i);
+  assert.match(details, /noindex,follow/);
+  assert.match(details, /location\\.replace/);
+  assert.doesNotMatch(details, /CapCut Studio Pro|Full VIP unlocked|SHA-256 clean signature verified/i);
 });
 
 test("robots and sitemap reference the canonical website", () => {
