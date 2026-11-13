@@ -395,6 +395,32 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 }
 @media(max-width:380px){.device-nav-card{padding-inline:.68rem!important}.device-nav-title{font-size:.69rem!important}}
 </style>
+
+<style data-purpose="snappshub-responsive-catalog-grid-v3">
+  /* Catalogue density: readable on phones, balanced on tablets, spacious on desktop. */
+  #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    align-items:stretch;
+    gap:clamp(.65rem,1.4vw,1rem)!important;
+  }
+  @media(min-width:768px){
+    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    }
+  }
+  @media(min-width:1200px){
+    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+      grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    }
+  }
+  @media(max-width:360px){
+    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
+      gap:.55rem!important;
+    }
+  }
+</style>
+
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
