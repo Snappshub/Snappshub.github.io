@@ -207,16 +207,24 @@
 <style data-purpose="pinned-device-navigation">
   /* Compact, single-line pinned device navigation */
   .device-nav { position:sticky; top:72px; z-index:35; background:rgba(10,14,24,.96); backdrop-filter:blur(16px); border-bottom:1px solid rgba(31,39,61,.9); }
-  .device-nav-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.4rem; }
+  .device-nav-grid {
+    display:flex; align-items:center; gap:.5rem; overflow-x:auto; overflow-y:hidden;
+    padding:0 0 .2rem; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x proximity;
+  }
+  .device-nav-grid::-webkit-scrollbar { display:none; }
   .device-nav-card { position:relative; display:flex; align-items:center; justify-content:center; min-width:0; min-height:2.55rem; padding:.55rem .25rem; overflow:hidden; border:1px solid #26334d; border-radius:.65rem; background:linear-gradient(135deg,rgba(17,23,40,.98),rgba(15,29,48,.92)); color:#f1f5f9; text-align:center; white-space:nowrap; transition:background .2s ease,border-color .2s ease,color .2s ease; }
   .device-nav-card:hover,.device-nav-card:focus-visible,.device-nav-card.active { background:rgba(30,41,59,.95); border-color:var(--device-accent); color:var(--device-accent); outline:none; }
   .device-nav-icon,.device-nav-sub,.device-nav-arrow { display:none!important; }
   .device-nav-title { display:block; min-width:0; overflow:hidden; text-overflow:ellipsis; color:inherit; font-size:clamp(.58rem,.9vw,.78rem); line-height:1.15; font-weight:800; white-space:nowrap; }
   @media(max-width:767px) {
     .device-nav { top:64px; }
-    .device-nav-grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:.25rem; }
-    .device-nav-card { min-height:2.35rem; padding:.45rem .1rem; border-radius:.5rem; }
-    .device-nav-title { font-size:clamp(.52rem,2.35vw,.7rem); letter-spacing:-.02em; }
+    .device-nav-grid { gap:.4rem; }
+    .device-nav-card {
+      flex:0 0 auto; min-height:2.35rem; min-width:max-content;
+      padding:.45rem .7rem; border-radius:.5rem; scroll-snap-align:start;
+    }
+    .device-nav-title { font-size:.68rem; letter-spacing:0; }
   }
   @media(prefers-reduced-motion:reduce) { .device-nav-card { transition:none!important; } }
 </style>
