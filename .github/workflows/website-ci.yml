@@ -2,9 +2,9 @@ name: Website catalogue validation
 
 on:
   push:
-    branches: [live]
+    branches: [main, live]
   pull_request:
-    branches: [live]
+    branches: [main, live]
   workflow_dispatch:
 
 permissions:
