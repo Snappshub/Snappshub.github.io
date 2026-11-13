@@ -1312,6 +1312,7 @@ Join Telegram Community
         button.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
       activeDeviceCategory[device] = category;
+      categoryLimits[device] = 8;
       renderCatalog();
     }
 
@@ -1332,8 +1333,14 @@ Join Telegram Community
           (activeGlobalCategory === 'all' || item.category === activeGlobalCategory));
         if (activeSearchQuery) {
           const q = activeSearchQuery;
-          items = items.filter(item => (item.title || '').toLowerCase().includes(q) ||
-            (item.desc || '').toLowerCase().includes(q) || (item.arch || '').toLowerCase().includes(q));
+          items = items.filter(item => {
+            const searchable = [
+              item.title, item.desc, item.arch, item.version, item.size, item.id,
+              item.category, subcategoryNames[item.category],
+              ...(Array.isArray(item.devices) ? item.devices : [])
+            ].filter(Boolean).join(' ').toLocaleLowerCase();
+            return searchable.includes(q);
+          });
         }
         if (sectionEl) sectionEl.classList.toggle('hidden', items.length === 0);
         const limit = categoryLimits[device] || 8;
