@@ -175,10 +175,12 @@
     #appDetailsView #detailBreadcrumb { max-width: 45%; text-align: right; overflow-wrap: anywhere; }
     #cat-android > div:first-child,
     #cat-androidtv > div:first-child,
-    #cat-desktop > div:first-child { align-items: flex-start; gap: .5rem; }
+    #cat-desktop > div:first-child,
+    #cat-router > div:first-child { align-items: flex-start; gap: .5rem; }
     #cat-android > div:first-child > span:last-child,
     #cat-androidtv > div:first-child > span:last-child,
-    #cat-desktop > div:first-child > span:last-child { display: none; }
+    #cat-desktop > div:first-child > span:last-child,
+    #cat-router > div:first-child > span:last-child { display: none; }
     #downloadModal { align-items: flex-start; padding: .75rem; }
     #downloadModal > div { padding: 1rem; margin: auto 0; }
     #downloadModal > div > div:last-child { flex-wrap: wrap; gap: .5rem; }
@@ -725,6 +727,33 @@ Join Telegram Community
 </div>
 </section>
 <!-- END: CategoryDesktop -->
+<!-- CATEGORY 4: Router Firmware -->
+<!-- BEGIN: CategoryRouterFirmware -->
+<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-router">
+<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
+<div class="flex items-center gap-2.5">
+<span class="text-2xl">📡</span>
+<div>
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+                Router Firmware Vault
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20" id="count-router">Listings</span>
+</h2>
+<p class="text-xs text-slate-400">Stock firmware and open-source router firmware from publisher sources</p>
+</div>
+</div>
+<span class="text-xs font-mono text-slate-500">DEVICE-SPECIFIC FIRMWARE</span>
+</div>
+<div class="device-subcategory-tabs flex flex-wrap gap-2 mb-4" id="subcategories-router" aria-label="router firmware categories"></div>
+<div class="grid grid-cols-2 gap-3.5" id="grid-router">
+<!-- Populated by JS -->
+</div>
+<div class="text-center mt-5">
+<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-[#1f273d] hover:border-cyan-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-router" onclick="expandCategory('router')">
+            View More
+          </button>
+</div>
+</section>
+<!-- END: CategoryRouterFirmware -->
 <!-- IN-FEED NATIVE AD BANNER 2 -->
 
 </div>
@@ -1090,7 +1119,7 @@ Join Telegram Community
 
     // Local storage persistence or fallback
     let repositoryData = initialRepositoryData;
-    let categoryLimits = { android: 8, androidtv: 8, desktop: 8 };
+    let categoryLimits = { android: 8, androidtv: 8, desktop: 8, router: 8 };
     let currentActiveApp = null;
     let countdownInterval = null;
 
@@ -1127,6 +1156,7 @@ Join Telegram Community
       android: { label: 'Android', categories: ['android','browser','security','popular','network','video','photo'] },
       androidtv: { label: 'Android TV', categories: ['androidtv','browser','popular','video'] },
       desktop: { label: 'Desktop', categories: ['desktop','browser','security','popular','network','video','photo'] },
+      router: { label: 'Router Firmware', categories: ['router'] },
     };
     const subcategoryNames = {
       android:'Apps', androidtv:'TV Apps', desktop:'PC Software',
@@ -1137,28 +1167,34 @@ Join Telegram Community
     function applyPublishedDefinitions(data) {
       const devices = Array.isArray(data.devices) ? data.devices : [];
       const categories = Array.isArray(data.categoryDefinitions) ? data.categoryDefinitions : [];
+      const apps = Array.isArray(data.apps) ? data.apps : [];
       categories.forEach(category => {
         const slug = String(category.slug || '');
         if (/^[a-zA-Z0-9_-]+$/.test(slug) && typeof category.name === 'string' && category.name.trim()) {
           subcategoryNames[slug] = category.name.trim();
         }
       });
-      devices.forEach(device => {
-        const slug = String(device.slug || '');
-        if (!deviceCatalogs[slug]) return;
-        if (typeof device.name === 'string' && device.name.trim()) deviceCatalogs[slug].label = device.name.trim();
+      Object.keys(deviceCatalogs).forEach(slug => {
+        const device = devices.find(item => String(item.slug || '') === slug);
+        if (device && typeof device.name === 'string' && device.name.trim()) deviceCatalogs[slug].label = device.name.trim();
         const assigned = categories
           .filter(category => {
             const deviceId = String(category.deviceId || '');
-            return !deviceId || deviceId === String(device.id || '') || deviceId === slug;
+            if (deviceId) return deviceId === String(device?.id || '') || deviceId === slug || deviceId === 'device-' + slug;
+            return apps.some(app => app && app.category === category.slug &&
+              (Array.isArray(app.devices) ? app.devices : [app.category]).includes(slug));
           })
           .sort((a, b) => Number(a.order || 0) - Number(b.order || 0))
           .map(category => String(category.slug || ''))
           .filter(categorySlug => /^[a-zA-Z0-9_-]+$/.test(categorySlug));
-        if (assigned.length) deviceCatalogs[slug].categories = [...new Set(assigned)];
+        const discovered = apps
+          .filter(app => app && (Array.isArray(app.devices) ? app.devices : [app.category]).includes(slug))
+          .map(app => String(app.category || ''))
+          .filter(categorySlug => /^[a-zA-Z0-9_-]+$/.test(categorySlug));
+        deviceCatalogs[slug].categories = [...new Set([...assigned, ...discovered])];
       });
     }
-    const activeDeviceCategory = { android:'all', androidtv:'all', desktop:'all' };
+    const activeDeviceCategory = { android:'all', androidtv:'all', desktop:'all', router:'all' };
     let activeGlobalCategory = 'all';
     let activeSearchQuery = '';
 
