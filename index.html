@@ -325,6 +325,59 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 @media(prefers-reduced-motion:reduce){footer .footer-neon-icon,footer .footer-dmca-shield,footer .grid>div:first-child>div:first-child .rounded,footer .grid>div>div:first-child:not(.flex):before{animation:none!important}}
 </style>
 
+
+<style data-purpose="snappshub-mobile-polish-v1">
+/* Compact, swipeable category navigation */
+.device-nav{position:sticky;top:64px;z-index:35;padding:.45rem 0;background:rgba(10,14,24,.97)}
+.device-nav-grid{
+ display:flex!important;flex-wrap:nowrap!important;gap:.5rem!important;
+ overflow-x:auto;overflow-y:hidden;padding:0 .9rem .3rem;
+ scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
+}
+.device-nav-grid::-webkit-scrollbar{display:none}
+.device-nav-card{
+ flex:0 0 auto;min-width:max-content;min-height:2.35rem!important;
+ padding:.55rem .9rem!important;border-radius:999px!important;
+ scroll-snap-align:start;white-space:nowrap;
+}
+.device-nav-icon,.device-nav-sub,.device-nav-arrow{display:none!important}
+.device-nav-title{font-size:.76rem!important;letter-spacing:0!important;overflow:visible!important}
+@media(max-width:767px){
+ .device-nav{top:64px;padding:.4rem 0 .25rem}
+ .device-nav-grid{gap:.4rem!important;padding-inline:.75rem}
+ .device-nav-card{min-height:2.15rem!important;padding:.48rem .78rem!important}
+ .device-nav-title{font-size:.72rem!important}
+}
+/* Remove the oversized fake ad panel treatment; retain a compact sponsor slot */
+#headerAdContainer{min-height:0!important;margin-top:.65rem!important;padding:.55rem .8rem!important;border-style:solid!important}
+#headerAdContainer #headerAdContent{flex-direction:row!important;flex-wrap:wrap;gap:.45rem .7rem!important}
+#headerAdContainer #headerAdContent p{font-size:.72rem;line-height:1.35}
+#headerAdContainer #headerAdContent>span{font-size:.68rem}
+#headerAdContainer #headerAdContent>a{padding:.35rem .7rem!important}
+#headerAdContainer>span{font-size:8px!important}
+@media(max-width:639px){
+ #headerAdContainer{margin:.55rem .75rem 0!important;width:auto!important;padding:.55rem .65rem!important}
+ #headerAdContainer #headerAdContent{justify-content:center;gap:.35rem .55rem!important}
+ #headerAdContainer #headerAdContent p{flex:1 1 100%;text-align:center;margin:0}
+ #headerAdContainer #headerAdContent>span{font-size:.62rem}
+ #headerAdContainer #headerAdContent>a{font-size:.68rem}
+}
+/* Keep the announcement ticker from squeezing its label or clipping the track */
+[data-purpose="marquee-announcement"]>.flex{min-width:0}
+[data-purpose="marquee-announcement"]>.flex>div:first-child{flex:0 0 auto}
+[data-purpose="marquee-announcement"] .overflow-hidden{min-width:0;flex:1}
+[data-purpose="marquee-announcement"] .animate-marquee{width:max-content;max-width:none;white-space:nowrap}
+/* The opt-in toast must not cover the first catalogue content on phones */
+@media(max-width:767px){
+ #pushNotificationBanner{display:none!important}
+}
+/* Consistent mobile gutters and calmer section rhythm */
+@media(max-width:639px){
+ main{padding-top:.5rem}
+ section.max-w-7xl{padding-top:.75rem;padding-bottom:.75rem}
+}
+</style>
+
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
