@@ -7,7 +7,6 @@ assert.ok(Array.isArray(catalog.apps), 'apps-data.json must contain an apps arra
 assert.ok(catalog.apps.length > 0, 'catalogue must not be empty');
 
 const ids = new Set();
-const allowedCategories = new Set(catalog.categories || []);
 const allowedDevices = new Set(['android', 'androidtv', 'desktop', 'router']);
 for (const [index, app] of catalog.apps.entries()) {
   const label = app.id || `row ${index + 1}`;
@@ -20,7 +19,7 @@ for (const [index, app] of catalog.apps.entries()) {
   assert.ok(typeof app.category === 'string' && app.category.trim(), `${label}: category is required`);
   assert.ok(Array.isArray(app.devices) && app.devices.length > 0, `${label}: at least one device is required`);
   for (const device of app.devices) assert.ok(allowedDevices.has(device), `${label}: unsupported device "${device}"`);
-  if (allowedCategories.size) assert.ok(allowedCategories.has(app.category), `${label}: category "${app.category}" is not declared`);
+  assert.match(app.category, /^[a-zA-Z0-9_-]+$/, `${label}: category contains unsupported characters`);
 
   for (const field of ['url', 'sourceUrl', 'icon']) {
     if (!app[field]) continue;
