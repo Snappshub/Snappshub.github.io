@@ -184,7 +184,7 @@
     #downloadModal { align-items: flex-start; padding: .75rem; }
     #downloadModal > div { padding: 1rem; margin: auto 0; }
     #downloadModal > div > div:last-child { flex-wrap: wrap; gap: .5rem; }
-    #pushNotificationBanner { right: 1rem; bottom: 1rem; }
+    #pushNotificationBanner { display:none !important; }
   }
   @media (max-width: 360px) {
     header > div > div:first-child > button { padding: .4rem; }
@@ -443,7 +443,7 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 </div>
 <p class="text-xs text-slate-300 mt-1" id="pushMessageText">Get real-time push alerts for new Router Firmwares and Zero-Day updates.</p>
 <div class="mt-2.5 flex items-center gap-2">
-<button class="px-2.5 py-1 text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold rounded transition shadow" onclick="dismissNotification()">Enable Alerts</button>
+<button type="button" class="px-2.5 py-1 text-xs bg-slate-800 text-slate-500 font-semibold rounded cursor-not-allowed" disabled aria-disabled="true" title="Push notifications are not connected yet">Alerts coming soon</button>
 <button class="px-2.5 py-1 text-xs bg-slate-800 text-slate-400 hover:text-slate-200 rounded" onclick="dismissNotification()">Later</button>
 </div>
 </div>
