@@ -44,5 +44,5 @@ for (const required of [
 ]) {
   assert.ok(html.includes(required), `index.html is missing required catalogue element/reference: ${required}`);
 }
-assert.doesNotMatch(html, /SHA-256 Signatures|Free from Adware|Online 100%/i, 'Website must not claim unverified security or uptime guarantees');
+assert.doesNotMatch(html, /SHA-256 Signatures|Free from Adware|Online 100%|VirusTotal|100% clean builds|tamper signatures|Scanned with VirusTotal|high-availability CDN|d5a7f98e72c83b4/i, 'Website must not claim unverified security scans, hashes, or uptime guarantees');
 console.log(`Catalogue validation passed: ${catalog.apps.length} apps, ${ids.size} unique IDs.`);
