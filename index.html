@@ -503,7 +503,7 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 <span>🔥 <strong class="text-amber-400">LATEST RELEASES:</strong> Publisher-linked releases • Check package signatures and publisher checksums before installing</span>
 <span>⚡ <strong class="text-cyan-400">ROUTER FIRMWARES ADDED:</strong> Tenda AC10 v4, TP-Link Archer C6 v3.2, Mikrotik RouterOS 7.15</span>
 <span>📺 <strong class="text-amber-400">ANDROID TV APKS:</strong> SmartTube 21.85, Kodi 21.0 Omega, TiviMate 4.8.0 Premium</span>
-<span>🛡️ <strong class="text-emerald-400">VIRUSTOTAL SCANNED:</strong> 100% clean builds with SHA-256 integrity signatures</span>
+<span>🛡️ <strong class="text-emerald-400">PUBLISHER CHECKS:</strong> Review release notes, signatures and checksums when supplied</span>
 <span>💬 Need custom firmware or direct upload? Join Telegram <a class="underline text-sky-400" href="https://t.me/snappshub">@snappshub</a></span>
 <!-- Duplicate for seamless infinite loop -->
 <span>🔥 <strong class="text-amber-400">LATEST RELEASES:</strong> Publisher-linked releases • Check package signatures and publisher checksums before installing</span>
@@ -529,7 +529,7 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
             Direct High-Speed <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-cyan-400 bg-clip-text text-transparent">Apps, TV APKs &amp; Firmware</span>
 </h1>
 <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-            Curated archive of Android applications, TV utilities, cross-platform software, and stock router recovery firmwares. Scanned with VirusTotal API and hosted on high-availability CDN.
+            Curated archive of Android applications, TV utilities, cross-platform software, and stock router recovery firmwares. Listings link to publisher sources. Check each publisher's release notes and package signature before installing.
           </p>
 <a class="mt-5 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white text-sm font-semibold shadow-md transition transform hover:-translate-y-0.5" href="https://t.me/snappshub" rel="noopener noreferrer" target="_blank">
 <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
@@ -577,7 +577,7 @@ Join Telegram Community
 <div class="bg-[#0c1220] p-4 rounded-xl border border-[#1f273d] space-y-2">
 <h3 class="text-xs uppercase font-mono tracking-wider text-slate-400">Cryptographic Integrity</h3>
 <div class="text-xs font-mono text-slate-300 break-all bg-[#080c16] p-2.5 rounded border border-slate-800 flex items-center justify-between">
-<span id="detailAppSha256">SHA-256: d5a7f98e72c83b4...</span>
+<span id="detailAppSha256">SHA-256: Not supplied by publisher</span>
 <button class="ml-2 text-amber-400 hover:text-white shrink-0 text-xs font-sans" onclick="copyDetailSha()">Copy</button>
 </div>
 </div>
@@ -816,7 +816,7 @@ Join Telegram Community
 <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
 <div class="bg-gradient-to-r from-amber-500 to-cyan-400 h-full w-0 transition-all duration-1000 ease-linear" id="countdownBar"></div>
 </div>
-<p class="text-[11px] text-slate-400">Verifying SHA-256 cryptographic hashes against tamper signatures...</p>
+<p class="text-[11px] text-slate-400">Preparing the publisher download link...</p>
 </div>
 <!-- Download Action Button (Appears after countdown) -->
 <div class="hidden space-y-3" id="readyContainer">
@@ -837,11 +837,11 @@ Join Telegram Community
 <p class="text-[11px] text-slate-400 mt-1">Find TFTP, Odin, and SP Flash utilities through publisher sources; verify device compatibility before use.</p>
 <a class="mt-2 text-xs text-amber-400 hover:underline" href="https://t.me/snappshub" target="_blank">Explore Telegram Vault →</a>
 </div>
-<!-- Security / VirusTotal Guarantee -->
+<!-- Publisher source status -->
 <div class="mt-4 pt-3 border-t border-[#1f273d] flex items-center justify-between text-xs font-mono">
 <span class="text-emerald-400 flex items-center gap-1">
 <svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
-          VirusTotal (0/72 Clean)
+          Publisher source linked — not independently scanned
         </span>
 <button class="text-slate-400 hover:text-white underline" onclick="toggleDetailsFromModal()">View Details Page</button>
 </div>
