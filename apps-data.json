@@ -781,6 +781,121 @@
       "devices": [
         "desktop"
       ]
+    },
+    {
+      "id": "security-signal",
+      "title": "Signal Messenger",
+      "category": "security",
+      "version": "Latest official",
+      "size": "Varies",
+      "arch": "Android / Windows / macOS / Linux",
+      "icon": "",
+      "url": "https://signal.org/download/",
+      "sourceUrl": "https://signal.org/download/",
+      "sourceLabel": "Signal official downloads",
+      "sha256": "",
+      "desc": "Private messaging app with end-to-end encryption. Official downloads for mobile and desktop platforms.",
+      "devices": [
+        "android",
+        "desktop"
+      ],
+      "mirrors": [],
+      "telegramSupportUrl": ""
+    },
+    {
+      "id": "video-obs-studio",
+      "title": "OBS Studio",
+      "category": "video",
+      "version": "33.0.0",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "",
+      "url": "https://obsproject.com/download/",
+      "sourceUrl": "https://obsproject.com/download/",
+      "sourceLabel": "OBS Project official download",
+      "sha256": "",
+      "desc": "Open-source live streaming and screen recording software. Choose the correct operating-system build from the official download page.",
+      "devices": [
+        "desktop"
+      ],
+      "mirrors": [],
+      "telegramSupportUrl": ""
+    },
+    {
+      "id": "popular-ventoy",
+      "title": "Ventoy",
+      "category": "popular",
+      "version": "1.1.18",
+      "size": "Varies",
+      "arch": "Windows / Linux",
+      "icon": "",
+      "url": "https://www.ventoy.net/en/download.html",
+      "sourceUrl": "https://www.ventoy.net/en/download.html",
+      "sourceLabel": "Ventoy official download",
+      "sha256": "",
+      "desc": "Open-source bootable USB tool. Check the published SHA-256 checksum and release notes before using downloaded files.",
+      "devices": [
+        "desktop"
+      ],
+      "mirrors": [],
+      "telegramSupportUrl": ""
+    },
+    {
+      "id": "popular-libreoffice",
+      "title": "LibreOffice",
+      "category": "popular",
+      "version": "26.8.0",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "",
+      "url": "https://www.libreoffice.org/download/",
+      "sourceUrl": "https://www.libreoffice.org/download/",
+      "sourceLabel": "LibreOffice official download",
+      "sha256": "",
+      "desc": "Free office productivity suite with document, spreadsheet and presentation tools. Select the correct operating-system package.",
+      "devices": [
+        "desktop"
+      ],
+      "mirrors": [],
+      "telegramSupportUrl": ""
+    },
+    {
+      "id": "network-syncthing",
+      "title": "Syncthing",
+      "category": "network",
+      "version": "2.1.7",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "",
+      "url": "https://syncthing.net/downloads/",
+      "sourceUrl": "https://syncthing.net/downloads/",
+      "sourceLabel": "Syncthing official downloads",
+      "sha256": "",
+      "desc": "Open-source continuous file synchronization across devices. Use official packages and review device-sharing settings.",
+      "devices": [
+        "desktop"
+      ],
+      "mirrors": [],
+      "telegramSupportUrl": ""
+    },
+    {
+      "id": "network-filezilla",
+      "title": "FileZilla Client",
+      "category": "network",
+      "version": "Latest official",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "icon": "",
+      "url": "https://filezilla-project.org/download.php?type=client",
+      "sourceUrl": "https://filezilla-project.org/download.php?type=client",
+      "sourceLabel": "FileZilla official download",
+      "sha256": "",
+      "desc": "Cross-platform FTP, FTPS and SFTP client for managing files on servers you are authorized to access.",
+      "devices": [
+        "desktop"
+      ],
+      "mirrors": [],
+      "telegramSupportUrl": ""
     }
   ],
   "siteConfig": {
