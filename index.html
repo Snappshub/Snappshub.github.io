@@ -382,6 +382,19 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 }
 </style>
 
+<style data-purpose="snappshub-mobile-polish-v2">
+@media(max-width:767px){
+.device-nav-grid{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding:0 .75rem .3rem!important;gap:.45rem!important}
+.device-nav-grid::-webkit-scrollbar{display:none}
+.device-nav-card{flex:0 0 auto!important;width:auto!important;min-width:max-content!important;min-height:2.2rem!important;padding:.48rem .82rem!important;border-radius:999px!important;scroll-snap-align:start}
+.device-nav-title{font-size:.73rem!important;white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important}
+.device-nav{overflow:hidden}
+[data-purpose="marquee-announcement"]{padding-block:.45rem}
+[data-purpose="marquee-announcement"] .animate-marquee{display:inline-flex;gap:2.5rem;align-items:center}
+#headerAdContainer{border-radius:14px!important;background:linear-gradient(135deg,rgba(17,24,39,.98),rgba(15,23,42,.94))!important;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+}
+@media(max-width:380px){.device-nav-card{padding-inline:.68rem!important}.device-nav-title{font-size:.69rem!important}}
+</style>
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <!-- BEGIN: WebPushNotificationToast -->
