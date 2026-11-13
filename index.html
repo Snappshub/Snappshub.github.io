@@ -367,9 +367,13 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 [data-purpose="marquee-announcement"]>.flex>div:first-child{flex:0 0 auto}
 [data-purpose="marquee-announcement"] .overflow-hidden{min-width:0;flex:1}
 [data-purpose="marquee-announcement"] .animate-marquee{width:max-content;max-width:none;white-space:nowrap}
-/* The opt-in toast must not cover the first catalogue content on phones */
+/* Keep the opt-in notice accessible without floating over catalogue cards */
 @media(max-width:767px){
- #pushNotificationBanner{display:none!important}
+ #pushNotificationBanner{
+  position:relative!important;inset:auto!important;right:auto!important;bottom:auto!important;
+  left:auto!important;transform:none!important;width:calc(100% - 1.5rem)!important;
+  max-width:28rem;margin:1rem auto!important;z-index:5;
+ }
 }
 /* Consistent mobile gutters and calmer section rhythm */
 @media(max-width:639px){
