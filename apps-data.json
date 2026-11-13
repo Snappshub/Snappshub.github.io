@@ -896,6 +896,183 @@
       ],
       "mirrors": [],
       "telegramSupportUrl": ""
+    },
+    {
+      "id": "security-aegis",
+      "title": "Aegis Authenticator",
+      "category": "security",
+      "url": "https://f-droid.org/en/packages/com.beemdevelopment.aegis/",
+      "sourceUrl": "https://f-droid.org/en/packages/com.beemdevelopment.aegis/",
+      "sourceLabel": "F-Droid verified package",
+      "version": "Current F-Droid release",
+      "size": "Varies",
+      "arch": "Android",
+      "sha256": "",
+      "desc": "Open-source two-factor authenticator with encrypted token storage and backup options. Review the F-Droid package details.",
+      "devices": [
+        "android"
+      ]
+    },
+    {
+      "id": "popular-antennapod",
+      "title": "AntennaPod",
+      "category": "popular",
+      "url": "https://antennapod.org/download/",
+      "sourceUrl": "https://antennapod.org/download/",
+      "sourceLabel": "Official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android",
+      "sha256": "",
+      "desc": "Open-source podcast manager for subscribing to and playing podcasts. Download from the official project page.",
+      "devices": [
+        "android"
+      ]
+    },
+    {
+      "id": "popular-organicmaps",
+      "title": "Organic Maps",
+      "category": "popular",
+      "url": "https://organicmaps.app/",
+      "sourceUrl": "https://organicmaps.app/",
+      "sourceLabel": "Official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / iOS",
+      "sha256": "",
+      "desc": "Offline maps and navigation based on OpenStreetMap data. Choose the official app-store listing for your device.",
+      "devices": [
+        "android"
+      ]
+    },
+    {
+      "id": "photo-blender",
+      "title": "Blender",
+      "category": "photo",
+      "url": "https://www.blender.org/download/",
+      "sourceUrl": "https://www.blender.org/download/",
+      "sourceLabel": "Blender official download",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "sha256": "",
+      "desc": "Free and open-source 3D creation suite for modeling, animation, rendering and visual effects.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "photo-inkscape",
+      "title": "Inkscape",
+      "category": "photo",
+      "url": "https://inkscape.org/release/",
+      "sourceUrl": "https://inkscape.org/release/",
+      "sourceLabel": "Inkscape official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "sha256": "",
+      "desc": "Open-source vector graphics editor for illustrations, icons, diagrams and SVG artwork.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "video-audacity",
+      "title": "Audacity",
+      "category": "video",
+      "url": "https://www.audacityteam.org/download/",
+      "sourceUrl": "https://www.audacityteam.org/download/",
+      "sourceLabel": "Audacity official download",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "sha256": "",
+      "desc": "Free, open-source audio editor and recorder for editing, cleanup and exporting audio projects.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "video-handbrake",
+      "title": "HandBrake",
+      "category": "video",
+      "url": "https://handbrake.fr/downloads.php",
+      "sourceUrl": "https://handbrake.fr/downloads.php",
+      "sourceLabel": "HandBrake official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "sha256": "",
+      "desc": "Open-source video transcoder for converting media files using presets and format controls.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "popular-thunderbird",
+      "title": "Mozilla Thunderbird",
+      "category": "popular",
+      "url": "https://www.thunderbird.net/",
+      "sourceUrl": "https://www.thunderbird.net/",
+      "sourceLabel": "Thunderbird official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows / macOS / Linux",
+      "sha256": "",
+      "desc": "Open-source email client with calendar, contacts and feed features. Download from Mozilla's official site.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "popular-sharex",
+      "title": "ShareX",
+      "category": "popular",
+      "url": "https://getsharex.com/",
+      "sourceUrl": "https://getsharex.com/",
+      "sourceLabel": "ShareX official site",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows",
+      "sha256": "",
+      "desc": "Open-source Windows screenshot and screen-recording utility with annotation and workflow tools.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "popular-notepadpp",
+      "title": "Notepad++",
+      "category": "popular",
+      "url": "https://notepad-plus-plus.org/downloads/",
+      "sourceUrl": "https://notepad-plus-plus.org/downloads/",
+      "sourceLabel": "Notepad++ official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Windows",
+      "sha256": "",
+      "desc": "Free source-code and text editor for Windows with syntax highlighting and plugin support.",
+      "devices": [
+        "desktop"
+      ]
+    },
+    {
+      "id": "network-tailscale",
+      "title": "Tailscale",
+      "category": "network",
+      "url": "https://tailscale.com/download",
+      "sourceUrl": "https://tailscale.com/download",
+      "sourceLabel": "Tailscale official downloads",
+      "version": "Current release",
+      "size": "Varies",
+      "arch": "Android / Windows / macOS / Linux",
+      "sha256": "",
+      "desc": "Private networking app for connecting your own devices securely. Review account and device-sharing settings before enabling.",
+      "devices": [
+        "android",
+        "desktop"
+      ]
     }
   ],
   "siteConfig": {
