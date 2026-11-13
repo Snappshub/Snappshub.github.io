@@ -893,14 +893,14 @@ Join Telegram Community
 <div class="space-y-2">
 <div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Safety &amp; Terms</div>
 <p class="text-[11px] text-slate-400 leading-normal">
-            All files are strictly distributed for educational, maintenance, and system restoration purposes. We do not distribute malicious files. Hashes are provided for verification.
+            SN Apps Hub links to publisher sources. Checksums are shown only when supplied; files are not represented as independently scanned or verified.
           </p>
 <div class="flex items-center gap-2 pt-1">
 <span class="inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-800/40">
-              ✓ SHA-256 Signatures
+              ✓ Publisher source links
             </span>
 <span class="inline-flex items-center gap-1 text-[10px] text-cyan-400 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-800/40">
-              ✓ Free from Adware
+              ✓ Checksums when supplied
             </span>
 </div>
 </div>
@@ -917,7 +917,7 @@ Join Telegram Community
           </span>
 </div>
 <div class="text-xs font-mono text-slate-400">
-          Node: <span class="text-emerald-400">Online 100%</span>
+          Source: <span class="text-emerald-400">Publisher linked</span>
 </div>
 </div>
 </div>
@@ -1187,6 +1187,31 @@ Join Telegram Community
       browser:'Browser', security:'Security', popular:'Popular Tools',
       network:'Network Tools', video:'Video Editor', photo:'Photo Editor'
     };
+
+    function applyPublishedDefinitions(data) {
+      const devices = Array.isArray(data.devices) ? data.devices : [];
+      const categories = Array.isArray(data.categoryDefinitions) ? data.categoryDefinitions : [];
+      categories.forEach(category => {
+        const slug = String(category.slug || '');
+        if (/^[a-zA-Z0-9_-]+$/.test(slug) && typeof category.name === 'string' && category.name.trim()) {
+          subcategoryNames[slug] = category.name.trim();
+        }
+      });
+      devices.forEach(device => {
+        const slug = String(device.slug || '');
+        if (!deviceCatalogs[slug]) return;
+        if (typeof device.name === 'string' && device.name.trim()) deviceCatalogs[slug].label = device.name.trim();
+        const assigned = categories
+          .filter(category => {
+            const deviceId = String(category.deviceId || '');
+            return !deviceId || deviceId === String(device.id || '') || deviceId === slug;
+          })
+          .sort((a, b) => Number(a.order || 0) - Number(b.order || 0))
+          .map(category => String(category.slug || ''))
+          .filter(categorySlug => /^[a-zA-Z0-9_-]+$/.test(categorySlug));
+        if (assigned.length) deviceCatalogs[slug].categories = [...new Set(assigned)];
+      });
+    }
     const activeDeviceCategory = { android:'all', androidtv:'all', desktop:'all', router:'all' };
     let activeSearchQuery = '';
 
@@ -1390,14 +1415,32 @@ Join Telegram Community
   </script>
 
 <script>
+    const PUBLIC_CATALOGUE_ENDPOINT = 'https://sqnbahirvbcympmjqkkc.supabase.co/functions/v1/public-catalogue';
+
+    async function loadCatalogueData() {
+      try {
+        const remote = await fetch(PUBLIC_CATALOGUE_ENDPOINT, { cache: 'no-store', headers: { Accept: 'application/json' } });
+        if (remote.ok) {
+          const data = await remote.json();
+          if (data && Array.isArray(data.apps)) return data;
+        }
+      } catch (error) {
+        console.warn('Public catalogue API unavailable; using the static snapshot.', error);
+      }
+
+      const response = await fetch('./apps-data.json?t=' + Date.now(), { cache: 'no-store' });
+      if (!response.ok) throw new Error('App data HTTP ' + response.status);
+      const data = await response.json();
+      if (!Array.isArray(data.apps)) throw new Error('Invalid app list');
+      return data;
+    }
+
     document.addEventListener("DOMContentLoaded", async () => {
       renderCatalog();
       try {
-        const response = await fetch('./apps-data.json?t=' + Date.now(), { cache: 'no-store' });
-        if (!response.ok) throw new Error('App data HTTP ' + response.status);
-        const data = await response.json();
-        if (!Array.isArray(data.apps)) throw new Error('Invalid app list');
-        repositoryData = data.apps.filter(a => /^[a-zA-Z0-9_-]+$/.test(a.id)).map(a => ({...a, title:a.title || a.name, url:a.url || a.mirror1}));
+        const data = await loadCatalogueData();
+        applyPublishedDefinitions(data);
+        repositoryData = data.apps.filter(a => a && /^[a-zA-Z0-9_-]+$/.test(a.id)).map(a => ({...a, title:a.title || a.name, url:a.url || a.mirror1}));
         renderCatalog();
         const hero = data.hero || {};
         if (hero.siteBrandTitle) document.querySelectorAll('.brand-pulse-name').forEach(el => el.textContent = hero.siteBrandTitle);
@@ -1419,7 +1462,7 @@ Join Telegram Community
         if (siteConfig.contactEmail) {
           document.querySelectorAll('a[href^="mailto:"]').forEach(el => el.href = 'mailto:' + siteConfig.contactEmail);
         }
-      } catch (error) { console.error('Live catalog load failed:', error); }
+      } catch (error) { console.error('Live catalogue load failed:', error); }
     });
   </script>
 <!-- END: EmbeddedApplicationLogic -->
