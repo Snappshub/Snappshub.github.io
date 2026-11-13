@@ -33,7 +33,16 @@ for (const [index, app] of catalog.apps.entries()) {
 }
 
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-for (const required of ['id="catalogView"', 'id="appDetailsView"', 'id="downloadModal"', 'apps-data.json']) {
+for (const required of [
+  'id="catalogView"',
+  'id="appDetailsView"',
+  'id="downloadModal"',
+  'PUBLIC_CATALOGUE_ENDPOINT',
+  'loadCatalogueData',
+  'applyPublishedDefinitions',
+  './apps-data.json?t='
+]) {
   assert.ok(html.includes(required), `index.html is missing required catalogue element/reference: ${required}`);
 }
+assert.doesNotMatch(html, /SHA-256 Signatures|Free from Adware|Online 100%/i, 'Website must not claim unverified security or uptime guarantees');
 console.log(`Catalogue validation passed: ${catalog.apps.length} apps, ${ids.size} unique IDs.`);
