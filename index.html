@@ -474,7 +474,6 @@ input,select,textarea,button{max-width:100%}
       <button type="button" class="device-nav-card" style="--device-accent:#38bdf8" data-category="network" aria-pressed="false" onclick="filterAllCategory('network')"><span class="device-nav-title">Network Tools</span></button>
       <button type="button" class="device-nav-card" style="--device-accent:#fb7185" data-category="video" aria-pressed="false" onclick="filterAllCategory('video')"><span class="device-nav-title">Video Editor</span></button>
       <button type="button" class="device-nav-card" style="--device-accent:#f472b6" data-category="photo" aria-pressed="false" onclick="filterAllCategory('photo')"><span class="device-nav-title">Photo Editor</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#f59e0b" data-category="router" aria-pressed="false" onclick="filterAllCategory('router')"><span class="device-nav-title">Firmware</span></button>
     </div>
   </div>
 </nav>
@@ -790,40 +789,7 @@ Join Telegram Community
 
 
 
-<!-- CRITICAL CATEGORY 4: ROUTER FIRMWARE VAULT (MUST ALWAYS BE THE VERY LAST CATEGORY) -->
-<!-- BEGIN: CategoryRouterVault -->
-<section class="scroll-mt-24 pb-4" data-purpose="app-category-section" id="cat-router">
-<div class="p-4 rounded-xl bg-gradient-to-r from-cyan-950/40 via-[#111728] to-cyan-950/40 border border-cyan-500/30 mb-5">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center text-2xl shadow-[0_0_12px_rgba(6,182,212,0.4)]">
-                📁
-              </div>
-<div>
-<h2 class="text-lg font-bold text-white flex items-center gap-2">
-                  Router Firmware Vault
-                  <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-black">CRITICAL RECOVERY</span>
-</h2>
-<p class="text-xs text-cyan-300/80">Router firmware links from vendor and project sources; confirm exact model and hardware revision</p>
-</div>
-</div>
-<div class="text-right">
-<span class="text-xs font-mono text-slate-400" id="count-router">Vault Count: 4 Files</span>
-<p class="text-[10px] text-amber-400 font-mono">ALWAYS THE FINAL CATEGORY</p>
-</div>
-</div>
-</div>
-<div class="device-subcategory-tabs flex flex-wrap gap-2 mb-4" id="subcategories-router" aria-label="router software categories"></div>
-<div class="grid grid-cols-2 gap-3.5" id="grid-router">
-<!-- Populated by JS -->
-</div>
-<div class="text-center mt-5">
-<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-cyan-700/60 hover:border-cyan-400 text-xs font-semibold text-cyan-300 transition shadow" id="viewMore-router" onclick="expandCategory('router')">
-            View More
-          </button>
-</div>
-</section>
-<!-- END: CategoryRouterVault -->
+
 </div>
 </main>
 <!-- END: MainContentArea -->
@@ -1204,7 +1170,7 @@ Join Telegram Community
 
     // Local storage persistence or fallback
     let repositoryData = initialRepositoryData;
-    let categoryLimits = { android: 8, androidtv: 8, desktop: 8, router: 8 };
+    let categoryLimits = { android: 8, androidtv: 8, desktop: 8 };
     let currentActiveApp = null;
     let countdownInterval = null;
 
@@ -1240,8 +1206,7 @@ Join Telegram Community
     const deviceCatalogs = {
       android: { label: 'Android', categories: ['android','browser','security','popular','network','video','photo'] },
       androidtv: { label: 'Android TV', categories: ['androidtv','browser','popular','video'] },
-      desktop: { label: 'Desktop', categories: ['desktop','browser','security','popular','network','video','photo'] },
-      router: { label: 'Router', categories: ['router'] }
+      desktop: { label: 'Desktop', categories: ['desktop','browser','security','popular','network','video','photo'] }
     };
     const subcategoryNames = {
       android:'Apps', androidtv:'TV Apps', desktop:'PC Software', router:'Firmware',
@@ -1254,7 +1219,6 @@ Join Telegram Community
 
     function filterAllCategory(category) {
       activeGlobalCategory = category;
-      activeGlobalCategory = 'all';
       document.querySelectorAll('.device-nav-card[data-category]').forEach(button => {
         const active = button.dataset.category === 'all';
         button.classList.toggle('active', active);
