@@ -1496,12 +1496,12 @@ Join Telegram Community
       const countdownNumber = document.getElementById('countdownNumber');
       const countdownBar = document.getElementById('countdownBar');
 
-      // Publisher/F-Droid links open directly; the countdown is only for SnappsHub-hosted mirrors.
+      // Never show a ready state or start a countdown when no valid HTTPS destination exists.
+      // Publisher/F-Droid links open directly; countdown is only for valid SnappsHub-hosted mirrors.
       if (countdownInterval) clearInterval(countdownInterval);
-      if (item.sourceLabel) {
+      if (!publisherUrl || item.sourceLabel) {
         timerContainer.classList.add('hidden');
         readyContainer.classList.remove('hidden');
-        directBtn.textContent = 'Download';
       } else {
         timerContainer.classList.remove('hidden');
         readyContainer.classList.add('hidden');
