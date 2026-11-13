@@ -21,7 +21,7 @@ for (const [index, app] of catalog.apps.entries()) {
   for (const device of app.devices) assert.ok(allowedDevices.has(device), `${label}: unsupported device "${device}"`);
   assert.match(app.category, /^[a-zA-Z0-9_-]+$/, `${label}: category contains unsupported characters`);
 
-  for (const field of ['url', 'sourceUrl', 'icon']) {
+  for (const field of ['url', 'sourceUrl']) {
     if (!app[field]) continue;
     let parsed;
     try { parsed = new URL(app[field]); }
@@ -29,6 +29,22 @@ for (const [index, app] of catalog.apps.entries()) {
     assert.equal(parsed.protocol, 'https:', `${label}: ${field} must use HTTPS`);
     assert.equal(parsed.username, '', `${label}: ${field} must not contain embedded credentials`);
     assert.equal(parsed.password, '', `${label}: ${field} must not contain embedded credentials`);
+  }
+
+  if (app.icon) {
+    const icon = String(app.icon).trim();
+    if (/^https:\/\//i.test(icon)) {
+      let parsed;
+      try { parsed = new URL(icon); }
+      catch { assert.fail(`${label}: icon must be a valid HTTPS URL`); }
+      assert.equal(parsed.protocol, 'https:', `${label}: icon must use HTTPS`);
+      assert.equal(parsed.username, '', `${label}: icon must not contain embedded credentials`);
+      assert.equal(parsed.password, '', `${label}: icon must not contain embedded credentials`);
+    } else if (/^[a-z][a-z0-9+.-]*:/i.test(icon)) {
+      assert.fail(`${label}: icon must not use an unsafe URL scheme`);
+    } else if (icon.startsWith('./') || icon.startsWith('../') || icon.startsWith('/')) {
+      assert.match(icon, /^\.\/assets\/[a-zA-Z0-9._/-]+$/, `${label}: local icon path must point into ./assets`);
+    }
   }
 }
 
