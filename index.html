@@ -1279,6 +1279,12 @@ Join Telegram Community
 
     function handleUniversalSearch(query) {
       activeSearchQuery = (query || '').trim().toLowerCase();
+      activeGlobalCategory = 'all';
+      document.querySelectorAll('.device-nav-card[data-category]').forEach(button => {
+        const active = button.dataset.category === 'all';
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
       Object.keys(activeDeviceCategory).forEach(device => activeDeviceCategory[device] = 'all');
       Object.keys(categoryLimits).forEach(device => categoryLimits[device] = 8);
       renderCatalog();
