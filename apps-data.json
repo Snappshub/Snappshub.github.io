@@ -1014,7 +1014,7 @@
     {
       "id": "video-audacity",
       "title": "Audacity",
-      "category": "video",
+      "category": "media",
       "url": "https://www.audacityteam.org/download/",
       "sourceUrl": "https://www.audacityteam.org/download/",
       "sourceLabel": "Audacity official download",
@@ -1383,7 +1383,7 @@
       "sha256": "",
       "desc": "Open-source calendar with events, reminders and recurring schedules.",
       "devices": [
-        "desktop"
+        "android"
       ]
     },
     {
@@ -1400,7 +1400,7 @@
       "sha256": "",
       "desc": "Open-source local file manager for browsing and organizing device storage.",
       "devices": [
-        "desktop"
+        "android"
       ]
     },
     {
