@@ -703,6 +703,23 @@ Join Telegram Community
                 Publisher-linked software listing. Review the source, release notes and package signature before installation.
               </p>
 </div>
+<div class="rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-4">
+  <div class="text-[10px] uppercase tracking-[.18em] text-cyan-300 font-semibold mb-2">About this app</div>
+  <p class="text-xs leading-6 text-slate-300" id="detailIntro">Explore the app overview, supported devices and publisher information before downloading.</p>
+</div>
+<div class="space-y-3">
+  <div class="flex items-center justify-between"><h3 class="text-sm font-semibold text-white">Screenshots &amp; Preview</h3><span class="text-[10px] text-slate-500">3 preview panels</span></div>
+  <div class="grid grid-cols-3 gap-3" id="detailScreenshots">
+    <div class="aspect-[4/3] rounded-xl border border-dashed border-slate-700 bg-gradient-to-br from-[#162035] to-[#090d16] flex items-center justify-center text-[10px] text-slate-500">Preview 01</div>
+    <div class="aspect-[4/3] rounded-xl border border-dashed border-slate-700 bg-gradient-to-br from-[#162035] to-[#090d16] flex items-center justify-center text-[10px] text-slate-500">Preview 02</div>
+    <div class="aspect-[4/3] rounded-xl border border-dashed border-slate-700 bg-gradient-to-br from-[#162035] to-[#090d16] flex items-center justify-center text-[10px] text-slate-500">Preview 03</div>
+  </div>
+  <p class="text-[10px] text-slate-500">Publisher screenshots will appear here when supplied in the catalogue.</p>
+</div>
+<div class="rounded-xl border border-dashed border-slate-700 bg-[#090d16] p-5 text-center" data-purpose="details-ad-slot">
+  <span class="text-[9px] uppercase tracking-widest text-slate-500">Advertisement</span>
+  <p class="text-xs text-slate-500 mt-2">Ad placement</p>
+</div>
 <!-- In-Page Specification Grid -->
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
 <div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
@@ -726,21 +743,26 @@ Join Telegram Community
 <!-- Secondary Side Action Column -->
 <div class="space-y-4">
 <div class="bg-[#0e1424] border border-[#1f273d] p-5 rounded-xl space-y-4">
-<h4 class="text-sm font-bold text-white">Publisher Download</h4>
-<p class="text-xs text-slate-400">Continue to the publisher's download page. Availability and speed are controlled by the publisher.</p>
+<div class="flex items-center gap-2 rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
+  <span class="w-8 h-8 rounded-lg bg-[#162035] flex items-center justify-center text-cyan-300 font-bold text-xs">OS</span>
+  <div class="min-w-0"><div class="text-[9px] uppercase tracking-wider text-slate-500">Open-source / publisher credit</div><a id="detailSourceCredit" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-cyan-300 hover:underline">Visit official source ↗</a></div>
+</div>
+<h4 class="text-sm font-bold text-white">Download options</h4>
+<p class="text-xs text-slate-400">Review the publisher source before downloading. External availability is controlled by the publisher.</p>
 <button class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg transition flex items-center justify-center gap-2" id="detailDownloadTriggerBtn">
 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                Continue to Publisher
+                Download Now
               </button>
+<div class="text-center py-1"><a id="detailSourceLink" href="#" target="_blank" rel="noopener noreferrer" class="text-[11px] text-cyan-300 hover:underline">Official source website ↗</a></div>
+<button type="button" onclick="openDownloadModal(currentActiveApp.id, 'download')" class="w-full py-2.5 px-4 rounded-xl bg-[#162035] hover:bg-emerald-600/20 text-emerald-300 font-semibold text-xs border border-emerald-500/30 transition">Download</button>
 <a class="w-full py-2.5 px-4 rounded-xl bg-[#162035] hover:bg-sky-600/30 text-sky-400 font-semibold text-xs border border-sky-500/30 transition flex items-center justify-center gap-2" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">
                 Join Telegram Mirror @snappshub
               </a>
 </div>
 <!-- Page 2 Banner Ad Box -->
-<div class="p-4 rounded-xl bg-[#0a0e18] border border-dashed border-[#1f273d] text-center">
-<span class="text-[9px] uppercase font-mono text-slate-500">Publisher Info</span>
-<p class="text-xs text-amber-400 font-medium mt-1">Publisher Source Links</p>
-<p class="text-[11px] text-slate-400 mt-0.5">Downloads open the publisher's site; availability and speed depend on the publisher.</p>
+<div class="p-4 rounded-xl bg-[#0a0e18] border border-dashed border-[#1f273d] text-center" data-purpose="details-sidebar-ad-slot">
+<span class="text-[9px] uppercase font-mono text-slate-500">Advertisement</span>
+<p class="text-xs text-slate-500 mt-1">Ad placement</p>
 </div>
 </div>
 </div>
@@ -907,7 +929,7 @@ Join Telegram Community
 <!-- 5-Second Countdown Clock & Progress -->
 <div class="my-6 p-4 rounded-xl bg-[#090d16] border border-[#1f273d] text-center">
 <div class="space-y-3" id="timerContainer">
-<div class="text-xs uppercase font-mono tracking-wider text-slate-400">Download Preparation</div>
+<div class="text-xs uppercase font-mono tracking-wider text-slate-400" id="timerHeading">Download Preparation</div>
 <div class="flex items-center justify-center gap-2">
 <div class="text-4xl font-extrabold font-mono text-amber-400 drop-shadow-[0_0_10px_rgba(245,158,11,0.6)]" id="countdownNumber">5</div>
 <span class="text-xs text-slate-400">seconds remaining</span>
@@ -916,18 +938,15 @@ Join Telegram Community
 <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
 <div class="bg-gradient-to-r from-amber-500 to-cyan-400 h-full w-0 transition-all duration-1000 ease-linear" id="countdownBar"></div>
 </div>
-<p class="text-[11px] text-slate-400">Your download will start shortly. If it does not, use Retry or Telegram.</p>
+<p class="text-[11px] text-slate-400" id="timerMessage">Your download will start shortly. If it does not, use Retry or Telegram.</p>
 </div>
 <!-- Download Action Button (Appears after countdown) -->
 <div class="hidden space-y-3" id="readyContainer">
-<div class="text-emerald-400 text-xs font-semibold flex items-center justify-center gap-1.5">
-<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
-            Publisher Link Ready
-          </div>
-<a class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2" href="#" id="modalDirectDownloadBtn" target="_blank" rel="noopener noreferrer">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-            Download
-          </a>
+<div class="text-emerald-400 text-xs font-semibold text-center" id="modalReadyMessage">Preparation complete</div>
+<button type="button" id="modalContinueDetailsBtn" onclick="toggleDetailsFromModal()" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-sm shadow-lg transition">Continue to app details →</button>
+<a class="hidden w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-sm shadow-lg transition text-center" href="#" id="modalDirectDownloadBtn" target="_blank" rel="noopener noreferrer">Download from publisher ↗</a>
+<button type="button" id="modalRetryBtn" onclick="retryDownloadPreparation()" class="hidden w-full py-2.5 rounded-xl border border-cyan-500/30 text-cyan-300 text-xs font-semibold hover:bg-cyan-500/10">Retry download</button>
+<a class="w-full py-2.5 rounded-xl border border-sky-500/30 text-sky-300 text-xs font-semibold text-center hover:bg-sky-500/10" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">Open SN Apps Hub Telegram ↗</a>
 </div>
 </div>
 <!-- Safe 300x250 Banner Ad Slot inside Modal -->
@@ -1516,12 +1535,25 @@ Join Telegram Community
       document.getElementById('detailAppSize').textContent = item.size;
       document.getElementById('detailAppSha256').textContent = `SHA-256: ${item.sha256 || 'Not supplied by publisher'}`;
       document.getElementById('detailAppDesc').textContent = item.desc || 'Publisher-linked software listing. Verify the publisher and package before installation.';
+      document.getElementById('detailIntro').textContent = (item.title || 'This app') + ' — ' + (item.desc || 'Explore publisher information, supported devices and release details before downloading.');
+      const sourceUrl = getSafePublisherUrl(item);
+      const sourceName = item.sourceLabel || (sourceUrl ? new URL(sourceUrl).hostname.replace(/^www\\./, '') : 'Publisher website');
+      ['detailSourceCredit','detailSourceLink'].forEach(id => {
+        const link = document.getElementById(id);
+        if (link) { link.href = sourceUrl || 'https://t.me/snappshub'; link.textContent = sourceName + ' ↗'; }
+      });
+      const screenshots = Array.isArray(item.screenshots) ? item.screenshots.slice(0,3) : [];
+      document.getElementById('detailScreenshots').innerHTML = [0,1,2].map(index => {
+        const shot = screenshots[index];
+        return shot ? '<div class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-700 bg-[#090d16]"><img loading="lazy" src="' + safeText(shot) + '" alt="' + safeText(item.title) + ' screenshot ' + (index + 1) + '" class="w-full h-full object-cover"></div>' :
+          '<div class="aspect-[4/3] rounded-xl border border-dashed border-slate-700 bg-gradient-to-br from-[#162035] to-[#090d16] flex items-center justify-center text-[10px] text-slate-500">Preview 0' + (index + 1) + '</div>';
+      }).join('');
       document.getElementById('detailArch').textContent = item.arch || 'Multi-platform';
       document.getElementById('detailBreadcrumb').textContent = `Repository / ${item.category.toUpperCase()} / ${item.title}`;
 
       // Bind button
       const dlBtn = document.getElementById('detailDownloadTriggerBtn');
-      dlBtn.onclick = () => openDownloadModal(item.id);
+      dlBtn.onclick = () => openDownloadModal(item.id, 'download');
 
       // Toggle views
       document.getElementById('catalogView').classList.add('hidden');
@@ -1549,69 +1581,92 @@ Join Telegram Community
       }
     }
 
-    // 5-Second Countdown Download Modal
-    function openDownloadModal(itemId) {
-      const item = repositoryData.find(i => i.id === itemId);
-      if (!item) return;
-
-      currentActiveApp = item;
-
-      // Fill modal info
-      document.getElementById('modalAppIcon').innerHTML = getAutoIconMarkup(item);
-      document.getElementById('modalAppTitle').textContent = item.title;
-      document.getElementById('modalAppVersion').textContent = item.version;
-      document.getElementById('modalAppSize').textContent = item.size;
-      const metaLine = document.getElementById('modalAppMeta');
-      if (metaLine) metaLine.textContent = (item.category || 'Software') + ' • ' + ((item.devices || [item.category]).join(', ')) + ' • ' + (item.size || 'Size unavailable');
-
-      const directBtn = document.getElementById('modalDirectDownloadBtn');
-      let publisherUrl = '';
+    // Two-stage download flow: 5s catalogue preparation, 3s download hand-off.
+    let downloadModalMode = 'details';
+    let downloadTimerToken = 0;
+    function getSafePublisherUrl(item) {
       try {
-        const parsedUrl = new URL(String(item.url || item.mirror1 || ''));
-        if (parsedUrl.protocol === 'https:' && parsedUrl.hostname && !parsedUrl.username && !parsedUrl.password) publisherUrl = parsedUrl.href;
+        const u = new URL(String(item.url || item.mirror1 || ''));
+        if (u.protocol === 'https:' && u.hostname && !u.username && !u.password) return u.href;
       } catch (_) {}
-      directBtn.href = publisherUrl || '#';
-      directBtn.rel = 'noopener noreferrer';
-      directBtn.setAttribute('aria-disabled', publisherUrl ? 'false' : 'true');
-      directBtn.classList.toggle('opacity-50', !publisherUrl);
-      directBtn.classList.toggle('pointer-events-none', !publisherUrl);
-      directBtn.textContent = publisherUrl ? 'Download' : 'Publisher link unavailable';
-
-      // Reset timer UI
-      const timerContainer = document.getElementById('timerContainer');
-      const readyContainer = document.getElementById('readyContainer');
-      const countdownNumber = document.getElementById('countdownNumber');
-      const countdownBar = document.getElementById('countdownBar');
-
-      // Never show a ready state or start a countdown when no valid HTTPS destination exists.
-      // Publisher/F-Droid links open directly; countdown is only for valid SnappsHub-hosted mirrors.
+      return '';
+    }
+    function runDownloadCountdown(seconds, mode) {
       if (countdownInterval) clearInterval(countdownInterval);
-      if (!publisherUrl || item.sourceLabel) {
-        timerContainer.classList.add('hidden');
-        readyContainer.classList.remove('hidden');
-      } else {
-        timerContainer.classList.remove('hidden');
-        readyContainer.classList.add('hidden');
-        countdownBar.style.width = '0%';
-        let seconds = 3;
-        countdownNumber.textContent = seconds;
-        setTimeout(() => { countdownBar.style.width = '100%'; }, 50);
-        countdownInterval = setInterval(() => {
-          seconds--;
-          if (seconds > 0) countdownNumber.textContent = seconds;
-          else {
-            clearInterval(countdownInterval);
-            timerContainer.classList.add('hidden');
-            readyContainer.classList.remove('hidden');
+      const timer = document.getElementById('timerContainer');
+      const ready = document.getElementById('readyContainer');
+      const number = document.getElementById('countdownNumber');
+      const bar = document.getElementById('countdownBar');
+      const direct = document.getElementById('modalDirectDownloadBtn');
+      const continueBtn = document.getElementById('modalContinueDetailsBtn');
+      const retryBtn = document.getElementById('modalRetryBtn');
+      const readyMessage = document.getElementById('modalReadyMessage');
+      const token = ++downloadTimerToken;
+      timer.classList.remove('hidden');
+      ready.classList.add('hidden');
+      number.textContent = String(seconds);
+      bar.style.width = '0%';
+      document.getElementById('timerMessage').textContent = mode === 'listing'
+        ? 'Preparing app information. You will continue to the details page.'
+        : 'Your download will start shortly. If it does not, use Retry or Telegram.';
+      document.getElementById('timerHeading').textContent = mode === 'listing' ? 'App Details Preparation' : 'Download Preparation';
+      requestAnimationFrame(() => { if (token === downloadTimerToken) bar.style.width = '100%'; });
+      let remaining = seconds;
+      countdownInterval = setInterval(() => {
+        if (token !== downloadTimerToken) return;
+        remaining -= 1;
+        if (remaining > 0) { number.textContent = String(remaining); return; }
+        clearInterval(countdownInterval);
+        timer.classList.add('hidden');
+        ready.classList.remove('hidden');
+        const item = currentActiveApp;
+        const publisherUrl = item ? getSafePublisherUrl(item) : '';
+        if (mode === 'listing') {
+          continueBtn.classList.remove('hidden');
+          direct.classList.add('hidden');
+          retryBtn.classList.add('hidden');
+          readyMessage.textContent = 'Ready — app details are available.';
+        } else {
+          continueBtn.classList.add('hidden');
+          direct.classList.toggle('hidden', !publisherUrl);
+          retryBtn.classList.remove('hidden');
+          readyMessage.textContent = publisherUrl ? 'Publisher source is ready. Confirm the source before downloading.' : 'No valid publisher URL is available for this listing.';
+          if (publisherUrl && /\.(apk|xapk|apks|exe|msi|dmg|pkg|zip|7z|rar|tar|gz|img|bin|iso)(?:$|[?#])/i.test(publisherUrl)) {
+            direct.href = publisherUrl;
+            direct.textContent = 'Download file ↗';
+          } else if (publisherUrl) {
+            direct.href = publisherUrl;
+            direct.textContent = 'Visit publisher download page ↗';
           }
-        }, 1000);
-      }
-
-      // Show modal
+        }
+      }, 1000);
+    }
+    function openDownloadModal(itemId, mode) {
+      const item = repositoryData.find(i => String(i.id) === String(itemId));
+      if (!item) return;
+      currentActiveApp = item;
+      downloadModalMode = mode || 'listing';
+      document.getElementById('modalAppIcon').innerHTML = getAutoIconMarkup(item);
+      document.getElementById('modalAppTitle').textContent = item.title || item.name || 'Application';
+      document.getElementById('modalAppVersion').textContent = item.version || 'Version unavailable';
+      document.getElementById('modalAppSize').textContent = item.size || 'Size unavailable';
+      const meta = document.getElementById('modalAppMeta');
+      if (meta) meta.textContent = (item.category || 'Software') + ' • ' + ((item.devices || [item.category]).join(', ')) + ' • ' + (item.size || 'Size unavailable');
+      const direct = document.getElementById('modalDirectDownloadBtn');
+      direct.href = getSafePublisherUrl(item) || '#';
+      direct.classList.add('hidden');
+      document.getElementById('modalContinueDetailsBtn').classList.add('hidden');
+      document.getElementById('modalRetryBtn').classList.add('hidden');
       document.getElementById('downloadModal').classList.remove('hidden');
+      runDownloadCountdown(downloadModalMode === 'listing' ? 5 : 3, downloadModalMode);
+    }
+    function retryDownloadPreparation() {
+      if (!currentActiveApp) return;
+      runDownloadCountdown(3, 'download');
     }
 
     function closeDownloadModal() {
+      downloadTimerToken++;
       if (countdownInterval) clearInterval(countdownInterval);
       document.getElementById('downloadModal').classList.add('hidden');
     }
