@@ -48,7 +48,7 @@ for (const [index, app] of catalog.apps.entries()) {
   }
 }
 
-const outboundFields = ['url', 'sourceUrl', 'telegramSupportUrl'];
+const outboundFields = ['url', 'sourceUrl', 'mirror1', 'telegramSupportUrl'];
 for (const [index, app] of catalog.apps.entries()) {
   const label = app.id || \`row \${index + 1}\`;
   for (const field of outboundFields) {
@@ -91,7 +91,10 @@ for (const required of [
 const dynamicDownloadAction = "${safeText('openDownloadModal(' + JSON.stringify(String(item.id)) + ')')}";
 assert.ok(html.includes(dynamicDownloadAction),
   'catalogue download actions must JSON-encode app IDs before placing them in inline JavaScript');
+assert.ok(html.includes("!parsedUrl.username && !parsedUrl.password"),
+  'publisher download links must reject URLs containing embedded credentials');
 const newWindowAnchors = [...html.matchAll(/<a\b[^>]*\btarget="_blank"[^>]*>/g)].map(match => match[0]);
+assert.ok(newWindowAnchors.length > 0, 'website must contain external links that the security test can inspect');
 for (const anchor of newWindowAnchors) {
   assert.match(anchor, /\brel="[^"]*noopener[^"]*"/,
     'links opening a new tab must use rel=noopener');
