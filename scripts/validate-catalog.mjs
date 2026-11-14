@@ -2,8 +2,24 @@ import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { Script } from 'node:vm';
 
-const raw = await readFile(new URL('../apps-data.json', import.meta.url), 'utf8');
+const raw = await readFile(new URL('../public-catalogue.json', import.meta.url), 'utf8');
 const catalog = JSON.parse(raw);
+const liveRaw = await readFile(new URL('../apps-data.json', import.meta.url), 'utf8');
+const liveConfig = JSON.parse(liveRaw);
+assert.ok(Array.isArray(liveConfig.apps) && liveConfig.apps.length > 0, 'Admin Live Sync config must contain apps');
+assert.ok(Array.isArray(liveConfig.categories) && liveConfig.categories.length > 0, 'Admin Live Sync config must contain categories');
+assert.ok(Array.isArray(liveConfig.devices), 'Admin Live Sync config must contain devices');
+assert.deepEqual(liveConfig.devices.map(device => device.slug), ['android','androidtv','desktop','router'],
+  'Admin Live Sync config must preserve Android, Android TV, Desktop, Router order');
+const liveCategorySlugs = new Set(liveConfig.categories.map(category => category.slug));
+assert.equal(liveCategorySlugs.size, liveConfig.categories.length, 'Admin Live Sync categories must have unique slugs');
+for (const [index, app] of liveConfig.apps.entries()) {
+  const label = app.id || `live app row ${index + 1}`;
+  assert.ok(typeof app.id === 'string' && app.id.trim(), `${label}: live app id is required`);
+  assert.ok(liveCategorySlugs.has(app.category), `${label}: live app category is undefined`);
+  assert.ok(Array.isArray(app.devices) && app.devices.length > 0, `${label}: live app needs device assignments`);
+  for (const device of app.devices) assert.ok(['android','androidtv','desktop','router'].includes(device), `${label}: unsupported live device ${device}`);
+}
 assert.ok(Array.isArray(catalog.apps), 'apps-data.json must contain an apps array');
 assert.ok(catalog.apps.length > 0, 'catalogue must not be empty');
 
@@ -187,6 +203,14 @@ if (isLegacyRenderer) {
   const storeEnd = html.indexOf(';\n    let activeFolder', storeStart);
   assert.ok(storeEnd > storeStart, 'live storefront STORE configuration must be a bounded JSON object');
   const store = JSON.parse(html.slice(storeStart, storeEnd));
+  const comparable = value => {
+    const copy = JSON.parse(JSON.stringify(value));
+    delete copy.syncedAt;
+    if (copy.githubSync) delete copy.githubSync.lastSyncedAt;
+    return copy;
+  };
+  assert.deepEqual(comparable(store), comparable(liveConfig),
+    'public storefront embedded STORE must match the separate Admin Live Sync config');
   assert.deepEqual(store.devices.map(device => device.slug), ['android','androidtv','desktop','router'],
     'live storefront must preserve Android, Android TV, Desktop, Router order');
   assert.ok(store.categories.length > 0, 'live storefront must define categories');
@@ -202,7 +226,7 @@ if (isLegacyRenderer) {
     'function selectDevice(', 'function selectCategory(', 'function showMoreApps()',
     "let activeDevice = 'android'", 'let visibleCount = 6',
     'class="detail-source"', 'class="detail-shots"', 'id="mw2-timer"',
-    'async function loadSupplementalCatalogue()', "fetch('./apps-data.json?t=' + Date.now()", 'STORE.apps = [...(STORE.apps || []), ...extraApps]'
+    'async function loadSupplementalCatalogue()', "fetch('./public-catalogue.json?t=' + Date.now()", 'STORE.apps = [...(STORE.apps || []), ...extraApps]'
   ]) assert.ok(html.includes(required), 'live storefront is missing ' + required);
   const heroStart = html.indexOf('<section class="hero">');
   const heroEnd = html.indexOf('</section>', heroStart);
