@@ -101,7 +101,8 @@
         "androidtv"
       ],
       "sourceUrl": "https://github.com/yuliskov/SmartTube/releases",
-      "sourceLabel": "GitHub releases"
+      "sourceLabel": "GitHub releases",
+      "iconUrl": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/main/res/mipmap-nodpi/app_icon.png"
     },
     {
       "id": "tv-2",
@@ -169,7 +170,8 @@
         "desktop"
       ],
       "sourceUrl": "https://rufus.ie/",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://raw.githubusercontent.com/pbatard/rufus/master/res/appstore/Images/Square150x150Logo.scale-200.png"
     },
     {
       "id": "pc-2",
@@ -842,7 +844,8 @@
         "desktop"
       ],
       "mirrors": [],
-      "telegramSupportUrl": ""
+      "telegramSupportUrl": "",
+      "iconUrl": "https://raw.githubusercontent.com/signalapp/Signal-Android/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
       "id": "video-obs-studio",
