@@ -340,7 +340,8 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "iconUrl": "https://f-droid.org/repo/org.mozilla.fennec_fdroid/en-US/icon.png"
     },
     {
       "id": "security-bitwarden",
@@ -375,7 +376,8 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "iconUrl": "https://f-droid.org/repo/com.kunzisoft.keepass.libre/en-US/icon.png"
     },
     {
       "id": "security-keepassxc",
@@ -427,7 +429,8 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "iconUrl": "https://f-droid.org/repo/org.localsend.localsend_app/en-US/icon.png"
     },
     {
       "id": "popular-termux",
@@ -444,7 +447,8 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "iconUrl": "https://f-droid.org/repo/com.termux/en-US/icon.png"
     },
     {
       "id": "popular-vlc",
@@ -514,7 +518,8 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "iconUrl": "https://f-droid.org/repo/com.termux/en-US/icon.png"
     },
     {
       "id": "video-kdenlive",
@@ -1367,7 +1372,8 @@
       "desc": "Open-source local photo and video gallery from the Fossify app collection.",
       "devices": [
         "android"
-      ]
+      ],
+      "iconUrl": "https://f-droid.org/repo/org.fossify.gallery/en-US/icon.png"
     },
     {
       "id": "productivity-fossify-calendar",
@@ -1384,7 +1390,8 @@
       "desc": "Open-source calendar with events, reminders and recurring schedules.",
       "devices": [
         "android"
-      ]
+      ],
+      "iconUrl": "https://f-droid.org/repo/org.fossify.calendar/en-US/icon.png"
     },
     {
       "id": "system-fossify-file-manager",
@@ -1401,7 +1408,8 @@
       "desc": "Open-source local file manager for browsing and organizing device storage.",
       "devices": [
         "android"
-      ]
+      ],
+      "iconUrl": "https://f-droid.org/repo/org.fossify.filemanager/en-US/icon.png"
     },
     {
       "id": "system-everything",
