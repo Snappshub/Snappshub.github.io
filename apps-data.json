@@ -3,7 +3,7 @@
     {
       "id": "apk-1",
       "title": "Instagram (Publisher Link)",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📱",
       "url": "https://www.instagram.com/",
       "category": "android",
       "version": "v18.0",
@@ -20,7 +20,7 @@
     {
       "id": "apk-2",
       "title": "Telegram Messenger",
-      "icon": "https://www.google.com/s2/favicons?domain=t.me&sz=128",
+      "icon": "📱",
       "url": "https://telegram.org/apps",
       "category": "android",
       "version": "v10.14",
@@ -37,7 +37,7 @@
     {
       "id": "apk-3",
       "title": "AdGuard for Android",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📱",
       "url": "https://adguard.com/en/adguard-android/overview.html",
       "category": "android",
       "version": "v4.4.1",
@@ -54,7 +54,7 @@
     {
       "id": "apk-4",
       "title": "Seal Media Downloader",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📱",
       "url": "https://github.com/JunkFood02/Seal/releases",
       "category": "android",
       "version": "v1.12.3",
@@ -71,7 +71,7 @@
     {
       "id": "apk-5",
       "title": "Poweramp Music Player",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📱",
       "url": "https://powerampapp.com/",
       "category": "android",
       "version": "build-976",
@@ -88,7 +88,7 @@
     {
       "id": "tv-1",
       "title": "SmartTube",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📺",
       "url": "https://github.com/yuliskov/SmartTube/releases",
       "category": "androidtv",
       "version": "v21.85",
@@ -105,7 +105,7 @@
     {
       "id": "tv-2",
       "title": "Kodi Media Center",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📺",
       "url": "https://kodi.tv/download/",
       "category": "androidtv",
       "version": "v21.0",
@@ -122,7 +122,7 @@
     {
       "id": "tv-3",
       "title": "TiviMate IPTV Player",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📺",
       "url": "https://tivimate.com/",
       "category": "androidtv",
       "version": "v4.8.0",
@@ -139,7 +139,7 @@
     {
       "id": "tv-4",
       "title": "Projectivy Launcher",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📺",
       "url": "https://projectivy.hu/",
       "category": "androidtv",
       "version": "v4.52",
@@ -156,7 +156,7 @@
     {
       "id": "pc-1",
       "title": "Rufus USB Bootmaker",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "💻",
       "url": "https://rufus.ie/",
       "category": "desktop",
       "version": "v4.5 Portable",
@@ -173,7 +173,7 @@
     {
       "id": "pc-2",
       "title": "7-Zip File Archiver",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "💻",
       "url": "https://www.7-zip.org/download.html",
       "category": "desktop",
       "version": "v24.05",
@@ -190,7 +190,7 @@
     {
       "id": "pc-3",
       "title": "VLC Media Player",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "💻",
       "url": "https://www.videolan.org/vlc/",
       "category": "desktop",
       "version": "v3.0.21",
@@ -207,7 +207,7 @@
     {
       "id": "pc-4",
       "title": "Wireshark Network Analyzer",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "💻",
       "url": "https://www.wireshark.org/download.html",
       "category": "desktop",
       "version": "v4.2.5",
@@ -224,7 +224,7 @@
     {
       "id": "rt-1",
       "title": "Tenda AC10 v4 Firmware Support",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📡",
       "url": "https://www.tendacn.com/",
       "category": "router",
       "version": "US_ACT_V16.03.10.20",
@@ -241,7 +241,7 @@
     {
       "id": "rt-2",
       "title": "TP-Link Archer C6 Firmware Support",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📡",
       "url": "https://www.tp-link.com/en/support/download/archer-c6/",
       "category": "router",
       "version": "v3.2_Build220414",
@@ -258,7 +258,7 @@
     {
       "id": "rt-3",
       "title": "MikroTik RouterOS Downloads",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📡",
       "url": "https://mikrotik.com/download",
       "category": "router",
       "version": "v7.15 Stable",
@@ -275,7 +275,7 @@
     {
       "id": "rt-4",
       "title": "OpenWrt Firmware Selector",
-      "icon": "https://www.google.com/s2/favicons?domain=snappshub.github.io&sz=128",
+      "icon": "📡",
       "url": "https://firmware-selector.openwrt.org/",
       "category": "router",
       "version": "v23.05.3-factory",
@@ -293,7 +293,7 @@
       "id": "browser-firefox",
       "title": "Firefox Browser",
       "category": "browser",
-      "icon": "https://www.google.com/s2/favicons?domain=mozilla.org&sz=128",
+      "icon": "📱",
       "url": "https://www.mozilla.org/firefox/new/",
       "sourceUrl": "https://www.mozilla.org/firefox/new/",
       "sourceLabel": "Official site",
@@ -323,7 +323,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=brave.com&sz=128"
+      "icon": "📱"
     },
     {
       "id": "browser-fennec",
@@ -340,7 +340,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "icon": "📱",
       "iconUrl": "https://f-droid.org/repo/org.mozilla.fennec_fdroid/en-US/icon.png"
     },
     {
@@ -359,7 +359,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=bitwarden.com&sz=128"
+      "icon": "📱"
     },
     {
       "id": "security-keepassdx",
@@ -376,7 +376,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "icon": "📱",
       "iconUrl": "https://f-droid.org/repo/com.kunzisoft.keepass.libre/en-US/icon.png"
     },
     {
@@ -394,7 +394,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=keepassxc.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "popular-7zip",
@@ -411,7 +411,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=7-zip.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "popular-localsend",
@@ -429,7 +429,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "icon": "📱",
       "iconUrl": "https://f-droid.org/repo/org.localsend.localsend_app/en-US/icon.png"
     },
     {
@@ -447,7 +447,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "icon": "📱",
       "iconUrl": "https://f-droid.org/repo/com.termux/en-US/icon.png"
     },
     {
@@ -467,7 +467,7 @@
         "androidtv",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=videolan.org&sz=128"
+      "icon": "📱"
     },
     {
       "id": "network-wireshark",
@@ -484,7 +484,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=wireshark.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "network-nmap",
@@ -501,7 +501,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=nmap.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "network-termux",
@@ -518,7 +518,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128",
+      "icon": "📱",
       "iconUrl": "https://f-droid.org/repo/com.termux/en-US/icon.png"
     },
     {
@@ -536,7 +536,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=kdenlive.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "video-shotcut",
@@ -553,7 +553,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=shotcut.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "video-openshot",
@@ -570,7 +570,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=openshot.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "photo-gimp",
@@ -587,7 +587,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=gimp.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "photo-krita",
@@ -605,7 +605,7 @@
         "desktop",
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=krita.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "photo-darktable",
@@ -622,7 +622,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=darktable.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "browser-tvbro",
@@ -639,7 +639,7 @@
       "devices": [
         "androidtv"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
+      "icon": "📺"
     },
     {
       "id": "security-protonpass",
@@ -657,7 +657,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=proton.me&sz=128"
+      "icon": "📱"
     },
     {
       "id": "security-malwarebytes",
@@ -675,7 +675,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=malwarebytes.com&sz=128"
+      "icon": "📱"
     },
     {
       "id": "popular-kdeconnect",
@@ -693,7 +693,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=kdeconnect.kde.org&sz=128"
+      "icon": "📱"
     },
     {
       "id": "popular-obtainium",
@@ -710,7 +710,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
+      "icon": "📱"
     },
     {
       "id": "network-wifiman",
@@ -728,7 +728,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=ui.com&sz=128"
+      "icon": "📱"
     },
     {
       "id": "video-vn",
@@ -745,7 +745,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=vlognow.me&sz=128"
+      "icon": "📱"
     },
     {
       "id": "video-nova-tv",
@@ -763,7 +763,7 @@
         "androidtv",
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
+      "icon": "📺"
     },
     {
       "id": "photo-snapseed",
@@ -780,7 +780,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=play.google.com&sz=128"
+      "icon": "📱"
     },
     {
       "id": "photo-photopea",
@@ -797,7 +797,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=photopea.com&sz=128"
+      "icon": "💻"
     },
     {
       "id": "popular-powertoys",
@@ -814,7 +814,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=learn.microsoft.com&sz=128"
+      "icon": "💻"
     },
     {
       "id": "security-signal",
@@ -823,7 +823,7 @@
       "version": "Latest official",
       "size": "Varies",
       "arch": "Android / Windows / macOS / Linux",
-      "icon": "https://www.google.com/s2/favicons?domain=signal.org&sz=128",
+      "icon": "📱",
       "url": "https://signal.org/download/",
       "sourceUrl": "https://signal.org/download/",
       "sourceLabel": "Signal official downloads",
@@ -843,7 +843,7 @@
       "version": "33.0.0",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "https://www.google.com/s2/favicons?domain=obsproject.com&sz=128",
+      "icon": "💻",
       "url": "https://obsproject.com/download/",
       "sourceUrl": "https://obsproject.com/download/",
       "sourceLabel": "OBS Project official download",
@@ -862,7 +862,7 @@
       "version": "1.1.18",
       "size": "Varies",
       "arch": "Windows / Linux",
-      "icon": "https://www.google.com/s2/favicons?domain=ventoy.net&sz=128",
+      "icon": "💻",
       "url": "https://www.ventoy.net/en/download.html",
       "sourceUrl": "https://www.ventoy.net/en/download.html",
       "sourceLabel": "Ventoy official download",
@@ -881,7 +881,7 @@
       "version": "26.8.0",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "https://www.google.com/s2/favicons?domain=libreoffice.org&sz=128",
+      "icon": "💻",
       "url": "https://www.libreoffice.org/download/",
       "sourceUrl": "https://www.libreoffice.org/download/",
       "sourceLabel": "LibreOffice official download",
@@ -900,7 +900,7 @@
       "version": "2.1.7",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "https://www.google.com/s2/favicons?domain=syncthing.net&sz=128",
+      "icon": "💻",
       "url": "https://syncthing.net/downloads/",
       "sourceUrl": "https://syncthing.net/downloads/",
       "sourceLabel": "Syncthing official downloads",
@@ -919,7 +919,7 @@
       "version": "Latest official",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "https://www.google.com/s2/favicons?domain=filezilla-project.org&sz=128",
+      "icon": "💻",
       "url": "https://filezilla-project.org/download.php?type=client",
       "sourceUrl": "https://filezilla-project.org/download.php?type=client",
       "sourceLabel": "FileZilla official download",
@@ -946,7 +946,8 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
+      "icon": "📱",
+      "iconUrl": "https://f-droid.org/repo/com.beemdevelopment.aegis/en-US/icon.png"
     },
     {
       "id": "popular-antennapod",
@@ -963,7 +964,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=antennapod.org&sz=128"
+      "icon": "📱"
     },
     {
       "id": "popular-organicmaps",
@@ -980,7 +981,7 @@
       "devices": [
         "android"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=organicmaps.app&sz=128"
+      "icon": "📱"
     },
     {
       "id": "photo-blender",
@@ -997,7 +998,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=blender.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "photo-inkscape",
@@ -1014,7 +1015,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=inkscape.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "video-audacity",
@@ -1031,7 +1032,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=audacityteam.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "video-handbrake",
@@ -1048,7 +1049,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=handbrake.fr&sz=128"
+      "icon": "💻"
     },
     {
       "id": "popular-thunderbird",
@@ -1065,7 +1066,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=thunderbird.net&sz=128"
+      "icon": "💻"
     },
     {
       "id": "popular-sharex",
@@ -1082,7 +1083,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=getsharex.com&sz=128"
+      "icon": "💻"
     },
     {
       "id": "popular-notepadpp",
@@ -1099,7 +1100,7 @@
       "devices": [
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=notepad-plus-plus.org&sz=128"
+      "icon": "💻"
     },
     {
       "id": "network-tailscale",
@@ -1117,7 +1118,7 @@
         "android",
         "desktop"
       ],
-      "icon": "https://www.google.com/s2/favicons?domain=tailscale.com&sz=128"
+      "icon": "📱"
     },
     {
       "id": "developer-vscode",
