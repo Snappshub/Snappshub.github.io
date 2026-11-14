@@ -1273,7 +1273,7 @@ Join Telegram Community
 
     // Local storage persistence or fallback
     let repositoryData = initialRepositoryData;
-    let categoryLimits = { android: 8, androidtv: 8, desktop: 8, router: 8 };
+    let categoryLimits = { android: 6, androidtv: 6, desktop: 6, router: 6 };
     let currentActiveApp = null;
     let countdownInterval = null;
 
@@ -1546,7 +1546,7 @@ Join Telegram Community
       document.getElementById('detailAppDesc').textContent = item.desc || 'Publisher-linked software listing. Verify the publisher and package before installation.';
       document.getElementById('detailIntro').textContent = (item.title || 'This app') + ' — ' + (item.desc || 'Explore publisher information, supported devices and release details before downloading.');
       const sourceUrl = getSafePublisherUrl(item);
-      const sourceName = item.sourceLabel || (sourceUrl ? new URL(sourceUrl).hostname.replace(/^www\\./, '') : 'Publisher website');
+      const sourceName = item.sourceLabel || (sourceUrl ? new URL(sourceUrl).hostname.replace(/^www\./, '') : 'Publisher website');
       ['detailSourceCredit','detailSourceLink'].forEach(id => {
         const link = document.getElementById(id);
         if (link) { link.href = sourceUrl || 'https://t.me/snappshub'; link.textContent = sourceName + ' ↗'; }
