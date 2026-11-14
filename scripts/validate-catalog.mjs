@@ -107,6 +107,13 @@ assert.ok(html.includes('const PRIMARY_SECTORS = [\'android\',\'androidtv\',\'de
   'renderer must use exactly four primary sectors');
 assert.ok(html.includes('validIconSource(item.iconUrl)') && html.includes('validIconSource(item.iconFile)'),
   'app icon engine must prioritize publisher-owned icon URLs and bundled icon files');
+const primaryNav = html.match(/<nav class="device-nav"[\\s\\S]*?<\\/nav>/)?.[0] || '';
+assert.equal((primaryNav.match(/data-sector=/g) || []).length, 4,
+  'top navigation must contain exactly four primary device sectors');
+assert.ok(!primaryNav.includes('data-category='),
+  'subcategories must not appear in the primary top navigation');
+assert.ok(html.includes("parsed.pathname === '/s2/favicons'"),
+  'generic Google favicons must not be treated as publisher-owned app icons');
 
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 for (const required of [
