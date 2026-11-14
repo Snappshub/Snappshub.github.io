@@ -1554,7 +1554,7 @@ Join Telegram Community
       const sourceLogo = document.getElementById('detailSourceLogo');
       const sourceLogoFallback = document.getElementById('detailSourceLogoFallback');
       if (sourceLogo && sourceUrl) {
-        sourceLogo.src = 'https://www.google.com/s2/favicons?domain_url=' + encodeURIComponent(new URL(sourceUrl).origin) + '&sz=64';
+        sourceLogo.src = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(new URL(sourceUrl).hostname) + '&sz=64';
         sourceLogo.hidden = false;
         sourceLogo.onerror = () => { sourceLogo.hidden = true; if (sourceLogoFallback) sourceLogoFallback.hidden = false; };
         if (sourceLogoFallback) sourceLogoFallback.hidden = true;
