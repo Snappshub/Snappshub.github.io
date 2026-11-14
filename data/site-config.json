@@ -2,15 +2,15 @@
   "syncedAt": "2026-11-14T06:35:55.032Z",
   "meta": {
     "siteDomain": "https://snappshub.github.io",
-    "seoTitle": "SN Apps Hub — Trusted & Secure Apps for Every Device",
-    "seoDescription": "Verified Android, Android TV, Desktop, and Router software curated by SN Apps Hub with fast direct mirrors.",
+    "seoTitle": "SnappsHub — Publisher-Linked Software, APKs & Firmware Vault",
+    "seoDescription": "Explore curated Android apps, Android TV utilities, desktop software and router firmware with links to publisher sources.",
     "maintenanceMode": false,
     "maintenanceMessage": "Scheduled catalogue update in progress. Back online in a few minutes."
   },
   "header": {
-    "brandTitle": "SN Apps Hub",
+    "brandTitle": "SnappsHub",
     "brandSubtitle": "Trusted & Secure for Your Device",
-    "logoUrl": "/assets/aistudio/SN_Apps_Hub_Brand_Logo_cb936f51.png",
+    "logoUrl": "https://snappshub.github.io/assets/snappshub-logo.svg",
     "logoSizePx": 34,
     "showLogo": true,
     "sticky": true,
@@ -91,7 +91,7 @@
   },
   "hero": {
     "eyebrow": "Trusted & Secure for Your Device",
-    "headline": "Curated apps, verified mirrors, zero clutter.",
+    "headline": "Publisher-Linked Apps, TV Tools & Firmware",
     "subheadline": "Discover clean, checksum-verified releases across Android, Android TV, Desktop, and Router platforms with direct high-speed download mirrors.",
     "primaryCtaLabel": "Browse Catalogue",
     "primaryCtaUrl": "#apps",
@@ -535,8 +535,8 @@
     "filePath": "data/site-config.json",
     "deployFullSite": true,
     "autoSyncEnabled": true,
-    "lastSyncedAt": null,
-    "lastSyncStatus": "error",
-    "lastSyncError": "GitHub lookup failed for data/site-config.json (401): {\r\n  \"message\": \"Bad credentials\",\r\n  \"documentation_url\": \"https://docs.github.com/rest\",\r\n  \"status\": \"401\"\r\n}"
+    "lastSyncedAt": "2026-11-14T06:36:31.981Z",
+    "lastSyncStatus": "idle",
+    "lastSyncError": "GitHub token not stored in Vault yet."
   }
 }
