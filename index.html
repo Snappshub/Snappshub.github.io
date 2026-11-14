@@ -421,6 +421,13 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
   #skip-link:focus{transform:translateY(0);outline:3px solid #22d3ee;outline-offset:3px}
   #main-content:focus{outline:none}
 </style>
+<style data-purpose="four-sector-navigation-final">
+.device-nav-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.4rem!important;overflow:visible!important;padding:0!important}
+.device-nav-card{flex:initial!important;min-width:0!important;width:100%;min-height:2.55rem!important;padding:.45rem .2rem!important;border-radius:.65rem!important;white-space:nowrap}
+.device-nav-icon{display:inline-flex!important;width:1rem!important;min-width:1rem!important;height:1rem!important}
+.device-nav-title{font-size:clamp(.58rem,1.1vw,.78rem)!important;letter-spacing:0!important}
+@media(max-width:360px){.device-nav-grid{gap:.2rem!important}.device-nav-card{gap:.12rem!important;padding-inline:.08rem!important}.device-nav-icon{width:.78rem!important;min-width:.78rem!important;height:.78rem!important}.device-nav-title{font-size:.5rem!important}}
+</style>
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <a id="skip-link" href="#main-content">Skip to main content</a>
@@ -512,7 +519,7 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 <nav class="device-nav" aria-label="Primary device sectors">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
     <div class="device-nav-grid">
-      <button type="button" class="device-nav-card active" style="--device-accent:#22d3ee" data-sector="android" aria-pressed="true" onclick="filterPrimarySector('android')"><span class="device-nav-icon" aria-hidden="true">📱</span><span class="device-nav-title">Android</span></button>
+      <button type="button" class="device-nav-card" style="--device-accent:#22d3ee" data-sector="android" aria-pressed="false" onclick="filterPrimarySector('android')"><span class="device-nav-icon" aria-hidden="true">📱</span><span class="device-nav-title">Android</span></button>
       <button type="button" class="device-nav-card" style="--device-accent:#a78bfa" data-sector="androidtv" aria-pressed="false" onclick="filterPrimarySector('androidtv')"><span class="device-nav-icon" aria-hidden="true">📺</span><span class="device-nav-title">Android TV</span></button>
       <button type="button" class="device-nav-card" style="--device-accent:#34d399" data-sector="desktop" aria-pressed="false" onclick="filterPrimarySector('desktop')"><span class="device-nav-icon" aria-hidden="true">💻</span><span class="device-nav-title">Desktop</span></button>
       <button type="button" class="device-nav-card" style="--device-accent:#f59e0b" data-sector="router" aria-pressed="false" onclick="filterPrimarySector('router')"><span class="device-nav-icon" aria-hidden="true">📡</span><span class="device-nav-title">Router</span></button>
@@ -1234,6 +1241,8 @@ Join Telegram Community
         if (/^https:\/\//i.test(source)) {
           try {
             const parsed = new URL(source);
+            if (/^(www\\.)?google\\.com$/i.test(parsed.hostname) && parsed.pathname === '/s2/favicons') return '';
+            if (parsed.hostname === 'icons.duckduckgo.com') return '';
             return parsed.protocol === 'https:' && parsed.hostname && !parsed.username && !parsed.password ? parsed.href : '';
           } catch (_) { return ''; }
         }
@@ -1385,7 +1394,7 @@ Join Telegram Community
         if (sectionEl) sectionEl.classList.toggle('hidden',
           items.length === 0 || (activePrimarySector !== 'all' && activePrimarySector !== device));
         document.querySelectorAll('.device-nav-card[data-sector]').forEach(button => {
-          const active = button.dataset.sector === activePrimarySector || (activePrimarySector === 'all' && button.dataset.sector === 'android');
+          const active = button.dataset.sector === activePrimarySector;
           button.classList.toggle('active', active);
           button.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
