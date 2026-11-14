@@ -292,7 +292,8 @@
         "router"
       ],
       "sourceUrl": "https://firmware-selector.openwrt.org/",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://raw.githubusercontent.com/openwrt/branding/master/logo/openwrt_logo_black.svg"
     },
     {
       "id": "browser-firefox",
@@ -542,7 +543,7 @@
         "desktop"
       ],
       "icon": "💻",
-      "iconUrl": "https://raw.githubusercontent.com/KDE/kdenlive/master/data/icons/512-apps-kdenlive.png"
+      "iconUrl": "https://apps.kde.org/app-icons/org.kde.kdenlive.svg"
     },
     {
       "id": "video-shotcut",
@@ -611,7 +612,8 @@
         "desktop",
         "android"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://apps.kde.org/app-icons/org.kde.krita.svg"
     },
     {
       "id": "photo-darktable",
@@ -701,7 +703,8 @@
         "android",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://apps.kde.org/app-icons/org.kde.kdeconnect.svg"
     },
     {
       "id": "popular-obtainium",
