@@ -1320,7 +1320,8 @@ Join Telegram Community
           .map(category => String(category.slug || ''))
           .filter(categorySlug => /^[a-zA-Z0-9_-]+$/.test(categorySlug));
         const discovered = apps
-          .filter(app => app && (Array.isArray(app.devices) ? app.devices : [app.category]).includes(slug))
+          .filter(app => app && !PRIMARY_SECTORS.includes(String(app.category || '')) &&
+            (Array.isArray(app.devices) ? app.devices : [app.category]).includes(slug))
           .map(app => String(app.category || ''))
           .filter(categorySlug => /^[a-zA-Z0-9_-]+$/.test(categorySlug));
         deviceCatalogs[slug].categories = [...new Set([...assigned, ...discovered])];
