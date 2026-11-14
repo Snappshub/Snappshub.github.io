@@ -199,13 +199,13 @@
   },
   "adminPanel": {
     "adminThemeId": "cyberpunk-neon",
-    "compactMode": false,
+    "compactMode": true,
     "animationsEnabled": true,
     "glassIntensity": 14,
     "showInlinePreview": true,
     "dragMoveEnabled": true,
     "adminAppsViewStyle": "list",
-    "adminSettingsViewStyle": "tabs",
+    "adminSettingsViewStyle": "stacked",
     "uiScalePct": 100,
     "sidebarWidthPx": 256
   },
@@ -535,7 +535,7 @@
     "filePath": "data/site-config.json",
     "deployFullSite": true,
     "autoSyncEnabled": true,
-    "lastSyncedAt": "2026-11-14T06:39:44.278Z",
+    "lastSyncedAt": "2026-11-14T06:40:41.346Z",
     "lastSyncStatus": "synced",
     "lastSyncError": ""
   }
