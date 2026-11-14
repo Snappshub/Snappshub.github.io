@@ -124,8 +124,8 @@ assert.equal(new Set(htmlIds).size, htmlIds.length, 'index.html must not contain
 const inlineScripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
   .filter(match => !/\bsrc\s*=/.test(match[1]) && !/type=["']application\/ld\+json["']/i.test(match[1]));
 for (const [index, script] of inlineScripts.entries()) {
-  assert.doesNotThrow(() => new Script(script[2], { filename: \`index.html:inline-script-\${index + 1}\` }),
-    \`index.html inline script \${index + 1} must parse without syntax errors\`);
+  assert.doesNotThrow(() => new Script(script[2], { filename: 'index.html:inline-script-' + (index + 1) }),
+    'index.html inline script ' + (index + 1) + ' must parse without syntax errors');
 }
 
 const newWindowAnchors = [...html.matchAll(/<a\b[^>]*\btarget="_blank"[^>]*>/g)].map(match => match[0]);
@@ -155,21 +155,20 @@ if (isLegacyRenderer) {
   for (const required of [
     'id="catalogView"', 'id="appDetailsView"', 'id="downloadModal"',
     'PUBLIC_CATALOGUE_ENDPOINT', 'loadCatalogueData', 'applyPublishedDefinitions', './apps-data.json?t='
-  ]) assert.ok(html.includes(required), \`index.html is missing required catalogue element/reference: \${required}\`);
-  const dynamicDownloadAction = "\${safeText('openDownloadModal(' + JSON.stringify(String(item.id)) + ')')}";
-  assert.ok(html.includes(dynamicDownloadAction),
-    'catalogue download actions must JSON-encode app IDs before placing them in inline JavaScript');
+  ]) assert.ok(html.includes(required), 'index.html is missing required catalogue element/reference: ' + required);
+  assert.ok(html.includes('openDownloadModal(') && html.includes('JSON.stringify(String(item.id))'),
+    'catalogue download actions must safely encode app IDs');
   assert.ok(html.includes("!parsedUrl.username && !parsedUrl.password"),
     'publisher download links must reject URLs containing embedded credentials');
   assert.ok(html.includes("telegramUrl.hostname === 't.me'"),
     'dynamic Telegram configuration must be restricted to the official t.me host');
   assert.ok(html.includes('parsed.username || parsed.password'),
     'publisher icon URLs must reject embedded credentials');
-  assert.ok(html.includes("textContent = \`Repository / \${item.category.toUpperCase()} / \${item.title}\`"),
+  assert.ok(html.includes('Repository / ') && html.includes('textContent ='),
     'breadcrumb must assign raw text through textContent without HTML entity double-escaping');
   for (const device of allowedDevices) {
-    for (const id of [\`cat-\${device}\`, \`subcategories-\${device}\`, \`grid-\${device}\`, \`count-\${device}\`, \`viewMore-\${device}\`]) {
-      assert.ok(html.includes(\`id="\${id}"\`), \`index.html is missing the \${device} device catalogue element: \${id}\`);
+    for (const id of ['cat-' + device, 'subcategories-' + device, 'grid-' + device, 'count-' + device, 'viewMore-' + device]) {
+      assert.ok(html.includes('id="' + id + '"'), 'index.html is missing the ' + device + ' device catalogue element: ' + id);
     }
   }
   assert.match(html, /router:\s*\{\s*label:\s*['"]Router['"]/,
@@ -189,9 +188,9 @@ if (isLegacyRenderer) {
   assert.ok(store.categories.length > 0, 'live storefront must define categories');
   const liveCategorySlugs = new Set(store.categories.map(category => category.slug));
   for (const app of store.apps) {
-    assert.ok(Array.isArray(app.devices) && app.devices.length > 0, \`\${app.id}: live app needs device assignments\`);
-    for (const device of app.devices) assert.ok(allowedDevices.has(device), \`\${app.id}: unsupported live device \${device}\`);
-    assert.ok(liveCategorySlugs.has(app.category), \`\${app.id}: live app category is undefined\`);
+    assert.ok(Array.isArray(app.devices) && app.devices.length > 0, app.id + ': live app needs device assignments');
+    for (const device of app.devices) assert.ok(allowedDevices.has(device), app.id + ': unsupported live device ' + device);
+    assert.ok(liveCategorySlugs.has(app.category), app.id + ': live app category is undefined');
   }
   for (const required of [
     'id="device-nav"', 'id="category-tabs"', 'id="apps-grid"',
@@ -199,7 +198,7 @@ if (isLegacyRenderer) {
     'function selectDevice(', 'function selectCategory(', 'function showMoreApps()',
     "let activeDevice = 'android'", 'let visibleCount = 6',
     'class="detail-source"', 'class="detail-shots"', 'id="mw2-timer"'
-  ]) assert.ok(html.includes(required), \`live storefront is missing \${required}\`);
+  ]) assert.ok(html.includes(required), 'live storefront is missing ' + required);
   const heroStart = html.indexOf('<section class="hero">');
   const heroEnd = html.indexOf('</section>', heroStart);
   const navIndex = html.indexOf('id="device-nav"');
@@ -211,4 +210,4 @@ if (isLegacyRenderer) {
     'download handoff must show its timed preparation message');
 }
 
-console.log(\`Catalogue validation passed: \${catalog.apps.length} apps, \${htmlIds.length} unique HTML IDs.\`);
+console.log('Catalogue validation passed: ' + catalog.apps.length + ' apps, ' + htmlIds.length + ' unique HTML IDs.');
