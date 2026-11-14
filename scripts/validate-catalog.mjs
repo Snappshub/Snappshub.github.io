@@ -89,7 +89,9 @@ for (const [index, app] of catalog.apps.entries()) {
     assert.equal(parsed.password, '', `${label}: ${field} must not contain embedded credentials`);
   }
   if (app.iconFile !== undefined) {
-    assert.match(app.iconFile, /^\\.\\/assets\\/[a-zA-Z0-9._/-]+$/, `${label}: iconFile must point into ./assets`);
+    assert.ok(typeof app.iconFile === 'string' && app.iconFile.startsWith('./assets/') &&
+      app.iconFile.split('/').every(segment => segment && segment !== '.' && segment !== '..'),
+      `${label}: iconFile must point into ./assets without traversal segments`);
   }
   if (app.mirrors !== undefined) {
     assert.ok(Array.isArray(app.mirrors), `${label}: mirrors must be an array`);
