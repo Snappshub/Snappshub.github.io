@@ -147,7 +147,7 @@ assert.ok(html.includes("!parsedUrl.username && !parsedUrl.password"),
   'publisher download links must reject URLs containing embedded credentials');
 assert.ok(html.includes("telegramUrl.hostname === 't.me'"),
   'dynamic Telegram configuration must be restricted to the official t.me host');
-assert.ok(html.includes('!parsed.username && !parsed.password'),
+assert.ok(html.includes('parsed.username || parsed.password'),
   'publisher icon URLs must reject embedded credentials');
 assert.ok(html.includes("textContent = `Repository / ${item.category.toUpperCase()} / ${item.title}`"),
   'breadcrumb must assign raw text through textContent without HTML entity double-escaping');
