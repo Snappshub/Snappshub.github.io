@@ -1238,39 +1238,46 @@ Join Telegram Community
     const AUTO_ICON_DOMAINS = {instander:'instagram.com',instagram:'instagram.com',telegram:'telegram.org',smarttube:'smarttubeapp.github.io',kodi:'kodi.tv',tivimate:'tivimate.com',projectivy:'projectivy.hu',rufus:'rufus.ie','7-zip':'7-zip.org','7zip':'7-zip.org',vlc:'videolan.org',wireshark:'wireshark.org',tenda:'tendacn.com','tp-link':'tp-link.com',tplink:'tp-link.com',mikrotik:'mikrotik.com',openwrt:'openwrt.org',adguard:'adguard.com',seal:'github.com',poweramp:'powerampapp.com',firefox:'mozilla.org',brave:'brave.com',fennec:'f-droid.org',bitwarden:'bitwarden.com',keepassdx:'f-droid.org',keepassxc:'keepassxc.org',localsend:'localsend.org',termux:'f-droid.org',nmap:'nmap.org',kdenlive:'kdenlive.org',shotcut:'shotcut.org',openshot:'openshot.org',gimp:'gimp.org',krita:'krita.org',darktable:'darktable.org','tv bro':'github.com',proton:'proton.me',malwarebytes:'malwarebytes.com','kde connect':'kdeconnect.kde.org',obtainium:'github.com',wifiman:'ui.com',vn:'vlognow.me',nova:'github.com',snapseed:'play.google.com',photopea:'photopea.com',powertoys:'microsoft.com'};
     function getAutoIconMarkup(item) {
       const title = String(item.title || item.name || '').toLowerCase();
-      const suppliedIcon = String(item.icon || '').trim();
-      const fallback = ({android:'📱',androidtv:'📺',desktop:'💻',router:'📡'})[item.category] || '📦';
-      // Prefer an explicitly supplied image, except the old broken site-wide favicon URL.
-      let safeSuppliedIcon = '';
-      if (/^https:\/\//i.test(suppliedIcon)) {
-        try {
-          const parsedIcon = new URL(suppliedIcon);
-          if (parsedIcon.protocol === 'https:' && parsedIcon.hostname && !parsedIcon.username && !parsedIcon.password) safeSuppliedIcon = parsedIcon.href;
-        } catch (_) {}
-      } else if (/^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(suppliedIcon)) {
-        safeSuppliedIcon = suppliedIcon;
-      }
-      if (safeSuppliedIcon && !/domain=snappshub\.github\.io/i.test(safeSuppliedIcon)) {
-        return '<img src="' + safeText(safeSuppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '">';
-      }
+      const fallback = ({android:'📱',androidtv:'📺',desktop:'💻',router:'📡'})[(item.devices || [])[0]] || '📦';
+      const validIconSource = value => {
+        const source = String(value || '').trim();
+        if (/^https:\/\//i.test(source)) {
+          try {
+            const parsed = new URL(source);
+            return parsed.protocol === 'https:' && parsed.hostname && !parsed.username && !parsed.password ? parsed.href : '';
+          } catch (_) { return ''; }
+        }
+        return /^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(source) ? source : '';
+      };
+      const imageMarkup = (source, secondary, alt) =>
+        '<img src="' + safeText(source) + '"' +
+        (secondary ? ' data-fallback="' + safeText(secondary) + '"' : '') +
+        ' alt="' + safeText(alt) + '" class="w-10 h-10 rounded-lg object-contain" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback=\'\';}else{this.onerror=null;this.replaceWith(document.createTextNode(' + JSON.stringify(fallback) + '));}">';
+      // Priority: publisher-owned icon URL, bundled icon file, legacy icon URL.
+      const ownedIcon = validIconSource(item.iconUrl);
+      const fileIcon = validIconSource(item.iconFile);
+      const legacyIcon = validIconSource(item.icon);
+      const primary = ownedIcon || fileIcon || legacyIcon;
+      if (primary && !/domain=snappshub\\.github\\.io/i.test(primary)) return imageMarkup(primary, '', (item.title || 'App') + ' official icon');
       const key = Object.keys(AUTO_ICON_DOMAINS).sort((a,b) => b.length-a.length).find(k => title.includes(k));
       let domain = key ? AUTO_ICON_DOMAINS[key] : '';
       if (!domain) {
         try {
-          const host = new URL(item.url || item.mirror1 || '').hostname.toLowerCase();
+          const host = new URL(item.sourceUrl || item.url || item.mirror1 || '').hostname.toLowerCase();
           if (host && !host.endsWith('snappshub.github.io') && !host.endsWith('t.me')) domain = host;
         } catch (_) {}
       }
       if (!domain) return safeText(fallback);
       const google = 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(domain) + '&sz=128';
       const duckduckgo = 'https://icons.duckduckgo.com/ip3/' + encodeURIComponent(domain) + '.ico';
-      return '<img src="' + safeText(google) + '" data-fallback="' + safeText(duckduckgo) + '" alt="' + safeText(item.title || item.name || 'App') + ' icon" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback=&quot;&quot;}else{this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '}">';
+      return imageMarkup(google, duckduckgo, (item.title || 'App') + ' publisher icon');
     }
+    const PRIMARY_SECTORS = ['android','androidtv','desktop','router'];
     const deviceCatalogs = {
-      android: { label: 'Android', categories: ['android','browser','security','popular','network','video','photo'] },
-      androidtv: { label: 'Android TV', categories: ['androidtv','browser','popular','video'] },
-      desktop: { label: 'Desktop', categories: ['desktop','browser','security','popular','network','video','photo'] },
-      router: { label: 'Router Firmware', categories: ['router'] },
+      android: { label: 'Android', categories: [] },
+      androidtv: { label: 'Android TV', categories: [] },
+      desktop: { label: 'Desktop', categories: [] },
+      router: { label: 'Router', categories: [] },
     };
     const subcategoryNames = {
       android:'Apps', androidtv:'TV Apps', desktop:'PC Software',
@@ -1300,6 +1307,10 @@ Join Telegram Community
         if (device && typeof device.name === 'string' && device.name.trim()) deviceCatalogs[slug].label = device.name.trim();
         const assigned = categories
           .filter(category => {
+            const categorySlug = String(category.slug || '');
+            if (PRIMARY_SECTORS.includes(categorySlug)) return false;
+            const deviceIds = Array.isArray(category.deviceIds) ? category.deviceIds.map(String) : [];
+            if (deviceIds.length) return deviceIds.includes(slug);
             const deviceId = String(category.deviceId || '');
             if (deviceId) return deviceId === String(device?.id || '') || deviceId === slug || deviceId === 'device-' + slug;
             return apps.some(app => app && app.category === category.slug &&
