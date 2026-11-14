@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import { Script } from 'node:vm';
 
 const raw = await readFile(new URL('../apps-data.json', import.meta.url), 'utf8');
 const catalog = JSON.parse(raw);
@@ -128,4 +129,16 @@ assert.match(html, /router:\s*\{\s*label:\s*['"]Router Firmware['"]/,
 assert.match(html, /const discovered = apps[\s\S]*?deviceCatalogs\[slug\]\.categories = \[\.\.\.new Set\(\[\.\.\.assigned, \.\.\.discovered\]\)\]/,
   'device categories must be discovered from published app assignments, including static fallback data');
 assert.doesNotMatch(html, /SHA-256 Signatures|Free from Adware|Online 100%|VirusTotal|100% clean builds|tamper signatures|Scanned with VirusTotal|high-availability CDN|d5a7f98e72c83b4|Direct High-Speed|DIRECT CDN|High-Speed CDN|Zero wait time|unrestricted multi-thread|Lightning Fast Premium Hosting Cloud|High-Speed Gigabit VPN|Instant Download|Active Builds|CRITICAL RECOVERY|modded utility builds|CDN Pipe Ready|Authenticated!|TFTP, Odin|SP Flash utilities/i, 'Website must not claim unverified security scans, delivery infrastructure, modified builds, or download verification');
+const htmlIds = [...html.matchAll(/\\bid=["']([^"']+)["']/g)].map(match => match[1]);
+assert.equal(new Set(htmlIds).size, htmlIds.length, 'index.html must not contain duplicate element IDs');
+
+const inlineScripts = [...html.matchAll(/<script\\b([^>]*)>([\\s\\S]*?)<\\/script>/gi)]
+  .filter(match => !/\\bsrc\\s*=/.test(match[1]));
+for (const [index, script] of inlineScripts.entries()) {
+  assert.doesNotMatch(script[1], /\\btype=["']application\\/ld\\+json["']/i,
+    'JSON-LD script blocks are not executable JavaScript');
+  assert.doesNotThrow(() => new Script(script[2], { filename: `index.html:inline-script-${index + 1}` }),
+    `index.html inline script ${index + 1} must parse without syntax errors`);
+}
+
 console.log(`Catalogue validation passed: ${catalog.apps.length} apps, ${ids.size} unique IDs.`);
