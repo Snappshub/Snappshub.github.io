@@ -1246,10 +1246,10 @@ Join Telegram Community
             return parsed.href;
           } catch (_) { return ''; }
         }
-        return /^\.\.\/assets\/[a-zA-Z0-9._/-]+$/.test(source) ? source : (/^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(source) ? source : '');
+        return /^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(source) && !source.split('/').includes('..') ? source : '';
       };
       const imageMarkup = source =>
-        '<img src="' + safeText(source) + '" alt="' + safeText((item.title || 'App') + ' official app icon') +
+        '<img src="' + safeText(source) + '" alt="' + safeText((item.title || 'App') + ' app icon') +
         '" class="w-10 h-10 rounded-lg object-contain" loading="lazy" decoding="async" referrerpolicy="no-referrer" ' +
         'onerror="this.onerror=null;this.replaceWith(document.createTextNode(' + JSON.stringify(fallback) + '));">';
       // Only explicitly supplied app artwork or bundled local files count as app icons.
