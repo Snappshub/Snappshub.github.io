@@ -50,27 +50,27 @@ for (const [index, app] of catalog.apps.entries()) {
 
 const outboundFields = ['url', 'sourceUrl', 'mirror1', 'telegramSupportUrl'];
 for (const [index, app] of catalog.apps.entries()) {
-  const label = app.id || \`row \${index + 1}\`;
+  const label = app.id || `row \${index + 1}`;
   for (const field of outboundFields) {
     if (!app[field]) continue;
     let parsed;
     try { parsed = new URL(app[field]); }
-    catch { assert.fail(\`\${label}: \${field} must be an absolute URL\`); }
-    assert.equal(parsed.protocol, 'https:', \`\${label}: \${field} must use HTTPS\`);
-    assert.equal(parsed.username, '', \`\${label}: \${field} must not contain embedded credentials\`);
-    assert.equal(parsed.password, '', \`\${label}: \${field} must not contain embedded credentials\`);
+    catch { assert.fail(`\${label}: \${field} must be an absolute URL`); }
+    assert.equal(parsed.protocol, 'https:', `\${label}: \${field} must use HTTPS`);
+    assert.equal(parsed.username, '', `\${label}: \${field} must not contain embedded credentials`);
+    assert.equal(parsed.password, '', `\${label}: \${field} must not contain embedded credentials`);
   }
   if (app.mirrors !== undefined) {
-    assert.ok(Array.isArray(app.mirrors), \`\${label}: mirrors must be an array\`);
+    assert.ok(Array.isArray(app.mirrors), `\${label}: mirrors must be an array`);
     for (const mirror of app.mirrors) {
       const mirrorUrl = typeof mirror === 'string' ? mirror : mirror?.url;
-      assert.ok(typeof mirrorUrl === 'string' && mirrorUrl.trim(), \`\${label}: each mirror needs a URL\`);
+      assert.ok(typeof mirrorUrl === 'string' && mirrorUrl.trim(), `\${label}: each mirror needs a URL`);
       let parsed;
       try { parsed = new URL(mirrorUrl); }
-      catch { assert.fail(\`\${label}: mirror URL must be absolute\`); }
-      assert.equal(parsed.protocol, 'https:', \`\${label}: mirror URL must use HTTPS\`);
-      assert.equal(parsed.username, '', \`\${label}: mirror URL must not contain embedded credentials\`);
-      assert.equal(parsed.password, '', \`\${label}: mirror URL must not contain embedded credentials\`);
+      catch { assert.fail(`\${label}: mirror URL must be absolute`); }
+      assert.equal(parsed.protocol, 'https:', `\${label}: mirror URL must use HTTPS`);
+      assert.equal(parsed.username, '', `\${label}: mirror URL must not contain embedded credentials`);
+      assert.equal(parsed.password, '', `\${label}: mirror URL must not contain embedded credentials`);
     }
   }
 }
