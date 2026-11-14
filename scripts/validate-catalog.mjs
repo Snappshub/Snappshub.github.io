@@ -103,6 +103,8 @@ for (const [index, app] of catalog.apps.entries()) {
   }
 }
 
+const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+
 assert.ok(html.includes('const PRIMARY_SECTORS = [\'android\',\'androidtv\',\'desktop\',\'router\']'),
   'renderer must use exactly four primary sectors');
 assert.ok(html.includes('validIconSource(item.iconUrl)') && html.includes('validIconSource(item.iconFile)'),
@@ -115,7 +117,6 @@ assert.ok(!primaryNav.includes('data-category='),
 assert.ok(html.includes("parsed.pathname === '/s2/favicons'"),
   'generic Google favicons must not be treated as publisher-owned app icons');
 
-const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 for (const required of [
   'id="catalogView"',
   'id="appDetailsView"',
