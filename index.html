@@ -755,9 +755,9 @@ Join Telegram Community
               </button>
 <div class="text-center py-1"><a id="detailSourceLink" href="#" target="_blank" rel="noopener noreferrer" class="text-[11px] text-cyan-300 hover:underline">Official source website ↗</a></div>
 <button type="button" onclick="openDownloadModal(currentActiveApp.id, 'download')" class="w-full py-2.5 px-4 rounded-xl bg-[#162035] hover:bg-emerald-600/20 text-emerald-300 font-semibold text-xs border border-emerald-500/30 transition">Download</button>
-<a class="w-full py-2.5 px-4 rounded-xl bg-[#162035] hover:bg-sky-600/30 text-sky-400 font-semibold text-xs border border-sky-500/30 transition flex items-center justify-center gap-2" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">
-                Join Telegram Mirror @snappshub
-              </a>
+<button type="button" onclick="openDownloadModal(currentActiveApp.id, 'download')" class="w-full py-2.5 px-4 rounded-xl bg-[#162035] hover:bg-sky-600/30 text-sky-400 font-semibold text-xs border border-sky-500/30 transition flex items-center justify-center gap-2">
+                Telegram download help ↗
+              </button>
 </div>
 <!-- Page 2 Banner Ad Box -->
 <div class="p-4 rounded-xl bg-[#0a0e18] border border-dashed border-[#1f273d] text-center" data-purpose="details-sidebar-ad-slot">
@@ -1634,6 +1634,7 @@ Join Telegram Community
           if (publisherUrl && /\.(apk|xapk|apks|exe|msi|dmg|pkg|zip|7z|rar|tar|gz|img|bin|iso)(?:$|[?#])/i.test(publisherUrl)) {
             direct.href = publisherUrl;
             direct.textContent = 'Download file ↗';
+            direct.click();
           } else if (publisherUrl) {
             direct.href = publisherUrl;
             direct.textContent = 'Visit publisher download page ↗';
