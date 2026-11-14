@@ -32,7 +32,8 @@
         "android"
       ],
       "sourceUrl": "https://telegram.org/apps",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://raw.githubusercontent.com/DrKLO/Telegram/master/TMessagesProj/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
       "id": "apk-3",
@@ -311,7 +312,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/mozilla-mobile/firefox-android/main/fenix/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
       "id": "browser-brave",
@@ -365,7 +367,8 @@
         "android",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://raw.githubusercontent.com/bitwarden/clients/main/apps/browser/src/images/icon128.png"
     },
     {
       "id": "security-keepassdx",
@@ -400,7 +403,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/develop/share/icons/application/256x256/apps/keepassxc.png"
     },
     {
       "id": "popular-7zip",
@@ -577,7 +581,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/images/openshot.png"
     },
     {
       "id": "photo-gimp",
