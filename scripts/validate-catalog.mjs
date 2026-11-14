@@ -135,8 +135,8 @@ assert.equal(new Set(htmlIds).size, htmlIds.length, 'index.html must not contain
 const inlineScripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
   .filter(match => !/\bsrc\s*=/.test(match[1]) && !/type=["']application\/ld\+json["']/i.test(match[1]));
 for (const [index, script] of inlineScripts.entries()) {
-  assert.doesNotThrow(() => new Script(script[2], { filename: \`index.html:inline-script-\${index + 1}\` }),
-    \`index.html inline script \${index + 1} must parse without syntax errors\`);
+  assert.doesNotThrow(() => new Script(script[2], { filename: `index.html:inline-script-${index + 1}` }),
+    `index.html inline script ${index + 1} must parse without syntax errors`);
 }
 
 console.log(`Catalogue validation passed: ${catalog.apps.length} apps, ${ids.size} unique IDs.`);
