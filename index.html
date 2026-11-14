@@ -1,1640 +1,308 @@
-<!DOCTYPE html>
-
-<html class="dark scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SnappsHub — Publisher-Linked Software, APKs &amp; Firmware Vault</title>
-<meta content="Curated software listings with publisher-linked downloads for Android, Android TV, desktop utilities, and router firmware." name="description"/>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-<link rel="canonical" href="https://snappshub.github.io/"/>
-<link rel="alternate" hreflang="en" href="https://snappshub.github.io/"/>
-<link rel="alternate" hreflang="x-default" href="https://snappshub.github.io/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:site_name" content="SnappsHub"/>
-<meta property="og:title" content="SnappsHub — Publisher-Linked Software, APKs &amp; Firmware Vault"/>
-<meta property="og:description" content="Explore curated Android apps, Android TV utilities, desktop software and router firmware with links to publisher sources."/>
-<meta property="og:url" content="https://snappshub.github.io/"/>
-<meta property="og:locale" content="en_US"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta property="og:image" content="https://snappshub.github.io/assets/snappshub-logo.svg"/>
-<meta name="twitter:image" content="https://snappshub.github.io/assets/snappshub-logo.svg"/>
-<link rel="apple-touch-icon" href="./assets/snappshub-logo.svg"/>
-<link rel="sitemap" type="application/xml" href="https://snappshub.github.io/sitemap.xml"/>
-<!-- Favicon using provided Cyber S SVG -->
-<link href="./assets/snappshub-logo.svg" rel="icon" type="image/svg+xml"/>
-<!-- Inter Font -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS v3 with Plugins -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            cyberDark: '#0a0e18',
-            surfaceCard: '#111728',
-            surfaceBorder: '#1f273d',
-            goldAccent: '#f59e0b',
-            cyanNeon: '#06b6d4',
-            emeraldSafe: '#10b981',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          animation: {
-            'marquee': 'marquee 28s linear infinite',
-            'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          },
-          keyframes: {
-            marquee: {
-              '0%': { transform: 'translateX(0%)' },
-              '100%': { transform: 'translateX(-50%)' },
-            },
-            pulseGlow: {
-              '0%, 100%': { opacity: 1, filter: 'drop-shadow(0 0 10px rgba(245, 158, 11, 0.7))' },
-              '50%': { opacity: 0.6, filter: 'drop-shadow(0 0 3px rgba(6, 182, 212, 0.5))' },
-            }
-          }
-        }
-      }
-    }
-  </script>
-<style data-purpose="base-cyber-effects">
-    body {
-      background-color: #0a0e18;
-      color: #e2e8f0;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-    .custom-scroll::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scroll::-webkit-scrollbar-track {
-      background: #0a0e18;
-    }
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background: #1f273d;
-      border-radius: 4px;
-    }
-    .custom-scroll::-webkit-scrollbar-thumb:hover {
-      background: #f59e0b;
-    }
-    .glow-gold {
-      box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.25);
-    }
-    .glow-cyan {
-      box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.25);
-    }
-    /* Lightweight cyberpunk motion: animate compositor-friendly transform/opacity only. */
-    .ticker-pulse-label {
-      color: #22d3ee;
-      text-shadow: 0 0 5px rgba(34, 211, 238, .55);
-      animation: tickerLabelPulse 2.4s ease-in-out infinite;
-    }
-    .brand-pulse-name {
-      display: inline-block;
-      color: #22d3ee;
-      text-shadow: 0 0 8px rgba(34, 211, 238, .65);
-      animation: brandNamePulse 2.8s ease-in-out infinite;
-      font-size: 1.2rem;
-    }
-    .brand-pulse-icon {
-      animation: brandNamePulse 2.8s ease-in-out infinite;
-      filter: drop-shadow(0 0 6px rgba(34, 211, 238, .5));
-    }
-    .search-cyber-icon {
-      color: #22d3ee;
-      filter: drop-shadow(0 0 4px rgba(34, 211, 238, .65));
-      transform-origin: center;
-      animation: searchCyberScan 3s ease-in-out infinite;
-    }
-    @keyframes brandNamePulse {
-      0%, 100% { opacity: 1; transform: translateY(0); }
-      50% { opacity: .78; transform: translateY(-1px); }
-    }
-    @keyframes searchCyberScan {
-      0%, 100% { opacity: 1; transform: rotate(0deg) scale(1); }
-      50% { opacity: .78; transform: rotate(9deg) scale(1.12); }
-    }
-    .header-search-open { display: block !important; position: absolute; top: calc(100% + .5rem); left: 1rem; right: 1rem; width: auto; max-width: 32rem; margin-left: auto; z-index: 60; padding: .5rem; background: #0a0e18; border: 1px solid #1f273d; border-radius: .75rem; box-shadow: 0 12px 30px rgba(0,0,0,.4); }
-    @media (max-width: 767px) {
-      .brand-pulse-name { font-size: 1.05rem; }
-    }
-    @keyframes tickerLabelPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .68; }
-    }
-    .footer-neon-item { transition: transform .22s ease, color .22s ease; }
-    .footer-neon-item:hover { transform: translateX(3px); color: #67e8f9; }
-    .footer-neon-icon { display: inline-flex; align-items: center; justify-content: center; width: 1.15rem; min-width: 1.15rem; color: #22d3ee; transition: transform .25s ease, filter .25s ease; }
-    .footer-neon-item:hover .footer-neon-icon { transform: translateY(-2px) scale(1.12); filter: drop-shadow(0 0 5px rgba(34,211,238,.75)); }
-    .footer-dmca-badge { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem .75rem; border: 1px solid rgba(34,211,238,.35); border-radius: .65rem; background: linear-gradient(110deg, rgba(8,145,178,.13), rgba(15,23,42,.8)); color: #a5f3fc; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
-    .footer-dmca-badge:hover { border-color: rgba(34,211,238,.8); box-shadow: 0 0 14px rgba(34,211,238,.18); transform: translateY(-2px); }
-    .footer-dmca-shield { animation: footerShieldPulse 2.8s ease-in-out infinite; }
-    @keyframes footerShieldPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .72; transform: scale(1.06); } }
-    @media (prefers-reduced-motion: reduce) {
-      .ticker-pulse-label, .brand-pulse-name, .brand-pulse-icon, .search-cyber-icon, .footer-dmca-shield {
-        animation: none !important;
-        transform: none !important;
-      }
-      .footer-neon-item, .footer-neon-icon, .footer-dmca-badge { transition: none !important; }
-    }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SN Apps Hub — Trusted &amp; Secure Apps for Every Device</title>
+  <meta name="description" content="Verified Android, Android TV, Desktop, and Router software curated by SN Apps Hub with fast direct mirrors." />
+  <meta property="og:title" content="SN Apps Hub — Trusted &amp; Secure Apps for Every Device" />
+  <meta property="og:description" content="Verified Android, Android TV, Desktop, and Router software curated by SN Apps Hub with fast direct mirrors." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#06030f" />
   
-    .device-subcategory-tabs { overflow-x:auto; padding:2px 0 6px; scrollbar-width:thin; }
-    .subcategory-chip { flex:0 0 auto; border:1px solid #26334b; border-radius:999px; padding:6px 11px; color:#aab8cc; background:#101827; font-size:11px; font-weight:600; transition:all .2s ease; }
-    .subcategory-chip:hover,.subcategory-chip.active { color:#07111d; background:#22d3ee; border-color:#22d3ee; box-shadow:0 0 12px rgba(34,211,238,.18); }
-</style>
-<style data-purpose="responsive-layout-fixes">
-  /* Responsive-only layout safeguards; preserve the existing visual theme. */
-  *, *::before, *::after { box-sizing: border-box; }
-  img, svg, video, canvas { max-width: 100%; }
-  body { width: 100%; min-width: 0; }
-  main, header, footer, section, aside { min-width: 0; }
-  h1, h2, h3, p, a, button, span { overflow-wrap: anywhere; }
-  #downloadModal { overflow-y: auto; }
-  #downloadModal > div { max-height: calc(100dvh - 2rem); overflow-y: auto; }
-  #pushNotificationBanner { width: min(24rem, calc(100vw - 2rem)); }
-  @media (max-width: 639px) {
-    header > div { gap: .5rem; padding-left: .75rem; padding-right: .75rem; }
-    header > div > div:first-child { min-width: 0; gap: .5rem; }
-    header .group { min-width: 0; gap: .4rem; }
-    header .group > div:last-child { min-width: 0; }
-    header .group > div:last-child > p { display: none; }
-    header .group > div:last-child .inline-flex { display: none; }
-    header .group > div:last-child > div > span:first-child { font-size: 1rem; }
-    header > div > div:last-child a { padding: .45rem .6rem; }
-    #appDetailsView > div { padding: 1rem; }
-    #appDetailsView #detailBreadcrumb { max-width: 45%; text-align: right; overflow-wrap: anywhere; }
-    #cat-android > div:first-child,
-    #cat-androidtv > div:first-child,
-    #cat-desktop > div:first-child,
-    #cat-router > div:first-child { align-items: flex-start; gap: .5rem; }
-    #cat-android > div:first-child > span:last-child,
-    #cat-androidtv > div:first-child > span:last-child,
-    #cat-desktop > div:first-child > span:last-child,
-    #cat-router > div:first-child > span:last-child { display: none; }
-    #downloadModal { align-items: flex-start; padding: .75rem; }
-    #downloadModal > div { padding: 1rem; margin: auto 0; }
-    #downloadModal > div > div:last-child { flex-wrap: wrap; gap: .5rem; }
-    #pushNotificationBanner { display:none !important; }
-  }
-  @media (max-width: 360px) {
-    header > div > div:first-child > button { padding: .4rem; }
-    header .group > div:last-child > div > span:first-child { font-size: .9rem; }
-    main { padding-left: .75rem; padding-right: .75rem; }
-    #appDetailsView #detailBreadcrumb { display: none; }
-  }
-</style>
-
-<style data-purpose="pinned-device-navigation">
-  /* Compact, single-line pinned device navigation */
-  .device-nav { position:sticky; top:72px; z-index:35; background:rgba(10,14,24,.96); backdrop-filter:blur(16px); border-bottom:1px solid rgba(31,39,61,.9); }
-  .device-nav-grid {
-    display:flex; align-items:center; gap:.5rem; overflow-x:auto; overflow-y:hidden;
-    padding:0 0 .2rem; scrollbar-width:none; -webkit-overflow-scrolling:touch;
-    scroll-snap-type:x proximity;
-  }
-  .device-nav-grid::-webkit-scrollbar { display:none; }
-  .device-nav-card { position:relative; display:flex; align-items:center; justify-content:center; min-width:0; min-height:2.55rem; padding:.55rem .25rem; overflow:hidden; border:1px solid #26334d; border-radius:.65rem; background:linear-gradient(135deg,rgba(17,23,40,.98),rgba(15,29,48,.92)); color:#f1f5f9; text-align:center; white-space:nowrap; transition:background .2s ease,border-color .2s ease,color .2s ease; }
-  .device-nav-card:hover,.device-nav-card:focus-visible,.device-nav-card.active { background:rgba(30,41,59,.95); border-color:var(--device-accent); color:var(--device-accent); outline:none; }
-  .device-nav-icon,.device-nav-sub,.device-nav-arrow { display:none!important; }
-  .device-nav-title { display:block; min-width:0; overflow:hidden; text-overflow:ellipsis; color:inherit; font-size:clamp(.58rem,.9vw,.78rem); line-height:1.15; font-weight:800; white-space:nowrap; }
-  @media(max-width:767px) {
-    .device-nav { top:64px; }
-    .device-nav-grid { gap:.4rem; }
-    .device-nav-card {
-      flex:0 0 auto; min-height:2.35rem; min-width:max-content;
-      padding:.45rem .7rem; border-radius:.5rem; scroll-snap-align:start;
+  <style>
+    :root {
+      --bg: #06030f;
+      --surface: #0e0720;
+      --surface2: #160c2e;
+      --border: rgba(0, 240, 255, 0.35);
+      --accent: #00f0ff;
+      --accent2: #ff2a85;
+      --accentText: #05020b;
+      --text: #f0f9ff;
+      --muted: #94a3b8;
+      --radius: 10px;
     }
-    .device-nav-title { font-size:.68rem; letter-spacing:0; }
-  }
-  @media(prefers-reduced-motion:reduce) { .device-nav-card { transition:none!important; } }
-</style>
-
-
-<style data-purpose="snappshub-unified-design-system">
-:root{
-  --sn-bg:#0a0e18;--sn-surface:#111728;--sn-surface-2:#151f33;
-  --sn-border:#26334d;--sn-border-soft:rgba(148,163,184,.14);
-  --sn-cyan:#22d3ee;--sn-cyan-strong:#06b6d4;--sn-gold:#f59e0b;
-  --sn-text:#e2e8f0;--sn-muted:#94a3b8;
-  --sn-radius:14px;--sn-shadow:0 14px 38px rgba(0,0,0,.24);
-  --sn-focus:0 0 0 3px rgba(6,182,212,.18);
-}
-html{scroll-behavior:smooth}
-body{background-color:var(--sn-bg);color:var(--sn-text)}
-:where(button,a,input,select,textarea,[role="button"]){-webkit-tap-highlight-color:transparent}
-:where(button,a,[role="button"]){transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
-:where(button,input,select,textarea):focus-visible{outline:2px solid var(--sn-cyan);outline-offset:2px}
-:where(input,select,textarea){accent-color:var(--sn-cyan)}
-::selection{background:rgba(6,182,212,.32);color:#fff}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto!important}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-}
-</style>
-<style data-purpose="snappshub-site-design-system">
-body{background-image:radial-gradient(ellipse at 12% -10%,rgba(6,182,212,.075),transparent 38%),radial-gradient(ellipse at 88% 0%,rgba(245,158,11,.065),transparent 34%)}
-header{border-color:var(--sn-border)!important;box-shadow:0 8px 28px rgba(0,0,0,.22)}
-.device-nav{background:rgba(10,14,24,.94);border-bottom-color:var(--sn-border)}
-.device-nav-card{border-color:var(--sn-border);border-radius:10px;box-shadow:inset 0 1px rgba(255,255,255,.025);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
-.device-nav-card:hover,.device-nav-card:focus-visible{transform:translateY(-1px);box-shadow:0 6px 18px rgba(6,182,212,.10)}
-#pushNotificationBanner{border-radius:var(--sn-radius);box-shadow:var(--sn-shadow);backdrop-filter:blur(18px)}
-button{border-radius:10px}
-input,select,textarea{border-radius:10px}
-@media(max-width:767px){.device-nav-card:hover{transform:none}}
-</style>
-<style data-purpose="snappshub-device-nav-fix">
-  /* Four compact device links: icon + one-line title, with subtle motion. */
-  .device-nav { top:72px; }
-  .device-nav-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.45rem; }
-  .device-nav-card {
-    display:flex; flex-direction:row; align-items:center; justify-content:center;
-    gap:.38rem; min-width:0; min-height:2.7rem; padding:.45rem .3rem;
-    white-space:nowrap; border:1px solid var(--sn-border,#26334d);
-    border-radius:10px; background:linear-gradient(135deg,rgba(17,23,40,.98),rgba(15,29,48,.92));
-    color:#e2e8f0; transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease,color .2s ease;
-  }
-  .device-nav-card:hover,.device-nav-card:focus-visible {
-    transform:translateY(-2px); border-color:var(--device-accent);
-    color:var(--device-accent); box-shadow:0 7px 18px rgba(6,182,212,.12); outline:none;
-  }
-  .device-nav-icon {
-    display:inline-flex!important; align-items:center; justify-content:center;
-    width:1.15rem; min-width:1.15rem; height:1.15rem; color:var(--device-accent);
-    animation:deviceIconFloat 2.8s ease-in-out infinite;
-  }
-  .device-nav-icon svg { display:block; width:100%; height:100%; }
-  .device-nav-title {
-    display:block; min-width:0; overflow:hidden; text-overflow:ellipsis;
-    font-size:clamp(.62rem,.82vw,.78rem); line-height:1.15; font-weight:800;
-    white-space:nowrap; color:inherit;
-  }
-  .device-nav-sub { display:none!important; }
-  .device-nav-arrow { display:none!important; }
-  .device-nav-card:nth-child(2) .device-nav-icon { animation-delay:.25s; }
-  .device-nav-card:nth-child(3) .device-nav-icon { animation-delay:.5s; }
-  .device-nav-card:nth-child(4) .device-nav-icon { animation-delay:.75s; }
-  @keyframes deviceIconFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
-  @media(max-width:767px) {
-    .device-nav { top:64px; }
-    .device-nav-grid { gap:.22rem; }
-    .device-nav-card { min-height:2.45rem; gap:.2rem; padding:.35rem .12rem; border-radius:8px; }
-    .device-nav-icon { width:.9rem; min-width:.9rem; height:.9rem; }
-    .device-nav-title { font-size:clamp(.51rem,2.15vw,.68rem); letter-spacing:-.035em; }
-  }
-  @media(max-width:360px) {
-    .device-nav-card { gap:.12rem; padding-inline:.06rem; }
-    .device-nav-icon { width:.78rem; min-width:.78rem; height:.78rem; }
-    .device-nav-title { font-size:.49rem; }
-  }
-  @media(prefers-reduced-motion:reduce) {
-    .device-nav-icon { animation:none!important; }
-    .device-nav-card { transition:none!important; }
-  }
-</style>
-
-
-<style data-purpose="snappshub-footer-cyber-icons">
-footer{position:relative;overflow:hidden;background:radial-gradient(ellipse at 15% 0%,rgba(6,182,212,.09),transparent 42%),radial-gradient(ellipse at 85% 100%,rgba(245,158,11,.07),transparent 38%),#080c16!important}
-footer:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,#22d3ee,#f59e0b,transparent);opacity:.8}
-footer .grid>div{position:relative}
-footer .grid>div>div:first-child:not(.flex){display:flex;align-items:center;gap:.48rem}
-footer .grid>div>div:first-child:not(.flex):before{content:"";width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:#22d3ee;box-shadow:0 0 9px #22d3ee;animation:footerDotPulse 2s ease-in-out infinite}
-footer .footer-neon-item{min-height:2rem;padding:.22rem .28rem;border:1px solid transparent;border-radius:8px}
-footer .footer-neon-item:hover{transform:translateX(3px);border-color:rgba(34,211,238,.22);background:rgba(6,182,212,.07);box-shadow:0 0 14px rgba(6,182,212,.07)}
-footer .footer-neon-icon{animation:footerIconFloat 3s ease-in-out infinite;filter:drop-shadow(0 0 3px rgba(34,211,238,.24))}
-footer .footer-neon-item:nth-child(2n) .footer-neon-icon{animation-delay:.45s}
-footer .footer-neon-item:nth-child(3n) .footer-neon-icon{animation-delay:.9s}
-footer .footer-dmca-badge{box-shadow:inset 0 0 14px rgba(6,182,212,.04)}
-footer .footer-dmca-shield{filter:drop-shadow(0 0 5px rgba(34,211,238,.35))}
-footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 3s ease-in-out infinite;box-shadow:0 0 14px rgba(245,158,11,.12)}
-@keyframes footerIconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
-@keyframes footerDotPulse{0%,100%{opacity:.65;transform:scale(.85)}50%{opacity:1;transform:scale(1.2)}}
-@keyframes footerBrandGlow{0%,100%{box-shadow:0 0 8px rgba(245,158,11,.1)}50%{box-shadow:0 0 17px rgba(6,182,212,.22)}}
-@media(prefers-reduced-motion:reduce){footer .footer-neon-icon,footer .footer-dmca-shield,footer .grid>div:first-child>div:first-child .rounded,footer .grid>div>div:first-child:not(.flex):before{animation:none!important}}
-</style>
-
-
-<style data-purpose="snappshub-mobile-polish-v1">
-/* Compact, swipeable category navigation */
-.device-nav{position:sticky;top:64px;z-index:35;padding:.45rem 0;background:rgba(10,14,24,.97)}
-.device-nav-grid{
- display:flex!important;flex-wrap:nowrap!important;gap:.5rem!important;
- overflow-x:auto;overflow-y:hidden;padding:0 .9rem .3rem;
- scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
-}
-.device-nav-grid::-webkit-scrollbar{display:none}
-.device-nav-card{
- flex:0 0 auto;min-width:max-content;min-height:2.35rem!important;
- padding:.55rem .9rem!important;border-radius:999px!important;
- scroll-snap-align:start;white-space:nowrap;
-}
-.device-nav-icon,.device-nav-sub,.device-nav-arrow{display:none!important}
-.device-nav-title{font-size:.76rem!important;letter-spacing:0!important;overflow:visible!important}
-@media(max-width:767px){
- .device-nav{top:64px;padding:.4rem 0 .25rem}
- .device-nav-grid{gap:.4rem!important;padding-inline:.75rem}
- .device-nav-card{min-height:2.15rem!important;padding:.48rem .78rem!important}
- .device-nav-title{font-size:.72rem!important}
-}
-/* Remove the oversized fake ad panel treatment; retain a compact sponsor slot */
-#headerAdContainer{min-height:0!important;margin-top:.65rem!important;padding:.55rem .8rem!important;border-style:solid!important}
-#headerAdContainer #headerAdContent{flex-direction:row!important;flex-wrap:wrap;gap:.45rem .7rem!important}
-#headerAdContainer #headerAdContent p{font-size:.72rem;line-height:1.35}
-#headerAdContainer #headerAdContent>span{font-size:.68rem}
-#headerAdContainer #headerAdContent>a{padding:.35rem .7rem!important}
-#headerAdContainer>span{font-size:8px!important}
-@media(max-width:639px){
- #headerAdContainer{margin:.55rem .75rem 0!important;width:auto!important;padding:.55rem .65rem!important}
- #headerAdContainer #headerAdContent{justify-content:center;gap:.35rem .55rem!important}
- #headerAdContainer #headerAdContent p{flex:1 1 100%;text-align:center;margin:0}
- #headerAdContainer #headerAdContent>span{font-size:.62rem}
- #headerAdContainer #headerAdContent>a{font-size:.68rem}
-}
-/* Keep the announcement ticker from squeezing its label or clipping the track */
-[data-purpose="marquee-announcement"]>.flex{min-width:0}
-[data-purpose="marquee-announcement"]>.flex>div:first-child{flex:0 0 auto}
-[data-purpose="marquee-announcement"] .overflow-hidden{min-width:0;flex:1}
-[data-purpose="marquee-announcement"] .animate-marquee{width:max-content;max-width:none;white-space:nowrap}
-/* Keep the opt-in notice accessible without floating over catalogue cards */
-@media(max-width:767px){
- #pushNotificationBanner{
-  position:relative!important;inset:auto!important;right:auto!important;bottom:auto!important;
-  left:auto!important;transform:none!important;width:calc(100% - 1.5rem)!important;
-  max-width:28rem;margin:1rem auto!important;z-index:5;
- }
-}
-/* Consistent mobile gutters and calmer section rhythm */
-@media(max-width:639px){
- main{padding-top:.5rem}
- section.max-w-7xl{padding-top:.75rem;padding-bottom:.75rem}
-}
-</style>
-
-<style data-purpose="snappshub-mobile-polish-v2">
-@media(max-width:767px){
-.device-nav-grid{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding:0 .75rem .3rem!important;gap:.45rem!important}
-.device-nav-grid::-webkit-scrollbar{display:none}
-.device-nav-card{flex:0 0 auto!important;width:auto!important;min-width:max-content!important;min-height:2.2rem!important;padding:.48rem .82rem!important;border-radius:999px!important;scroll-snap-align:start}
-.device-nav-title{font-size:.73rem!important;white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important}
-.device-nav{overflow:hidden}
-[data-purpose="marquee-announcement"]{padding-block:.45rem}
-[data-purpose="marquee-announcement"] .animate-marquee{display:inline-flex;gap:2.5rem;align-items:center}
-#headerAdContainer{border-radius:14px!important;background:linear-gradient(135deg,rgba(17,24,39,.98),rgba(15,23,42,.94))!important;box-shadow:0 8px 24px rgba(0,0,0,.18)}
-}
-@media(max-width:380px){.device-nav-card{padding-inline:.68rem!important}.device-nav-title{font-size:.69rem!important}}
-</style>
-
-<style data-purpose="snappshub-responsive-catalog-grid-v3">
-  /* Catalogue density: readable on phones, balanced on tablets, spacious on desktop. */
-  #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
-    display:grid!important;
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    align-items:stretch;
-    gap:clamp(.65rem,1.4vw,1rem)!important;
-  }
-  @media(min-width:768px){
-    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
-      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5;
     }
-  }
-  @media(min-width:1200px){
-    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
-      grid-template-columns:repeat(4,minmax(0,1fr))!important;
-    }
-  }
-  @media(max-width:360px){
-    #grid-android,#grid-androidtv,#grid-desktop,#grid-router {
-      gap:.55rem!important;
-    }
-  }
-</style>
-
-<style id="keyboard-accessibility">
-  #skip-link{position:fixed;top:1rem;left:1rem;z-index:1000;transform:translateY(-160%);padding:.7rem 1rem;border-radius:.6rem;background:#fbbf24;color:#0a0e18;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.35)}
-  #skip-link:focus{transform:translateY(0);outline:3px solid #22d3ee;outline-offset:3px}
-  #main-content:focus{outline:none}
-</style>
-<style data-purpose="four-sector-navigation-final">
-.device-nav-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.4rem!important;overflow:visible!important;padding:0!important}
-.device-nav-card{flex:initial!important;min-width:0!important;width:100%;min-height:2.55rem!important;padding:.45rem .2rem!important;border-radius:.65rem!important;white-space:nowrap}
-.device-nav-icon{display:inline-flex!important;width:1rem!important;min-width:1rem!important;height:1rem!important}
-.device-nav-title{font-size:clamp(.58rem,1.1vw,.78rem)!important;letter-spacing:0!important}
-@media(max-width:360px){.device-nav-grid{gap:.2rem!important}.device-nav-card{gap:.12rem!important;padding-inline:.08rem!important}.device-nav-icon{width:.78rem!important;min-width:.78rem!important;height:.78rem!important}.device-nav-title{font-size:.5rem!important}}
-</style>
+    a { color: var(--accent); text-decoration: none; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 14px; }
+    .topbar { position: sticky; top: 0; z-index: 30; background: var(--surface); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 10px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; }
+    .brand img { width: 34px; height: 34px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 14px; border-radius: var(--radius); font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background: var(--accent); color: var(--accentText); }
+    .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+    .btn-glass { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--accent); }
+    .btn-gradient { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: var(--accentText); }
+    .btn-sec { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .hero { padding: 28px 0; border-bottom: 1px solid var(--border); }
+    .eyebrow { color: var(--accent); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
+    .hero h1 { font-size: 26px; margin-top: 6px; line-height: 1.2; }
+    .hero p { color: var(--muted); font-size: 14px; margin-top: 8px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .app-ico { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1px solid var(--border); flex-shrink: 0; }
+    .ad-box { margin: 14px 0; padding: 12px; border: 1px dashed var(--border); border-radius: var(--radius); text-align: center; font-size: 12px; color: var(--muted); background: var(--surface2); }
+    .modal-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,0.78); display: none; align-items: center; justify-content: center; padding: 14px; backdrop-filter: blur(6px); }
+    .modal-backdrop.open { display: flex; }
+    .modal-card { width: 100%; max-width: 440px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+    .bar-track { height: 8px; background: var(--surface2); border-radius: 99px; overflow: hidden; margin: 12px 0; border: 1px solid var(--border); }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); width: 0%; transition: width .35s linear; }
+    footer { margin-top: 36px; border-top: 1px solid var(--border); padding: 24px 0; background: var(--surface2); font-size: 12px; color: var(--muted); }
+    @keyframes snTicker { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+    .ticker-bar { background: rgba(0,0,0,0.4); border-bottom: 1px solid var(--border); padding: 6px 12px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--accent); overflow: hidden; }
+    .ticker-badge { background: var(--accent); color: var(--accentText); font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 5px; flex-shrink: 0; }
+    .ticker-wrap { flex: 1; overflow: hidden; white-space: nowrap; }
+    .ticker-track { display: inline-flex; width: max-content; animation: snTicker 18s linear infinite; }
+    .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+    /* Custom Live CSS injected directly into SN Apps Hub */
+.sn-hero-glow {
+  box-shadow: 0 20px 60px rgba(243, 201, 105, 0.08);
+}
+  </style>
 </head>
-<body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
-<a id="skip-link" href="#main-content">Skip to main content</a>
-<!-- BEGIN: WebPushNotificationToast -->
-<div class="fixed bottom-5 right-5 z-50 max-w-sm w-full bg-[#111728] border border-cyan-500/30 shadow-2xl rounded-xl p-4 transition-all duration-300 transform translate-y-0 flex items-start gap-3 backdrop-blur-md" data-purpose="push-toast" id="pushNotificationBanner">
-<div class="p-2.5 bg-cyan-950/60 text-cyan-400 rounded-lg border border-cyan-800/50 shrink-0">
-<svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div class="flex-1">
-<div class="flex items-center justify-between">
-<h4 class="text-xs font-semibold uppercase tracking-wider text-amber-400 font-mono">SnappsHub Alert</h4>
-<button class="text-slate-400 hover:text-white text-xs" onclick="dismissNotification()">×</button>
-</div>
-<p class="text-xs text-slate-300 mt-1" id="pushMessageText">Get real-time push alerts for new Router Firmwares and Zero-Day updates.</p>
-<div class="mt-2.5 flex items-center gap-2">
-<button type="button" class="px-2.5 py-1 text-xs bg-slate-800 text-slate-500 font-semibold rounded cursor-not-allowed" disabled aria-disabled="true" title="Push notifications are not connected yet">Alerts coming soon</button>
-<button class="px-2.5 py-1 text-xs bg-slate-800 text-slate-400 hover:text-slate-200 rounded" onclick="dismissNotification()">Later</button>
-</div>
-</div>
-</div>
-<!-- END: WebPushNotificationToast -->
-<!-- BEGIN: MainHeader -->
-<header class="sticky top-0 z-40 bg-[#0a0e18]/90 backdrop-blur-xl border-b border-[#1f273d]">
-<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-3">
-<!-- Drawer Menu Toggle & Official Logo -->
-<div class="flex items-center gap-3">
-<button class="p-2 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-300 hover:text-amber-400 focus:outline-none transition" id="mobileMenuBtn" onclick="toggleDrawer()">
-<svg class="w-5 h-5 brand-pulse-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<!-- Brand Mark using provided SVG logo data -->
-<a class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5 group z-10" href="#home" onclick="showCatalogView()">
-<div class="w-14 h-11 shrink-0 transform group-hover:scale-105 transition-transform">
-<img src="./assets/snappshub-logo.svg" alt="SnappsHub official logo" class="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(245,158,11,0.45)]" width="56" height="44" decoding="async">
-<defs>
-<lineargradient id="goldGrad" x1="0%" x2="100%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#fbbf24"></stop>
-<stop offset="50%" stop-color="#f59e0b"></stop>
-<stop offset="100%" stop-color="#d97706"></stop>
-</lineargradient>
-<lineargradient id="cyberGrad" x1="0%" x2="100%" y1="100%" y2="0%">
-<stop offset="0%" stop-color="#06b6d4"></stop>
-<stop offset="100%" stop-color="#3b82f6"></stop>
-</lineargradient>
-<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
-<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
-<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
-</filter>
-</defs>
-<rect fill="#0b0f19" height="100" rx="22" stroke="#1f293d" stroke-width="2" width="100"></rect>
-<polygon fill="none" points="50,15 82,30 82,60 50,85 18,60 18,30" stroke="url(#cyberGrad)" stroke-dasharray="4,2" stroke-width="2.5"></polygon>
-<path d="M60 34 C58 31 52 30 46 32 C39 34 37 39 40 43 C43 47 62 48 64 54 C66 61 60 67 48 68 C40 68 35 64 33 60 M33 60 L36 57" fill="none" filter="url(#glow)" stroke="url(#goldGrad)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.5"></path>
-<circle cx="50" cy="15" fill="#f59e0b" r="3.5"></circle>
-<circle cx="82" cy="60" fill="#06b6d4" r="3"></circle>
-<circle cx="18" cy="60" fill="#06b6d4" r="3"></circle>
-<circle cx="50" cy="85" fill="#f59e0b" r="3.5"></circle>
-</div>
-<div>
-<div class="flex items-center gap-1.5">
-<span class="font-extrabold text-lg tracking-tight brand-pulse-name">SnappsHub</span>
-<span class="inline-flex items-center px-1.5 py-0.2 text-[10px] font-semibold bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 rounded">
-<svg class="w-2.5 h-2.5 mr-0.5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
-                Official Links
-              </span>
-</div>
-<p class="text-[10px] text-slate-400 tracking-wider font-mono">REPOSITORIES &amp; FIRMWARE</p>
-</div>
-</a>
-</div>
-<!-- Universal Search Bar -->
-<div id="headerSearchWrap" class="hidden">
-<div class="relative">
-<input class="w-full bg-[#111728] border border-[#1f273d] text-sm text-slate-200 rounded-lg pl-9 pr-4 py-2 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition placeholder:text-slate-500" id="globalSearchInput" oninput="handleUniversalSearch(this.value)" placeholder="Search apps, TV APKs, routers, utilities..." type="text"/>
-<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] text-slate-500 font-mono">ESC</span>
-</div>
-</div>
-<!-- Quick Action Controls -->
-<div class="flex items-center gap-2 sm:gap-3">
-<button type="button" onclick="toggleHeaderSearch()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111728] border border-[#1f273d] text-slate-200 hover:text-cyan-300 hover:border-cyan-500/60 text-xs font-semibold transition" aria-label="Search"><svg class="w-4 h-4 search-cyber-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-width="2"></circle><path d="m16 16 5 5" stroke-linecap="round" stroke-width="2"></path></svg><span class="hidden sm:inline">Search</span></button>
+<body>
+  <a href="#apps" class="ticker-bar">
+          <span class="ticker-badge">LIVE</span>
+          <div class="ticker-wrap"><div class="ticker-track"><span style="padding-right:42px;">All builds verified · New Android TV &amp; Router releases live now</span><span style="padding-right:42px;" aria-hidden="true">All builds verified · New Android TV &amp; Router releases live now</span></div></div>
+        </a>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="/assets/aistudio/SN_Apps_Hub_Brand_Logo_cb936f51.png" alt="Logo" onerror="this.style.display='none'" />
+        <span>SN Apps Hub</span>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-sec" onclick="toggleFolders()">Folders</button>
+        <a class="btn btn-primary" href="https://t.me/snappshub" target="_blank" rel="noreferrer">Telegram</a>
+      </div>
+    </div>
+  </header>
 
-</div>
-</div>
-</header>
-<!-- END: MainHeader -->
+  <main id="page-home" class="container">
+    <section class="hero">
+      <div class="eyebrow">Trusted &amp; Secure for Your Device</div>
+      <h1>Curated apps, verified mirrors, zero clutter.</h1>
+      <p>Discover clean, checksum-verified releases across Android, Android TV, Desktop, and Router platforms with direct high-speed download mirrors.</p>
+      <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="#apps" class="btn btn-primary">Browse Catalogue</a>
+        <a href="https://t.me/snappshub" target="_blank" class="btn btn-sec">Join Support Channel</a>
+      </div>
+    </section>
 
-<!-- Four Primary Device/Sector Navigation -->
-<nav class="device-nav" aria-label="Primary device sectors">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
-    <div class="device-nav-grid">
-      <button type="button" class="device-nav-card" style="--device-accent:#22d3ee" data-sector="android" aria-pressed="false" onclick="filterPrimarySector('android')"><span class="device-nav-icon" aria-hidden="true">📱</span><span class="device-nav-title">Android</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#a78bfa" data-sector="androidtv" aria-pressed="false" onclick="filterPrimarySector('androidtv')"><span class="device-nav-icon" aria-hidden="true">📺</span><span class="device-nav-title">Android TV</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#34d399" data-sector="desktop" aria-pressed="false" onclick="filterPrimarySector('desktop')"><span class="device-nav-icon" aria-hidden="true">💻</span><span class="device-nav-title">Desktop</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#f59e0b" data-sector="router" aria-pressed="false" onclick="filterPrimarySector('router')"><span class="device-nav-icon" aria-hidden="true">📡</span><span class="device-nav-title">Router</span></button>
+    <div id="folder-bar" style="display:none;margin-top:12px;gap:8px;flex-wrap:wrap;"></div>
+    <div id="ads-home"></div>
+
+    <section id="apps" style="margin-top:18px;">
+      <h2 style="font-size:18px;">Verified Applications</h2>
+      <div id="apps-grid" class="grid"></div>
+    </section>
+  </main>
+
+  <main id="page-details" class="container" style="display:none;padding-top:18px;">
+    <button class="btn btn-sec" onclick="goHome()">&larr; Back to Dashboard Home</button>
+    <div id="details-body" style="margin-top:14px;"></div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>SN Apps Hub curates trusted utility, streaming, browser, and network software with transparent source attribution and reliable download mirrors.</p>
+      <div style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="#dmca" onclick="showPolicy('dmca');return false;">DMCA</a>
+        <a href="#privacy" onclick="showPolicy('privacy');return false;">Privacy Policy</a>
+        <a href="#credits" onclick="showPolicy('credits');return false;">Open-Source Credits</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+      <p style="margin-top:10px;">© 2026 SN Apps Hub · snappshub.github.io</p>
+    </div>
+  </footer>
+
+  <!-- Mini Window 1: Pre-Detail 5s Countdown -->
+  <div id="mw1" class="modal-backdrop">
+    <div class="modal-card" style="max-width:350px;">
+      <div class="eyebrow" id="mw1-title">Preparing Verified Package</div>
+      <h3 id="mw1-app" style="margin-top:4px;font-size:18px;"></h3>
+      <p id="mw1-sub" style="font-size:12px;color:var(--muted);margin-top:4px;"></p>
+      <div class="bar-track"><div id="mw1-bar" class="bar-fill"></div></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span id="mw1-timer" style="font-size:13px;font-weight:700;color:var(--accent);">5s</span>
+        <button class="btn btn-sec" onclick="closeMw1()">Cancel</button>
+      </div>
+      <div id="mw1-ad"></div>
     </div>
   </div>
-</nav>
 
-
-<!-- BEGIN: OffcanvasDrawer -->
-<div class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300" id="drawerOverlay" onclick="toggleDrawer()"></div>
-<aside class="fixed top-0 left-0 bottom-0 w-72 max-w-[85vw] bg-[#0b0f19] border-r border-[#1f273d] z-50 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between p-5" id="sideDrawer">
-<div>
-<div class="flex items-center justify-between pb-4 border-b border-[#1f273d]">
-<div class="flex items-center gap-2">
-<img src="./assets/snappshub-logo.svg" alt="SnappsHub official brand logo" class="w-8 h-8 object-contain brand-pulse-icon" width="32" height="32" loading="lazy">
-<span class="font-bold text-slate-100 text-sm">SnappsHub Navigation</span>
-</div>
-<button class="text-slate-400 hover:text-white" onclick="toggleDrawer()">×</button>
-</div>
-<nav class="mt-5 space-y-1 text-sm font-medium">
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-amber-400 transition" href="#cat-android" onclick="toggleDrawer()">
-<span class="text-lg">📱</span> Android Apps
-        </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-amber-400 transition" href="#cat-androidtv" onclick="toggleDrawer()">
-<span class="text-lg">📺</span> Android TV
-        </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-amber-400 transition" href="#cat-desktop" onclick="toggleDrawer()">
-<span class="text-lg">💻</span> Desktop &amp; Laptop
-        </a>
-<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#111728] hover:text-cyan-400 transition" href="#cat-router" onclick="toggleDrawer()">
-<span class="flex items-center gap-3"><span class="text-lg">📁</span> Router Firmware Vault</span>
-<span class="text-[10px] font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-800 px-1.5 py-0.5 rounded">LAST</span>
-</a>
-</nav>
-<!-- Admin interface is intentionally not published in this public website repository. -->
-<div class="mt-6 pt-5 border-t border-[#1f273d]">
-<div class="text-xs uppercase text-slate-500 font-mono mb-2">Network Channels</div>
-<a class="flex items-center gap-2 text-xs text-sky-400 hover:underline py-1" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">
-<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
-          Telegram Official: @snappshub
-        </a>
-<a class="flex items-center gap-2 text-xs text-slate-400 hover:text-white py-1" href="mailto:alaminsaheb2019@gmail.com">
-<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>Email support</a>
-</div>
-</div>
-<div class="text-[11px] text-slate-500 font-mono border-t border-[#1f273d] pt-3">
-      v3.2 Cyber Vault Edition
-    </div>
-</aside>
-<!-- END: OffcanvasDrawer -->
-<!-- BEGIN: LeaderboardAdSlot -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full">
-<div class="w-full bg-[#111728]/80 border border-dashed border-[#1f273d] rounded-xl p-3 flex flex-col items-center justify-center min-h-[90px] relative overflow-hidden text-center" data-purpose="ad-slot-leaderboard" id="headerAdContainer">
-<span class="absolute top-1 right-2 text-[9px] uppercase tracking-wider text-slate-500 font-mono">Sponsored Banner</span>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-3" id="headerAdContent">
-<span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-mono text-xs border border-amber-500/20">Adsterra &amp; Monetag Engine Enabled</span>
-<p class="text-xs text-slate-300">Publisher source links • Confirm device compatibility before installing</p>
-<a class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1 rounded transition" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">Fast Access</a>
-</div>
-</div>
-</div>
-<!-- END: LeaderboardAdSlot -->
-
-<!-- BEGIN: ScrollingMarqueeTicker -->
-<aside class="bg-[#0f1523] border-b border-[#1f273d]/80 py-2 overflow-hidden select-none" data-purpose="marquee-announcement">
-<div class="flex items-center">
-<div class="px-3 py-0.5 bg-amber-500/20 border-r border-amber-500/30 text-xs font-mono font-bold shrink-0 z-10 flex items-center gap-1.5">
-<span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-        <span class="ticker-pulse-label">HUB PULSE</span>
+  <!-- Mini Window 2: Downloading Processing -->
+  <div id="mw2" class="modal-backdrop">
+    <div class="modal-card" style="max-width:350px;">
+      <div class="eyebrow" id="mw2-title">Initializing Secure Download</div>
+      <h3 id="mw2-app" style="margin-top:4px;font-size:18px;"></h3>
+      <p id="mw2-sub" style="font-size:12px;color:var(--muted);margin-top:4px;"></p>
+      <div class="bar-track"><div id="mw2-bar" class="bar-fill"></div></div>
+      <div id="mw2-ad"></div>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+        <a id="mw2-link" class="btn btn-primary" href="#" target="_blank" rel="noreferrer">Direct Start</a>
+        <button class="btn btn-sec" onclick="closeMw2()">Close</button>
       </div>
-<div class="overflow-hidden whitespace-nowrap w-full">
-<div class="inline-block animate-marquee text-xs font-medium text-slate-300 space-x-12">
-<span>🔥 <strong class="text-amber-400">LATEST RELEASES:</strong> Publisher-linked releases • Check package signatures and publisher checksums before installing</span>
-<span>⚡ <strong class="text-cyan-400">ROUTER FIRMWARES ADDED:</strong> Tenda AC10 v4, TP-Link Archer C6 v3.2, Mikrotik RouterOS 7.15</span>
-<span>📺 <strong class="text-amber-400">ANDROID TV APKS:</strong> SmartTube 21.85, Kodi 21.0 Omega, TiviMate 4.8.0 Premium</span>
-<span>🛡️ <strong class="text-emerald-400">PUBLISHER CHECKS:</strong> Review release notes, signatures and checksums when supplied</span>
-<span>💬 Need custom firmware or direct upload? Join Telegram <a class="underline text-sky-400" href="https://t.me/snappshub">@snappshub</a></span>
-<!-- Duplicate for seamless infinite loop -->
-<span>🔥 <strong class="text-amber-400">LATEST RELEASES:</strong> Publisher-linked releases • Check package signatures and publisher checksums before installing</span>
-<span>⚡ <strong class="text-cyan-400">ROUTER FIRMWARES ADDED:</strong> Tenda AC10 v4, TP-Link Archer C6 v3.2, Mikrotik RouterOS 7.15</span>
-</div>
-</div>
-</div>
-</aside>
-<!-- END: ScrollingMarqueeTicker -->
-<!-- BEGIN: HeroSection -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-2">
-<div class="relative rounded-2xl overflow-hidden border border-[#1f273d] bg-gradient-to-br from-[#111728] via-[#0d1322] to-[#0a0e18] shadow-2xl">
-<div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen overflow-hidden">
-<img alt="Cyber Grid Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_gngVmFy7Pz8PM3aQhb1hMRXlEQ-TW5hDqOurY-lHj3T44nGafdVwhuSmLEFKFpnmPhhZ9LtaIWcmtN75_gsFuYgf3AliaNP6cYs6QK1xd7q8EB0QLh2J-8vSg4rBXq4KeyWuUfjyEBmNYRkiTO30jzZZUdy9xEIgT8hLm7pIrQDN3DOqedVp0d3fVMXnBrUEH0BIQdIVb97pNAteh8XDlvmbEqyGAsuq4hv6S90"/>
-</div>
-<div class="relative z-10 p-4 sm:p-6 md:p-8 lg:p-9 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
-<div class="w-full max-w-3xl text-center lg:text-left">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-400 text-xs font-mono font-medium mb-4">
-<span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-            PUBLISHER-SOURCE SOFTWARE CATALOGUE
+    </div>
+  </div>
+
+  <!-- Policy Modal -->
+  <div id="policy-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <h3 id="policy-title" style="font-size:17px;"></h3>
+      <p id="policy-text" style="font-size:13px;color:var(--muted);margin-top:10px;white-space:pre-line;"></p>
+      <button class="btn btn-sec" style="margin-top:14px;" onclick="document.getElementById('policy-modal').classList.remove('open')">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const STORE = {"meta":{"siteDomain":"https://snappshub.github.io","seoTitle":"SN Apps Hub — Trusted & Secure Apps for Every Device","seoDescription":"Verified Android, Android TV, Desktop, and Router software curated by SN Apps Hub with fast direct mirrors.","maintenanceMode":false,"maintenanceMessage":"Scheduled catalogue update in progress. Back online in a few minutes."},"header":{"brandTitle":"SN Apps Hub","brandSubtitle":"Trusted & Secure for Your Device","logoUrl":"/assets/aistudio/SN_Apps_Hub_Brand_Logo_cb936f51.png","logoSizePx":34,"showLogo":true,"sticky":true,"headerHeight":"standard","showSearch":true,"announcementEnabled":true,"announcementMode":"ticker","announcementBadge":"LIVE","announcementText":"All builds verified · New Android TV & Router releases live now","announcementLink":"#apps","announcementSpeedSec":18,"ctaLabel":"Telegram","ctaUrl":"https://t.me/snappshub","navLinks":[{"id":"nav-home","label":"Explore","href":"#hero","enabled":true,"openInNewTab":false},{"id":"nav-categories","label":"Categories","href":"#categories","enabled":true,"openInNewTab":false},{"id":"nav-devices","label":"Devices","href":"#devices","enabled":true,"openInNewTab":false},{"id":"nav-apps","label":"Catalogue","href":"#apps","enabled":true,"openInNewTab":false}],"sidebarFolders":[{"id":"sf-apk","name":"Android APK","slug":"apk","fileTypeHint":"APK / XAPK","icon":"📱","enabled":true},{"id":"sf-msi","name":"Windows MSI & EXE","slug":"msi","fileTypeHint":"MSI / EXE","icon":"🪟","enabled":true},{"id":"sf-os","name":"OS & Router Firmware","slug":"ipk","fileTypeHint":"ISO / IPK / IMG","icon":"🛰️","enabled":true},{"id":"sf-mac","name":"macOS & Linux","slug":"dmg","fileTypeHint":"DMG / DEB / APPIMAGE","icon":"💻","enabled":true}]},"hero":{"eyebrow":"Trusted & Secure for Your Device","headline":"Curated apps, verified mirrors, zero clutter.","subheadline":"Discover clean, checksum-verified releases across Android, Android TV, Desktop, and Router platforms with direct high-speed download mirrors.","primaryCtaLabel":"Browse Catalogue","primaryCtaUrl":"#apps","secondaryCtaLabel":"Join Support Channel","secondaryCtaUrl":"https://t.me/snappshub","trustLine":"SHA-256 Verified · Direct Mirrors · Multi-Device Builds","backgroundStyle":"sapphire-aurora","heroImageUrl":"/assets/aistudio/SN_Apps_Hub_Brand_Logo_cb936f51.png","heroImageSize":"medium","heroImageWidthPx":76,"heroImageHeightPx":76,"heroPaddingY":"standard","heroImagePosition":"right","showFeaturedShowcase":true,"featuredAppId":"app-sn-player"},"footer":{"brandSummary":"SN Apps Hub curates trusted utility, streaming, browser, and network software with transparent source attribution and reliable download mirrors.","copyrightText":"© 2026 SN Apps Hub · snappshub.github.io","showSocials":true,"telegramUrl":"https://t.me/snappshub","githubUrl":"https://github.com/snappshub","youtubeUrl":"https://youtube.com/@snappshub","contactEmail":"alaminsahebweb@gmail.com","legalNotice":"All trademarks and package names belong to their respective developers. Official websites and source links are credited on every app page.","columns":[{"id":"col-platforms","title":"Platforms","links":[{"id":"fl-1","label":"Android Apps","href":"#android","enabled":true},{"id":"fl-2","label":"Android TV","href":"#androidtv","enabled":true},{"id":"fl-3","label":"Desktop Tools","href":"#desktop","enabled":true},{"id":"fl-4","label":"Router Firmware","href":"#router","enabled":true}]},{"id":"col-resources","title":"Resources","links":[{"id":"fl-5","label":"Mirror Status","href":"#apps","enabled":true},{"id":"fl-6","label":"Telegram Support","href":"https://t.me/snappshub","enabled":true},{"id":"fl-7","label":"DMCA & Attribution","href":"#legal","enabled":true}]}]},"policies":{"dmcaText":"SN Apps Hub respects intellectual property rights and complies with the Digital Millennium Copyright Act (DMCA). All software binaries linked or indexed remain the property of their respective authors. To request removal of any infringing link, email alaminsahebweb@gmail.com with the exact URL and proof of ownership; verified notices are processed within 24–48 hours.","privacyPolicyText":"SN Apps Hub does not sell personal visitor data. Anonymous aggregate download counters and ad impression metrics may be recorded to improve mirror reliability. Third-party ad networks (Google AdSense, Adsterra, Monetag) may use standard cookies subject to their respective privacy policies.","openSourceCreditText":"We gratefully acknowledge the open-source communities behind Android, Chromium, OpenWrt, Linux, FFmpeg, and independent developers publishing under MIT, Apache-2.0, and GPL licenses. Original repository links and developer attributions appear on each application details page.","sitemapBaseUrl":"https://snappshub.github.io","autoIncludeAppsInSitemap":true,"adsTxtExtraLines":"# Add extra authorized seller lines here if required by your ad network"},"theme":{"systemThemeId":"cyberpunk-neon","accentGold":"#f3c969","accentBlue":"#65b8ff","canvasBg":"#070b14","surfaceBg":"#0f1726","borderRadius":"balanced","glassBlurPx":14,"animationPreset":"kinetic","storefrontAppsView":"list","appIconSizePx":44,"appCardScale":"standard","downloadButtonStyle":"gradient","customCss":"/* Custom Live CSS injected directly into SN Apps Hub */\n.sn-hero-glow {\n  box-shadow: 0 20px 60px rgba(243, 201, 105, 0.08);\n}"},"adminPanel":{"adminThemeId":"cyberpunk-neon","compactMode":false,"animationsEnabled":true,"glassIntensity":14,"showInlinePreview":true,"dragMoveEnabled":true,"adminAppsViewStyle":"list","adminSettingsViewStyle":"tabs","uiScalePct":100,"sidebarWidthPx":256},"miniWindows":{"preDetailSeconds":5,"preDetailTitle":"Preparing Verified Package","preDetailSubtitle":"Scanning package signature, open-source credits & fast mirror nodes…","preDetailSize":"standard","preDetailWidthPx":350,"preDetailPosition":"center","preDetailAnim":"cyber-bar","downloadingTitle":"Initializing Secure Download","downloadingSubtitle":"Handshaking with high-speed CDN mirror & preparing checksum stream…","downloadingSize":"standard","downloadingWidthPx":350,"downloadingPosition":"center","downloadingAnim":"pulse-ring"},"sections":[{"id":"sec-hero","type":"hero","title":"Hero Spotlight","subtitle":"Primary brand banner, headlines, and featured app highlight","enabled":true},{"id":"sec-ad-hero","type":"ad-hero-below","title":"Hero Sponsor Slot","subtitle":"Optional placement directly beneath hero section","enabled":true},{"id":"sec-devices","type":"devices","title":"Device Explorer","subtitle":"Filter catalogue by Android, Android TV, Desktop, or Router","enabled":true},{"id":"sec-featured","type":"featured","title":"Featured Releases","subtitle":"Hand-picked verified builds highlighted on home feed","enabled":true},{"id":"sec-categories","type":"categories","title":"Category Directory","subtitle":"Browse software grouped by purpose and device class","enabled":true},{"id":"sec-apps","type":"apps","title":"App Catalogue Feed","subtitle":"Interactive app cards with instant mirror handoff","enabled":true},{"id":"sec-ad-home","type":"ad-home","title":"Home Feed Ad Placement","subtitle":"In-feed monetization block","enabled":true},{"id":"sec-trust","type":"trust","title":"Verification & Trust Strip","subtitle":"Security checks, source attribution, and Telegram support","enabled":true},{"id":"sec-custom","type":"custom-html","title":"Custom Promo Banner","subtitle":"Editable HTML/CSS notice block","enabled":false,"customHtml":"\u003cdiv style=\"padding:14px;border:1px solid rgba(243,201,105,0.3);border-radius:12px;text-align:center;\">\u003cstrong>Community Notice:\u003c/strong> Request new apps via Telegram @snappshub\u003c/div>"}],"devices":[{"id":"device-android","name":"Android","slug":"android","icon":"Smartphone","enabled":true},{"id":"device-android-tv","name":"Android TV","slug":"androidtv","icon":"Tv","enabled":true},{"id":"device-desktop","name":"Desktop","slug":"desktop","icon":"Monitor","enabled":true},{"id":"device-router","name":"Router","slug":"router","icon":"Router","enabled":true}],"categories":[{"id":"cat-browsers","name":"Browsers","slug":"browsers","icon":"🌐","description":"Privacy-first web browsers and lightweight mobile engines.","deviceId":"","order":0,"enabled":true},{"id":"cat-media","name":"Media & TV","slug":"media-tv","icon":"📺","description":"4K media players, IPTV utilities, and Android TV launchers.","deviceId":"device-android-tv","order":1,"enabled":true},{"id":"cat-network","name":"Network & DNS","slug":"network-dns","icon":"🛡️","description":"Encrypted DNS tools, router utilities, and diagnostics.","deviceId":"device-router","order":2,"enabled":true},{"id":"cat-utilities","name":"System Utilities","slug":"utilities","icon":"⚡","description":"File managers, ADB helpers, and productivity tools.","deviceId":"","order":3,"enabled":true}],"apps":[{"id":"app-sn-player","name":"NovaStream Player Pro","category":"media-tv","version":"4.8.2","packageId":"io.snappshub.novastream","description":"Hardware-accelerated 4K HDR media player optimized for Android phones and Android TV leanback navigation.","developer":"SN Media Labs","platform":"Android","devices":["android","androidtv"],"minimumOs":"Android 8.0+","updatedAt":"2026-11-10","fileSize":"28.4 MB","iconUrl":"","officialWebsite":"https://snappshub.github.io","sourceName":"GitHub Releases","sourceUrl":"https://github.com/snappshub","telegramSupportUrl":"https://t.me/snappshub","featured":true,"verified":true,"mirrors":[{"id":"m-nova-1","label":"Primary CDN Mirror","url":"https://snappshub.github.io/downloads/novastream-4.8.2.apk","enabled":true,"primary":true},{"id":"m-nova-2","label":"GitHub Release Asset","url":"https://github.com/snappshub/releases/novastream-4.8.2.apk","enabled":true,"primary":false}],"fileFormat":"APK","architecture":"universal","license":"Open Source","screenshots":[]},{"id":"app-shield-browser","name":"Aegis Shield Browser","category":"browsers","version":"131.2.0","packageId":"org.aegis.browser","description":"Hardened Chromium-based browser with built-in tracker blocking, DoH support, and desktop extension sync.","developer":"Aegis Open Collective","platform":"Android","devices":["android","desktop"],"minimumOs":"Android 9.0+ / Win 10+","updatedAt":"2026-11-08","fileSize":"64.0 MB","iconUrl":"","officialWebsite":"https://snappshub.github.io","sourceName":"Official Repo","sourceUrl":"https://github.com/snappshub","telegramSupportUrl":"https://t.me/snappshub","featured":true,"verified":true,"mirrors":[{"id":"m-aegis-1","label":"Fast Edge Mirror","url":"https://snappshub.github.io/downloads/aegis-131.2.apk","enabled":true,"primary":true}],"fileFormat":"APK","architecture":"universal","license":"Open Source","screenshots":[]},{"id":"app-netguard-dns","name":"RoutePulse DNS Guard","category":"network-dns","version":"2.3.5","packageId":"net.snappshub.routepulse","description":"Zero-root encrypted DNS over HTTPS/TLS profile manager for OpenWrt routers and Android devices.","developer":"SN Network Tools","platform":"Linux","devices":["router","android","desktop"],"minimumOs":"OpenWrt 23.05+ / Android 10+","updatedAt":"2026-11-02","fileSize":"12.1 MB","iconUrl":"","officialWebsite":"https://snappshub.github.io","sourceName":"GitHub Source","sourceUrl":"https://github.com/snappshub","telegramSupportUrl":"https://t.me/snappshub","featured":false,"verified":true,"mirrors":[{"id":"m-route-1","label":"Direct Mirror","url":"https://snappshub.github.io/downloads/routepulse-2.3.5.ipk","enabled":true,"primary":true}],"fileFormat":"APK","architecture":"universal","license":"Open Source","screenshots":[]}],"ads":[{"id":"ad-home-top","network":"Google AdSense","slotId":"ca-pub-snapps-home-01","placement":"home","format":"Responsive Banner","customCode":"","enabled":true},{"id":"ad-download-page","network":"Adsterra Native","slotId":"slot-sn-dl-442","placement":"download","format":"Native 320x100","customCode":"","enabled":true}],"downloadFlow":{"delaySeconds":3,"introMessage":"Preparing app details and verifying mirror availability…","failureMessage":"The download did not start automatically. Choose an alternate option below.","telegramSupportUrl":"https://t.me/snappshub","showRetry":true,"showOpenLink":true,"showCopyLink":true,"showAlternateMirrors":true,"showTelegramSupport":true},"telegram":{"enabled":false,"channelId":"@snappshub","autoPostOnNewApp":true,"autoPostOnPublish":false,"postTemplate":"🚀 \u003cb>{name}\u003c/b> v{version} is now live on SN Apps Hub!\n\n📦 Size: {size}\n📱 Platform: {platform}\n📝 {description}\n\n🔗 Download: {url}","lastPostedAt":null},"earnings":{"estimatedCpmUsd":2.8,"adsensePublisherId":"","adsterraZoneId":"","monetagZoneId":""},"githubSync":{"owner":"snappshub","repo":"snappshub.github.io","branch":"main","filePath":"data/site-config.json","deployFullSite":true,"autoSyncEnabled":true,"lastSyncedAt":null,"lastSyncStatus":"error","lastSyncError":"GitHub lookup failed for data/site-config.json (401): {\r\n  \"message\": \"Bad credentials\",\r\n  \"documentation_url\": \"https://docs.github.com/rest\",\r\n  \"status\": \"401\"\r\n}"}};
+    let activeFolder = 'all';
+    let currentApp = null;
+    let mw1Interval = null;
+
+    function renderAds(placement, elId) {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      const list = (STORE.ads || []).filter(a => a.enabled && a.placement === placement);
+      el.innerHTML = list.map(a => a.customCode ? a.customCode : '<div class="ad-box">Sponsored · ' + a.network + ' (' + a.slotId + ')</div>').join('');
+    }
+
+    function toggleFolders() {
+      const bar = document.getElementById('folder-bar');
+      bar.style.display = bar.style.display === 'none' ? 'flex' : 'none';
+      const folders = (STORE.header.sidebarFolders || []).filter(f => f.enabled);
+      bar.innerHTML = '<button class="btn btn-sec" onclick="filterFolder(\'all\')">All Files</button>' +
+        folders.map(f => '<button class="btn btn-sec" onclick="filterFolder(\'' + f.slug + '\')">' + (f.icon || '📁') + ' ' + f.name + '</button>').join('');
+    }
+
+    function filterFolder(slug) {
+      activeFolder = slug;
+      renderApps();
+    }
+
+    function btnCls(app) {
+      const st = (app && app.downloadButtonStyle) || (STORE.theme && STORE.theme.downloadButtonStyle) || 'gradient';
+      if (st === 'neon-outline') return 'btn btn-outline';
+      if (st === 'glass') return 'btn btn-glass';
+      if (st === 'solid') return 'btn btn-primary';
+      return 'btn btn-gradient';
+    }
+
+    function renderApps() {
+      const grid = document.getElementById('apps-grid');
+      const apps = (STORE.apps || []).filter(a => activeFolder === 'all' || (a.fileFormat || '').toLowerCase() === activeFolder || (a.platform || '').toLowerCase().includes(activeFolder));
+      grid.innerHTML = apps.map(a => {
+        const ico = a.iconUrl ? '<img class="app-ico" src="' + a.iconUrl + '" alt="" />' : '';
+        const colStyle = a.downloadButtonColor ? ' style="background:' + a.downloadButtonColor + ';border-color:' + a.downloadButtonColor + ';"' : '';
+        const btn = a.downloadEnabled === false
+          ? '<span class="btn btn-sec">Paused</span>'
+          : '<button class="' + btnCls(a) + '"' + colStyle + ' onclick="startMiniWindow1(\'' + a.id + '\')">' + (a.downloadButtonLabel || 'Download') + '</button>';
+        return '<div class="card"><div style="display:flex;align-items:center;gap:10px;min-width:0;">' + ico + '<div style="min-width:0;"><div style="font-weight:700;font-size:14px;">' + a.name + '</div><div style="font-size:11px;color:var(--muted);">v' + (a.version || '1.0') + ' · ' + (a.fileFormat || a.platform || 'APK') + ' · ' + (a.fileSize || 'Mirror') + '</div></div></div>' + btn + '</div>';
+      }).join('');
+    }
+
+    function startMiniWindow1(appId) {
+      currentApp = (STORE.apps || []).find(a => a.id === appId);
+      if (!currentApp) return;
+      const secs = Math.max(1, Number((STORE.miniWindows && STORE.miniWindows.preDetailSeconds) || 5));
+      document.getElementById('mw1-app').textContent = currentApp.name + ' v' + (currentApp.version || '1.0');
+      document.getElementById('mw1-sub').textContent = (STORE.miniWindows && STORE.miniWindows.preDetailSubtitle) || 'Preparing package details...';
+      renderAds('mini-window-1', 'mw1-ad');
+      document.getElementById('mw1').classList.add('open');
+      let left = secs;
+      document.getElementById('mw1-timer').textContent = left + 's';
+      document.getElementById('mw1-bar').style.width = '5%';
+      clearInterval(mw1Interval);
+      mw1Interval = setInterval(() => {
+        left--;
+        const pct = Math.min(100, Math.round(((secs - left) / secs) * 100));
+        document.getElementById('mw1-bar').style.width = pct + '%';
+        document.getElementById('mw1-timer').textContent = Math.max(0, left) + 's';
+        if (left <= 0) {
+          clearInterval(mw1Interval);
+          closeMw1();
+          openDetailsPage(currentApp);
+        }
+      }, 1000);
+    }
+
+    function closeMw1() { clearInterval(mw1Interval); document.getElementById('mw1').classList.remove('open'); }
+    function closeMw2() { document.getElementById('mw2').classList.remove('open'); }
+
+    function openDetailsPage(app) {
+      document.getElementById('page-home').style.display = 'none';
+      document.getElementById('page-details').style.display = 'block';
+      const mirrors = (app.mirrors || []).filter(m => m.enabled);
+      const primary = mirrors.find(m => m.primary) || mirrors[0];
+      const shots = app.showDetailsScreenshots === false ? '' : (app.screenshots || []).map(s => '<img src="' + s + '" style="height:140px;border-radius:10px;border:1px solid var(--border);" />').join('');
+      const noticeHtml = app.customDetailNotice ? '<div style="margin-top:10px;padding:8px 12px;border-radius:8px;border:1px solid var(--accent);font-size:12px;color:var(--accent);">' + app.customDetailNotice + '</div>' : '';
+      const specsHtml = app.showDetailsSpecs === false ? '' : '<div style="margin-top:10px;font-size:12px;color:var(--muted);">Format: ' + (app.fileFormat || 'APK') + ' · Arch: ' + (app.architecture || 'Universal') + ' · License: ' + (app.license || 'Freeware') + ' · Size: ' + (app.fileSize || 'Mirror') + '</div>';
+      const changelogHtml = (app.showDetailsChangelog !== false && app.changelog) ? '<div style="margin-top:10px;font-size:12px;color:var(--muted);"><strong>Changelog:</strong> ' + app.changelog + '</div>' : '';
+      const shaHtml = (app.showDetailsChecksum !== false && app.sha256) ? '<div style="margin-top:8px;font-family:monospace;font-size:10px;color:var(--muted);word-break:break-all;">SHA-256: ' + app.sha256 + '</div>' : '';
+      const colStyle = app.downloadButtonColor ? ' style="background:' + app.downloadButtonColor + ';border-color:' + app.downloadButtonColor + ';"' : '';
+      const primaryBtn = (app.downloadEnabled !== false && primary)
+        ? '<button class="' + btnCls(app) + '"' + colStyle + ' onclick="startMiniWindow2(\'' + primary.url + '\', \'' + primary.label + '\')">' + (app.downloadButtonLabel || 'Direct Download') + (app.downloadButtonSubtext ? ' <small style="opacity:.8;">(' + app.downloadButtonSubtext + ')</small>' : '') + '</button>'
+        : '';
+      const mirrorBtns = (app.downloadEnabled !== false && app.showDetailsMirrors !== false)
+        ? mirrors.map(m => '<button class="btn btn-sec" onclick="startMiniWindow2(\'' + m.url + '\', \'' + m.label + '\')">' + m.label + '</button>').join('')
+        : '';
+      const tgBtn = app.telegramButtonEnabled === false ? '' : '<a class="btn btn-sec" href="' + (app.telegramSupportUrl || (STORE.downloadFlow && STORE.downloadFlow.telegramSupportUrl) || '#') + '" target="_blank">' + (app.telegramButtonLabel || 'Telegram Support') + '</a>';
+      document.getElementById('details-body').innerHTML = `
+        <div class="card" style="display:block;">
+          <h2 style="font-size:20px;">${app.name} <small style="color:var(--accent);">v${app.version}</small></h2>
+          <p style="font-size:13px;color:var(--muted);margin-top:6px;">${app.description || ''}</p>
+          ${noticeHtml}
+          ${specsHtml}
+          ${shots ? '<div style="display:flex;gap:8px;overflow-x:auto;margin-top:12px;">' + shots + '</div>' : ''}
+          ${changelogHtml}
+          ${shaHtml}
+          <div id="details-ad"></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
+            ${primaryBtn}
+            ${mirrorBtns}
+            ${tgBtn}
           </div>
-<h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Publisher-Linked <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-cyan-400 bg-clip-text text-transparent">Apps, TV Tools &amp; Firmware</span>
-</h1>
-<p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-            Curated archive of Android applications, TV utilities, cross-platform software, and stock router recovery firmwares. Listings link to publisher sources. Check each publisher's release notes and package signature before installing.
-          </p>
-<div class="mt-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5">
-<a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white text-sm font-semibold shadow-md transition transform hover:-translate-y-0.5" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">
-<span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.01-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.04.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path></svg>
-Join Telegram Community
-</a>
-<a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-cyan-500/40 bg-slate-900/70 hover:bg-cyan-950/60 text-cyan-200 text-sm font-semibold transition" href="#cat-android">Browse Catalogue <span aria-hidden="true">↓</span></a>
-</div>
-</div>
-<aside class="w-full lg:w-72 xl:w-80 grid grid-cols-2 lg:grid-cols-1 gap-2.5" aria-label="Browse by device">
-<a href="#cat-android" class="rounded-xl border border-cyan-500/30 bg-cyan-950/25 p-3 text-left hover:border-cyan-400/70 transition"><span class="block text-lg mb-1">📱</span><span class="block text-sm font-bold text-white">Android</span><span class="block text-[11px] text-slate-400">Apps &amp; utilities</span></a>
-<a href="#cat-androidtv" class="rounded-xl border border-amber-500/30 bg-amber-950/20 p-3 text-left hover:border-amber-400/70 transition"><span class="block text-lg mb-1">📺</span><span class="block text-sm font-bold text-white">Android TV</span><span class="block text-[11px] text-slate-400">TV apps &amp; tools</span></a>
-<a href="#cat-desktop" class="rounded-xl border border-violet-500/30 bg-violet-950/20 p-3 text-left hover:border-violet-400/70 transition"><span class="block text-lg mb-1">💻</span><span class="block text-sm font-bold text-white">Desktop</span><span class="block text-[11px] text-slate-400">PC software</span></a>
-<a href="#cat-router" class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-3 text-left hover:border-emerald-400/70 transition"><span class="block text-lg mb-1">📡</span><span class="block text-sm font-bold text-white">Router</span><span class="block text-[11px] text-slate-400">Firmware archive</span></a>
-</aside>
-</div>
-</div>
-</section>
-<!-- END: HeroSection -->
-
-<!-- BEGIN: MainContentArea -->
-<main id="main-content" tabindex="-1" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-12">
-<!-- PAGE 2: In-Page App Details View (Initially Hidden) -->
-<section class="hidden" data-purpose="page2-app-detail-flow" id="appDetailsView">
-<div class="bg-[#111728] border border-[#1f273d] rounded-2xl p-6 md:p-8">
-<div class="flex items-center justify-between border-b border-[#1f273d] pb-4 mb-6">
-<button class="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 hover:text-amber-300 transition" onclick="showCatalogView()">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-            Back to All Repositories
-          </button>
-<span class="text-xs font-mono text-slate-400" id="detailBreadcrumb">Repository / Details</span>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2 space-y-6">
-<div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-<div class="w-20 h-20 rounded-2xl bg-[#162035] border border-slate-700 p-2 flex items-center justify-center text-4xl shadow-lg shrink-0" id="detailAppIcon">
-                📦
-              </div>
-<div>
-<h2 class="text-2xl font-bold text-white tracking-tight" id="detailAppTitle">Application Name</h2>
-<div class="flex flex-wrap items-center gap-2 mt-2">
-<span class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30" id="detailAppBadge">Category</span>
-<span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300" id="detailAppVersion">v1.0.0</span>
-<span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300" id="detailAppSize">00 MB</span>
-<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
-                    Publisher source
-                  </span>
-</div>
-</div>
-</div>
-<div class="bg-[#0c1220] p-4 rounded-xl border border-[#1f273d] space-y-2">
-<h3 class="text-xs uppercase font-mono tracking-wider text-slate-400">Cryptographic Integrity</h3>
-<div class="text-xs font-mono text-slate-300 break-all bg-[#080c16] p-2.5 rounded border border-slate-800 flex items-center justify-between">
-<span id="detailAppSha256">SHA-256: Not supplied by publisher</span>
-<button class="ml-2 text-amber-400 hover:text-white shrink-0 text-xs font-sans" onclick="copyDetailSha()">Copy</button>
-</div>
-</div>
-<div class="space-y-3">
-<h3 class="text-sm font-semibold text-white">Package Description &amp; Release Notes</h3>
-<p class="text-sm text-slate-300 leading-relaxed" id="detailAppDesc">
-                Publisher-linked software listing. Review the source, release notes and package signature before installation.
-              </p>
-</div>
-<!-- In-Page Specification Grid -->
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
-<span class="text-slate-400 block font-mono">Architecture</span>
-<span class="font-bold text-white mt-1 block" id="detailArch">armeabi-v7a / arm64</span>
-</div>
-<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
-<span class="text-slate-400 block font-mono">Minimum OS</span>
-<span class="font-bold text-white mt-1 block" id="detailMinOs">Android 5.0+ / Win 10</span>
-</div>
-<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
-<span class="text-slate-400 block font-mono">Licensing</span>
-<span class="font-bold text-emerald-400 mt-1 block">License varies — check publisher</span>
-</div>
-<div class="bg-[#162035]/60 p-3 rounded-lg border border-[#1f273d]">
-<span class="text-slate-400 block font-mono">Release Status</span>
-<span class="font-bold text-cyan-400 mt-1 block">Stable Channel</span>
-</div>
-</div>
-</div>
-<!-- Secondary Side Action Column -->
-<div class="space-y-4">
-<div class="bg-[#0e1424] border border-[#1f273d] p-5 rounded-xl space-y-4">
-<h4 class="text-sm font-bold text-white">Publisher Download</h4>
-<p class="text-xs text-slate-400">Continue to the publisher's download page. Availability and speed are controlled by the publisher.</p>
-<button class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-lg transition flex items-center justify-center gap-2" id="detailDownloadTriggerBtn">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                Continue to Publisher
-              </button>
-<a class="w-full py-2.5 px-4 rounded-xl bg-[#162035] hover:bg-sky-600/30 text-sky-400 font-semibold text-xs border border-sky-500/30 transition flex items-center justify-center gap-2" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">
-                Join Telegram Mirror @snappshub
-              </a>
-</div>
-<!-- Page 2 Banner Ad Box -->
-<div class="p-4 rounded-xl bg-[#0a0e18] border border-dashed border-[#1f273d] text-center">
-<span class="text-[9px] uppercase font-mono text-slate-500">Publisher Info</span>
-<p class="text-xs text-amber-400 font-medium mt-1">Publisher Source Links</p>
-<p class="text-[11px] text-slate-400 mt-0.5">Downloads open the publisher's site; availability and speed depend on the publisher.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- MAIN CATALOG CONTAINER -->
-<div class="space-y-12" id="catalogView">
-<!-- CATEGORY 1: Android Apps -->
-<!-- BEGIN: CategoryAndroidApps -->
-<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-android">
-<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
-<div class="flex items-center gap-2.5">
-<span class="text-2xl">📱</span>
-<div>
-<h2 class="text-lg font-bold text-white flex items-center gap-2">
-                Android Apps
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20" id="count-android">Listings</span>
-</h2>
-<p class="text-xs text-slate-400">Apps and utilities for smartphones and tablets</p>
-</div>
-</div>
-<span class="text-xs font-mono text-slate-500">PUBLISHER LINKS</span>
-</div>
-<div class="device-subcategory-tabs flex flex-wrap gap-2 mb-4" id="subcategories-android" aria-label="android software categories"></div>
-<div class="grid grid-cols-2 gap-3.5" id="grid-android">
-<!-- Populated by JS -->
-</div>
-<!-- Styled View More Button -->
-<div class="text-center mt-5">
-<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-amber-500 hover:text-black border border-[#1f273d] hover:border-amber-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-android" onclick="expandCategory('android')">
-            View More
-          </button>
-</div>
-</section>
-<!-- END: CategoryAndroidApps -->
-<!-- COMMUNITY UPDATE 1 -->
-<div class="p-3 bg-gradient-to-r from-[#111728] via-[#162035] to-[#111728] border border-[#1f273d] rounded-xl flex flex-col md:flex-row items-center justify-between gap-3" data-purpose="community-update">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-mono text-xs">SN</div>
-<div>
-<div class="text-xs font-bold text-white">SN Apps Hub Telegram Updates</div>
-<div class="text-[11px] text-slate-400">Follow the Telegram channel for catalogue updates and support.</div>
-</div>
-</div>
-<a class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-semibold text-xs whitespace-nowrap transition" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">
-          Join Telegram
-        </a>
-</div>
-<!-- CATEGORY 2: Android TV -->
-<!-- BEGIN: CategoryAndroidTV -->
-<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-androidtv">
-<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
-<div class="flex items-center gap-2.5">
-<span class="text-2xl">📺</span>
-<div>
-<h2 class="text-lg font-bold text-white flex items-center gap-2">
-                Android TV &amp; TV Box
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20" id="count-androidtv">Listings</span>
-</h2>
-<p class="text-xs text-slate-400">Leanback launchers, IPTV players, streaming engines</p>
-</div>
-</div>
-<span class="text-xs font-mono text-slate-500">ANDROID TV CATALOGUE</span>
-</div>
-<div class="device-subcategory-tabs flex flex-wrap gap-2 mb-4" id="subcategories-androidtv" aria-label="androidtv software categories"></div>
-<div class="grid grid-cols-2 gap-3.5" id="grid-androidtv">
-<!-- Populated by JS -->
-</div>
-<div class="text-center mt-5">
-<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-[#1f273d] hover:border-cyan-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-androidtv" onclick="expandCategory('androidtv')">
-            View More
-          </button>
-</div>
-</section>
-<!-- END: CategoryAndroidTV -->
-<!-- CATEGORY 3: Desktop & Laptop -->
-<!-- BEGIN: CategoryDesktop -->
-<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-desktop">
-<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
-<div class="flex items-center gap-2.5">
-<span class="text-2xl">💻</span>
-<div>
-<h2 class="text-lg font-bold text-white flex items-center gap-2">
-                Desktop &amp; Laptop
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20" id="count-desktop">Listings</span>
-</h2>
-<p class="text-xs text-slate-400">Windows, macOS &amp; Linux portable utilities and system toolkits</p>
-</div>
-</div>
-<span class="text-xs font-mono text-slate-500">x64 / ARM / PORTABLE</span>
-</div>
-<div class="device-subcategory-tabs flex flex-wrap gap-2 mb-4" id="subcategories-desktop" aria-label="desktop software categories"></div>
-<div class="grid grid-cols-2 gap-3.5" id="grid-desktop">
-<!-- Populated by JS -->
-</div>
-<div class="text-center mt-5">
-<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-indigo-500 hover:text-white border border-[#1f273d] hover:border-indigo-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-desktop" onclick="expandCategory('desktop')">
-            View More
-          </button>
-</div>
-</section>
-<!-- END: CategoryDesktop -->
-<!-- CATEGORY 4: Router Firmware -->
-<!-- BEGIN: CategoryRouterFirmware -->
-<section class="scroll-mt-24" data-purpose="app-category-section" id="cat-router">
-<div class="flex items-center justify-between pb-3 border-b border-[#1f273d] mb-4">
-<div class="flex items-center gap-2.5">
-<span class="text-2xl">📡</span>
-<div>
-<h2 class="text-lg font-bold text-white flex items-center gap-2">
-                Router Firmware Vault
-                <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20" id="count-router">Listings</span>
-</h2>
-<p class="text-xs text-slate-400">Stock firmware and open-source router firmware from publisher sources</p>
-</div>
-</div>
-<span class="text-xs font-mono text-slate-500">DEVICE-SPECIFIC FIRMWARE</span>
-</div>
-<div class="device-subcategory-tabs flex flex-wrap gap-2 mb-4" id="subcategories-router" aria-label="router firmware categories"></div>
-<div class="grid grid-cols-2 gap-3.5" id="grid-router">
-<!-- Populated by JS -->
-</div>
-<div class="text-center mt-5">
-<button class="px-5 py-2 rounded-lg bg-[#111728] hover:bg-cyan-500 hover:text-black border border-[#1f273d] hover:border-cyan-400 text-xs font-semibold text-slate-300 transition shadow" id="viewMore-router" onclick="expandCategory('router')">
-            View More
-          </button>
-</div>
-</section>
-<!-- END: CategoryRouterFirmware -->
-<!-- IN-FEED NATIVE AD BANNER 2 -->
-
-</div>
-</main>
-<!-- END: MainContentArea -->
-<!-- BEGIN: DownloadCountdownModal -->
-<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4" id="downloadModal">
-<div class="bg-[#111728] border border-amber-500/30 rounded-2xl max-w-lg w-full p-6 relative shadow-2xl overflow-hidden">
-<!-- Modal Close Button -->
-<button class="absolute top-4 right-4 text-slate-400 hover:text-white transition" onclick="closeDownloadModal()">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</button>
-<!-- App Header inside modal -->
-<div class="flex items-center gap-3.5">
-<div class="w-12 h-12 rounded-xl bg-[#162035] border border-slate-700 flex items-center justify-center text-2xl shrink-0" id="modalAppIcon">
-          📦
         </div>
-<div>
-<h3 class="text-base font-bold text-white" id="modalAppTitle">Application Title</h3>
-<div class="flex items-center gap-2 text-xs text-slate-400 font-mono mt-0.5">
-<span id="modalAppVersion">v1.0.0</span>
-<span>•</span>
-<span id="modalAppSize">24.5 MB</span>
-</div>
-</div>
-</div>
-<!-- 5-Second Countdown Clock & Progress -->
-<div class="my-6 p-4 rounded-xl bg-[#090d16] border border-[#1f273d] text-center">
-<div class="space-y-3" id="timerContainer">
-<div class="text-xs uppercase font-mono tracking-wider text-slate-400">Publisher Link Preparation</div>
-<div class="flex items-center justify-center gap-2">
-<div class="text-4xl font-extrabold font-mono text-amber-400 drop-shadow-[0_0_10px_rgba(245,158,11,0.6)]" id="countdownNumber">5</div>
-<span class="text-xs text-slate-400">seconds remaining</span>
-</div>
-<!-- Progress bar -->
-<div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-<div class="bg-gradient-to-r from-amber-500 to-cyan-400 h-full w-0 transition-all duration-1000 ease-linear" id="countdownBar"></div>
-</div>
-<p class="text-[11px] text-slate-400">Preparing the publisher download link...</p>
-</div>
-<!-- Download Action Button (Appears after countdown) -->
-<div class="hidden space-y-3" id="readyContainer">
-<div class="text-emerald-400 text-xs font-semibold flex items-center justify-center gap-1.5">
-<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
-            Publisher Link Ready
-          </div>
-<a class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2" href="#" id="modalDirectDownloadBtn" target="_blank" rel="noopener noreferrer">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-            Download
-          </a>
-</div>
-</div>
-<!-- Safe 300x250 Banner Ad Slot inside Modal -->
-<div class="w-full h-36 bg-[#0a0e18] border border-dashed border-[#1f273d] rounded-lg flex flex-col items-center justify-center text-center p-3 relative" data-purpose="modal-support-note">
-
-<p class="text-xs font-semibold text-cyan-400">Need help choosing a publisher source?</p>
-<p class="text-[11px] text-slate-400 mt-1">Use official vendor documentation and confirm the exact device model and supported release.</p>
-<a class="mt-2 text-xs text-amber-400 hover:underline" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">Explore Telegram Vault →</a>
-</div>
-<!-- Publisher source status -->
-<div class="mt-4 pt-3 border-t border-[#1f273d] flex items-center justify-between text-xs font-mono">
-<span class="text-emerald-400 flex items-center gap-1">
-<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
-          Publisher source linked — not independently scanned
-        </span>
-<button class="text-slate-400 hover:text-white underline" onclick="toggleDetailsFromModal()">View Details Page</button>
-</div>
-</div>
-</div>
-<!-- END: DownloadCountdownModal -->
-<!-- BEGIN: MainFooter -->
-<footer class="mt-16 bg-[#080c16] border-t border-[#1f273d] text-slate-400 text-xs" aria-label="SN Apps Hub site footer">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-<!-- Col 1: Identity -->
-<div class="space-y-3 md:col-span-1">
-<div class="flex items-center gap-2">
-<span class="footer-brand-mark"><img src="./assets/snappshub-logo.svg" alt="" aria-hidden="true"></span>
-<span class="font-extrabold text-white text-base">SN Apps Hub</span>
-</div>
-<p class="text-slate-400 text-xs leading-relaxed">
-            A curated software catalogue linking to publisher downloads for Android, Android TV, desktop systems, and router firmware.
-          </p>
-<div class="pt-2">
-<!-- Compact DMCA logo-style protection link -->
-<a class="footer-dmca-badge" href="https://www.dmca.com/Protection/Status.aspx?ID=37a95780-9718-4357-92ee-ea67c2cefe3f" target="_blank" rel="noopener noreferrer" title="View DMCA Protection Status">
-<svg class="footer-dmca-shield" width="25" height="27" viewBox="0 0 24 26" fill="none" aria-hidden="true"><path d="M12 1.8 21 5v7.1c0 5.4-3.7 9.7-9 12.1-5.3-2.4-9-6.7-9-12.1V5l9-3.2Z" stroke="currentColor" stroke-width="1.6"/><path d="m7.8 12.7 2.7 2.7 5.8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<span class="flex flex-col text-left"><strong class="text-[11px] tracking-[.16em] text-cyan-200">DMCA</strong><span class="text-[9px] tracking-wider text-slate-400">PROTECTION</span></span>
-</a>
-</div>
-</div>
-<!-- Col 2: Repository Nav -->
-<div class="space-y-2">
-<div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Vault Index</div>
-<ul class="space-y-1.5">
-<li><a class="footer-neon-item inline-flex items-center gap-2" href="#cat-android"><span class="footer-neon-icon" aria-hidden="true">📱</span><span>Android Applications</span></a></li>
-<li><a class="footer-neon-item inline-flex items-center gap-2" href="#cat-androidtv"><span class="footer-neon-icon" aria-hidden="true">📺</span><span>Android TV &amp; Leanback</span></a></li>
-<li><a class="footer-neon-item inline-flex items-center gap-2" href="#cat-desktop"><span class="footer-neon-icon" aria-hidden="true">💻</span><span>Desktop &amp; Laptop Software</span></a></li>
-<li><a class="footer-neon-item inline-flex items-center gap-2 text-cyan-300" href="#cat-router"><span class="footer-neon-icon" aria-hidden="true">📡</span><span>Router Firmware Vault</span></a></li>
-</ul>
-</div>
-<!-- Col 3: Direct Official Links -->
-<div class="space-y-2">
-<div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Official Links</div>
-<ul class="grid grid-cols-2 gap-x-4 gap-y-2">
-<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="https://snappshub.github.io/" aria-label="SnappsHub Website"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.9 12h18.2M12 2.8c2.4 2.5 3.6 5.6 3.6 9.2s-1.2 6.7-3.6 9.2c-2.4-2.5-3.6-5.6-3.6-9.2s1.2-6.7 3.6-9.2Z"/></svg><span>SnappsHub Website</span></a></li>
-<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer" aria-label="Telegram Community"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M21.7 4.1 18.5 20c-.24 1.12-.88 1.4-1.78.87l-4.92-3.63-2.38 2.29c-.26.26-.48.48-.98.48l.35-5.01 9.12-8.24c.4-.35-.09-.55-.62-.2L6.02 13.7l-4.85-1.52c-1.05-.33-1.07-1.05.22-1.56L20.36 3.3c.87-.32 1.63.21 1.34.8Z"/></svg><span>Telegram Community</span></a></li>
-<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="mailto:alaminsaheb2019@gmail.com" aria-label="Email SnappsHub"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 6.5L20.5 6"/></svg><span class="min-w-0">Email support</span></a></li>
-<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="./privacy-policy.html" aria-label="Privacy Policy"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg><span>Privacy Policy</span></a></li>
-<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="./sitemap.html" aria-label="HTML Sitemap"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6v5H4zM14 5h6v5h-6zM9 17h6v5H9zM7 10v3h10v-3M12 13v4"/></svg><span>Site map</span></a></li>
-
-</ul>
-</div>
-<!-- Col 4: Compliance & Disclaimer -->
-<div class="space-y-2">
-<div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Safety &amp; Terms</div>
-<p class="text-[11px] text-slate-400 leading-normal">
-            SN Apps Hub links to publisher sources. Checksums are shown only when supplied; files are not represented as independently scanned or verified.
-          </p>
-<div class="flex items-center gap-2 pt-1">
-<span class="inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-800/40">
-              ✓ Publisher source links
-            </span>
-<span class="inline-flex items-center gap-1 text-[10px] text-cyan-400 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-800/40">
-              ✓ Checksums when supplied
-            </span>
-</div>
-</div>
-</div>
-<!-- Centered Glowing Designer Credit -->
-<div class="pt-6 border-t border-[#1f273d] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-<p class="text-xs text-slate-400">
-          © 2026 <a class="text-slate-300 hover:text-white font-medium" href="https://snappshub.github.io/">SN Apps Hub</a>. All Rights Reserved.
-        </p>
-<!-- Centered Glowing Designer Credit -->
-<div class="px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 via-cyan-500/10 to-amber-500/10 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] text-center">
-<span class="text-xs font-semibold bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent">
-            Website Designed &amp; Developed by Alamin Saheb
-          </span>
-</div>
-<div class="text-xs font-mono text-slate-400">
-          Source: <span class="text-emerald-400">Publisher linked</span>
-</div>
-</div>
-</div>
-</footer>
-<!-- END: MainFooter -->
-<!-- BEGIN: EmbeddedApplicationLogic -->
-<script data-purpose="app-core-store">
-    // Core database with default entries for the 4 categories
-    // CRITICAL: category 'router' is strictly kept as the last category
-    const initialRepositoryData = [
-      // Android Apps
-      {
-        id: "apk-1",
-        title: "Instander Pro",
-        category: "android",
-        version: "v18.0",
-        size: "52.4 MB",
-        arch: "arm64-v8a",
-        icon: "📸",
-        url: "https://www.instagram.com/",
-        sha256: "",
-        desc: "High quality image download, ad-free feed, privacy ghosts, and publisher-linked release."
-      },
-      {
-        id: "apk-2",
-        title: "Telegram Messenger",
-        category: "android",
-        version: "v10.14",
-        size: "68.1 MB",
-        arch: "Universal",
-        icon: "✈️",
-        url: "https://t.me/snappshub",
-        sha256: "",
-        desc: "Optimized Telegram client with zero sponsored messages and enhanced download pipes."
-      },
-      {
-        id: "apk-3",
-        title: "AdGuard Premium",
-        category: "android",
-        version: "v4.4.1",
-        size: "34.2 MB",
-        arch: "All Arch",
-        icon: "🛡️",
-        url: "https://adguard.com/en/adguard-android/overview.html",
-        sha256: "",
-        desc: "System-wide ad blocker, HTTPS traffic filtering, and privacy tracker prevention."
-      },
-      {
-        id: "apk-4",
-        title: "Seal Media Downloader",
-        category: "android",
-        version: "v1.12.3",
-        size: "28.0 MB",
-        arch: "arm64-v8a",
-        icon: "🦭",
-        url: "https://github.com/JunkFood02/Seal/releases",
-        sha256: "",
-        desc: "Open source yt-dlp frontend with custom audio/video conversion and material design."
-      },
-      {
-        id: "apk-5",
-        title: "Poweramp Music Player",
-        category: "android",
-        version: "build-976",
-        size: "18.6 MB",
-        arch: "Universal",
-        icon: "🎵",
-        url: "https://powerampapp.com/",
-        sha256: "",
-        desc: "Audiophile music player with custom 64-bit audio engine, equalizer, and high-res output."
-      },
-
-      // Android TV
-      {
-        id: "tv-1",
-        title: "SmartTube TV Stable",
-        category: "androidtv",
-        version: "v21.85",
-        size: "24.5 MB",
-        arch: "Android TV",
-        icon: "📺",
-        url: "https://github.com/yuliskov/SmartTube/releases",
-        sha256: "",
-        desc: "YouTube client for Android TV with SponsorBlock, 4K 60fps AV1 playback, zero video ads."
-      },
-      {
-        id: "tv-2",
-        title: "Kodi 21.0 Omega TV",
-        category: "androidtv",
-        version: "v21.0",
-        size: "74.8 MB",
-        arch: "armeabi-v7a",
-        icon: "❄️",
-        url: "https://kodi.tv/download/",
-        sha256: "",
-        desc: "Ultimate entertainment center with support for network streaming, TrueHD audio, and skins."
-      },
-      {
-        id: "tv-3",
-        title: "TiviMate IPTV Player",
-        category: "androidtv",
-        version: "v4.8.0",
-        size: "16.2 MB",
-        arch: "Android TV",
-        icon: "📡",
-        url: "https://tivimate.com/",
-        sha256: "",
-        desc: "Dedicated IPTV client designed specifically for large screens and remote controllers."
-      },
-      {
-        id: "tv-4",
-        title: "Projectivy Launcher",
-        category: "androidtv",
-        version: "v4.52",
-        size: "12.0 MB",
-        arch: "Leanback",
-        icon: "🚀",
-        url: "https://projectivy.hu/",
-        sha256: "",
-        desc: "Clean Android TV replacement launcher with zero banner recommendations and ultra-fast boot."
-      },
-
-      // Desktop & Laptop
-      {
-        id: "pc-1",
-        title: "Rufus USB Bootmaker",
-        category: "desktop",
-        version: "v4.5 Portable",
-        size: "1.4 MB",
-        arch: "Windows x64",
-        icon: "💾",
-        url: "https://rufus.ie/",
-        sha256: "",
-        desc: "Format and create bootable USB drives such as ISO to USB, Windows 11 TPM bypass enabled."
-      },
-      {
-        id: "pc-2",
-        title: "7-Zip Ultra Cyber Edition",
-        category: "desktop",
-        version: "v24.05",
-        size: "1.9 MB",
-        arch: "Win / Mac / Linux",
-        icon: "🗜️",
-        url: "https://www.7-zip.org/download.html",
-        sha256: "",
-        desc: "High compression ratio archiver supporting LZMA2 encryption and self-extracting formats."
-      },
-      {
-        id: "pc-3",
-        title: "VLC Media Player Portable",
-        category: "desktop",
-        version: "v3.0.21",
-        size: "42.1 MB",
-        arch: "x86_64",
-        icon: "🟧",
-        url: "https://www.videolan.org/vlc/",
-        sha256: "",
-        desc: "Cross platform multimedia player that reads all audio, video codecs, streams without extra packs."
-      },
-      {
-        id: "pc-4",
-        title: "Wireshark Network Analyzer",
-        category: "desktop",
-        version: "v4.2.5",
-        size: "82.4 MB",
-        arch: "x64 Native",
-        icon: "🦈",
-        url: "https://www.wireshark.org/download.html",
-        sha256: "",
-        desc: "World's foremost network protocol analyzer for packet capture, router debugging, and analysis."
-      },
-
-      // ROUTER FIRMWARE VAULT (ALWAYS FINAL CATEGORY)
-      {
-        id: "rt-1",
-        title: "Tenda AC10 v4 Stock & Breed",
-        category: "router",
-        version: "US_ACT_V16.03.10.20",
-        size: "11.2 MB",
-        arch: "MIPS 16MB SPI",
-        icon: "📶",
-        url: "https://www.tendacn.com/",
-        sha256: "",
-        desc: "Vendor-linked firmware support page for Tenda AC10 v4.0. Resolves bootloop and bricked flash."
-      },
-      {
-        id: "rt-2",
-        title: "TP-Link Archer C6 v3.2 EU",
-        category: "router",
-        version: "v3.2_Build220414",
-        size: "14.5 MB",
-        arch: "Qualcomm Atheros",
-        icon: "📡",
-        url: "https://www.tp-link.com/en/support/download/archer-c6/",
-        sha256: "",
-        desc: "Official stripped bin file for recovery via TFTP server. Clean firmware with stock bootloader."
-      },
-      {
-        id: "rt-3",
-        title: "MikroTik RouterOS Main",
-        category: "router",
-        version: "v7.15 Stable",
-        size: "26.8 MB",
-        arch: "MMIPS / ARM / x86",
-        icon: "⚙️",
-        url: "https://mikrotik.com/download",
-        sha256: "",
-        desc: "RouterOS v7 package file (.npk) with WireGuard native protocol, BGP improvements, and patch."
-      },
-      {
-        id: "rt-4",
-        title: "OpenWrt 23.05.3 Generic",
-        category: "router",
-        version: "v23.05.3-factory",
-        size: "8.9 MB",
-        arch: "MediaTek MT7621",
-        icon: "🌐",
-        url: "https://firmware-selector.openwrt.org/",
-        sha256: "",
-        desc: "Clean OpenWrt factory flashing image. LuCI web interface included with modern kernel."
-      }
-    ];
-
-    // Local storage persistence or fallback
-    let repositoryData = initialRepositoryData;
-    let categoryLimits = { android: 8, androidtv: 8, desktop: 8, router: 8 };
-    let currentActiveApp = null;
-    let countdownInterval = null;
-
-    function saveRepositoryToStorage() {
-      localStorage.setItem('snapps_repo_data', JSON.stringify(repositoryData));
+      `;
+      renderAds('app-details', 'details-ad');
     }
-  </script>
-<script data-purpose="render-and-ui">
-    // Render Items to Category Grids
-    function safeText(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-    function getAutoIconMarkup(item) {
-      const sectorFallback = ({android:'📱',androidtv:'📺',desktop:'💻',router:'📡'})[(item.devices || [])[0]] || '📦';
-      const fallback = typeof item.icon === 'string' && !/^https?:\/\//i.test(item.icon) ? item.icon : sectorFallback;
-      const validIconSource = value => {
-        const source = String(value || '').trim();
-        if (/^https:\/\//i.test(source)) {
-          try {
-            const parsed = new URL(source);
-            if (parsed.protocol !== 'https:' || parsed.username || parsed.password) return '';
-            if (/^(www\.)?google\.com$/i.test(parsed.hostname) && parsed.pathname === '/s2/favicons') return '';
-            if (parsed.hostname.toLowerCase() === 'icons.duckduckgo.com') return '';
-            return parsed.href;
-          } catch (_) { return ''; }
-        }
-        return /^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(source) && !source.split('/').includes('..') ? source : '';
+
+    function goHome() {
+      document.getElementById('page-details').style.display = 'none';
+      document.getElementById('page-home').style.display = 'block';
+    }
+
+    function startMiniWindow2(url, label) {
+      document.getElementById('mw2-app').textContent = (currentApp ? currentApp.name : 'Package') + ' — ' + label;
+      document.getElementById('mw2-sub').textContent = (STORE.miniWindows && STORE.miniWindows.downloadingSubtitle) || 'Downloading...';
+      document.getElementById('mw2-link').href = url;
+      renderAds('mini-window-2', 'mw2-ad');
+      document.getElementById('mw2').classList.add('open');
+      setTimeout(() => { document.getElementById('mw2-bar').style.width = '100%'; }, 120);
+    }
+
+    function showPolicy(kind) {
+      const p = STORE.policies || {};
+      const map = {
+        dmca: ['DMCA Policy', p.dmcaText],
+        privacy: ['Privacy Policy', p.privacyPolicyText],
+        credits: ['Open-Source Credits', p.openSourceCreditText],
       };
-      const imageMarkup = source =>
-        '<img src="' + safeText(source) + '" alt="' + safeText((item.title || 'App') + ' app icon') +
-        '" class="w-10 h-10 rounded-lg object-contain" loading="lazy" decoding="async" referrerpolicy="no-referrer" ' +
-        'onerror="this.onerror=null;this.replaceWith(document.createTextNode(' + JSON.stringify(fallback) + '));">';
-      // Only explicitly supplied app artwork or bundled local files count as app icons.
-      const officialIcon = validIconSource(item.iconUrl);
-      const fileIcon = validIconSource(item.iconFile);
-      return officialIcon || fileIcon ? imageMarkup(officialIcon || fileIcon) : safeText(fallback);
-    }
-    const PRIMARY_SECTORS = ['android','androidtv','desktop','router'];
-    const deviceCatalogs = {
-      android: { label: 'Android', categories: [] },
-      androidtv: { label: 'Android TV', categories: [] },
-      desktop: { label: 'Desktop', categories: [] },
-      router: { label: 'Router', categories: [] },
-    };
-    const subcategoryNames = {
-      android:'Apps', androidtv:'TV Apps', desktop:'PC Software',
-      browser:'Browser', security:'Security', popular:'Popular Tools',
-      network:'Network Tools', video:'Video Editor', photo:'Photo Editor', developer:'Developer Tools', productivity:'Productivity', education:'Education', documents:'Documents & Reading', communication:'Communication', system:'System Utilities', media:'Media & Gallery'
-    };
-    const subcategoryIcons = {
-      android:'📱', androidtv:'📺', desktop:'💻', router:'📡', browser:'🌐',
-      security:'🛡️', popular:'⭐', network:'🛜', video:'🎬', photo:'🖼️',
-      developer:'🧑‍💻', productivity:'📝', education:'🎓', documents:'📚',
-      communication:'💬', system:'🛠️', media:'🖼️'
-    };
-
-    function applyPublishedDefinitions(data) {
-      const devices = Array.isArray(data.devices) ? data.devices : [];
-      const categories = Array.isArray(data.categoryDefinitions) ? data.categoryDefinitions : [];
-      const apps = Array.isArray(data.apps) ? data.apps : [];
-      categories.forEach(category => {
-        const slug = String(category.slug || '');
-        if (/^[a-zA-Z0-9_-]+$/.test(slug) && typeof category.name === 'string' && category.name.trim()) {
-          subcategoryNames[slug] = category.name.trim();
-          if (typeof category.icon === 'string' && category.icon.trim()) subcategoryIcons[slug] = category.icon.trim();
-        }
-      });
-      Object.keys(deviceCatalogs).forEach(slug => {
-        const device = devices.find(item => String(item.slug || '') === slug);
-        if (device && typeof device.name === 'string' && device.name.trim()) deviceCatalogs[slug].label = device.name.trim();
-        const assigned = categories
-          .filter(category => {
-            const categorySlug = String(category.slug || '');
-            if (PRIMARY_SECTORS.includes(categorySlug)) return false;
-            const deviceIds = Array.isArray(category.deviceIds) ? category.deviceIds.map(String) : [];
-            if (deviceIds.length) return deviceIds.includes(slug);
-            const deviceId = String(category.deviceId || '');
-            if (deviceId) return deviceId === String(device?.id || '') || deviceId === slug || deviceId === 'device-' + slug;
-            return apps.some(app => app && app.category === category.slug &&
-              (Array.isArray(app.devices) ? app.devices : [app.category]).includes(slug));
-          })
-          .sort((a, b) => Number(a.order || 0) - Number(b.order || 0))
-          .map(category => String(category.slug || ''))
-          .filter(categorySlug => /^[a-zA-Z0-9_-]+$/.test(categorySlug));
-        const discovered = apps
-          .filter(app => app && !PRIMARY_SECTORS.includes(String(app.category || '')) &&
-            (Array.isArray(app.devices) ? app.devices : [app.category]).includes(slug))
-          .map(app => String(app.category || ''))
-          .filter(categorySlug => /^[a-zA-Z0-9_-]+$/.test(categorySlug));
-        deviceCatalogs[slug].categories = [...new Set([...assigned, ...discovered])];
-      });
-    }
-    const activeDeviceCategory = { android:'all', androidtv:'all', desktop:'all', router:'all' };
-    let activePrimarySector = 'all';
-    let activeGlobalCategory = 'all';
-    let activeSearchQuery = '';
-
-    function filterAllCategory(category) {
-      activeGlobalCategory = category;
-      Object.keys(activeDeviceCategory).forEach(device => activeDeviceCategory[device] = 'all');
-      document.querySelectorAll('.device-nav-card[data-category]').forEach(button => {
-        const active = button.dataset.category === category;
-        button.classList.toggle('active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      Object.keys(categoryLimits).forEach(device => categoryLimits[device] = 8);
-      renderCatalog();
+      const entry = map[kind] || ['Legal Notice', ''];
+      document.getElementById('policy-title').textContent = entry[0];
+      document.getElementById('policy-text').textContent = entry[1];
+      document.getElementById('policy-modal').classList.add('open');
     }
 
-    function filterPrimarySector(sector) {
-      if (!PRIMARY_SECTORS.includes(sector)) return;
-      activePrimarySector = sector;
-      activeGlobalCategory = 'all';
-      Object.keys(activeDeviceCategory).forEach(device => activeDeviceCategory[device] = 'all');
-      Object.keys(categoryLimits).forEach(device => categoryLimits[device] = 8);
-      renderCatalog();
-    }
-
-    function filterDeviceCategory(device, category) {
-      activePrimarySector = device;
-      activeGlobalCategory = 'all';
-      document.querySelectorAll('.device-nav-card[data-category]').forEach(button => {
-        const active = button.dataset.category === 'all';
-        button.classList.toggle('active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      activeDeviceCategory[device] = category;
-      categoryLimits[device] = 8;
-      renderCatalog();
-    }
-
-    function renderCatalog() {
-      Object.keys(deviceCatalogs).forEach(device => {
-        const gridEl = document.getElementById('grid-' + device);
-        const tabsEl = document.getElementById('subcategories-' + device);
-        const sectionEl = document.getElementById('cat-' + device);
-        if (!gridEl || !tabsEl) return;
-        const supported = deviceCatalogs[device].categories.filter(cat =>
-          repositoryData.some(item => item.category === cat && (item.devices || [item.category]).includes(device))
-        );
-        const selected = activeDeviceCategory[device];
-        tabsEl.innerHTML = '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'all\')" class="subcategory-chip ' + (selected === 'all' ? 'active' : '') + '">All</button>' +
-          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'' + cat + '\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '"><span aria-hidden="true">' + safeText(subcategoryIcons[cat] || '📦') + '</span> ' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
-        let items = repositoryData.filter(item => (item.devices || [item.category]).includes(device) &&
-          (selected === 'all' || item.category === selected) &&
-          (activeGlobalCategory === 'all' || item.category === activeGlobalCategory));
-        if (activeSearchQuery) {
-          const q = activeSearchQuery;
-          items = items.filter(item => {
-            const searchable = [
-              item.title, item.desc, item.arch, item.version, item.size, item.id,
-              item.category, subcategoryNames[item.category],
-              ...(Array.isArray(item.devices) ? item.devices : [])
-            ].filter(Boolean).join(' ').toLocaleLowerCase();
-            return searchable.includes(q);
-          });
-        }
-        if (sectionEl) sectionEl.classList.toggle('hidden',
-          items.length === 0 || (activePrimarySector !== 'all' && activePrimarySector !== device));
-        document.querySelectorAll('.device-nav-card[data-sector]').forEach(button => {
-          const active = button.dataset.sector === activePrimarySector;
-          button.classList.toggle('active', active);
-          button.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
-        const limit = categoryLimits[device] || 8;
-        const visible = items.slice(0, limit);
-        gridEl.innerHTML = visible.map(item => `
-          <div data-purpose="app-card" class="bg-[#111728] border border-[#1f273d] hover:border-amber-500/50 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-2 mb-2.5">
-                <div class="w-10 h-10 rounded-lg bg-[#162035] border border-slate-700/60 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">${getAutoIconMarkup(item)}</div>
-                <div class="text-right"><span class="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${safeText(item.version)}</span><span class="block text-[10px] font-mono text-slate-400 mt-0.5">${safeText(item.size)}</span></div>
-              </div>
-              <h3 class="text-xs font-bold text-white group-hover:text-amber-400 transition truncate" title="${safeText(item.title)}">${safeText(item.title)}</h3>
-              <p class="text-[11px] text-slate-400 line-clamp-2 mt-1 leading-snug">${safeText(item.desc || 'Publisher-linked software listing.')}</p>
-              <div class="mt-2.5 flex items-center justify-between gap-2 text-[10px] text-slate-400 border-t border-[#1f273d]/70 pt-2 font-mono"><span class="truncate max-w-[110px]">${safeText(item.arch || 'Universal')}</span><span class="truncate text-cyan-300">${safeText(subcategoryNames[item.category] || item.category || 'Software')}</span></div>
-            </div>
-            <div class="mt-3.5 pt-1"><button onclick="${safeText('openDownloadModal(' + JSON.stringify(String(item.id)) + ')')}" class="w-full py-1.5 px-2 text-center text-xs font-bold rounded bg-amber-500 hover:bg-amber-400 text-slate-950 transition">Download ↓</button></div>
-          </div>`).join('') || '<div class="col-span-full py-4 text-center text-xs text-slate-500 font-mono">No apps in this category yet.</div>';
-        const more = document.getElementById('viewMore-' + device);
-        if (more) more.classList.toggle('hidden', items.length <= limit);
-        const count = document.getElementById('count-' + device);
-        if (count) count.textContent = items.length + ' Items';
-      });
-    }
-
-    function handleUniversalSearch(query) {
-      activeSearchQuery = (query || '').trim().toLowerCase();
-      activePrimarySector = 'all';
-      activeGlobalCategory = 'all';
-      document.querySelectorAll('.device-nav-card[data-category]').forEach(button => {
-        const active = button.dataset.category === 'all';
-        button.classList.toggle('active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      Object.keys(activeDeviceCategory).forEach(device => activeDeviceCategory[device] = 'all');
-      Object.keys(categoryLimits).forEach(device => categoryLimits[device] = 8);
-      renderCatalog();
-    }
-
-    // Expand category when View More.. ▾ is clicked
-    function expandCategory(cat) {
-      categoryLimits[cat] = (categoryLimits[cat] || 8) + 4;
-      renderCatalog();
-    }
-
-    // Toggle off-canvas drawer
-    function toggleDrawer() {
-      const drawer = document.getElementById('sideDrawer');
-      const overlay = document.getElementById('drawerOverlay');
-      if (drawer.classList.contains('-translate-x-full')) {
-        drawer.classList.remove('-translate-x-full');
-        overlay.classList.remove('hidden');
-        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-      } else {
-        drawer.classList.add('-translate-x-full');
-        overlay.classList.add('opacity-0');
-        setTimeout(() => overlay.classList.add('hidden'), 300);
-      }
-    }
-
-    // Header search button: open a compact search panel on every screen size.
-    function toggleHeaderSearch() {
-      const wrap = document.getElementById("headerSearchWrap");
-      const input = document.getElementById("globalSearchInput");
-      wrap.classList.toggle("header-search-open");
-      if (wrap.classList.contains("header-search-open")) input.focus();
-    }
-
-
-    // In-Page App Details View (Page 2 Flow)
-    function viewAppDetails(itemId) {
-      const item = repositoryData.find(i => i.id === itemId);
-      if (!item) return;
-
-      currentActiveApp = item;
-
-      // Populate details page
-      document.getElementById('detailAppIcon').innerHTML = getAutoIconMarkup(item);
-      document.getElementById('detailAppTitle').textContent = item.title;
-      document.getElementById('detailAppBadge').textContent = item.category.toUpperCase();
-      document.getElementById('detailAppVersion').textContent = item.version;
-      document.getElementById('detailAppSize').textContent = item.size;
-      document.getElementById('detailAppSha256').textContent = `SHA-256: ${item.sha256 || 'Not supplied by publisher'}`;
-      document.getElementById('detailAppDesc').textContent = item.desc || 'Publisher-linked software listing. Verify the publisher and package before installation.';
-      document.getElementById('detailArch').textContent = item.arch || 'Multi-platform';
-      document.getElementById('detailBreadcrumb').textContent = `Repository / ${item.category.toUpperCase()} / ${item.title}`;
-
-      // Bind button
-      const dlBtn = document.getElementById('detailDownloadTriggerBtn');
-      dlBtn.onclick = () => openDownloadModal(item.id);
-
-      // Toggle views
-      document.getElementById('catalogView').classList.add('hidden');
-      document.getElementById('appDetailsView').classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function showCatalogView() {
-      document.getElementById('appDetailsView').classList.add('hidden');
-      document.getElementById('catalogView').classList.remove('hidden');
-    }
-
-    async function copyDetailSha() {
-      if (!currentActiveApp) return;
-      if (!currentActiveApp.sha256) {
-        alert('No publisher-provided SHA-256 checksum is available for this listing.');
-        return;
-      }
-      try {
-        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
-        await navigator.clipboard.writeText(currentActiveApp.sha256);
-        alert('SHA-256 checksum copied to clipboard.');
-      } catch (_) {
-        alert('Clipboard access is unavailable in this browser. Copy the checksum manually from the details page.');
-      }
-    }
-
-    // 5-Second Countdown Download Modal
-    function openDownloadModal(itemId) {
-      const item = repositoryData.find(i => i.id === itemId);
-      if (!item) return;
-
-      currentActiveApp = item;
-
-      // Fill modal info
-      document.getElementById('modalAppIcon').innerHTML = getAutoIconMarkup(item);
-      document.getElementById('modalAppTitle').textContent = item.title;
-      document.getElementById('modalAppVersion').textContent = item.version;
-      document.getElementById('modalAppSize').textContent = item.size;
-
-      const directBtn = document.getElementById('modalDirectDownloadBtn');
-      let publisherUrl = '';
-      try {
-        const parsedUrl = new URL(String(item.url || item.mirror1 || ''));
-        if (parsedUrl.protocol === 'https:' && parsedUrl.hostname && !parsedUrl.username && !parsedUrl.password) publisherUrl = parsedUrl.href;
-      } catch (_) {}
-      directBtn.href = publisherUrl || '#';
-      directBtn.rel = 'noopener noreferrer';
-      directBtn.setAttribute('aria-disabled', publisherUrl ? 'false' : 'true');
-      directBtn.classList.toggle('opacity-50', !publisherUrl);
-      directBtn.classList.toggle('pointer-events-none', !publisherUrl);
-      directBtn.textContent = publisherUrl ? 'Download' : 'Publisher link unavailable';
-
-      // Reset timer UI
-      const timerContainer = document.getElementById('timerContainer');
-      const readyContainer = document.getElementById('readyContainer');
-      const countdownNumber = document.getElementById('countdownNumber');
-      const countdownBar = document.getElementById('countdownBar');
-
-      // Never show a ready state or start a countdown when no valid HTTPS destination exists.
-      // Publisher/F-Droid links open directly; countdown is only for valid SnappsHub-hosted mirrors.
-      if (countdownInterval) clearInterval(countdownInterval);
-      if (!publisherUrl || item.sourceLabel) {
-        timerContainer.classList.add('hidden');
-        readyContainer.classList.remove('hidden');
-      } else {
-        timerContainer.classList.remove('hidden');
-        readyContainer.classList.add('hidden');
-        countdownBar.style.width = '0%';
-        let seconds = 5;
-        countdownNumber.textContent = seconds;
-        setTimeout(() => { countdownBar.style.width = '100%'; }, 50);
-        countdownInterval = setInterval(() => {
-          seconds--;
-          if (seconds > 0) countdownNumber.textContent = seconds;
-          else {
-            clearInterval(countdownInterval);
-            timerContainer.classList.add('hidden');
-            readyContainer.classList.remove('hidden');
-          }
-        }, 1000);
-      }
-
-      // Show modal
-      document.getElementById('downloadModal').classList.remove('hidden');
-    }
-
-    function closeDownloadModal() {
-      if (countdownInterval) clearInterval(countdownInterval);
-      document.getElementById('downloadModal').classList.add('hidden');
-    }
-
-    function toggleDetailsFromModal() {
-      if (currentActiveApp) {
-        closeDownloadModal();
-        viewAppDetails(currentActiveApp.id);
-      }
-    }
-
-    // Push notification simulator
-    function dismissNotification() {
-      const banner = document.getElementById('pushNotificationBanner');
-      if (banner) {
-        banner.classList.add('translate-y-24', 'opacity-0');
-        setTimeout(() => banner.classList.add('hidden'), 300);
-      }
-    }
+    renderAds('home', 'ads-home');
+    renderApps();
   </script>
-
-<script>
-    const PUBLIC_CATALOGUE_ENDPOINT = 'https://sqnbahirvbcympmjqkkc.supabase.co/functions/v1/public-catalogue';
-
-    async function loadCatalogueData() {
-      try {
-        const remote = await fetch(PUBLIC_CATALOGUE_ENDPOINT, { cache: 'no-store', headers: { Accept: 'application/json' } });
-        if (remote.ok) {
-          const data = await remote.json();
-          if (data && Array.isArray(data.apps)) return data;
-        }
-      } catch (error) {
-        console.warn('Public catalogue API unavailable; using the static snapshot.', error);
-      }
-
-      const response = await fetch('./apps-data.json?t=' + Date.now(), { cache: 'no-store' });
-      if (!response.ok) throw new Error('App data HTTP ' + response.status);
-      const data = await response.json();
-      if (!Array.isArray(data.apps)) throw new Error('Invalid app list');
-      return data;
-    }
-
-    document.addEventListener("DOMContentLoaded", async () => {
-      renderCatalog();
-      try {
-        const data = await loadCatalogueData();
-        applyPublishedDefinitions(data);
-        repositoryData = data.apps.filter(a => a && /^[a-zA-Z0-9_-]+$/.test(a.id)).map(a => ({...a, title:a.title || a.name, url:a.url || a.mirror1}));
-        renderCatalog();
-        const hero = data.hero || {};
-        if (hero.siteBrandTitle) document.querySelectorAll('.brand-pulse-name').forEach(el => el.textContent = hero.siteBrandTitle);
-        const ticker = document.querySelector('[data-purpose="marquee-announcement"]');
-        if (ticker && hero.tickerActive === false) ticker.hidden = true;
-        if (ticker && hero.tickerText) ticker.querySelector('.animate-marquee').textContent = hero.tickerText;
-        const siteConfig = data.siteConfig || {};
-        if (siteConfig.siteName) {
-          document.title = siteConfig.siteName + ' — Publisher-Linked Software, APKs & Firmware Vault';
-          document.querySelectorAll('.brand-pulse-name').forEach(el => el.textContent = siteConfig.siteName);
-        }
-        if (siteConfig.tagline) {
-          const description = document.querySelector('meta[name="description"]');
-          if (description) description.content = siteConfig.tagline;
-        }
-        if (siteConfig.telegram) {
-          try {
-            const telegramUrl = new URL(String(siteConfig.telegram));
-            if (telegramUrl.protocol === 'https:' && telegramUrl.hostname === 't.me' && !telegramUrl.username && !telegramUrl.password) {
-              document.querySelectorAll('a[href*="t.me/snappshub"]').forEach(el => el.href = telegramUrl.href);
-            }
-          } catch (_) {}
-        }
-        if (siteConfig.contactEmail) {
-          document.querySelectorAll('a[href^="mailto:"]').forEach(el => el.href = 'mailto:' + siteConfig.contactEmail);
-        }
-      } catch (error) { console.error('Live catalogue load failed:', error); }
-    });
-  </script>
-<!-- END: EmbeddedApplicationLogic -->
-</body></html>
+</body>
+</html>
