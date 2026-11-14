@@ -113,7 +113,11 @@ const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 assert.ok(html.includes('const PRIMARY_SECTORS = [\'android\',\'androidtv\',\'desktop\',\'router\']'),
   'renderer must use exactly four primary sectors');
 assert.ok(html.includes('validIconSource(item.iconUrl)') && html.includes('validIconSource(item.iconFile)'),
-  'app icon engine must prioritize publisher-owned icon URLs and bundled icon files');
+  'app icon engine must prioritize explicit app icon URLs and bundled icon files');
+assert.ok(!html.includes('validIconSource(item.icon)'),
+  'legacy favicon fields must not be treated as original app icons');
+assert.ok(html.includes('Only explicitly supplied app artwork or bundled local files count as app icons'),
+  'icon engine must distinguish app artwork from publisher favicons');
 const navStart = html.indexOf('<nav class="device-nav"');
 const navEnd = html.indexOf('</nav>', navStart);
 const primaryNav = navStart >= 0 && navEnd >= 0 ? html.slice(navStart, navEnd + 6) : '';
