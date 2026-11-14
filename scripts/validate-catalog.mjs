@@ -48,6 +48,33 @@ for (const [index, app] of catalog.apps.entries()) {
   }
 }
 
+const outboundFields = ['url', 'sourceUrl', 'telegramSupportUrl'];
+for (const [index, app] of catalog.apps.entries()) {
+  const label = app.id || \`row \${index + 1}\`;
+  for (const field of outboundFields) {
+    if (!app[field]) continue;
+    let parsed;
+    try { parsed = new URL(app[field]); }
+    catch { assert.fail(\`\${label}: \${field} must be an absolute URL\`); }
+    assert.equal(parsed.protocol, 'https:', \`\${label}: \${field} must use HTTPS\`);
+    assert.equal(parsed.username, '', \`\${label}: \${field} must not contain embedded credentials\`);
+    assert.equal(parsed.password, '', \`\${label}: \${field} must not contain embedded credentials\`);
+  }
+  if (app.mirrors !== undefined) {
+    assert.ok(Array.isArray(app.mirrors), \`\${label}: mirrors must be an array\`);
+    for (const mirror of app.mirrors) {
+      const mirrorUrl = typeof mirror === 'string' ? mirror : mirror?.url;
+      assert.ok(typeof mirrorUrl === 'string' && mirrorUrl.trim(), \`\${label}: each mirror needs a URL\`);
+      let parsed;
+      try { parsed = new URL(mirrorUrl); }
+      catch { assert.fail(\`\${label}: mirror URL must be absolute\`); }
+      assert.equal(parsed.protocol, 'https:', \`\${label}: mirror URL must use HTTPS\`);
+      assert.equal(parsed.username, '', \`\${label}: mirror URL must not contain embedded credentials\`);
+      assert.equal(parsed.password, '', \`\${label}: mirror URL must not contain embedded credentials\`);
+    }
+  }
+}
+
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 for (const required of [
   'id="catalogView"',
@@ -64,9 +91,9 @@ for (const required of [
 const dynamicDownloadAction = "${safeText('openDownloadModal(' + JSON.stringify(String(item.id)) + ')')}";
 assert.ok(html.includes(dynamicDownloadAction),
   'catalogue download actions must JSON-encode app IDs before placing them in inline JavaScript');
-const newWindowAnchors = [...html.matchAll(/<a\\b[^>]*\\btarget="_blank"[^>]*>/g)].map(match => match[0]);
+const newWindowAnchors = [...html.matchAll(/<a\b[^>]*\btarget="_blank"[^>]*>/g)].map(match => match[0]);
 for (const anchor of newWindowAnchors) {
-  assert.match(anchor, /\\brel="[^"]*noopener[^"]*"/,
+  assert.match(anchor, /\brel="[^"]*noopener[^"]*"/,
     'links opening a new tab must use rel=noopener');
 }
 
