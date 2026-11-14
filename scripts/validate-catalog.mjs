@@ -157,7 +157,7 @@ for (const device of allowedDevices) {
     assert.ok(html.includes(`id="${id}"`), `index.html is missing the ${device} device catalogue element: ${id}`);
   }
 }
-assert.match(html, /router:\s*\{\s*label:\s*['"]Router Firmware['"]/,
+assert.match(html, /router:\s*\{\s*label:\s*['"]Router['"]/,
   'device renderer must include the router device group');
 assert.match(html, /const discovered = apps[\s\S]*?deviceCatalogs\[slug\]\.categories = \[\.\.\.new Set\(\[\.\.\.assigned, \.\.\.discovered\]\)\]/,
   'device categories must be discovered from published app assignments, including static fallback data');
