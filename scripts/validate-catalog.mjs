@@ -61,6 +61,15 @@ for (const required of [
   assert.ok(html.includes(required), `index.html is missing required catalogue element/reference: ${required}`);
 }
 
+const dynamicDownloadAction = "${safeText('openDownloadModal(' + JSON.stringify(String(item.id)) + ')')}";
+assert.ok(html.includes(dynamicDownloadAction),
+  'catalogue download actions must JSON-encode app IDs before placing them in inline JavaScript');
+const newWindowAnchors = [...html.matchAll(/<a\\b[^>]*\\btarget="_blank"[^>]*>/g)].map(match => match[0]);
+for (const anchor of newWindowAnchors) {
+  assert.match(anchor, /\\brel="[^"]*noopener[^"]*"/,
+    'links opening a new tab must use rel=noopener');
+}
+
 for (const device of allowedDevices) {
   for (const id of [`cat-${device}`, `subcategories-${device}`, `grid-${device}`, `count-${device}`, `viewMore-${device}`]) {
     assert.ok(html.includes(`id="${id}"`), `index.html is missing the ${device} device catalogue element: ${id}`);
