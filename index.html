@@ -231,7 +231,7 @@
 
     async function loadSupplementalCatalogue() {
       try {
-        const response = await fetch('./apps-data.json?t=' + Date.now(), {cache:'no-store'});
+        const response = await fetch('./public-catalogue.json?t=' + Date.now(), {cache:'no-store'});
         if (!response.ok) throw new Error('Catalogue data request failed: ' + response.status);
         const payload = await response.json();
         const primaryDevices = new Set(['android','androidtv','desktop','router']);
