@@ -1584,7 +1584,12 @@ Join Telegram Community
           if (description) description.content = siteConfig.tagline;
         }
         if (siteConfig.telegram) {
-          document.querySelectorAll('a[href*="t.me/snappshub"]').forEach(el => el.href = siteConfig.telegram);
+          try {
+            const telegramUrl = new URL(String(siteConfig.telegram));
+            if (telegramUrl.protocol === 'https:' && telegramUrl.hostname === 't.me' && !telegramUrl.username && !telegramUrl.password) {
+              document.querySelectorAll('a[href*="t.me/snappshub"]').forEach(el => el.href = telegramUrl.href);
+            }
+          } catch (_) {}
         }
         if (siteConfig.contactEmail) {
           document.querySelectorAll('a[href^="mailto:"]').forEach(el => el.href = 'mailto:' + siteConfig.contactEmail);
