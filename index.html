@@ -1561,7 +1561,8 @@ Join Telegram Community
       document.getElementById('modalAppTitle').textContent = item.title;
       document.getElementById('modalAppVersion').textContent = item.version;
       document.getElementById('modalAppSize').textContent = item.size;
-      const metaLine = document.getElementById('modalAppMeta');\n      if (metaLine) metaLine.textContent = (item.category || 'Software') + ' • ' + ((item.devices || [item.category]).join(', ')) + ' • ' + (item.size || 'Size unavailable');
+      const metaLine = document.getElementById('modalAppMeta');
+      if (metaLine) metaLine.textContent = (item.category || 'Software') + ' • ' + ((item.devices || [item.category]).join(', ')) + ' • ' + (item.size || 'Size unavailable');
 
       const directBtn = document.getElementById('modalDirectDownloadBtn');
       let publisherUrl = '';
