@@ -104,7 +104,7 @@
       </div>
       <div style="display:flex;gap:8px;">
         <button class="btn btn-sec" onclick="toggleFolders()">Folders</button>
-        <a class="btn btn-primary" href="https://t.me/snappshub" target="_blank" rel="noreferrer">Telegram</a>
+        <a class="btn btn-primary" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer">Telegram</a>
       </div>
     </div>
   </header>
@@ -176,7 +176,7 @@
       <div class="bar-track"><div id="mw2-bar" class="bar-fill"></div></div>
       <div id="mw2-ad"></div>
       <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
-        <a id="mw2-link" class="btn btn-primary" href="#" target="_blank" rel="noreferrer">Direct Start</a>
+        <a id="mw2-link" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Direct Start</a>
         <button class="btn btn-sec" onclick="closeMw2()">Close</button>
       </div>
     </div>
@@ -327,7 +327,7 @@
       const mirrorBtns = (app.downloadEnabled !== false && app.showDetailsMirrors !== false)
         ? mirrors.map(m => '<button class="btn btn-sec" onclick="startMiniWindow2(\'' + m.url + '\', \'' + m.label + '\')">' + m.label + '</button>').join('')
         : '';
-      const tgBtn = app.telegramButtonEnabled === false ? '' : '<a class="btn btn-sec" href="' + (app.telegramSupportUrl || (STORE.downloadFlow && STORE.downloadFlow.telegramSupportUrl) || '#') + '" target="_blank">' + (app.telegramButtonLabel || 'Telegram Support') + '</a>';
+      const tgBtn = app.telegramButtonEnabled === false ? '' : '<a class="btn btn-sec" href="' + (app.telegramSupportUrl || (STORE.downloadFlow && STORE.downloadFlow.telegramSupportUrl) || '#') + '" target="_blank" rel="noopener noreferrer">' + (app.telegramButtonLabel || 'Telegram Support') + '</a>';
       document.getElementById('details-body').innerHTML = `
         <div class="card" style="display:block;">
           <h2 style="font-size:20px;">${app.name} <small style="color:var(--accent);">v${app.version}</small></h2>
