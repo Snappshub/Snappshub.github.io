@@ -1,1822 +1,542 @@
 {
-  "apps": [
-    {
-      "id": "apk-1",
-      "title": "Instagram (Publisher Link)",
-      "icon": "📱",
-      "url": "https://www.instagram.com/",
-      "category": "android",
-      "version": "v18.0",
-      "size": "52.4 MB",
-      "arch": "arm64-v8a",
-      "sha256": "",
-      "desc": "Open the official Instagram site to access the publisher's current app links. No modified APK is hosted here.",
-      "devices": [
-        "android"
-      ],
-      "sourceUrl": "https://www.instagram.com/",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=instagram.com&sz=128"
-    },
-    {
-      "id": "apk-2",
-      "title": "Telegram Messenger",
-      "icon": "📱",
-      "url": "https://telegram.org/apps",
-      "category": "android",
-      "version": "v10.14",
-      "size": "68.1 MB",
-      "arch": "Universal",
-      "sha256": "",
-      "desc": "Official Telegram apps and installation links. Avoid unofficial modified builds and verify the publisher.",
-      "devices": [
-        "android"
-      ],
-      "sourceUrl": "https://telegram.org/apps",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://raw.githubusercontent.com/DrKLO/Telegram/master/TMessagesProj/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
-      "id": "apk-3",
-      "title": "AdGuard for Android",
-      "icon": "📱",
-      "url": "https://adguard.com/en/adguard-android/overview.html",
-      "category": "android",
-      "version": "v4.4.1",
-      "size": "34.2 MB",
-      "arch": "All Arch",
-      "sha256": "",
-      "desc": "AdGuard's official Android product page and installation guidance. Check plan and platform compatibility.",
-      "devices": [
-        "android"
-      ],
-      "sourceUrl": "https://adguard.com/en/adguard-android/overview.html",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=adguard.com&sz=128"
-    },
-    {
-      "id": "apk-4",
-      "title": "Seal Media Downloader",
-      "icon": "📱",
-      "url": "https://github.com/JunkFood02/Seal/releases",
-      "category": "android",
-      "version": "v1.12.3",
-      "size": "28.0 MB",
-      "arch": "arm64-v8a",
-      "sha256": "",
-      "desc": "Open-source yt-dlp Android frontend. Review release notes and package assets in the project's official repository.",
-      "devices": [
-        "android"
-      ],
-      "sourceUrl": "https://github.com/JunkFood02/Seal/releases",
-      "sourceLabel": "GitHub releases",
-      "iconUrl": "https://raw.githubusercontent.com/JunkFood02/Seal/main/fastlane/metadata/android/en-US/images/icon.png"
-    },
-    {
-      "id": "apk-5",
-      "title": "Poweramp Music Player",
-      "icon": "📱",
-      "url": "https://powerampapp.com/",
-      "category": "android",
-      "version": "build-976",
-      "size": "18.6 MB",
-      "arch": "Universal",
-      "sha256": "",
-      "desc": "Poweramp's official music-player website and purchase or installation information. No unlocked or modified package is distributed.",
-      "devices": [
-        "android"
-      ],
-      "sourceUrl": "https://powerampapp.com/",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=powerampapp.com&sz=128"
-    },
-    {
-      "id": "tv-1",
-      "title": "SmartTube",
-      "icon": "📺",
-      "url": "https://github.com/yuliskov/SmartTube/releases",
-      "category": "androidtv",
-      "version": "v21.85",
-      "size": "24.5 MB",
-      "arch": "Android TV",
-      "sha256": "",
-      "desc": "SmartTube project releases for Android TV. Check the official repository and release notes before installing.",
-      "devices": [
-        "androidtv"
-      ],
-      "sourceUrl": "https://github.com/yuliskov/SmartTube/releases",
-      "sourceLabel": "GitHub releases",
-      "iconUrl": "https://raw.githubusercontent.com/yuliskov/SmartTube/master/smarttubetv/src/main/res/mipmap-nodpi/app_icon.png"
-    },
-    {
-      "id": "tv-2",
-      "title": "Kodi Media Center",
-      "icon": "📺",
-      "url": "https://kodi.tv/download/",
-      "category": "androidtv",
-      "version": "v21.0",
-      "size": "74.8 MB",
-      "arch": "armeabi-v7a",
-      "sha256": "",
-      "desc": "Official Kodi downloads for supported devices. Select the correct Android TV architecture and release.",
-      "devices": [
-        "androidtv"
-      ],
-      "sourceUrl": "https://kodi.tv/download/",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=kodi.tv&sz=128"
-    },
-    {
-      "id": "tv-3",
-      "title": "TiviMate IPTV Player",
-      "icon": "📺",
-      "url": "https://tivimate.com/",
-      "category": "androidtv",
-      "version": "v4.8.0",
-      "size": "16.2 MB",
-      "arch": "Android TV",
-      "sha256": "",
-      "desc": "TiviMate's official product information. IPTV playlists and subscriptions are provided separately by their respective services.",
-      "devices": [
-        "androidtv"
-      ],
-      "sourceUrl": "https://tivimate.com/",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=tivimate.com&sz=128"
-    },
-    {
-      "id": "tv-4",
-      "title": "Projectivy Launcher",
-      "icon": "📺",
-      "url": "https://play.google.com/store/apps/details?id=com.spocky.projengmenu",
-      "category": "androidtv",
-      "version": "v4.52",
-      "size": "12.0 MB",
-      "arch": "Leanback",
-      "sha256": "",
-      "desc": "Official Projectivy Launcher website and project information for Android TV.",
-      "devices": [
-        "androidtv"
-      ],
-      "sourceUrl": "https://play.google.com/store/apps/details?id=com.spocky.projengmenu",
-      "sourceLabel": "Google Play",
-      "iconUrl": "https://play-lh.googleusercontent.com/6bigO3_72JW9xTdkX7Mpm8fTBiP7ISDCUcI2E3C79P21uwuJC6VWD8pFxH-bXvc-CVZm"
-    },
-    {
-      "id": "pc-1",
-      "title": "Rufus USB Bootmaker",
-      "icon": "💻",
-      "url": "https://rufus.ie/",
-      "category": "desktop",
-      "version": "v4.5 Portable",
-      "size": "1.4 MB",
-      "arch": "Windows x64",
-      "sha256": "",
-      "desc": "Official Rufus download page. Verify the release and digital signature before running the utility.",
-      "devices": [
-        "desktop"
-      ],
-      "sourceUrl": "https://rufus.ie/",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://raw.githubusercontent.com/pbatard/rufus/master/res/appstore/Images/Square150x150Logo.scale-200.png"
-    },
-    {
-      "id": "pc-2",
-      "title": "7-Zip File Archiver",
-      "icon": "💻",
-      "url": "https://www.7-zip.org/download.html",
-      "category": "desktop",
-      "version": "v24.05",
-      "size": "1.9 MB",
-      "arch": "Win / Mac / Linux",
-      "sha256": "",
-      "desc": "Official 7-Zip downloads for supported Windows architectures.",
-      "devices": [
-        "desktop"
-      ],
-      "sourceUrl": "https://www.7-zip.org/download.html",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=7-zip.org&sz=128"
-    },
-    {
-      "id": "pc-3",
-      "title": "VLC Media Player",
-      "icon": "💻",
-      "url": "https://www.videolan.org/vlc/",
-      "category": "desktop",
-      "version": "v3.0.21",
-      "size": "42.1 MB",
-      "arch": "x86_64",
-      "sha256": "",
-      "desc": "Official VideoLAN VLC downloads for desktop and supported mobile platforms.",
-      "devices": [
-        "desktop"
-      ],
-      "sourceUrl": "https://www.videolan.org/vlc/",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://raw.githubusercontent.com/VideoLAN/vlc/master/extras/package/macosx/asset_sources/vlc_app_icon.svg"
-    },
-    {
-      "id": "pc-4",
-      "title": "Wireshark Network Analyzer",
-      "icon": "💻",
-      "url": "https://www.wireshark.org/download.html",
-      "category": "desktop",
-      "version": "v4.2.5",
-      "size": "82.4 MB",
-      "arch": "x64 Native",
-      "sha256": "",
-      "desc": "Official Wireshark downloads. Capture or inspect only networks and systems you are authorized to administer.",
-      "devices": [
-        "desktop"
-      ],
-      "sourceUrl": "https://www.wireshark.org/download.html",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://raw.githubusercontent.com/wireshark/wireshark/master/resources/historic/wsicon.svg"
-    },
-    {
-      "id": "rt-1",
-      "title": "Tenda AC10 v4 Firmware Support",
-      "icon": "📡",
-      "url": "https://www.tendacn.com/",
-      "category": "router",
-      "version": "US_ACT_V16.03.10.20",
-      "size": "11.2 MB",
-      "arch": "MIPS 16MB SPI",
-      "sha256": "",
-      "desc": "Start at Tenda's official support portal and confirm the exact AC10 hardware revision and region before downloading firmware.",
-      "devices": [
-        "router"
-      ],
-      "sourceUrl": "https://www.tendacn.com/",
-      "sourceLabel": "Official support site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=tendacn.com&sz=128"
-    },
-    {
-      "id": "rt-2",
-      "title": "TP-Link Archer C6 Firmware Support",
-      "icon": "📡",
-      "url": "https://www.tp-link.com/en/support/download/archer-c6/",
-      "category": "router",
-      "version": "v3.2_Build220414",
-      "size": "14.5 MB",
-      "arch": "Qualcomm Atheros",
-      "sha256": "",
-      "desc": "Official Archer C6 support downloads. Match hardware version and region exactly; never flash a firmware image for a different revision.",
-      "devices": [
-        "router"
-      ],
-      "sourceUrl": "https://www.tp-link.com/en/support/download/archer-c6/",
-      "sourceLabel": "Official support site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=tp-link.com&sz=128"
-    },
-    {
-      "id": "rt-3",
-      "title": "MikroTik RouterOS Downloads",
-      "icon": "📡",
-      "url": "https://mikrotik.com/download",
-      "category": "router",
-      "version": "v7.15 Stable",
-      "size": "26.8 MB",
-      "arch": "MMIPS / ARM / x86",
-      "sha256": "",
-      "desc": "Official RouterOS packages and firmware downloads. Select the correct device architecture and release channel.",
-      "devices": [
-        "router"
-      ],
-      "sourceUrl": "https://mikrotik.com/download",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=mikrotik.com&sz=128"
-    },
-    {
-      "id": "rt-4",
-      "title": "OpenWrt Firmware Selector",
-      "icon": "📡",
-      "url": "https://firmware-selector.openwrt.org/",
-      "category": "router",
-      "version": "v23.05.3-factory",
-      "size": "8.9 MB",
-      "arch": "MediaTek MT7621",
-      "sha256": "",
-      "desc": "Use the official OpenWrt Firmware Selector to choose the exact device model and hardware revision before downloading.",
-      "devices": [
-        "router"
-      ],
-      "sourceUrl": "https://firmware-selector.openwrt.org/",
-      "sourceLabel": "Official site",
-      "iconUrl": "https://raw.githubusercontent.com/openwrt/branding/master/logo/openwrt_logo_black.svg"
-    },
-    {
-      "id": "browser-firefox",
-      "title": "Firefox Browser",
-      "category": "browser",
-      "icon": "📱",
-      "url": "https://www.mozilla.org/firefox/new/",
-      "sourceUrl": "https://www.mozilla.org/firefox/new/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Mozilla's open-source browser with tracking protection. Official download page; choose the build for your device.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/mozilla-mobile/firefox-android/main/fenix/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
-    },
-    {
-      "id": "browser-brave",
-      "title": "Brave Browser",
-      "category": "browser",
-      "url": "https://brave.com/download/",
-      "sourceUrl": "https://brave.com/download/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Privacy-focused Chromium browser with built-in tracker and ad blocking. Download from Brave.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=brave.com&sz=128"
-    },
-    {
-      "id": "browser-fennec",
-      "title": "Fennec F-Droid",
-      "category": "browser",
-      "url": "https://f-droid.org/packages/org.mozilla.fennec_fdroid/",
-      "sourceUrl": "https://f-droid.org/packages/org.mozilla.fennec_fdroid/",
-      "sourceLabel": "F-Droid",
-      "version": "F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "F-Droid-distributed Firefox-derived browser build. Review the package details and signing information on F-Droid.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://f-droid.org/repo/org.mozilla.fennec_fdroid/en-US/icon.png"
-    },
-    {
-      "id": "security-bitwarden",
-      "title": "Bitwarden",
-      "category": "security",
-      "url": "https://bitwarden.com/download/",
-      "sourceUrl": "https://bitwarden.com/download/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Desktop / Browser",
-      "sha256": "",
-      "desc": "Cross-platform password manager. Use the official Bitwarden download page.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://raw.githubusercontent.com/bitwarden/clients/main/apps/browser/src/images/icon128.png"
-    },
-    {
-      "id": "security-keepassdx",
-      "title": "KeePassDX",
-      "category": "security",
-      "url": "https://f-droid.org/packages/com.kunzisoft.keepass.libre/",
-      "sourceUrl": "https://f-droid.org/packages/com.kunzisoft.keepass.libre/",
-      "sourceLabel": "F-Droid",
-      "version": "F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Open-source offline password manager for Android. F-Droid package listing and release details.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://f-droid.org/repo/com.kunzisoft.keepass.libre/en-US/icon.png"
-    },
-    {
-      "id": "security-keepassxc",
-      "title": "KeePassXC",
-      "category": "security",
-      "url": "https://keepassxc.org/download/",
-      "sourceUrl": "https://keepassxc.org/download/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source desktop password manager. Verify installer signatures using the publisher's instructions.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/develop/share/icons/application/256x256/apps/keepassxc.png"
-    },
-    {
-      "id": "popular-7zip",
-      "title": "7-Zip",
-      "category": "popular",
-      "url": "https://www.7-zip.org/download.html",
-      "sourceUrl": "https://www.7-zip.org/download.html",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / Linux",
-      "sha256": "",
-      "desc": "File archiver supporting 7z, ZIP and many other formats. Official download page.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=7-zip.org&sz=128"
-    },
-    {
-      "id": "popular-localsend",
-      "title": "LocalSend",
-      "category": "popular",
-      "url": "https://f-droid.org/packages/org.localsend.localsend_app/",
-      "sourceUrl": "https://f-droid.org/packages/org.localsend.localsend_app/",
-      "sourceLabel": "F-Droid",
-      "version": "F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Open-source local-network file sharing. F-Droid listing for Android; other platforms are linked from the project site.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://f-droid.org/repo/org.localsend.localsend_app/en-US/icon.png"
-    },
-    {
-      "id": "popular-termux",
-      "title": "Termux",
-      "category": "popular",
-      "url": "https://f-droid.org/packages/com.termux/",
-      "sourceUrl": "https://f-droid.org/packages/com.termux/",
-      "sourceLabel": "F-Droid",
-      "version": "F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Terminal emulator and Linux environment for Android. Install from the linked F-Droid source; do not mix signatures from different sources.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://f-droid.org/repo/com.termux/en-US/icon.png"
-    },
-    {
-      "id": "popular-vlc",
-      "title": "VLC Media Player",
-      "category": "popular",
-      "url": "https://www.videolan.org/vlc/",
-      "sourceUrl": "https://www.videolan.org/vlc/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source multimedia player for a wide range of audio and video formats. Official VideoLAN downloads.",
-      "devices": [
-        "android",
-        "androidtv",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://raw.githubusercontent.com/VideoLAN/vlc/master/extras/package/macosx/asset_sources/vlc_app_icon.svg"
-    },
-    {
-      "id": "network-wireshark",
-      "title": "Wireshark",
-      "category": "network",
-      "url": "https://www.wireshark.org/download.html",
-      "sourceUrl": "https://www.wireshark.org/download.html",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Network protocol analyzer for inspecting packet captures on networks you own or are authorized to troubleshoot.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=wireshark.org&sz=128"
-    },
-    {
-      "id": "network-nmap",
-      "title": "Nmap",
-      "category": "network",
-      "url": "https://nmap.org/download.html",
-      "sourceUrl": "https://nmap.org/download.html",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Network discovery and security auditing utility. Scan only systems and networks you own or have permission to test.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=nmap.org&sz=128"
-    },
-    {
-      "id": "network-termux",
-      "title": "Termux Network Toolkit",
-      "category": "network",
-      "url": "https://f-droid.org/packages/com.termux/",
-      "sourceUrl": "https://f-droid.org/packages/com.termux/",
-      "sourceLabel": "F-Droid",
-      "version": "F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Android terminal environment for networking utilities. Tools are installed separately; use only on authorized networks.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://f-droid.org/repo/com.termux/en-US/icon.png"
-    },
-    {
-      "id": "video-kdenlive",
-      "title": "Kdenlive",
-      "category": "video",
-      "url": "https://kdenlive.org/en/download/",
-      "sourceUrl": "https://kdenlive.org/en/download/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source non-linear video editor with multi-track timeline, effects and transitions.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://apps.kde.org/app-icons/org.kde.kdenlive.svg"
-    },
-    {
-      "id": "video-shotcut",
-      "title": "Shotcut",
-      "category": "video",
-      "url": "https://www.shotcut.org/download/",
-      "sourceUrl": "https://www.shotcut.org/download/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Free, open-source video editor with broad format support and timeline editing.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=shotcut.org&sz=128"
-    },
-    {
-      "id": "video-openshot",
-      "title": "OpenShot",
-      "category": "video",
-      "url": "https://www.openshot.org/download/",
-      "sourceUrl": "https://www.openshot.org/download/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source video editor for basic timeline editing, titles and transitions.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://raw.githubusercontent.com/OpenShot/openshot-qt/develop/images/openshot.png"
-    },
-    {
-      "id": "photo-gimp",
-      "title": "GIMP",
-      "category": "photo",
-      "url": "https://www.gimp.org/downloads/",
-      "sourceUrl": "https://www.gimp.org/downloads/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Free, open-source image editor for retouching, compositing and graphics work.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.gimp.org/images/frontpage/wilber-big.png"
-    },
-    {
-      "id": "photo-krita",
-      "title": "Krita",
-      "category": "photo",
-      "url": "https://krita.org/en/download/",
-      "sourceUrl": "https://krita.org/en/download/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux / Android",
-      "sha256": "",
-      "desc": "Open-source digital painting and illustration application. Official downloads and platform builds.",
-      "devices": [
-        "desktop",
-        "android"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://apps.kde.org/app-icons/org.kde.krita.svg"
-    },
-    {
-      "id": "photo-darktable",
-      "title": "darktable",
-      "category": "photo",
-      "url": "https://www.darktable.org/install/",
-      "sourceUrl": "https://www.darktable.org/install/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source photography workflow and RAW image developer.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://raw.githubusercontent.com/darktable-org/darktable/master/data/pixmaps/dt_logo_128x128.png"
-    },
-    {
-      "id": "browser-tvbro",
-      "title": "TV Bro Browser",
-      "category": "browser",
-      "url": "https://github.com/truefedex/tv-bro/releases",
-      "sourceUrl": "https://github.com/truefedex/tv-bro/releases",
-      "sourceLabel": "GitHub releases",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android TV",
-      "sha256": "",
-      "desc": "Remote-friendly web browser designed for Android TV. Check the official release page for compatible builds.",
-      "devices": [
-        "androidtv"
-      ],
-      "icon": "📺",
-      "iconUrl": "https://raw.githubusercontent.com/truefedex/tv-bro/master/metadata/en-US/images/icon.png"
-    },
-    {
-      "id": "security-protonpass",
-      "title": "Proton Pass",
-      "category": "security",
-      "url": "https://proton.me/pass/download",
-      "sourceUrl": "https://proton.me/pass/download",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "End-to-end encrypted password manager with official downloads for supported platforms.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=proton.me&sz=128"
-    },
-    {
-      "id": "security-malwarebytes",
-      "title": "Malwarebytes",
-      "category": "security",
-      "url": "https://www.malwarebytes.com/",
-      "sourceUrl": "https://www.malwarebytes.com/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Windows / macOS",
-      "sha256": "",
-      "desc": "Security software from Malwarebytes. Review the official product page for supported platforms and current plans.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=malwarebytes.com&sz=128"
-    },
-    {
-      "id": "popular-kdeconnect",
-      "title": "KDE Connect",
-      "category": "popular",
-      "url": "https://kdeconnect.kde.org/download.html",
-      "sourceUrl": "https://kdeconnect.kde.org/download.html",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Windows / Linux",
-      "sha256": "",
-      "desc": "Connect Android devices and computers for file sharing, notifications and remote controls over your local network.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://apps.kde.org/app-icons/org.kde.kdeconnect.svg"
-    },
-    {
-      "id": "popular-obtainium",
-      "title": "Obtainium",
-      "category": "popular",
-      "url": "https://github.com/ImranR98/Obtainium/releases",
-      "sourceUrl": "https://github.com/ImranR98/Obtainium/releases",
-      "sourceLabel": "GitHub releases",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Open-source Android app updater that tracks releases from upstream project sources. Review app sources before adding them.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/icon-512x512.png"
-    },
-    {
-      "id": "network-wifiman",
-      "title": "WiFiman",
-      "category": "network",
-      "url": "https://ui.com/download",
-      "sourceUrl": "https://ui.com/download",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / iOS / Desktop",
-      "sha256": "",
-      "desc": "Ubiquiti network discovery and diagnostics utility. Use only on networks you own or are authorized to troubleshoot.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=ui.com&sz=128"
-    },
-    {
-      "id": "video-vn",
-      "title": "VN Video Editor",
-      "category": "video",
-      "url": "https://www.vlognow.me/",
-      "sourceUrl": "https://www.vlognow.me/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / iOS / Desktop",
-      "sha256": "",
-      "desc": "Multi-track video editor with timeline, effects and export tools. Check the official site for platform availability.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=vlognow.me&sz=128"
-    },
-    {
-      "id": "video-nova-tv",
-      "title": "Nova Video Player",
-      "category": "video",
-      "url": "https://github.com/nova-video-player/aos-AVP/releases",
-      "sourceUrl": "https://github.com/nova-video-player/aos-AVP/releases",
-      "sourceLabel": "GitHub releases",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Android TV",
-      "sha256": "",
-      "desc": "Open-source media player with Android TV support. Download builds from the project's official release page.",
-      "devices": [
-        "androidtv",
-        "android"
-      ],
-      "icon": "📺",
-      "iconUrl": "https://raw.githubusercontent.com/nova-video-player/aos-AVP/nova/fastlane/metadata/android/en-US/images/icon.png"
-    },
-    {
-      "id": "photo-snapseed",
-      "title": "Snapseed",
-      "category": "photo",
-      "url": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",
-      "sourceUrl": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",
-      "sourceLabel": "Google Play",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Google's photo editor with selective adjustments, filters and RAW editing support. Install from Google Play.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://play-lh.googleusercontent.com/w7o-_yhpqhfsGMrrdYYhgAA7LxiX8yAO-CG_6FGEraUDKGGlXDEDNf_RFtr5f7OJxLVa3dRcPf4WRl8k8ez7=w240-h480"
-    },
-    {
-      "id": "photo-photopea",
-      "title": "Photopea",
-      "category": "photo",
-      "url": "https://www.photopea.com/",
-      "sourceUrl": "https://www.photopea.com/",
-      "sourceLabel": "Official site",
-      "version": "Web app",
-      "size": "Browser-based",
-      "arch": "Web / Desktop browser",
-      "sha256": "",
-      "desc": "Browser-based image editor supporting layered documents and common raster and vector formats.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=photopea.com&sz=128"
-    },
-    {
-      "id": "popular-powertoys",
-      "title": "Microsoft PowerToys",
-      "category": "popular",
-      "url": "https://learn.microsoft.com/en-us/windows/powertoys/",
-      "sourceUrl": "https://learn.microsoft.com/en-us/windows/powertoys/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows 10 / 11",
-      "sha256": "",
-      "desc": "Microsoft's Windows productivity utilities. Review system requirements and install from official Microsoft channels.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=learn.microsoft.com&sz=128"
-    },
-    {
-      "id": "security-signal",
-      "title": "Signal Messenger",
-      "category": "security",
-      "version": "Latest official",
-      "size": "Varies",
-      "arch": "Android / Windows / macOS / Linux",
-      "icon": "📱",
-      "url": "https://signal.org/download/",
-      "sourceUrl": "https://signal.org/download/",
-      "sourceLabel": "Signal official downloads",
-      "sha256": "",
-      "desc": "Private messaging app with end-to-end encryption. Official downloads for mobile and desktop platforms.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "mirrors": [],
-      "telegramSupportUrl": "",
-      "iconUrl": "https://raw.githubusercontent.com/signalapp/Signal-Android/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
-      "id": "video-obs-studio",
-      "title": "OBS Studio",
-      "category": "video",
-      "version": "33.0.0",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "💻",
-      "url": "https://obsproject.com/download/",
-      "sourceUrl": "https://obsproject.com/download/",
-      "sourceLabel": "OBS Project official download",
-      "sha256": "",
-      "desc": "Open-source live streaming and screen recording software. Choose the correct operating-system build from the official download page.",
-      "devices": [
-        "desktop"
-      ],
-      "mirrors": [],
-      "telegramSupportUrl": "",
-      "iconUrl": "https://raw.githubusercontent.com/obsproject/obs-studio/master/frontend/cmake/linux/icons/obs-logo-512.png"
-    },
-    {
-      "id": "popular-ventoy",
-      "title": "Ventoy",
-      "category": "popular",
-      "version": "1.1.18",
-      "size": "Varies",
-      "arch": "Windows / Linux",
-      "icon": "💻",
-      "url": "https://www.ventoy.net/en/download.html",
-      "sourceUrl": "https://www.ventoy.net/en/download.html",
-      "sourceLabel": "Ventoy official download",
-      "sha256": "",
-      "desc": "Open-source bootable USB tool. Check the published SHA-256 checksum and release notes before using downloaded files.",
-      "devices": [
-        "desktop"
-      ],
-      "mirrors": [],
-      "telegramSupportUrl": "",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=ventoy.net&sz=128"
-    },
-    {
-      "id": "popular-libreoffice",
-      "title": "LibreOffice",
-      "category": "popular",
-      "version": "26.8.0",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "💻",
-      "url": "https://www.libreoffice.org/download/",
-      "sourceUrl": "https://www.libreoffice.org/download/",
-      "sourceLabel": "LibreOffice official download",
-      "sha256": "",
-      "desc": "Free office productivity suite with document, spreadsheet and presentation tools. Select the correct operating-system package.",
-      "devices": [
-        "desktop"
-      ],
-      "mirrors": [],
-      "telegramSupportUrl": "",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=libreoffice.org&sz=128"
-    },
-    {
-      "id": "network-syncthing",
-      "title": "Syncthing",
-      "category": "network",
-      "version": "2.1.7",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "💻",
-      "url": "https://syncthing.net/downloads/",
-      "sourceUrl": "https://syncthing.net/downloads/",
-      "sourceLabel": "Syncthing official downloads",
-      "sha256": "",
-      "desc": "Open-source continuous file synchronization across devices. Use official packages and review device-sharing settings.",
-      "devices": [
-        "desktop"
-      ],
-      "mirrors": [],
-      "telegramSupportUrl": "",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=syncthing.net&sz=128"
-    },
-    {
-      "id": "network-filezilla",
-      "title": "FileZilla Client",
-      "category": "network",
-      "version": "Latest official",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "💻",
-      "url": "https://filezilla-project.org/download.php?type=client",
-      "sourceUrl": "https://filezilla-project.org/download.php?type=client",
-      "sourceLabel": "FileZilla official download",
-      "sha256": "",
-      "desc": "Cross-platform FTP, FTPS and SFTP client for managing files on servers you are authorized to access.",
-      "devices": [
-        "desktop"
-      ],
-      "mirrors": [],
-      "telegramSupportUrl": "",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=filezilla-project.org&sz=128"
-    },
-    {
-      "id": "security-aegis",
-      "title": "Aegis Authenticator",
-      "category": "security",
-      "url": "https://f-droid.org/en/packages/com.beemdevelopment.aegis/",
-      "sourceUrl": "https://f-droid.org/en/packages/com.beemdevelopment.aegis/",
-      "sourceLabel": "F-Droid verified package",
-      "version": "Current F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Open-source two-factor authenticator with encrypted token storage and backup options. Review the F-Droid package details.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://f-droid.org/repo/com.beemdevelopment.aegis/en-US/icon.png"
-    },
-    {
-      "id": "popular-antennapod",
-      "title": "AntennaPod",
-      "category": "popular",
-      "url": "https://antennapod.org/download/",
-      "sourceUrl": "https://antennapod.org/download/",
-      "sourceLabel": "Official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android",
-      "sha256": "",
-      "desc": "Open-source podcast manager for subscribing to and playing podcasts. Download from the official project page.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=antennapod.org&sz=128"
-    },
-    {
-      "id": "popular-organicmaps",
-      "title": "Organic Maps",
-      "category": "popular",
-      "url": "https://organicmaps.app/",
-      "sourceUrl": "https://organicmaps.app/",
-      "sourceLabel": "Official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / iOS",
-      "sha256": "",
-      "desc": "Offline maps and navigation based on OpenStreetMap data. Choose the official app-store listing for your device.",
-      "devices": [
-        "android"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=organicmaps.app&sz=128"
-    },
-    {
-      "id": "photo-blender",
-      "title": "Blender",
-      "category": "photo",
-      "url": "https://www.blender.org/download/",
-      "sourceUrl": "https://www.blender.org/download/",
-      "sourceLabel": "Blender official download",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Free and open-source 3D creation suite for modeling, animation, rendering and visual effects.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=blender.org&sz=128"
-    },
-    {
-      "id": "photo-inkscape",
-      "title": "Inkscape",
-      "category": "photo",
-      "url": "https://inkscape.org/release/",
-      "sourceUrl": "https://inkscape.org/release/",
-      "sourceLabel": "Inkscape official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source vector graphics editor for illustrations, icons, diagrams and SVG artwork.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://inkscape.org/favicon.ico"
-    },
-    {
-      "id": "video-audacity",
-      "title": "Audacity",
-      "category": "media",
-      "url": "https://www.audacityteam.org/download/",
-      "sourceUrl": "https://www.audacityteam.org/download/",
-      "sourceLabel": "Audacity official download",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Free, open-source audio editor and recorder for editing, cleanup and exporting audio projects.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=audacityteam.org&sz=128"
-    },
-    {
-      "id": "video-handbrake",
-      "title": "HandBrake",
-      "category": "video",
-      "url": "https://handbrake.fr/downloads.php",
-      "sourceUrl": "https://handbrake.fr/downloads.php",
-      "sourceLabel": "HandBrake official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source video transcoder for converting media files using presets and format controls.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=handbrake.fr&sz=128"
-    },
-    {
-      "id": "popular-thunderbird",
-      "title": "Mozilla Thunderbird",
-      "category": "popular",
-      "url": "https://www.thunderbird.net/",
-      "sourceUrl": "https://www.thunderbird.net/",
-      "sourceLabel": "Thunderbird official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Open-source email client with calendar, contacts and feed features. Download from Mozilla's official site.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=thunderbird.net&sz=128"
-    },
-    {
-      "id": "popular-sharex",
-      "title": "ShareX",
-      "category": "popular",
-      "url": "https://getsharex.com/",
-      "sourceUrl": "https://getsharex.com/",
-      "sourceLabel": "ShareX official site",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows",
-      "sha256": "",
-      "desc": "Open-source Windows screenshot and screen-recording utility with annotation and workflow tools.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=getsharex.com&sz=128"
-    },
-    {
-      "id": "popular-notepadpp",
-      "title": "Notepad++",
-      "category": "popular",
-      "url": "https://notepad-plus-plus.org/downloads/",
-      "sourceUrl": "https://notepad-plus-plus.org/downloads/",
-      "sourceLabel": "Notepad++ official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows",
-      "sha256": "",
-      "desc": "Free source-code and text editor for Windows with syntax highlighting and plugin support.",
-      "devices": [
-        "desktop"
-      ],
-      "icon": "💻",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=notepad-plus-plus.org&sz=128"
-    },
-    {
-      "id": "network-tailscale",
-      "title": "Tailscale",
-      "category": "network",
-      "url": "https://tailscale.com/download",
-      "sourceUrl": "https://tailscale.com/download",
-      "sourceLabel": "Tailscale official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / Windows / macOS / Linux",
-      "sha256": "",
-      "desc": "Private networking app for connecting your own devices securely. Review account and device-sharing settings before enabling.",
-      "devices": [
-        "android",
-        "desktop"
-      ],
-      "icon": "📱",
-      "iconUrl": "https://www.google.com/s2/favicons?domain=tailscale.com&sz=128"
-    },
-    {
-      "id": "developer-vscode",
-      "title": "Visual Studio Code",
-      "category": "developer",
-      "url": "https://code.visualstudio.com/download",
-      "sourceUrl": "https://code.visualstudio.com/download",
-      "sourceLabel": "Official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "💻",
-      "sha256": "",
-      "desc": "Code editor with extensions, debugging, source control and optional AI features.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=128"
-    },
-    {
-      "id": "developer-vscodium",
-      "title": "VSCodium",
-      "category": "developer",
-      "url": "https://github.com/VSCodium/vscodium/releases",
-      "sourceUrl": "https://github.com/VSCodium/vscodium/releases",
-      "sourceLabel": "Official project releases",
-      "version": "1.143.17232",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "🧑‍💻",
-      "sha256": "",
-      "desc": "Community-built binaries of VS Code without Microsoft branding and telemetry defaults.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
-    },
-    {
-      "id": "developer-postman",
-      "title": "Postman",
-      "category": "developer",
-      "url": "https://www.postman.com/downloads/",
-      "sourceUrl": "https://www.postman.com/downloads/",
-      "sourceLabel": "Official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "📮",
-      "sha256": "",
-      "desc": "API platform for sending requests, organizing collections and testing APIs.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=postman.com&sz=128"
-    },
-    {
-      "id": "developer-insomnia",
-      "title": "Insomnia",
-      "category": "developer",
-      "url": "https://insomnia.rest/download",
-      "sourceUrl": "https://insomnia.rest/download",
-      "sourceLabel": "Official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "🔌",
-      "sha256": "",
-      "desc": "API client for designing, testing and debugging HTTP and GraphQL APIs.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=insomnia.rest&sz=128"
-    },
-    {
-      "id": "developer-podman-desktop",
-      "title": "Podman Desktop",
-      "category": "developer",
-      "url": "https://podman-desktop.io/downloads",
-      "sourceUrl": "https://podman-desktop.io/downloads",
-      "sourceLabel": "Official downloads",
-      "version": "1.30.5",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "📦",
-      "sha256": "",
-      "desc": "Graphical interface for managing containers, images, pods and Kubernetes contexts.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=podman-desktop.io&sz=128"
-    },
-    {
-      "id": "developer-dbeaver",
-      "title": "DBeaver Community",
-      "category": "developer",
-      "url": "https://dbeaver.io/download/",
-      "sourceUrl": "https://dbeaver.io/download/",
-      "sourceLabel": "Official Community downloads",
-      "version": "26.2.3",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "🗄️",
-      "sha256": "",
-      "desc": "Open-source database client with SQL editor, data browsing and support for many database engines.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=dbeaver.io&sz=128"
-    },
-    {
-      "id": "productivity-joplin",
-      "title": "Joplin",
-      "category": "productivity",
-      "url": "https://joplinapp.org/help/install/",
-      "sourceUrl": "https://joplinapp.org/help/install/",
-      "sourceLabel": "Official installation guide",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / iOS / Windows / macOS / Linux",
-      "icon": "📝",
-      "sha256": "",
-      "desc": "Open-source notes and to-do app with synchronization options across devices.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=joplinapp.org&sz=128"
-    },
-    {
-      "id": "productivity-github-desktop",
-      "title": "GitHub Desktop",
-      "category": "productivity",
-      "url": "https://desktop.github.com/",
-      "sourceUrl": "https://desktop.github.com/",
-      "sourceLabel": "Official GitHub download",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS",
-      "icon": "🔀",
-      "sha256": "",
-      "desc": "Desktop Git client for reviewing changes, committing and syncing repositories.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/desktop/desktop/development/app/static/linux/icon-logo.png"
-    },
-    {
-      "id": "education-zotero",
-      "title": "Zotero",
-      "category": "education",
-      "url": "https://www.zotero.org/download/",
-      "sourceUrl": "https://www.zotero.org/download/",
-      "sourceLabel": "Official downloads",
-      "version": "10",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux / Android / iOS",
-      "icon": "📚",
-      "sha256": "",
-      "desc": "Research reference manager for collecting, organizing, citing and sharing sources.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=zotero.org&sz=128"
-    },
-    {
-      "id": "education-anki",
-      "title": "Anki",
-      "category": "education",
-      "url": "https://apps.ankiweb.net/",
-      "sourceUrl": "https://apps.ankiweb.net/",
-      "sourceLabel": "Official downloads",
-      "version": "26.09.4",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux / Android / iOS",
-      "icon": "🧠",
-      "sha256": "",
-      "desc": "Flashcard learning tool with spaced-repetition scheduling.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/ankitects/anki/main/qt/installer/app/resources/anki.png"
-    },
-    {
-      "id": "documents-calibre",
-      "title": "Calibre",
-      "category": "documents",
-      "url": "https://calibre-ebook.com/download",
-      "sourceUrl": "https://calibre-ebook.com/download",
-      "sourceLabel": "Official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Windows / macOS / Linux",
-      "icon": "📖",
-      "sha256": "",
-      "desc": "E-book library manager and format conversion tool.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=calibre-ebook.com&sz=128"
-    },
-    {
-      "id": "documents-okular",
-      "title": "Okular",
-      "category": "documents",
-      "url": "https://okular.kde.org/download/",
-      "sourceUrl": "https://okular.kde.org/download/",
-      "sourceLabel": "Official KDE download guidance",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Linux / Windows",
-      "icon": "📄",
-      "sha256": "",
-      "desc": "Document viewer for PDF and many other formats; use the publisher-recommended platform packages.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=okular.kde.org&sz=128"
-    },
-    {
-      "id": "communication-element",
-      "title": "Element",
-      "category": "communication",
-      "url": "https://element.io/download",
-      "sourceUrl": "https://element.io/download",
-      "sourceLabel": "Official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / iOS / Windows / macOS / Linux / Web",
-      "icon": "💬",
-      "sha256": "",
-      "desc": "Secure messaging and collaboration client built on the Matrix network.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/element-hq/element-desktop/develop/build/icon.png"
-    },
-    {
-      "id": "communication-jitsi",
-      "title": "Jitsi Meet",
-      "category": "communication",
-      "url": "https://download.jitsi.org/",
-      "sourceUrl": "https://download.jitsi.org/",
-      "sourceLabel": "Official downloads",
-      "version": "Current release",
-      "size": "Varies",
-      "arch": "Android / iOS / Web / Linux",
-      "icon": "🎥",
-      "sha256": "",
-      "desc": "Video meeting application and platform with mobile app downloads and self-hosting options.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/jitsi/jitsi-meet/master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
-      "id": "photo-fossify-gallery",
-      "title": "Fossify Gallery",
-      "category": "media",
-      "url": "https://f-droid.org/packages/org.fossify.gallery/",
-      "sourceUrl": "https://f-droid.org/packages/org.fossify.gallery/",
-      "sourceLabel": "F-Droid project package",
-      "version": "Current F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "icon": "🖼️",
-      "sha256": "",
-      "desc": "Open-source local photo and video gallery from the Fossify app collection.",
-      "devices": [
-        "android"
-      ],
-      "iconUrl": "https://f-droid.org/repo/org.fossify.gallery/en-US/icon.png"
-    },
-    {
-      "id": "productivity-fossify-calendar",
-      "title": "Fossify Calendar",
-      "category": "productivity",
-      "url": "https://f-droid.org/packages/org.fossify.calendar/",
-      "sourceUrl": "https://f-droid.org/packages/org.fossify.calendar/",
-      "sourceLabel": "F-Droid project package",
-      "version": "Current F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "icon": "🗓️",
-      "sha256": "",
-      "desc": "Open-source calendar with events, reminders and recurring schedules.",
-      "devices": [
-        "android"
-      ],
-      "iconUrl": "https://f-droid.org/repo/org.fossify.calendar/en-US/icon.png"
-    },
-    {
-      "id": "system-fossify-file-manager",
-      "title": "Fossify File Manager",
-      "category": "system",
-      "url": "https://f-droid.org/packages/org.fossify.filemanager/",
-      "sourceUrl": "https://f-droid.org/packages/org.fossify.filemanager/",
-      "sourceLabel": "F-Droid project package",
-      "version": "Current F-Droid release",
-      "size": "Varies",
-      "arch": "Android",
-      "icon": "📁",
-      "sha256": "",
-      "desc": "Open-source local file manager for browsing and organizing device storage.",
-      "devices": [
-        "android"
-      ],
-      "iconUrl": "https://f-droid.org/repo/org.fossify.filemanager/en-US/icon.png"
-    },
-    {
-      "id": "system-everything",
-      "title": "Everything Search",
-      "category": "system",
-      "url": "https://www.voidtools.com/downloads/",
-      "sourceUrl": "https://www.voidtools.com/downloads/",
-      "sourceLabel": "Official downloads",
-      "version": "1.4.1.1032",
-      "size": "Varies",
-      "arch": "Windows",
-      "icon": "🔎",
-      "sha256": "",
-      "desc": "Fast filename search utility for Windows with installer and portable packages.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=voidtools.com&sz=128"
-    },
-    {
-      "id": "system-crystaldiskinfo",
-      "title": "CrystalDiskInfo",
-      "category": "system",
-      "url": "https://crystalmark.info/en/download/",
-      "sourceUrl": "https://crystalmark.info/en/download/",
-      "sourceLabel": "Official downloads",
-      "version": "9.9.4",
-      "size": "Varies",
-      "arch": "Windows",
-      "icon": "💽",
-      "sha256": "",
-      "desc": "Storage health monitoring utility for supported HDD, SSD and NVMe drives.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=crystalmark.info&sz=128"
-    },
-    {
-      "id": "system-bleachbit",
-      "title": "BleachBit",
-      "category": "system",
-      "url": "https://www.bleachbit.org/download",
-      "sourceUrl": "https://www.bleachbit.org/download",
-      "sourceLabel": "Official downloads",
-      "version": "6.0.6",
-      "size": "Varies",
-      "arch": "Windows / Linux",
-      "icon": "🧹",
-      "sha256": "",
-      "desc": "Open-source disk space and privacy cleanup utility; review each cleanup option before use.",
-      "devices": [
-        "desktop"
-      ],
-      "iconUrl": "https://www.google.com/s2/favicons?domain=bleachbit.org&sz=128"
-    }
-  ],
-  "siteConfig": {
-    "siteName": "SnappsHub",
-    "tagline": "Curated High-Speed Software, Apps & Firmware Vault",
-    "siteUrl": "https://snappshub.github.io/",
-    "telegram": "https://t.me/snappshub",
-    "contactEmail": "alaminsaheb2019@gmail.com",
-    "dmcaId": "37a95780-9718-4357-92ee-ea67c2cefe3f",
-    "developer": "Alamin Saheb"
+  "syncedAt": "2026-11-14T06:35:55.032Z",
+  "meta": {
+    "siteDomain": "https://snappshub.github.io",
+    "seoTitle": "SnappsHub — Publisher-Linked Software, APKs & Firmware Vault",
+    "seoDescription": "Explore curated Android apps, Android TV utilities, desktop software and router firmware with links to publisher sources.",
+    "maintenanceMode": false,
+    "maintenanceMessage": "Scheduled catalogue update in progress. Back online in a few minutes."
   },
-  "categories": [
-    "android",
-    "androidtv",
-    "desktop",
-    "router"
-  ],
-  "categoryDefinitions": [
+  "header": {
+    "brandTitle": "SnappsHub",
+    "brandSubtitle": "Trusted & Secure for Your Device",
+    "logoUrl": "https://snappshub.github.io/assets/snappshub-logo.svg",
+    "logoSizePx": 34,
+    "showLogo": true,
+    "sticky": true,
+    "headerHeight": "standard",
+    "showSearch": true,
+    "announcementEnabled": true,
+    "announcementMode": "ticker",
+    "announcementBadge": "LIVE",
+    "announcementText": "All builds verified · New Android TV & Router releases live now",
+    "announcementLink": "#apps",
+    "announcementSpeedSec": 18,
+    "ctaLabel": "Telegram",
+    "ctaUrl": "https://t.me/snappshub",
+    "navLinks": [
+      {
+        "id": "nav-home",
+        "label": "Explore",
+        "href": "#hero",
+        "enabled": true,
+        "openInNewTab": false
+      },
+      {
+        "id": "nav-categories",
+        "label": "Categories",
+        "href": "#categories",
+        "enabled": true,
+        "openInNewTab": false
+      },
+      {
+        "id": "nav-devices",
+        "label": "Devices",
+        "href": "#devices",
+        "enabled": true,
+        "openInNewTab": false
+      },
+      {
+        "id": "nav-apps",
+        "label": "Catalogue",
+        "href": "#apps",
+        "enabled": true,
+        "openInNewTab": false
+      }
+    ],
+    "sidebarFolders": [
+      {
+        "id": "sf-apk",
+        "name": "Android APK",
+        "slug": "apk",
+        "fileTypeHint": "APK / XAPK",
+        "icon": "📱",
+        "enabled": true
+      },
+      {
+        "id": "sf-msi",
+        "name": "Windows MSI & EXE",
+        "slug": "msi",
+        "fileTypeHint": "MSI / EXE",
+        "icon": "🪟",
+        "enabled": true
+      },
+      {
+        "id": "sf-os",
+        "name": "OS & Router Firmware",
+        "slug": "ipk",
+        "fileTypeHint": "ISO / IPK / IMG",
+        "icon": "🛰️",
+        "enabled": true
+      },
+      {
+        "id": "sf-mac",
+        "name": "macOS & Linux",
+        "slug": "dmg",
+        "fileTypeHint": "DMG / DEB / APPIMAGE",
+        "icon": "💻",
+        "enabled": true
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Trusted & Secure for Your Device",
+    "headline": "Publisher-Linked Apps, TV Tools & Firmware",
+    "subheadline": "Discover clean, checksum-verified releases across Android, Android TV, Desktop, and Router platforms with direct high-speed download mirrors.",
+    "primaryCtaLabel": "Browse Catalogue",
+    "primaryCtaUrl": "#apps",
+    "secondaryCtaLabel": "Join Support Channel",
+    "secondaryCtaUrl": "https://t.me/snappshub",
+    "trustLine": "SHA-256 Verified · Direct Mirrors · Multi-Device Builds",
+    "backgroundStyle": "sapphire-aurora",
+    "heroImageUrl": "/assets/aistudio/SN_Apps_Hub_Brand_Logo_cb936f51.png",
+    "heroImageSize": "medium",
+    "heroImageWidthPx": 76,
+    "heroImageHeightPx": 76,
+    "heroPaddingY": "standard",
+    "heroImagePosition": "right",
+    "showFeaturedShowcase": true,
+    "featuredAppId": "app-sn-player"
+  },
+  "footer": {
+    "brandSummary": "SN Apps Hub curates trusted utility, streaming, browser, and network software with transparent source attribution and reliable download mirrors.",
+    "copyrightText": "© 2026 SN Apps Hub · snappshub.github.io",
+    "showSocials": true,
+    "telegramUrl": "https://t.me/snappshub",
+    "githubUrl": "https://github.com/snappshub",
+    "youtubeUrl": "https://youtube.com/@snappshub",
+    "contactEmail": "alaminsahebweb@gmail.com",
+    "legalNotice": "All trademarks and package names belong to their respective developers. Official websites and source links are credited on every app page.",
+    "columns": [
+      {
+        "id": "col-platforms",
+        "title": "Platforms",
+        "links": [
+          {
+            "id": "fl-1",
+            "label": "Android Apps",
+            "href": "#android",
+            "enabled": true
+          },
+          {
+            "id": "fl-2",
+            "label": "Android TV",
+            "href": "#androidtv",
+            "enabled": true
+          },
+          {
+            "id": "fl-3",
+            "label": "Desktop Tools",
+            "href": "#desktop",
+            "enabled": true
+          },
+          {
+            "id": "fl-4",
+            "label": "Router Firmware",
+            "href": "#router",
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "id": "col-resources",
+        "title": "Resources",
+        "links": [
+          {
+            "id": "fl-5",
+            "label": "Mirror Status",
+            "href": "#apps",
+            "enabled": true
+          },
+          {
+            "id": "fl-6",
+            "label": "Telegram Support",
+            "href": "https://t.me/snappshub",
+            "enabled": true
+          },
+          {
+            "id": "fl-7",
+            "label": "DMCA & Attribution",
+            "href": "#legal",
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  "policies": {
+    "dmcaText": "SN Apps Hub respects intellectual property rights and complies with the Digital Millennium Copyright Act (DMCA). All software binaries linked or indexed remain the property of their respective authors. To request removal of any infringing link, email alaminsahebweb@gmail.com with the exact URL and proof of ownership; verified notices are processed within 24–48 hours.",
+    "privacyPolicyText": "SN Apps Hub does not sell personal visitor data. Anonymous aggregate download counters and ad impression metrics may be recorded to improve mirror reliability. Third-party ad networks (Google AdSense, Adsterra, Monetag) may use standard cookies subject to their respective privacy policies.",
+    "openSourceCreditText": "We gratefully acknowledge the open-source communities behind Android, Chromium, OpenWrt, Linux, FFmpeg, and independent developers publishing under MIT, Apache-2.0, and GPL licenses. Original repository links and developer attributions appear on each application details page.",
+    "sitemapBaseUrl": "https://snappshub.github.io",
+    "autoIncludeAppsInSitemap": true,
+    "adsTxtExtraLines": "# Add extra authorized seller lines here if required by your ad network"
+  },
+  "theme": {
+    "systemThemeId": "cyberpunk-neon",
+    "accentGold": "#f3c969",
+    "accentBlue": "#65b8ff",
+    "canvasBg": "#070b14",
+    "surfaceBg": "#0f1726",
+    "borderRadius": "balanced",
+    "glassBlurPx": 14,
+    "animationPreset": "kinetic",
+    "storefrontAppsView": "list",
+    "appIconSizePx": 44,
+    "appCardScale": "standard",
+    "downloadButtonStyle": "gradient",
+    "customCss": "/* Custom Live CSS injected directly into SN Apps Hub */\n.sn-hero-glow {\n  box-shadow: 0 20px 60px rgba(243, 201, 105, 0.08);\n}"
+  },
+  "adminPanel": {
+    "adminThemeId": "cyberpunk-neon",
+    "compactMode": true,
+    "animationsEnabled": true,
+    "glassIntensity": 14,
+    "showInlinePreview": true,
+    "dragMoveEnabled": true,
+    "adminAppsViewStyle": "list",
+    "adminSettingsViewStyle": "stacked",
+    "uiScalePct": 100,
+    "sidebarWidthPx": 256
+  },
+  "miniWindows": {
+    "preDetailSeconds": 5,
+    "preDetailTitle": "Preparing Verified Package",
+    "preDetailSubtitle": "Scanning package signature, open-source credits & fast mirror nodes…",
+    "preDetailSize": "standard",
+    "preDetailWidthPx": 350,
+    "preDetailPosition": "center",
+    "preDetailAnim": "cyber-bar",
+    "downloadingTitle": "Initializing Secure Download",
+    "downloadingSubtitle": "Handshaking with high-speed CDN mirror & preparing checksum stream…",
+    "downloadingSize": "standard",
+    "downloadingWidthPx": 350,
+    "downloadingPosition": "center",
+    "downloadingAnim": "pulse-ring"
+  },
+  "sections": [
     {
-      "id": "category-android",
-      "icon": "📱",
-      "name": "Android Apps",
-      "slug": "android",
-      "order": 0,
-      "enabled": true,
-      "deviceId": "device-android",
-      "description": "Curated Android Apps from verified publisher sources.",
-      "deviceIds": [
-        "android"
-      ]
+      "id": "sec-hero",
+      "type": "hero",
+      "title": "Hero Spotlight",
+      "subtitle": "Primary brand banner, headlines, and featured app highlight",
+      "enabled": true
     },
     {
-      "id": "category-androidtv",
-      "icon": "📺",
-      "name": "Android TV Apps",
-      "slug": "androidtv",
-      "order": 1,
-      "enabled": true,
-      "deviceId": "device-androidtv",
-      "description": "Curated Android TV Apps from verified publisher sources.",
-      "deviceIds": [
-        "androidtv"
-      ]
+      "id": "sec-ad-hero",
+      "type": "ad-hero-below",
+      "title": "Hero Sponsor Slot",
+      "subtitle": "Optional placement directly beneath hero section",
+      "enabled": true
     },
     {
-      "id": "category-desktop",
-      "icon": "💻",
-      "name": "Desktop Software",
-      "slug": "desktop",
-      "order": 2,
-      "enabled": true,
-      "deviceId": "device-desktop",
-      "description": "Curated Desktop Software from verified publisher sources.",
-      "deviceIds": [
-        "desktop"
-      ]
+      "id": "sec-devices",
+      "type": "devices",
+      "title": "Device Explorer",
+      "subtitle": "Filter catalogue by Android, Android TV, Desktop, or Router",
+      "enabled": true
     },
     {
-      "id": "category-router",
-      "icon": "📡",
-      "name": "Router Firmware",
-      "slug": "router",
-      "order": 3,
-      "enabled": true,
-      "deviceId": "device-router",
-      "description": "Curated Router Firmware from verified publisher sources.",
-      "deviceIds": [
-        "router"
-      ]
+      "id": "sec-featured",
+      "type": "featured",
+      "title": "Featured Releases",
+      "subtitle": "Hand-picked verified builds highlighted on home feed",
+      "enabled": true
     },
     {
-      "id": "category-browser",
-      "icon": "🌐",
-      "name": "Browsers",
-      "slug": "browser",
-      "order": 4,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Curated Browsers from verified publisher sources.",
-      "deviceIds": [
-        "android",
-        "desktop",
-        "androidtv"
-      ]
+      "id": "sec-categories",
+      "type": "categories",
+      "title": "Category Directory",
+      "subtitle": "Browse software grouped by purpose and device class",
+      "enabled": true
     },
     {
-      "id": "category-security",
-      "icon": "🛡️",
-      "name": "Security",
-      "slug": "security",
-      "order": 5,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Curated Security from verified publisher sources.",
-      "deviceIds": [
-        "android",
-        "desktop"
-      ]
+      "id": "sec-apps",
+      "type": "apps",
+      "title": "App Catalogue Feed",
+      "subtitle": "Interactive app cards with instant mirror handoff",
+      "enabled": true
     },
     {
-      "id": "category-popular",
-      "icon": "⭐",
-      "name": "Popular Tools",
-      "slug": "popular",
-      "order": 6,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Curated Popular Tools from verified publisher sources.",
-      "deviceIds": [
-        "desktop",
-        "android",
-        "androidtv"
-      ]
+      "id": "sec-ad-home",
+      "type": "ad-home",
+      "title": "Home Feed Ad Placement",
+      "subtitle": "In-feed monetization block",
+      "enabled": true
     },
     {
-      "id": "category-network",
-      "icon": "🛜",
-      "name": "Network Tools",
-      "slug": "network",
-      "order": 7,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Curated Network Tools from verified publisher sources.",
-      "deviceIds": [
-        "desktop",
-        "android"
-      ]
+      "id": "sec-trust",
+      "type": "trust",
+      "title": "Verification & Trust Strip",
+      "subtitle": "Security checks, source attribution, and Telegram support",
+      "enabled": true
     },
     {
-      "id": "category-video",
-      "icon": "🎬",
-      "name": "Video Editors",
-      "slug": "video",
-      "order": 8,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Curated Video Editors from verified publisher sources.",
-      "deviceIds": [
-        "desktop",
-        "android",
-        "androidtv"
-      ]
-    },
-    {
-      "id": "category-photo",
-      "icon": "🖼️",
-      "name": "Photo Editors",
-      "slug": "photo",
-      "order": 9,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Curated Photo Editors from verified publisher sources.",
-      "deviceIds": [
-        "desktop",
-        "android"
-      ]
-    },
-    {
-      "id": "category-developer",
-      "icon": "🧑‍💻",
-      "name": "Developer Tools",
-      "slug": "developer",
-      "order": 10,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Developer tools, API clients and database software.",
-      "deviceIds": [
-        "desktop"
-      ]
-    },
-    {
-      "id": "category-productivity",
-      "icon": "📝",
-      "name": "Productivity",
-      "slug": "productivity",
-      "order": 11,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Notes, planning and everyday productivity software.",
-      "deviceIds": [
-        "desktop",
-        "android"
-      ]
-    },
-    {
-      "id": "category-education",
-      "icon": "🎓",
-      "name": "Education",
-      "slug": "education",
-      "order": 12,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Study, flashcards and research tools.",
-      "deviceIds": [
-        "desktop"
-      ]
-    },
-    {
-      "id": "category-documents",
-      "icon": "📚",
-      "name": "Documents & Reading",
-      "slug": "documents",
-      "order": 13,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Document viewers and e-book management tools.",
-      "deviceIds": [
-        "desktop"
-      ]
-    },
-    {
-      "id": "category-communication",
-      "icon": "💬",
-      "name": "Communication",
-      "slug": "communication",
-      "order": 14,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Messaging and video meeting applications.",
-      "deviceIds": [
-        "desktop"
-      ]
-    },
-    {
-      "id": "category-system",
-      "icon": "🛠️",
-      "name": "System Utilities",
-      "slug": "system",
-      "order": 15,
-      "enabled": true,
-      "deviceId": "",
-      "description": "System maintenance, file and storage utilities.",
-      "deviceIds": [
-        "android",
-        "desktop"
-      ]
-    },
-    {
-      "id": "category-media",
-      "icon": "🖼️",
-      "name": "Media & Gallery",
-      "slug": "media",
-      "order": 16,
-      "enabled": true,
-      "deviceId": "",
-      "description": "Media players, galleries and media library tools.",
-      "deviceIds": [
-        "desktop",
-        "android"
-      ]
+      "id": "sec-custom",
+      "type": "custom-html",
+      "title": "Custom Promo Banner",
+      "subtitle": "Editable HTML/CSS notice block",
+      "enabled": false,
+      "customHtml": "<div style=\"padding:14px;border:1px solid rgba(243,201,105,0.3);border-radius:12px;text-align:center;\"><strong>Community Notice:</strong> Request new apps via Telegram @snappshub</div>"
     }
   ],
   "devices": [
     {
       "id": "device-android",
-      "slug": "android",
       "name": "Android",
-      "icon": "📱",
-      "order": 0
+      "slug": "android",
+      "icon": "Smartphone",
+      "enabled": true
     },
     {
-      "id": "device-androidtv",
-      "slug": "androidtv",
+      "id": "device-android-tv",
       "name": "Android TV",
-      "icon": "📺",
-      "order": 1
+      "slug": "androidtv",
+      "icon": "Tv",
+      "enabled": true
     },
     {
       "id": "device-desktop",
-      "slug": "desktop",
       "name": "Desktop",
-      "icon": "💻",
-      "order": 2
+      "slug": "desktop",
+      "icon": "Monitor",
+      "enabled": true
     },
     {
       "id": "device-router",
-      "slug": "router",
       "name": "Router",
-      "icon": "📡",
-      "order": 3
+      "slug": "router",
+      "icon": "Router",
+      "enabled": true
     }
-  ]
+  ],
+  "categories": [
+    {
+      "id": "cat-browsers",
+      "name": "Browsers",
+      "slug": "browsers",
+      "icon": "🌐",
+      "description": "Privacy-first web browsers and lightweight mobile engines.",
+      "deviceId": "",
+      "order": 0,
+      "enabled": true
+    },
+    {
+      "id": "cat-media",
+      "name": "Media & TV",
+      "slug": "media-tv",
+      "icon": "📺",
+      "description": "4K media players, IPTV utilities, and Android TV launchers.",
+      "deviceId": "device-android-tv",
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "cat-network",
+      "name": "Network & DNS",
+      "slug": "network-dns",
+      "icon": "🛡️",
+      "description": "Encrypted DNS tools, router utilities, and diagnostics.",
+      "deviceId": "device-router",
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "cat-utilities",
+      "name": "System Utilities",
+      "slug": "utilities",
+      "icon": "⚡",
+      "description": "File managers, ADB helpers, and productivity tools.",
+      "deviceId": "",
+      "order": 3,
+      "enabled": true
+    }
+  ],
+  "apps": [
+    {
+      "id": "app-sn-player",
+      "name": "NovaStream Player Pro",
+      "category": "media-tv",
+      "version": "4.8.2",
+      "packageId": "io.snappshub.novastream",
+      "description": "Hardware-accelerated 4K HDR media player optimized for Android phones and Android TV leanback navigation.",
+      "developer": "SN Media Labs",
+      "platform": "Android",
+      "devices": [
+        "android",
+        "androidtv"
+      ],
+      "minimumOs": "Android 8.0+",
+      "updatedAt": "2026-11-10",
+      "fileSize": "28.4 MB",
+      "iconUrl": "",
+      "officialWebsite": "https://snappshub.github.io",
+      "sourceName": "GitHub Releases",
+      "sourceUrl": "https://github.com/snappshub",
+      "telegramSupportUrl": "https://t.me/snappshub",
+      "featured": true,
+      "verified": true,
+      "mirrors": [
+        {
+          "id": "m-nova-1",
+          "label": "Primary CDN Mirror",
+          "url": "https://snappshub.github.io/downloads/novastream-4.8.2.apk",
+          "enabled": true,
+          "primary": true
+        },
+        {
+          "id": "m-nova-2",
+          "label": "GitHub Release Asset",
+          "url": "https://github.com/snappshub/releases/novastream-4.8.2.apk",
+          "enabled": true,
+          "primary": false
+        }
+      ],
+      "fileFormat": "APK",
+      "architecture": "universal",
+      "license": "Open Source",
+      "screenshots": []
+    },
+    {
+      "id": "app-shield-browser",
+      "name": "Aegis Shield Browser",
+      "category": "browsers",
+      "version": "131.2.0",
+      "packageId": "org.aegis.browser",
+      "description": "Hardened Chromium-based browser with built-in tracker blocking, DoH support, and desktop extension sync.",
+      "developer": "Aegis Open Collective",
+      "platform": "Android",
+      "devices": [
+        "android",
+        "desktop"
+      ],
+      "minimumOs": "Android 9.0+ / Win 10+",
+      "updatedAt": "2026-11-08",
+      "fileSize": "64.0 MB",
+      "iconUrl": "",
+      "officialWebsite": "https://snappshub.github.io",
+      "sourceName": "Official Repo",
+      "sourceUrl": "https://github.com/snappshub",
+      "telegramSupportUrl": "https://t.me/snappshub",
+      "featured": true,
+      "verified": true,
+      "mirrors": [
+        {
+          "id": "m-aegis-1",
+          "label": "Fast Edge Mirror",
+          "url": "https://snappshub.github.io/downloads/aegis-131.2.apk",
+          "enabled": true,
+          "primary": true
+        }
+      ],
+      "fileFormat": "APK",
+      "architecture": "universal",
+      "license": "Open Source",
+      "screenshots": []
+    },
+    {
+      "id": "app-netguard-dns",
+      "name": "RoutePulse DNS Guard",
+      "category": "network-dns",
+      "version": "2.3.5",
+      "packageId": "net.snappshub.routepulse",
+      "description": "Zero-root encrypted DNS over HTTPS/TLS profile manager for OpenWrt routers and Android devices.",
+      "developer": "SN Network Tools",
+      "platform": "Linux",
+      "devices": [
+        "router",
+        "android",
+        "desktop"
+      ],
+      "minimumOs": "OpenWrt 23.05+ / Android 10+",
+      "updatedAt": "2026-11-02",
+      "fileSize": "12.1 MB",
+      "iconUrl": "",
+      "officialWebsite": "https://snappshub.github.io",
+      "sourceName": "GitHub Source",
+      "sourceUrl": "https://github.com/snappshub",
+      "telegramSupportUrl": "https://t.me/snappshub",
+      "featured": false,
+      "verified": true,
+      "mirrors": [
+        {
+          "id": "m-route-1",
+          "label": "Direct Mirror",
+          "url": "https://snappshub.github.io/downloads/routepulse-2.3.5.ipk",
+          "enabled": true,
+          "primary": true
+        }
+      ],
+      "fileFormat": "APK",
+      "architecture": "universal",
+      "license": "Open Source",
+      "screenshots": []
+    }
+  ],
+  "ads": [
+    {
+      "id": "ad-home-top",
+      "network": "Google AdSense",
+      "slotId": "ca-pub-snapps-home-01",
+      "placement": "home",
+      "format": "Responsive Banner",
+      "customCode": "",
+      "enabled": true
+    },
+    {
+      "id": "ad-download-page",
+      "network": "Adsterra Native",
+      "slotId": "slot-sn-dl-442",
+      "placement": "download",
+      "format": "Native 320x100",
+      "customCode": "",
+      "enabled": true
+    }
+  ],
+  "downloadFlow": {
+    "delaySeconds": 3,
+    "introMessage": "Preparing app details and verifying mirror availability…",
+    "failureMessage": "The download did not start automatically. Choose an alternate option below.",
+    "telegramSupportUrl": "https://t.me/snappshub",
+    "showRetry": true,
+    "showOpenLink": true,
+    "showCopyLink": true,
+    "showAlternateMirrors": true,
+    "showTelegramSupport": true
+  },
+  "telegram": {
+    "enabled": false,
+    "channelId": "@snappshub",
+    "autoPostOnNewApp": true,
+    "autoPostOnPublish": false,
+    "postTemplate": "🚀 <b>{name}</b> v{version} is now live on SN Apps Hub!\n\n📦 Size: {size}\n📱 Platform: {platform}\n📝 {description}\n\n🔗 Download: {url}",
+    "lastPostedAt": null
+  },
+  "earnings": {
+    "estimatedCpmUsd": 2.8,
+    "adsensePublisherId": "",
+    "adsterraZoneId": "",
+    "monetagZoneId": ""
+  },
+  "githubSync": {
+    "owner": "snappshub",
+    "repo": "snappshub.github.io",
+    "branch": "main",
+    "filePath": "data/site-config.json",
+    "deployFullSite": true,
+    "autoSyncEnabled": true,
+    "lastSyncedAt": "2026-11-14T09:22:58.435Z",
+    "lastSyncStatus": "synced",
+    "lastSyncError": ""
+  }
 }
