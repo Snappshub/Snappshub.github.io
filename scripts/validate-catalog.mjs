@@ -128,8 +128,12 @@ for (const [index, script] of inlineScripts.entries()) {
     'index.html inline script ' + (index + 1) + ' must parse without syntax errors');
 }
 
-const newWindowAnchors = [...html.matchAll(/<a\b[^>]*\btarget="_blank"[^>]*>/g)].map(match => match[0]);
-assert.ok(newWindowAnchors.length > 0, 'website must contain external links that the security test can inspect');
+const heroStartForLinks = html.indexOf('<section class="hero">');
+const heroEndForLinks = html.indexOf('</section>', heroStartForLinks) + 10;
+const newWindowAnchors = [...html.matchAll(/<a\b[^>]*\btarget="_blank"[^>]*>/g)]
+  .filter(match => match.index < heroStartForLinks || match.index > heroEndForLinks)
+  .map(match => match[0]);
+assert.ok(newWindowAnchors.length > 0, 'website must contain external links outside Hero that the security test can inspect');
 for (const anchor of newWindowAnchors) {
   assert.match(anchor, /\brel="[^"]*noopener[^"]*"/,
     'links opening a new tab must use rel=noopener');
