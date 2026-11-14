@@ -1479,7 +1479,10 @@
       "order": 0,
       "enabled": true,
       "deviceId": "device-android",
-      "description": "Curated Android Apps from verified publisher sources."
+      "description": "Curated Android Apps from verified publisher sources.",
+      "deviceIds": [
+        "android"
+      ]
     },
     {
       "id": "category-androidtv",
@@ -1489,7 +1492,10 @@
       "order": 1,
       "enabled": true,
       "deviceId": "device-androidtv",
-      "description": "Curated Android TV Apps from verified publisher sources."
+      "description": "Curated Android TV Apps from verified publisher sources.",
+      "deviceIds": [
+        "androidtv"
+      ]
     },
     {
       "id": "category-desktop",
@@ -1499,7 +1505,10 @@
       "order": 2,
       "enabled": true,
       "deviceId": "device-desktop",
-      "description": "Curated Desktop Software from verified publisher sources."
+      "description": "Curated Desktop Software from verified publisher sources.",
+      "deviceIds": [
+        "desktop"
+      ]
     },
     {
       "id": "category-router",
@@ -1509,7 +1518,10 @@
       "order": 3,
       "enabled": true,
       "deviceId": "device-router",
-      "description": "Curated Router Firmware from verified publisher sources."
+      "description": "Curated Router Firmware from verified publisher sources.",
+      "deviceIds": [
+        "router"
+      ]
     },
     {
       "id": "category-browser",
@@ -1519,7 +1531,12 @@
       "order": 4,
       "enabled": true,
       "deviceId": "",
-      "description": "Curated Browsers from verified publisher sources."
+      "description": "Curated Browsers from verified publisher sources.",
+      "deviceIds": [
+        "android",
+        "desktop",
+        "androidtv"
+      ]
     },
     {
       "id": "category-security",
@@ -1529,7 +1546,11 @@
       "order": 5,
       "enabled": true,
       "deviceId": "",
-      "description": "Curated Security from verified publisher sources."
+      "description": "Curated Security from verified publisher sources.",
+      "deviceIds": [
+        "android",
+        "desktop"
+      ]
     },
     {
       "id": "category-popular",
@@ -1539,7 +1560,12 @@
       "order": 6,
       "enabled": true,
       "deviceId": "",
-      "description": "Curated Popular Tools from verified publisher sources."
+      "description": "Curated Popular Tools from verified publisher sources.",
+      "deviceIds": [
+        "desktop",
+        "android",
+        "androidtv"
+      ]
     },
     {
       "id": "category-network",
@@ -1549,7 +1575,11 @@
       "order": 7,
       "enabled": true,
       "deviceId": "",
-      "description": "Curated Network Tools from verified publisher sources."
+      "description": "Curated Network Tools from verified publisher sources.",
+      "deviceIds": [
+        "desktop",
+        "android"
+      ]
     },
     {
       "id": "category-video",
@@ -1559,7 +1589,12 @@
       "order": 8,
       "enabled": true,
       "deviceId": "",
-      "description": "Curated Video Editors from verified publisher sources."
+      "description": "Curated Video Editors from verified publisher sources.",
+      "deviceIds": [
+        "desktop",
+        "android",
+        "androidtv"
+      ]
     },
     {
       "id": "category-photo",
@@ -1569,7 +1604,11 @@
       "order": 9,
       "enabled": true,
       "deviceId": "",
-      "description": "Curated Photo Editors from verified publisher sources."
+      "description": "Curated Photo Editors from verified publisher sources.",
+      "deviceIds": [
+        "desktop",
+        "android"
+      ]
     },
     {
       "id": "category-developer",
@@ -1579,7 +1618,10 @@
       "order": 10,
       "enabled": true,
       "deviceId": "",
-      "description": "Developer tools, API clients and database software."
+      "description": "Developer tools, API clients and database software.",
+      "deviceIds": [
+        "desktop"
+      ]
     },
     {
       "id": "category-productivity",
@@ -1589,7 +1631,11 @@
       "order": 11,
       "enabled": true,
       "deviceId": "",
-      "description": "Notes, planning and everyday productivity software."
+      "description": "Notes, planning and everyday productivity software.",
+      "deviceIds": [
+        "desktop",
+        "android"
+      ]
     },
     {
       "id": "category-education",
@@ -1599,7 +1645,10 @@
       "order": 12,
       "enabled": true,
       "deviceId": "",
-      "description": "Study, flashcards and research tools."
+      "description": "Study, flashcards and research tools.",
+      "deviceIds": [
+        "desktop"
+      ]
     },
     {
       "id": "category-documents",
@@ -1609,7 +1658,10 @@
       "order": 13,
       "enabled": true,
       "deviceId": "",
-      "description": "Document viewers and e-book management tools."
+      "description": "Document viewers and e-book management tools.",
+      "deviceIds": [
+        "desktop"
+      ]
     },
     {
       "id": "category-communication",
@@ -1619,7 +1671,10 @@
       "order": 14,
       "enabled": true,
       "deviceId": "",
-      "description": "Messaging and video meeting applications."
+      "description": "Messaging and video meeting applications.",
+      "deviceIds": [
+        "desktop"
+      ]
     },
     {
       "id": "category-system",
@@ -1629,7 +1684,11 @@
       "order": 15,
       "enabled": true,
       "deviceId": "",
-      "description": "System maintenance, file and storage utilities."
+      "description": "System maintenance, file and storage utilities.",
+      "deviceIds": [
+        "android",
+        "desktop"
+      ]
     },
     {
       "id": "category-media",
@@ -1639,7 +1698,41 @@
       "order": 16,
       "enabled": true,
       "deviceId": "",
-      "description": "Media players, galleries and media library tools."
+      "description": "Media players, galleries and media library tools.",
+      "deviceIds": [
+        "desktop",
+        "android"
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "id": "device-android",
+      "slug": "android",
+      "name": "Android",
+      "icon": "📱",
+      "order": 0
+    },
+    {
+      "id": "device-androidtv",
+      "slug": "androidtv",
+      "name": "Android TV",
+      "icon": "📺",
+      "order": 1
+    },
+    {
+      "id": "device-desktop",
+      "slug": "desktop",
+      "name": "Desktop",
+      "icon": "💻",
+      "order": 2
+    },
+    {
+      "id": "device-router",
+      "slug": "router",
+      "name": "Router",
+      "icon": "📡",
+      "order": 3
     }
   ]
 }
