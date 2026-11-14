@@ -416,8 +416,14 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
   }
 </style>
 
+<style id="keyboard-accessibility">
+  #skip-link{position:fixed;top:1rem;left:1rem;z-index:1000;transform:translateY(-160%);padding:.7rem 1rem;border-radius:.6rem;background:#fbbf24;color:#0a0e18;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  #skip-link:focus{transform:translateY(0);outline:3px solid #22d3ee;outline-offset:3px}
+  #main-content:focus{outline:none}
+</style>
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
+<a id="skip-link" href="#main-content">Skip to main content</a>
 <!-- BEGIN: WebPushNotificationToast -->
 <div class="fixed bottom-5 right-5 z-50 max-w-sm w-full bg-[#111728] border border-cyan-500/30 shadow-2xl rounded-xl p-4 transition-all duration-300 transform translate-y-0 flex items-start gap-3 backdrop-blur-md" data-purpose="push-toast" id="pushNotificationBanner">
 <div class="p-2.5 bg-cyan-950/60 text-cyan-400 rounded-lg border border-cyan-800/50 shrink-0">
@@ -641,7 +647,7 @@ Join Telegram Community
 <!-- END: HeroSection -->
 
 <!-- BEGIN: MainContentArea -->
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-12">
+<main id="main-content" tabindex="-1" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-12">
 <!-- PAGE 2: In-Page App Details View (Initially Hidden) -->
 <section class="hidden" data-purpose="page2-app-detail-flow" id="appDetailsView">
 <div class="bg-[#111728] border border-[#1f273d] rounded-2xl p-6 md:p-8">
