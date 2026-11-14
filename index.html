@@ -1476,7 +1476,7 @@ Join Telegram Community
       let publisherUrl = '';
       try {
         const parsedUrl = new URL(String(item.url || item.mirror1 || ''));
-        if (parsedUrl.protocol === 'https:' && parsedUrl.hostname) publisherUrl = parsedUrl.href;
+        if (parsedUrl.protocol === 'https:' && parsedUrl.hostname && !parsedUrl.username && !parsedUrl.password) publisherUrl = parsedUrl.href;
       } catch (_) {}
       directBtn.href = publisherUrl || '#';
       directBtn.rel = 'noopener noreferrer';
