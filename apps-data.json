@@ -66,7 +66,8 @@
         "android"
       ],
       "sourceUrl": "https://github.com/JunkFood02/Seal/releases",
-      "sourceLabel": "GitHub releases"
+      "sourceLabel": "GitHub releases",
+      "iconUrl": "https://raw.githubusercontent.com/JunkFood02/Seal/main/fastlane/metadata/android/en-US/images/icon.png"
     },
     {
       "id": "apk-5",
@@ -202,7 +203,8 @@
         "desktop"
       ],
       "sourceUrl": "https://www.videolan.org/vlc/",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://raw.githubusercontent.com/VideoLAN/vlc/master/extras/package/macosx/asset_sources/vlc_app_icon.svg"
     },
     {
       "id": "pc-4",
@@ -219,7 +221,8 @@
         "desktop"
       ],
       "sourceUrl": "https://www.wireshark.org/download.html",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://raw.githubusercontent.com/wireshark/wireshark/master/resources/historic/wsicon.svg"
     },
     {
       "id": "rt-1",
@@ -536,7 +539,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://raw.githubusercontent.com/KDE/kdenlive/master/data/icons/512-apps-kdenlive.png"
     },
     {
       "id": "video-shotcut",
@@ -622,7 +626,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://raw.githubusercontent.com/darktable-org/darktable/master/data/pixmaps/dt_logo_128x128.png"
     },
     {
       "id": "browser-tvbro",
@@ -639,7 +644,8 @@
       "devices": [
         "androidtv"
       ],
-      "icon": "📺"
+      "icon": "📺",
+      "iconUrl": "https://raw.githubusercontent.com/truefedex/tv-bro/master/metadata/en-US/images/icon.png"
     },
     {
       "id": "security-protonpass",
@@ -710,7 +716,8 @@
       "devices": [
         "android"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/icon-512x512.png"
     },
     {
       "id": "network-wifiman",
@@ -763,7 +770,8 @@
         "androidtv",
         "android"
       ],
-      "icon": "📺"
+      "icon": "📺",
+      "iconUrl": "https://raw.githubusercontent.com/nova-video-player/aos-AVP/nova/fastlane/metadata/android/en-US/images/icon.png"
     },
     {
       "id": "photo-snapseed",
@@ -853,7 +861,8 @@
         "desktop"
       ],
       "mirrors": [],
-      "telegramSupportUrl": ""
+      "telegramSupportUrl": "",
+      "iconUrl": "https://raw.githubusercontent.com/obsproject/obs-studio/master/frontend/cmake/linux/icons/obs-logo-512.png"
     },
     {
       "id": "popular-ventoy",
