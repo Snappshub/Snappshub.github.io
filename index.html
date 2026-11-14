@@ -1560,7 +1560,8 @@ Join Telegram Community
       document.getElementById('modalAppIcon').innerHTML = getAutoIconMarkup(item);
       document.getElementById('modalAppTitle').textContent = item.title;
       document.getElementById('modalAppVersion').textContent = item.version;
-      document.getElementById('modalAppSize').textContent = item.size;\n      const metaLine = document.getElementById('modalAppMeta');\n      if (metaLine) metaLine.textContent = (item.category || 'Software') + ' • ' + ((item.devices || [item.category]).join(', ')) + ' • ' + (item.size || 'Size unavailable');
+      document.getElementById('modalAppSize').textContent = item.size;
+      const metaLine = document.getElementById('modalAppMeta');\n      if (metaLine) metaLine.textContent = (item.category || 'Software') + ' • ' + ((item.devices || [item.category]).join(', ')) + ' • ' + (item.size || 'Size unavailable');
 
       const directBtn = document.getElementById('modalDirectDownloadBtn');
       let publisherUrl = '';
@@ -1591,7 +1592,7 @@ Join Telegram Community
         timerContainer.classList.remove('hidden');
         readyContainer.classList.add('hidden');
         countdownBar.style.width = '0%';
-        let seconds = 5;
+        let seconds = 3;
         countdownNumber.textContent = seconds;
         setTimeout(() => { countdownBar.style.width = '100%'; }, 50);
         countdownInterval = setInterval(() => {
