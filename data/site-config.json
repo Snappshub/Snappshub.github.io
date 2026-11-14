@@ -1,0 +1,542 @@
+{
+  "syncedAt": "2026-11-14T06:35:55.032Z",
+  "meta": {
+    "siteDomain": "https://snappshub.github.io",
+    "seoTitle": "SN Apps Hub — Trusted & Secure Apps for Every Device",
+    "seoDescription": "Verified Android, Android TV, Desktop, and Router software curated by SN Apps Hub with fast direct mirrors.",
+    "maintenanceMode": false,
+    "maintenanceMessage": "Scheduled catalogue update in progress. Back online in a few minutes."
+  },
+  "header": {
+    "brandTitle": "SN Apps Hub",
+    "brandSubtitle": "Trusted & Secure for Your Device",
+    "logoUrl": "/assets/aistudio/SN_Apps_Hub_Brand_Logo_cb936f51.png",
+    "logoSizePx": 34,
+    "showLogo": true,
+    "sticky": true,
+    "headerHeight": "standard",
+    "showSearch": true,
+    "announcementEnabled": true,
+    "announcementMode": "ticker",
+    "announcementBadge": "LIVE",
+    "announcementText": "All builds verified · New Android TV & Router releases live now",
+    "announcementLink": "#apps",
+    "announcementSpeedSec": 18,
+    "ctaLabel": "Telegram",
+    "ctaUrl": "https://t.me/snappshub",
+    "navLinks": [
+      {
+        "id": "nav-home",
+        "label": "Explore",
+        "href": "#hero",
+        "enabled": true,
+        "openInNewTab": false
+      },
+      {
+        "id": "nav-categories",
+        "label": "Categories",
+        "href": "#categories",
+        "enabled": true,
+        "openInNewTab": false
+      },
+      {
+        "id": "nav-devices",
+        "label": "Devices",
+        "href": "#devices",
+        "enabled": true,
+        "openInNewTab": false
+      },
+      {
+        "id": "nav-apps",
+        "label": "Catalogue",
+        "href": "#apps",
+        "enabled": true,
+        "openInNewTab": false
+      }
+    ],
+    "sidebarFolders": [
+      {
+        "id": "sf-apk",
+        "name": "Android APK",
+        "slug": "apk",
+        "fileTypeHint": "APK / XAPK",
+        "icon": "📱",
+        "enabled": true
+      },
+      {
+        "id": "sf-msi",
+        "name": "Windows MSI & EXE",
+        "slug": "msi",
+        "fileTypeHint": "MSI / EXE",
+        "icon": "🪟",
+        "enabled": true
+      },
+      {
+        "id": "sf-os",
+        "name": "OS & Router Firmware",
+        "slug": "ipk",
+        "fileTypeHint": "ISO / IPK / IMG",
+        "icon": "🛰️",
+        "enabled": true
+      },
+      {
+        "id": "sf-mac",
+        "name": "macOS & Linux",
+        "slug": "dmg",
+        "fileTypeHint": "DMG / DEB / APPIMAGE",
+        "icon": "💻",
+        "enabled": true
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Trusted & Secure for Your Device",
+    "headline": "Curated apps, verified mirrors, zero clutter.",
+    "subheadline": "Discover clean, checksum-verified releases across Android, Android TV, Desktop, and Router platforms with direct high-speed download mirrors.",
+    "primaryCtaLabel": "Browse Catalogue",
+    "primaryCtaUrl": "#apps",
+    "secondaryCtaLabel": "Join Support Channel",
+    "secondaryCtaUrl": "https://t.me/snappshub",
+    "trustLine": "SHA-256 Verified · Direct Mirrors · Multi-Device Builds",
+    "backgroundStyle": "sapphire-aurora",
+    "heroImageUrl": "/assets/aistudio/SN_Apps_Hub_Brand_Logo_cb936f51.png",
+    "heroImageSize": "medium",
+    "heroImageWidthPx": 76,
+    "heroImageHeightPx": 76,
+    "heroPaddingY": "standard",
+    "heroImagePosition": "right",
+    "showFeaturedShowcase": true,
+    "featuredAppId": "app-sn-player"
+  },
+  "footer": {
+    "brandSummary": "SN Apps Hub curates trusted utility, streaming, browser, and network software with transparent source attribution and reliable download mirrors.",
+    "copyrightText": "© 2026 SN Apps Hub · snappshub.github.io",
+    "showSocials": true,
+    "telegramUrl": "https://t.me/snappshub",
+    "githubUrl": "https://github.com/snappshub",
+    "youtubeUrl": "https://youtube.com/@snappshub",
+    "contactEmail": "alaminsahebweb@gmail.com",
+    "legalNotice": "All trademarks and package names belong to their respective developers. Official websites and source links are credited on every app page.",
+    "columns": [
+      {
+        "id": "col-platforms",
+        "title": "Platforms",
+        "links": [
+          {
+            "id": "fl-1",
+            "label": "Android Apps",
+            "href": "#android",
+            "enabled": true
+          },
+          {
+            "id": "fl-2",
+            "label": "Android TV",
+            "href": "#androidtv",
+            "enabled": true
+          },
+          {
+            "id": "fl-3",
+            "label": "Desktop Tools",
+            "href": "#desktop",
+            "enabled": true
+          },
+          {
+            "id": "fl-4",
+            "label": "Router Firmware",
+            "href": "#router",
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "id": "col-resources",
+        "title": "Resources",
+        "links": [
+          {
+            "id": "fl-5",
+            "label": "Mirror Status",
+            "href": "#apps",
+            "enabled": true
+          },
+          {
+            "id": "fl-6",
+            "label": "Telegram Support",
+            "href": "https://t.me/snappshub",
+            "enabled": true
+          },
+          {
+            "id": "fl-7",
+            "label": "DMCA & Attribution",
+            "href": "#legal",
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  "policies": {
+    "dmcaText": "SN Apps Hub respects intellectual property rights and complies with the Digital Millennium Copyright Act (DMCA). All software binaries linked or indexed remain the property of their respective authors. To request removal of any infringing link, email alaminsahebweb@gmail.com with the exact URL and proof of ownership; verified notices are processed within 24–48 hours.",
+    "privacyPolicyText": "SN Apps Hub does not sell personal visitor data. Anonymous aggregate download counters and ad impression metrics may be recorded to improve mirror reliability. Third-party ad networks (Google AdSense, Adsterra, Monetag) may use standard cookies subject to their respective privacy policies.",
+    "openSourceCreditText": "We gratefully acknowledge the open-source communities behind Android, Chromium, OpenWrt, Linux, FFmpeg, and independent developers publishing under MIT, Apache-2.0, and GPL licenses. Original repository links and developer attributions appear on each application details page.",
+    "sitemapBaseUrl": "https://snappshub.github.io",
+    "autoIncludeAppsInSitemap": true,
+    "adsTxtExtraLines": "# Add extra authorized seller lines here if required by your ad network"
+  },
+  "theme": {
+    "systemThemeId": "cyberpunk-neon",
+    "accentGold": "#f3c969",
+    "accentBlue": "#65b8ff",
+    "canvasBg": "#070b14",
+    "surfaceBg": "#0f1726",
+    "borderRadius": "balanced",
+    "glassBlurPx": 14,
+    "animationPreset": "kinetic",
+    "storefrontAppsView": "list",
+    "appIconSizePx": 44,
+    "appCardScale": "standard",
+    "downloadButtonStyle": "gradient",
+    "customCss": "/* Custom Live CSS injected directly into SN Apps Hub */\n.sn-hero-glow {\n  box-shadow: 0 20px 60px rgba(243, 201, 105, 0.08);\n}"
+  },
+  "adminPanel": {
+    "adminThemeId": "cyberpunk-neon",
+    "compactMode": false,
+    "animationsEnabled": true,
+    "glassIntensity": 14,
+    "showInlinePreview": true,
+    "dragMoveEnabled": true,
+    "adminAppsViewStyle": "list",
+    "adminSettingsViewStyle": "tabs",
+    "uiScalePct": 100,
+    "sidebarWidthPx": 256
+  },
+  "miniWindows": {
+    "preDetailSeconds": 5,
+    "preDetailTitle": "Preparing Verified Package",
+    "preDetailSubtitle": "Scanning package signature, open-source credits & fast mirror nodes…",
+    "preDetailSize": "standard",
+    "preDetailWidthPx": 350,
+    "preDetailPosition": "center",
+    "preDetailAnim": "cyber-bar",
+    "downloadingTitle": "Initializing Secure Download",
+    "downloadingSubtitle": "Handshaking with high-speed CDN mirror & preparing checksum stream…",
+    "downloadingSize": "standard",
+    "downloadingWidthPx": 350,
+    "downloadingPosition": "center",
+    "downloadingAnim": "pulse-ring"
+  },
+  "sections": [
+    {
+      "id": "sec-hero",
+      "type": "hero",
+      "title": "Hero Spotlight",
+      "subtitle": "Primary brand banner, headlines, and featured app highlight",
+      "enabled": true
+    },
+    {
+      "id": "sec-ad-hero",
+      "type": "ad-hero-below",
+      "title": "Hero Sponsor Slot",
+      "subtitle": "Optional placement directly beneath hero section",
+      "enabled": true
+    },
+    {
+      "id": "sec-devices",
+      "type": "devices",
+      "title": "Device Explorer",
+      "subtitle": "Filter catalogue by Android, Android TV, Desktop, or Router",
+      "enabled": true
+    },
+    {
+      "id": "sec-featured",
+      "type": "featured",
+      "title": "Featured Releases",
+      "subtitle": "Hand-picked verified builds highlighted on home feed",
+      "enabled": true
+    },
+    {
+      "id": "sec-categories",
+      "type": "categories",
+      "title": "Category Directory",
+      "subtitle": "Browse software grouped by purpose and device class",
+      "enabled": true
+    },
+    {
+      "id": "sec-apps",
+      "type": "apps",
+      "title": "App Catalogue Feed",
+      "subtitle": "Interactive app cards with instant mirror handoff",
+      "enabled": true
+    },
+    {
+      "id": "sec-ad-home",
+      "type": "ad-home",
+      "title": "Home Feed Ad Placement",
+      "subtitle": "In-feed monetization block",
+      "enabled": true
+    },
+    {
+      "id": "sec-trust",
+      "type": "trust",
+      "title": "Verification & Trust Strip",
+      "subtitle": "Security checks, source attribution, and Telegram support",
+      "enabled": true
+    },
+    {
+      "id": "sec-custom",
+      "type": "custom-html",
+      "title": "Custom Promo Banner",
+      "subtitle": "Editable HTML/CSS notice block",
+      "enabled": false,
+      "customHtml": "<div style=\"padding:14px;border:1px solid rgba(243,201,105,0.3);border-radius:12px;text-align:center;\"><strong>Community Notice:</strong> Request new apps via Telegram @snappshub</div>"
+    }
+  ],
+  "devices": [
+    {
+      "id": "device-android",
+      "name": "Android",
+      "slug": "android",
+      "icon": "Smartphone",
+      "enabled": true
+    },
+    {
+      "id": "device-android-tv",
+      "name": "Android TV",
+      "slug": "androidtv",
+      "icon": "Tv",
+      "enabled": true
+    },
+    {
+      "id": "device-desktop",
+      "name": "Desktop",
+      "slug": "desktop",
+      "icon": "Monitor",
+      "enabled": true
+    },
+    {
+      "id": "device-router",
+      "name": "Router",
+      "slug": "router",
+      "icon": "Router",
+      "enabled": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-browsers",
+      "name": "Browsers",
+      "slug": "browsers",
+      "icon": "🌐",
+      "description": "Privacy-first web browsers and lightweight mobile engines.",
+      "deviceId": "",
+      "order": 0,
+      "enabled": true
+    },
+    {
+      "id": "cat-media",
+      "name": "Media & TV",
+      "slug": "media-tv",
+      "icon": "📺",
+      "description": "4K media players, IPTV utilities, and Android TV launchers.",
+      "deviceId": "device-android-tv",
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "cat-network",
+      "name": "Network & DNS",
+      "slug": "network-dns",
+      "icon": "🛡️",
+      "description": "Encrypted DNS tools, router utilities, and diagnostics.",
+      "deviceId": "device-router",
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "cat-utilities",
+      "name": "System Utilities",
+      "slug": "utilities",
+      "icon": "⚡",
+      "description": "File managers, ADB helpers, and productivity tools.",
+      "deviceId": "",
+      "order": 3,
+      "enabled": true
+    }
+  ],
+  "apps": [
+    {
+      "id": "app-sn-player",
+      "name": "NovaStream Player Pro",
+      "category": "media-tv",
+      "version": "4.8.2",
+      "packageId": "io.snappshub.novastream",
+      "description": "Hardware-accelerated 4K HDR media player optimized for Android phones and Android TV leanback navigation.",
+      "developer": "SN Media Labs",
+      "platform": "Android",
+      "devices": [
+        "android",
+        "androidtv"
+      ],
+      "minimumOs": "Android 8.0+",
+      "updatedAt": "2026-11-10",
+      "fileSize": "28.4 MB",
+      "iconUrl": "",
+      "officialWebsite": "https://snappshub.github.io",
+      "sourceName": "GitHub Releases",
+      "sourceUrl": "https://github.com/snappshub",
+      "telegramSupportUrl": "https://t.me/snappshub",
+      "featured": true,
+      "verified": true,
+      "mirrors": [
+        {
+          "id": "m-nova-1",
+          "label": "Primary CDN Mirror",
+          "url": "https://snappshub.github.io/downloads/novastream-4.8.2.apk",
+          "enabled": true,
+          "primary": true
+        },
+        {
+          "id": "m-nova-2",
+          "label": "GitHub Release Asset",
+          "url": "https://github.com/snappshub/releases/novastream-4.8.2.apk",
+          "enabled": true,
+          "primary": false
+        }
+      ],
+      "fileFormat": "APK",
+      "architecture": "universal",
+      "license": "Open Source",
+      "screenshots": []
+    },
+    {
+      "id": "app-shield-browser",
+      "name": "Aegis Shield Browser",
+      "category": "browsers",
+      "version": "131.2.0",
+      "packageId": "org.aegis.browser",
+      "description": "Hardened Chromium-based browser with built-in tracker blocking, DoH support, and desktop extension sync.",
+      "developer": "Aegis Open Collective",
+      "platform": "Android",
+      "devices": [
+        "android",
+        "desktop"
+      ],
+      "minimumOs": "Android 9.0+ / Win 10+",
+      "updatedAt": "2026-11-08",
+      "fileSize": "64.0 MB",
+      "iconUrl": "",
+      "officialWebsite": "https://snappshub.github.io",
+      "sourceName": "Official Repo",
+      "sourceUrl": "https://github.com/snappshub",
+      "telegramSupportUrl": "https://t.me/snappshub",
+      "featured": true,
+      "verified": true,
+      "mirrors": [
+        {
+          "id": "m-aegis-1",
+          "label": "Fast Edge Mirror",
+          "url": "https://snappshub.github.io/downloads/aegis-131.2.apk",
+          "enabled": true,
+          "primary": true
+        }
+      ],
+      "fileFormat": "APK",
+      "architecture": "universal",
+      "license": "Open Source",
+      "screenshots": []
+    },
+    {
+      "id": "app-netguard-dns",
+      "name": "RoutePulse DNS Guard",
+      "category": "network-dns",
+      "version": "2.3.5",
+      "packageId": "net.snappshub.routepulse",
+      "description": "Zero-root encrypted DNS over HTTPS/TLS profile manager for OpenWrt routers and Android devices.",
+      "developer": "SN Network Tools",
+      "platform": "Linux",
+      "devices": [
+        "router",
+        "android",
+        "desktop"
+      ],
+      "minimumOs": "OpenWrt 23.05+ / Android 10+",
+      "updatedAt": "2026-11-02",
+      "fileSize": "12.1 MB",
+      "iconUrl": "",
+      "officialWebsite": "https://snappshub.github.io",
+      "sourceName": "GitHub Source",
+      "sourceUrl": "https://github.com/snappshub",
+      "telegramSupportUrl": "https://t.me/snappshub",
+      "featured": false,
+      "verified": true,
+      "mirrors": [
+        {
+          "id": "m-route-1",
+          "label": "Direct Mirror",
+          "url": "https://snappshub.github.io/downloads/routepulse-2.3.5.ipk",
+          "enabled": true,
+          "primary": true
+        }
+      ],
+      "fileFormat": "APK",
+      "architecture": "universal",
+      "license": "Open Source",
+      "screenshots": []
+    }
+  ],
+  "ads": [
+    {
+      "id": "ad-home-top",
+      "network": "Google AdSense",
+      "slotId": "ca-pub-snapps-home-01",
+      "placement": "home",
+      "format": "Responsive Banner",
+      "customCode": "",
+      "enabled": true
+    },
+    {
+      "id": "ad-download-page",
+      "network": "Adsterra Native",
+      "slotId": "slot-sn-dl-442",
+      "placement": "download",
+      "format": "Native 320x100",
+      "customCode": "",
+      "enabled": true
+    }
+  ],
+  "downloadFlow": {
+    "delaySeconds": 3,
+    "introMessage": "Preparing app details and verifying mirror availability…",
+    "failureMessage": "The download did not start automatically. Choose an alternate option below.",
+    "telegramSupportUrl": "https://t.me/snappshub",
+    "showRetry": true,
+    "showOpenLink": true,
+    "showCopyLink": true,
+    "showAlternateMirrors": true,
+    "showTelegramSupport": true
+  },
+  "telegram": {
+    "enabled": false,
+    "channelId": "@snappshub",
+    "autoPostOnNewApp": true,
+    "autoPostOnPublish": false,
+    "postTemplate": "🚀 <b>{name}</b> v{version} is now live on SN Apps Hub!\n\n📦 Size: {size}\n📱 Platform: {platform}\n📝 {description}\n\n🔗 Download: {url}",
+    "lastPostedAt": null
+  },
+  "earnings": {
+    "estimatedCpmUsd": 2.8,
+    "adsensePublisherId": "",
+    "adsterraZoneId": "",
+    "monetagZoneId": ""
+  },
+  "githubSync": {
+    "owner": "snappshub",
+    "repo": "snappshub.github.io",
+    "branch": "main",
+    "filePath": "data/site-config.json",
+    "deployFullSite": true,
+    "autoSyncEnabled": true,
+    "lastSyncedAt": null,
+    "lastSyncStatus": "error",
+    "lastSyncError": "GitHub lookup failed for data/site-config.json (401): {\r\n  \"message\": \"Bad credentials\",\r\n  \"documentation_url\": \"https://docs.github.com/rest\",\r\n  \"status\": \"401\"\r\n}"
+  }
+}
