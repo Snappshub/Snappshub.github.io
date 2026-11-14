@@ -76,7 +76,7 @@ for (const [index, app] of catalog.apps.entries()) {
   }
 }
 
-const outboundFields = ['url', 'sourceUrl', 'mirror1', 'telegramSupportUrl'];
+const outboundFields = ['url', 'sourceUrl', 'mirror1', 'telegramSupportUrl', 'iconUrl'];
 for (const [index, app] of catalog.apps.entries()) {
   const label = app.id || `row ${index + 1}`;
   for (const field of outboundFields) {
@@ -87,6 +87,9 @@ for (const [index, app] of catalog.apps.entries()) {
     assert.equal(parsed.protocol, 'https:', `${label}: ${field} must use HTTPS`);
     assert.equal(parsed.username, '', `${label}: ${field} must not contain embedded credentials`);
     assert.equal(parsed.password, '', `${label}: ${field} must not contain embedded credentials`);
+  }
+  if (app.iconFile !== undefined) {
+    assert.match(app.iconFile, /^\\.\\/assets\\/[a-zA-Z0-9._/-]+$/, `${label}: iconFile must point into ./assets`);
   }
   if (app.mirrors !== undefined) {
     assert.ok(Array.isArray(app.mirrors), `${label}: mirrors must be an array`);
