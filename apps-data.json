@@ -293,7 +293,7 @@
       "id": "browser-firefox",
       "title": "Firefox Browser",
       "category": "browser",
-      "icon": "",
+      "icon": "https://www.google.com/s2/favicons?domain=mozilla.org&sz=128",
       "url": "https://www.mozilla.org/firefox/new/",
       "sourceUrl": "https://www.mozilla.org/firefox/new/",
       "sourceLabel": "Official site",
@@ -322,7 +322,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=brave.com&sz=128"
     },
     {
       "id": "browser-fennec",
@@ -338,7 +339,8 @@
       "desc": "F-Droid-distributed Firefox-derived browser build. Review the package details and signing information on F-Droid.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
     },
     {
       "id": "security-bitwarden",
@@ -355,7 +357,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=bitwarden.com&sz=128"
     },
     {
       "id": "security-keepassdx",
@@ -371,7 +374,8 @@
       "desc": "Open-source offline password manager for Android. F-Droid package listing and release details.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
     },
     {
       "id": "security-keepassxc",
@@ -387,7 +391,8 @@
       "desc": "Open-source desktop password manager. Verify installer signatures using the publisher's instructions.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=keepassxc.org&sz=128"
     },
     {
       "id": "popular-7zip",
@@ -403,7 +408,8 @@
       "desc": "File archiver supporting 7z, ZIP and many other formats. Official download page.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=7-zip.org&sz=128"
     },
     {
       "id": "popular-localsend",
@@ -420,7 +426,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
     },
     {
       "id": "popular-termux",
@@ -436,7 +443,8 @@
       "desc": "Terminal emulator and Linux environment for Android. Install from the linked F-Droid source; do not mix signatures from different sources.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
     },
     {
       "id": "popular-vlc",
@@ -454,7 +462,8 @@
         "android",
         "androidtv",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=videolan.org&sz=128"
     },
     {
       "id": "network-wireshark",
@@ -470,7 +479,8 @@
       "desc": "Network protocol analyzer for inspecting packet captures on networks you own or are authorized to troubleshoot.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=wireshark.org&sz=128"
     },
     {
       "id": "network-nmap",
@@ -486,7 +496,8 @@
       "desc": "Network discovery and security auditing utility. Scan only systems and networks you own or have permission to test.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=nmap.org&sz=128"
     },
     {
       "id": "network-termux",
@@ -502,7 +513,8 @@
       "desc": "Android terminal environment for networking utilities. Tools are installed separately; use only on authorized networks.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
     },
     {
       "id": "video-kdenlive",
@@ -518,7 +530,8 @@
       "desc": "Open-source non-linear video editor with multi-track timeline, effects and transitions.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=kdenlive.org&sz=128"
     },
     {
       "id": "video-shotcut",
@@ -534,7 +547,8 @@
       "desc": "Free, open-source video editor with broad format support and timeline editing.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=shotcut.org&sz=128"
     },
     {
       "id": "video-openshot",
@@ -550,7 +564,8 @@
       "desc": "Open-source video editor for basic timeline editing, titles and transitions.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=openshot.org&sz=128"
     },
     {
       "id": "photo-gimp",
@@ -566,7 +581,8 @@
       "desc": "Free, open-source image editor for retouching, compositing and graphics work.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=gimp.org&sz=128"
     },
     {
       "id": "photo-krita",
@@ -583,7 +599,8 @@
       "devices": [
         "desktop",
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=krita.org&sz=128"
     },
     {
       "id": "photo-darktable",
@@ -599,7 +616,8 @@
       "desc": "Open-source photography workflow and RAW image developer.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=darktable.org&sz=128"
     },
     {
       "id": "browser-tvbro",
@@ -615,7 +633,8 @@
       "desc": "Remote-friendly web browser designed for Android TV. Check the official release page for compatible builds.",
       "devices": [
         "androidtv"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
     },
     {
       "id": "security-protonpass",
@@ -632,7 +651,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=proton.me&sz=128"
     },
     {
       "id": "security-malwarebytes",
@@ -649,7 +669,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=malwarebytes.com&sz=128"
     },
     {
       "id": "popular-kdeconnect",
@@ -666,7 +687,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=kdeconnect.kde.org&sz=128"
     },
     {
       "id": "popular-obtainium",
@@ -682,7 +704,8 @@
       "desc": "Open-source Android app updater that tracks releases from upstream project sources. Review app sources before adding them.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
     },
     {
       "id": "network-wifiman",
@@ -699,7 +722,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=ui.com&sz=128"
     },
     {
       "id": "video-vn",
@@ -715,7 +739,8 @@
       "desc": "Multi-track video editor with timeline, effects and export tools. Check the official site for platform availability.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=vlognow.me&sz=128"
     },
     {
       "id": "video-nova-tv",
@@ -732,7 +757,8 @@
       "devices": [
         "androidtv",
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
     },
     {
       "id": "photo-snapseed",
@@ -748,7 +774,8 @@
       "desc": "Google's photo editor with selective adjustments, filters and RAW editing support. Install from Google Play.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=play.google.com&sz=128"
     },
     {
       "id": "photo-photopea",
@@ -764,7 +791,8 @@
       "desc": "Browser-based image editor supporting layered documents and common raster and vector formats.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=photopea.com&sz=128"
     },
     {
       "id": "popular-powertoys",
@@ -780,7 +808,8 @@
       "desc": "Microsoft's Windows productivity utilities. Review system requirements and install from official Microsoft channels.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=learn.microsoft.com&sz=128"
     },
     {
       "id": "security-signal",
@@ -789,7 +818,7 @@
       "version": "Latest official",
       "size": "Varies",
       "arch": "Android / Windows / macOS / Linux",
-      "icon": "",
+      "icon": "https://www.google.com/s2/favicons?domain=signal.org&sz=128",
       "url": "https://signal.org/download/",
       "sourceUrl": "https://signal.org/download/",
       "sourceLabel": "Signal official downloads",
@@ -809,7 +838,7 @@
       "version": "33.0.0",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "",
+      "icon": "https://www.google.com/s2/favicons?domain=obsproject.com&sz=128",
       "url": "https://obsproject.com/download/",
       "sourceUrl": "https://obsproject.com/download/",
       "sourceLabel": "OBS Project official download",
@@ -828,7 +857,7 @@
       "version": "1.1.18",
       "size": "Varies",
       "arch": "Windows / Linux",
-      "icon": "",
+      "icon": "https://www.google.com/s2/favicons?domain=ventoy.net&sz=128",
       "url": "https://www.ventoy.net/en/download.html",
       "sourceUrl": "https://www.ventoy.net/en/download.html",
       "sourceLabel": "Ventoy official download",
@@ -847,7 +876,7 @@
       "version": "26.8.0",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "",
+      "icon": "https://www.google.com/s2/favicons?domain=libreoffice.org&sz=128",
       "url": "https://www.libreoffice.org/download/",
       "sourceUrl": "https://www.libreoffice.org/download/",
       "sourceLabel": "LibreOffice official download",
@@ -866,7 +895,7 @@
       "version": "2.1.7",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "",
+      "icon": "https://www.google.com/s2/favicons?domain=syncthing.net&sz=128",
       "url": "https://syncthing.net/downloads/",
       "sourceUrl": "https://syncthing.net/downloads/",
       "sourceLabel": "Syncthing official downloads",
@@ -885,7 +914,7 @@
       "version": "Latest official",
       "size": "Varies",
       "arch": "Windows / macOS / Linux",
-      "icon": "",
+      "icon": "https://www.google.com/s2/favicons?domain=filezilla-project.org&sz=128",
       "url": "https://filezilla-project.org/download.php?type=client",
       "sourceUrl": "https://filezilla-project.org/download.php?type=client",
       "sourceLabel": "FileZilla official download",
@@ -911,7 +940,8 @@
       "desc": "Open-source two-factor authenticator with encrypted token storage and backup options. Review the F-Droid package details.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=f-droid.org&sz=128"
     },
     {
       "id": "popular-antennapod",
@@ -927,7 +957,8 @@
       "desc": "Open-source podcast manager for subscribing to and playing podcasts. Download from the official project page.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=antennapod.org&sz=128"
     },
     {
       "id": "popular-organicmaps",
@@ -943,7 +974,8 @@
       "desc": "Offline maps and navigation based on OpenStreetMap data. Choose the official app-store listing for your device.",
       "devices": [
         "android"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=organicmaps.app&sz=128"
     },
     {
       "id": "photo-blender",
@@ -959,7 +991,8 @@
       "desc": "Free and open-source 3D creation suite for modeling, animation, rendering and visual effects.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=blender.org&sz=128"
     },
     {
       "id": "photo-inkscape",
@@ -975,7 +1008,8 @@
       "desc": "Open-source vector graphics editor for illustrations, icons, diagrams and SVG artwork.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=inkscape.org&sz=128"
     },
     {
       "id": "video-audacity",
@@ -991,7 +1025,8 @@
       "desc": "Free, open-source audio editor and recorder for editing, cleanup and exporting audio projects.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=audacityteam.org&sz=128"
     },
     {
       "id": "video-handbrake",
@@ -1007,7 +1042,8 @@
       "desc": "Open-source video transcoder for converting media files using presets and format controls.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=handbrake.fr&sz=128"
     },
     {
       "id": "popular-thunderbird",
@@ -1023,7 +1059,8 @@
       "desc": "Open-source email client with calendar, contacts and feed features. Download from Mozilla's official site.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=thunderbird.net&sz=128"
     },
     {
       "id": "popular-sharex",
@@ -1039,7 +1076,8 @@
       "desc": "Open-source Windows screenshot and screen-recording utility with annotation and workflow tools.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=getsharex.com&sz=128"
     },
     {
       "id": "popular-notepadpp",
@@ -1055,7 +1093,8 @@
       "desc": "Free source-code and text editor for Windows with syntax highlighting and plugin support.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=notepad-plus-plus.org&sz=128"
     },
     {
       "id": "network-tailscale",
@@ -1072,7 +1111,8 @@
       "devices": [
         "android",
         "desktop"
-      ]
+      ],
+      "icon": "https://www.google.com/s2/favicons?domain=tailscale.com&sz=128"
     },
     {
       "id": "developer-vscode",
