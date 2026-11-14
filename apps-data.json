@@ -1266,7 +1266,8 @@
       "desc": "Desktop Git client for reviewing changes, committing and syncing repositories.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/desktop/desktop/development/app/static/linux/icon-logo.png"
     },
     {
       "id": "education-zotero",
@@ -1300,7 +1301,8 @@
       "desc": "Flashcard learning tool with spaced-repetition scheduling.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/ankitects/anki/main/qt/installer/app/resources/anki.png"
     },
     {
       "id": "documents-calibre",
@@ -1351,7 +1353,8 @@
       "desc": "Secure messaging and collaboration client built on the Matrix network.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/element-hq/element-desktop/develop/build/icon.png"
     },
     {
       "id": "communication-jitsi",
@@ -1368,7 +1371,8 @@
       "desc": "Video meeting application and platform with mobile app downloads and self-hosting options.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/jitsi/jitsi-meet/master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
       "id": "photo-fossify-gallery",
