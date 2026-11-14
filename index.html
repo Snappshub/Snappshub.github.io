@@ -428,6 +428,22 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 .device-nav-title{font-size:clamp(.58rem,1.1vw,.78rem)!important;letter-spacing:0!important}
 @media(max-width:360px){.device-nav-grid{gap:.2rem!important}.device-nav-card{gap:.12rem!important;padding-inline:.08rem!important}.device-nav-icon{width:.78rem!important;min-width:.78rem!important;height:.78rem!important}.device-nav-title{font-size:.5rem!important}}
 </style>
+
+<style data-purpose="snappshub-device-nav-final-fix">
+.device-nav{position:sticky;top:64px;z-index:35;background:rgba(10,14,24,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(31,39,61,.9)}
+.device-nav-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:clamp(.25rem,.8vw,.55rem)!important;overflow:visible!important;padding:0!important}
+.device-nav-card{display:flex!important;align-items:center!important;justify-content:center!important;gap:.42rem!important;min-width:0!important;width:100%!important;min-height:3rem!important;padding:.45rem .25rem!important;border-radius:.8rem!important;white-space:nowrap!important;background:linear-gradient(145deg,rgba(17,24,39,.98),rgba(10,14,24,.96))!important}
+.device-nav-icon{display:inline-flex!important;align-items:center;justify-content:center;width:1.2rem!important;min-width:1.2rem!important;height:1.2rem!important;font-size:1.05rem;filter:drop-shadow(0 0 7px color-mix(in srgb,var(--device-accent) 45%,transparent));animation:snDeviceFloat 2.8s ease-in-out infinite}
+.device-nav-card:nth-child(2) .device-nav-icon{animation-delay:.22s}.device-nav-card:nth-child(3) .device-nav-icon{animation-delay:.44s}.device-nav-card:nth-child(4) .device-nav-icon{animation-delay:.66s}
+.device-nav-title{display:block!important;min-width:0;font-size:clamp(.58rem,1vw,.78rem)!important;letter-spacing:0!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.device-nav-card.active{border-color:var(--device-accent)!important;box-shadow:0 0 0 1px color-mix(in srgb,var(--device-accent) 30%,transparent),0 0 18px color-mix(in srgb,var(--device-accent) 14%,transparent)!important}
+@keyframes snDeviceFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.08)}}
+#featuredAppsSection .featured-app-card{background:linear-gradient(145deg,rgba(17,24,39,.98),rgba(15,23,42,.92));border:1px solid rgba(56,189,248,.22);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+#featuredAppsSection .featured-app-card:hover{transform:translateY(-3px);border-color:rgba(56,189,248,.65);box-shadow:0 10px 28px rgba(8,145,178,.12)}
+@media(max-width:380px){.device-nav-card{gap:.2rem!important;padding-inline:.08rem!important}.device-nav-icon{width:.9rem!important;min-width:.9rem!important;height:.9rem!important;font-size:.9rem}.device-nav-title{font-size:.52rem!important}}
+@media(prefers-reduced-motion:reduce){.device-nav-icon{animation:none!important}.device-nav-card,#featuredAppsSection .featured-app-card{transition:none!important}}
+</style>
+
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <a id="skip-link" href="#main-content">Skip to main content</a>
@@ -732,6 +748,14 @@ Join Telegram Community
 </section>
 <!-- MAIN CATALOG CONTAINER -->
 <div class="space-y-12" id="catalogView">
+<div class="mb-8" id="featuredAppsSection" aria-labelledby="featuredAppsTitle">
+  <div class="flex items-end justify-between gap-3 mb-3">
+    <div><div class="flex items-center gap-2"><span class="text-amber-400">✦</span><h2 class="text-base sm:text-lg font-bold text-white" id="featuredAppsTitle">Popular &amp; Featured Apps</h2><span class="text-[9px] uppercase tracking-wider rounded-full px-2 py-1 bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Trending Picks</span></div><p class="text-[11px] text-slate-400 mt-1">Popular Tools, Security, Browser and other key categories</p></div>
+    <button type="button" onclick="filterAllCategory('popular')" class="shrink-0 text-[10px] sm:text-xs font-semibold text-cyan-300 hover:text-white">Browse Popular →</button>
+  </div>
+  <div id="featuredAppsGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+</div>
+
 <!-- CATEGORY 1: Android Apps -->
 <!-- BEGIN: CategoryAndroidApps -->
 <section class="scroll-mt-24" data-purpose="app-category-section" id="cat-android">
@@ -1351,7 +1375,30 @@ Join Telegram Community
       renderCatalog();
     }
 
+    function renderPopularApps() {
+      const section = document.getElementById('featuredAppsSection');
+      const grid = document.getElementById('featuredAppsGrid');
+      if (!section || !grid) return;
+      const showFeatured = activePrimarySector === 'all' && !activeSearchQuery && activeGlobalCategory === 'all';
+      section.classList.toggle('hidden', !showFeatured);
+      if (!showFeatured) return;
+      const categoryPriority = ['popular','security','browser','network','video','photo','productivity','system'];
+      const candidates = repositoryData.filter(item => categoryPriority.includes(String(item.category || '')));
+      candidates.sort((a,b) => categoryPriority.indexOf(a.category) - categoryPriority.indexOf(b.category));
+      const featured = candidates.slice(0,8);
+      grid.innerHTML = featured.map(item => {
+        const categoryLabel = subcategoryNames[item.category] || item.category || 'Software';
+        return '<article class="featured-app-card rounded-xl p-3 flex flex-col justify-between min-w-0">' +
+          '<div><div class="flex items-center justify-between gap-2 mb-2"><div class="w-9 h-9 rounded-lg bg-[#162035] border border-cyan-900/50 flex items-center justify-center text-lg shrink-0">' + getAutoIconMarkup(item) + '</div><span class="text-[9px] font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-full px-2 py-1">FEATURED</span></div>' +
+          '<h3 class="text-xs font-bold text-white truncate" title="' + safeText(item.title) + '">' + safeText(item.title) + '</h3>' +
+          '<p class="text-[10px] text-slate-400 line-clamp-2 mt-1">' + safeText(item.desc || 'Publisher-linked software listing.') + '</p></div>' +
+          '<div class="mt-3 flex items-center justify-between gap-2"><span class="text-[9px] text-cyan-300 truncate">' + safeText(categoryLabel) + '</span><button type="button" onclick="openDownloadModal(' + JSON.stringify(String(item.id)) + ')" class="text-[10px] font-bold rounded-md bg-amber-500 hover:bg-amber-400 text-slate-950 px-2.5 py-1.5 shrink-0">Open ↗</button></div>' +
+          '</article>';
+      }).join('') || '<p class="col-span-full text-xs text-slate-500">Featured picks will appear here as the catalogue grows.</p>';
+    }
+
     function renderCatalog() {
+      renderPopularApps();
       Object.keys(deviceCatalogs).forEach(device => {
         const gridEl = document.getElementById('grid-' + device);
         const tabsEl = document.getElementById('subcategories-' + device);
