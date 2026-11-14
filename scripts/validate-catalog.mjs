@@ -108,6 +108,15 @@ for (const [index, app] of catalog.apps.entries()) {
   }
 }
 
+const explicitIconApps = catalog.apps.filter(app => app.iconUrl || app.iconFile);
+assert.ok(explicitIconApps.length >= 20, 'catalogue should include a growing set of explicit app-owned icons');
+for (const app of catalog.apps) {
+  if (!app.iconUrl) continue;
+  const iconUrl = new URL(app.iconUrl);
+  assert.equal(iconUrl.protocol, 'https:', `${app.id}: app icon URL must use HTTPS`);
+  assert.ok(!/google\\.com$|icons\\.duckduckgo\\.com$/i.test(iconUrl.hostname),
+    `${app.id}: generic website favicons are not original app artwork`);
+}
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 
 assert.ok(html.includes('const PRIMARY_SECTORS = [\'android\',\'androidtv\',\'desktop\',\'router\']'),
