@@ -6,6 +6,17 @@ const catalog = JSON.parse(raw);
 assert.ok(Array.isArray(catalog.apps), 'apps-data.json must contain an apps array');
 assert.ok(catalog.apps.length > 0, 'catalogue must not be empty');
 
+assert.ok(Array.isArray(catalog.categoryDefinitions), 'catalogue must contain categoryDefinitions');
+const categorySlugs = new Set();
+for (const [index, category] of catalog.categoryDefinitions.entries()) {
+  const label = category.slug || `category row ${index + 1}`;
+  assert.equal(typeof category.slug, 'string', `${label}: category slug is required`);
+  assert.match(category.slug, /^[a-zA-Z0-9_-]+$/, `${label}: category slug contains unsupported characters`);
+  assert.ok(!categorySlugs.has(category.slug), `${label}: duplicate category slug`);
+  categorySlugs.add(category.slug);
+  assert.ok(typeof category.name === 'string' && category.name.trim(), `${label}: category name is required`);
+}
+
 const ids = new Set();
 const allowedDevices = new Set(['android', 'androidtv', 'desktop', 'router']);
 for (const [index, app] of catalog.apps.entries()) {
@@ -20,6 +31,7 @@ for (const [index, app] of catalog.apps.entries()) {
   assert.ok(Array.isArray(app.devices) && app.devices.length > 0, `${label}: at least one device is required`);
   for (const device of app.devices) assert.ok(allowedDevices.has(device), `${label}: unsupported device "${device}"`);
   assert.match(app.category, /^[a-zA-Z0-9_-]+$/, `${label}: category contains unsupported characters`);
+  assert.ok(categorySlugs.has(app.category), `${label}: app category has no category definition`);
 
   for (const field of ['url', 'sourceUrl']) {
     if (!app[field]) continue;
@@ -93,6 +105,8 @@ assert.ok(html.includes(dynamicDownloadAction),
   'catalogue download actions must JSON-encode app IDs before placing them in inline JavaScript');
 assert.ok(html.includes("!parsedUrl.username && !parsedUrl.password"),
   'publisher download links must reject URLs containing embedded credentials');
+assert.ok(html.includes("telegramUrl.hostname === 't.me'"),
+  'dynamic Telegram configuration must be restricted to the official t.me host');
 const newWindowAnchors = [...html.matchAll(/<a\b[^>]*\btarget="_blank"[^>]*>/g)].map(match => match[0]);
 assert.ok(newWindowAnchors.length > 0, 'website must contain external links that the security test can inspect');
 for (const anchor of newWindowAnchors) {
