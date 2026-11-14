@@ -229,6 +229,55 @@
       return 'btn btn-gradient';
     }
 
+    async function loadSupplementalCatalogue() {
+      try {
+        const response = await fetch('./apps-data.json?t=' + Date.now(), {cache:'no-store'});
+        if (!response.ok) throw new Error('Catalogue data request failed: ' + response.status);
+        const payload = await response.json();
+        const primaryDevices = new Set(['android','androidtv','desktop','router']);
+        const existingCategories = new Set((STORE.categories || []).map(c => c.slug));
+        const extraCategories = (payload.categoryDefinitions || [])
+          .filter(c => !primaryDevices.has(c.slug) && !existingCategories.has(c.slug))
+          .map(c => ({id:'catalog-' + c.slug, name:c.name, slug:c.slug, icon:c.icon || '', description:c.description || '', deviceId:'', order:Number(c.order) || 0, enabled:c.enabled !== false}));
+        if (extraCategories.length) STORE.categories = [...(STORE.categories || []), ...extraCategories];
+        const hasGeneral = (STORE.categories || []).some(c => c.slug === 'general');
+        if (!hasGeneral) STORE.categories.push({id:'catalog-general',name:'General',slug:'general',icon:'Apps',description:'General apps for this device',deviceId:'',order:99,enabled:true});
+        const existingIds = new Set((STORE.apps || []).map(a => a.id));
+        const extraApps = (payload.apps || []).filter(a => !existingIds.has(a.id)).map(a => {
+          const category = primaryDevices.has(a.category) ? 'general' : a.category;
+          const sourceUrl = a.sourceUrl || a.url || '';
+          const publisherUrl = a.url || sourceUrl;
+          const extension = (() => { try { return new URL(publisherUrl).pathname.match(/\.([a-z0-9]{2,6})$/i)?.[1]?.toUpperCase() || ''; } catch (_) { return ''; } })();
+          return {
+            id:a.id,
+            name:a.title || a.name || 'Untitled app',
+            category,
+            version:a.version || 'Current release',
+            description:a.desc || '',
+            developer:a.sourceLabel || 'Official publisher',
+            sourceName:a.sourceLabel || 'Official publisher',
+            sourceUrl,
+            officialWebsite:sourceUrl,
+            platform:(a.devices || []).join(' / '),
+            devices:Array.isArray(a.devices) ? a.devices : [],
+            fileFormat:extension || 'Publisher page',
+            fileSize:a.size || 'Varies',
+            architecture:a.arch || 'Universal',
+            iconUrl:a.iconUrl || '',
+            sha256:a.sha256 || '',
+            downloadButtonLabel:'Open Official Source',
+            downloadEnabled:Boolean(publisherUrl),
+            showDetailsMirrors:true,
+            mirrors:publisherUrl ? [{id:a.id + '-official',label:'Official Source Page',url:publisherUrl,enabled:true,primary:true}] : [],
+            screenshots:Array.isArray(a.screenshots) ? a.screenshots : []
+          };
+        });
+        STORE.apps = [...(STORE.apps || []), ...extraApps];
+      } catch (error) {
+        console.warn('Supplemental catalogue unavailable; using Command Studio apps only.', error);
+      }
+    }
+
     function renderDeviceTabs() {
       const host = document.getElementById('device-nav');
       if (!host) return;
@@ -391,9 +440,11 @@
     }
 
     renderAds('home', 'ads-home');
-    renderDeviceTabs();
-    renderCategoryTabs();
-    renderApps();
+    loadSupplementalCatalogue().finally(() => {
+      renderDeviceTabs();
+      renderCategoryTabs();
+      renderApps();
+    });
   </script>
 </body>
 </html>
