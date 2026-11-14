@@ -444,6 +444,15 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 @media(prefers-reduced-motion:reduce){.device-nav-icon{animation:none!important}.device-nav-card,#featuredAppsSection .featured-app-card{transition:none!important}}
 </style>
 
+<style data-purpose="snappshub-download-and-detail-polish">
+  #downloadModal:not(.hidden) > div { animation: sn-modal-in .28s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes sn-modal-in { from { opacity:0; transform:translateY(14px) scale(.975); } to { opacity:1; transform:translateY(0) scale(1); } }
+  #countdownBar { background-size:200% 100%; animation:sn-progress-glow 2s linear infinite; box-shadow:0 0 12px rgba(34,211,238,.35); }
+  @keyframes sn-progress-glow { from { background-position:100% 0; } to { background-position:-100% 0; } }
+  #detailScreenshots > div { transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; }
+  #detailScreenshots > div:hover { transform:translateY(-2px); border-color:rgba(34,211,238,.45); box-shadow:0 10px 24px rgba(0,0,0,.22); }
+  @media (prefers-reduced-motion:reduce) { #downloadModal > div,#countdownBar,#detailScreenshots > div { animation:none!important; transition:none!important; } }
+</style>
 </head>
 <body class="custom-scroll min-h-screen flex flex-col bg-[#0a0e18] text-slate-200 antialiased selection:bg-amber-500 selection:text-black">
 <a id="skip-link" href="#main-content">Skip to main content</a>
@@ -744,7 +753,7 @@ Join Telegram Community
 <div class="space-y-4">
 <div class="bg-[#0e1424] border border-[#1f273d] p-5 rounded-xl space-y-4">
 <div class="flex items-center gap-2 rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
-  <span class="w-8 h-8 rounded-lg bg-[#162035] flex items-center justify-center text-cyan-300 font-bold text-xs">OS</span>
+  <span class="w-9 h-9 rounded-lg bg-[#162035] border border-slate-700 flex items-center justify-center overflow-hidden shrink-0"><img id="detailSourceLogo" alt="" loading="lazy" class="w-7 h-7 object-contain" hidden><span id="detailSourceLogoFallback" class="text-cyan-300 font-bold text-xs">OS</span></span>
   <div class="min-w-0"><div class="text-[9px] uppercase tracking-wider text-slate-500">Open-source / publisher credit</div><a id="detailSourceCredit" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-cyan-300 hover:underline">Visit official source ↗</a></div>
 </div>
 <h4 class="text-sm font-bold text-white">Download options</h4>
@@ -1542,6 +1551,14 @@ Join Telegram Community
         const link = document.getElementById(id);
         if (link) { link.href = sourceUrl || 'https://t.me/snappshub'; link.textContent = sourceName + ' ↗'; }
       });
+      const sourceLogo = document.getElementById('detailSourceLogo');
+      const sourceLogoFallback = document.getElementById('detailSourceLogoFallback');
+      if (sourceLogo && sourceUrl) {
+        sourceLogo.src = 'https://www.google.com/s2/favicons?domain_url=' + encodeURIComponent(new URL(sourceUrl).origin) + '&sz=64';
+        sourceLogo.hidden = false;
+        sourceLogo.onerror = () => { sourceLogo.hidden = true; if (sourceLogoFallback) sourceLogoFallback.hidden = false; };
+        if (sourceLogoFallback) sourceLogoFallback.hidden = true;
+      } else if (sourceLogoFallback) sourceLogoFallback.hidden = false;
       const screenshots = Array.isArray(item.screenshots) ? item.screenshots.slice(0,3) : [];
       document.getElementById('detailScreenshots').innerHTML = [0,1,2].map(index => {
         const shot = screenshots[index];
