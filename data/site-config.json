@@ -535,8 +535,8 @@
     "filePath": "data/site-config.json",
     "deployFullSite": true,
     "autoSyncEnabled": true,
-    "lastSyncedAt": "2026-11-14T06:36:31.981Z",
-    "lastSyncStatus": "idle",
-    "lastSyncError": "GitHub token not stored in Vault yet."
+    "lastSyncedAt": "2026-11-14T06:39:44.278Z",
+    "lastSyncStatus": "synced",
+    "lastSyncError": ""
   }
 }
