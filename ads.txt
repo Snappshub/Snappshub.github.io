@@ -1,0 +1,2 @@
+# SN Apps Hub Automated ads.txt (https://snappshub.github.io)
+# Add extra authorized seller lines here if required by your ad network
