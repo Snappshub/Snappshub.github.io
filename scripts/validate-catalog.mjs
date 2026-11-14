@@ -197,7 +197,8 @@ if (isLegacyRenderer) {
     'function renderDeviceTabs()', 'function renderCategoryTabs()',
     'function selectDevice(', 'function selectCategory(', 'function showMoreApps()',
     "let activeDevice = 'android'", 'let visibleCount = 6',
-    'class="detail-source"', 'class="detail-shots"', 'id="mw2-timer"'
+    'class="detail-source"', 'class="detail-shots"', 'id="mw2-timer"',
+    'async function loadSupplementalCatalogue()', "fetch('./apps-data.json?t=' + Date.now()", 'STORE.apps = [...(STORE.apps || []), ...extraApps]'
   ]) assert.ok(html.includes(required), 'live storefront is missing ' + required);
   const heroStart = html.indexOf('<section class="hero">');
   const heroEnd = html.indexOf('</section>', heroStart);
