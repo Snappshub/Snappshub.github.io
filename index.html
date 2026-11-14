@@ -1265,7 +1265,11 @@ Join Telegram Community
           try {
             const parsed = new URL(source);
             if (parsed.protocol !== 'https:' || parsed.username || parsed.password) return '';
-            if (/^(www\\.)?google\\.com$/i.test(parsed.hostname) && parsed.pathname === '/s2/favicons') {\n              const domain = parsed.searchParams.get('domain') || '';\n              if (!/^(?:[a-z0-9-]+\\.)*[a-z0-9-]+$/i.test(domain) || parsed.searchParams.get('sz') !== '128') return '';\n              return parsed.href;\n            }
+            if (/^(www\.)?google\.com$/i.test(parsed.hostname) && parsed.pathname === '/s2/favicons') {
+              const domain = parsed.searchParams.get('domain') || '';
+              if (!/^(?:[a-z0-9-]+\.)*[a-z0-9-]+$/i.test(domain) || parsed.searchParams.get('sz') !== '128') return '';
+              return parsed.href;
+            }
             if (parsed.hostname.toLowerCase() === 'icons.duckduckgo.com') return '';
             return parsed.href;
           } catch (_) { return ''; }
