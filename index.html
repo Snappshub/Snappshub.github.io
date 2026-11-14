@@ -753,7 +753,7 @@ Join Telegram Community
     <div><div class="flex items-center gap-2"><span class="text-amber-400">✦</span><h2 class="text-base sm:text-lg font-bold text-white" id="featuredAppsTitle">Popular &amp; Featured Apps</h2><span class="text-[9px] uppercase tracking-wider rounded-full px-2 py-1 bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Trending Picks</span></div><p class="text-[11px] text-slate-400 mt-1">Popular Tools, Security, Browser and other key categories</p></div>
     <button type="button" onclick="filterAllCategory('popular')" class="shrink-0 text-[10px] sm:text-xs font-semibold text-cyan-300 hover:text-white">Browse Popular →</button>
   </div>
-  <div id="featuredAppsGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+  <div id="featuredAppsGrid" class="grid grid-cols-3 gap-3"></div>
 </div>
 
 <!-- CATEGORY 1: Android Apps -->
@@ -1353,7 +1353,7 @@ Join Telegram Community
         button.classList.toggle('active', active);
         button.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
-      Object.keys(categoryLimits).forEach(device => categoryLimits[device] = 8);
+      Object.keys(categoryLimits).forEach(device => categoryLimits[device] = 6);
       renderCatalog();
     }
 
@@ -1435,7 +1435,7 @@ Join Telegram Community
           button.classList.toggle('active', active);
           button.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
-        const limit = categoryLimits[device] || 8;
+        const limit = categoryLimits[device] || 6;
         const visible = items.slice(0, limit);
         gridEl.innerHTML = visible.map(item => `
           <div data-purpose="app-card" class="bg-[#111728] border border-[#1f273d] hover:border-amber-500/50 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between group">
@@ -1473,7 +1473,7 @@ Join Telegram Community
 
     // Expand category when View More.. ▾ is clicked
     function expandCategory(cat) {
-      categoryLimits[cat] = (categoryLimits[cat] || 8) + 4;
+      categoryLimits[cat] = (categoryLimits[cat] || 6) + 6;
       renderCatalog();
     }
 
