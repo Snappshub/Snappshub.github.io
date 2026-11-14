@@ -109,7 +109,9 @@ assert.ok(html.includes('const PRIMARY_SECTORS = [\'android\',\'androidtv\',\'de
   'renderer must use exactly four primary sectors');
 assert.ok(html.includes('validIconSource(item.iconUrl)') && html.includes('validIconSource(item.iconFile)'),
   'app icon engine must prioritize publisher-owned icon URLs and bundled icon files');
-const primaryNav = html.match(/<nav class="device-nav"[\\s\\S]*?<\\/nav>/)?.[0] || '';
+const navStart = html.indexOf('<nav class="device-nav"');
+const navEnd = html.indexOf('</nav>', navStart);
+const primaryNav = navStart >= 0 && navEnd >= 0 ? html.slice(navStart, navEnd + 6) : '';
 assert.equal((primaryNav.match(/data-sector=/g) || []).length, 4,
   'top navigation must contain exactly four primary device sectors');
 assert.ok(!primaryNav.includes('data-category='),
