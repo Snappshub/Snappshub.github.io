@@ -15,7 +15,8 @@
         "android"
       ],
       "sourceUrl": "https://www.instagram.com/",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=instagram.com&sz=128"
     },
     {
       "id": "apk-2",
@@ -50,7 +51,8 @@
         "android"
       ],
       "sourceUrl": "https://adguard.com/en/adguard-android/overview.html",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=adguard.com&sz=128"
     },
     {
       "id": "apk-4",
@@ -85,7 +87,8 @@
         "android"
       ],
       "sourceUrl": "https://powerampapp.com/",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=powerampapp.com&sz=128"
     },
     {
       "id": "tv-1",
@@ -120,7 +123,8 @@
         "androidtv"
       ],
       "sourceUrl": "https://kodi.tv/download/",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=kodi.tv&sz=128"
     },
     {
       "id": "tv-3",
@@ -137,13 +141,14 @@
         "androidtv"
       ],
       "sourceUrl": "https://tivimate.com/",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=tivimate.com&sz=128"
     },
     {
       "id": "tv-4",
       "title": "Projectivy Launcher",
       "icon": "📺",
-      "url": "https://projectivy.hu/",
+      "url": "https://play.google.com/store/apps/details?id=com.spocky.projengmenu",
       "category": "androidtv",
       "version": "v4.52",
       "size": "12.0 MB",
@@ -153,8 +158,9 @@
       "devices": [
         "androidtv"
       ],
-      "sourceUrl": "https://projectivy.hu/",
-      "sourceLabel": "Official site"
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.spocky.projengmenu",
+      "sourceLabel": "Google Play",
+      "iconUrl": "https://play-lh.googleusercontent.com/6bigO3_72JW9xTdkX7Mpm8fTBiP7ISDCUcI2E3C79P21uwuJC6VWD8pFxH-bXvc-CVZm"
     },
     {
       "id": "pc-1",
@@ -189,7 +195,8 @@
         "desktop"
       ],
       "sourceUrl": "https://www.7-zip.org/download.html",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=7-zip.org&sz=128"
     },
     {
       "id": "pc-3",
@@ -242,7 +249,8 @@
         "router"
       ],
       "sourceUrl": "https://www.tendacn.com/",
-      "sourceLabel": "Official support site"
+      "sourceLabel": "Official support site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=tendacn.com&sz=128"
     },
     {
       "id": "rt-2",
@@ -259,7 +267,8 @@
         "router"
       ],
       "sourceUrl": "https://www.tp-link.com/en/support/download/archer-c6/",
-      "sourceLabel": "Official support site"
+      "sourceLabel": "Official support site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=tp-link.com&sz=128"
     },
     {
       "id": "rt-3",
@@ -276,7 +285,8 @@
         "router"
       ],
       "sourceUrl": "https://mikrotik.com/download",
-      "sourceLabel": "Official site"
+      "sourceLabel": "Official site",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=mikrotik.com&sz=128"
     },
     {
       "id": "rt-4",
@@ -331,7 +341,8 @@
         "android",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=brave.com&sz=128"
     },
     {
       "id": "browser-fennec",
@@ -421,7 +432,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=7-zip.org&sz=128"
     },
     {
       "id": "popular-localsend",
@@ -477,7 +489,8 @@
         "androidtv",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://raw.githubusercontent.com/VideoLAN/vlc/master/extras/package/macosx/asset_sources/vlc_app_icon.svg"
     },
     {
       "id": "network-wireshark",
@@ -494,7 +507,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=wireshark.org&sz=128"
     },
     {
       "id": "network-nmap",
@@ -511,7 +525,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=nmap.org&sz=128"
     },
     {
       "id": "network-termux",
@@ -564,7 +579,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=shotcut.org&sz=128"
     },
     {
       "id": "video-openshot",
@@ -599,7 +615,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=www.gimp.org&sz=128"
     },
     {
       "id": "photo-krita",
@@ -672,7 +689,8 @@
         "android",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=proton.me&sz=128"
     },
     {
       "id": "security-malwarebytes",
@@ -690,7 +708,8 @@
         "android",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=malwarebytes.com&sz=128"
     },
     {
       "id": "popular-kdeconnect",
@@ -745,7 +764,8 @@
         "android",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=ui.com&sz=128"
     },
     {
       "id": "video-vn",
@@ -762,7 +782,8 @@
       "devices": [
         "android"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=vlognow.me&sz=128"
     },
     {
       "id": "video-nova-tv",
@@ -798,7 +819,8 @@
       "devices": [
         "android"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://play-lh.googleusercontent.com/w7o-_yhpqhfsGMrrdYYhgAA7LxiX8yAO-CG_6FGEraUDKGGlXDEDNf_RFtr5f7OJxLVa3dRcPf4WRl8k8ez7=w240-h480"
     },
     {
       "id": "photo-photopea",
@@ -815,7 +837,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=photopea.com&sz=128"
     },
     {
       "id": "popular-powertoys",
@@ -832,7 +855,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=learn.microsoft.com&sz=128"
     },
     {
       "id": "security-signal",
@@ -892,7 +916,8 @@
         "desktop"
       ],
       "mirrors": [],
-      "telegramSupportUrl": ""
+      "telegramSupportUrl": "",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=ventoy.net&sz=128"
     },
     {
       "id": "popular-libreoffice",
@@ -911,7 +936,8 @@
         "desktop"
       ],
       "mirrors": [],
-      "telegramSupportUrl": ""
+      "telegramSupportUrl": "",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=libreoffice.org&sz=128"
     },
     {
       "id": "network-syncthing",
@@ -930,7 +956,8 @@
         "desktop"
       ],
       "mirrors": [],
-      "telegramSupportUrl": ""
+      "telegramSupportUrl": "",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=syncthing.net&sz=128"
     },
     {
       "id": "network-filezilla",
@@ -949,7 +976,8 @@
         "desktop"
       ],
       "mirrors": [],
-      "telegramSupportUrl": ""
+      "telegramSupportUrl": "",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=filezilla-project.org&sz=128"
     },
     {
       "id": "security-aegis",
@@ -984,7 +1012,8 @@
       "devices": [
         "android"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=antennapod.org&sz=128"
     },
     {
       "id": "popular-organicmaps",
@@ -1001,7 +1030,8 @@
       "devices": [
         "android"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=organicmaps.app&sz=128"
     },
     {
       "id": "photo-blender",
@@ -1018,7 +1048,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=blender.org&sz=128"
     },
     {
       "id": "photo-inkscape",
@@ -1035,7 +1066,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=inkscape.org&sz=128"
     },
     {
       "id": "video-audacity",
@@ -1052,7 +1084,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=audacityteam.org&sz=128"
     },
     {
       "id": "video-handbrake",
@@ -1069,7 +1102,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=handbrake.fr&sz=128"
     },
     {
       "id": "popular-thunderbird",
@@ -1086,7 +1120,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=thunderbird.net&sz=128"
     },
     {
       "id": "popular-sharex",
@@ -1103,7 +1138,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=getsharex.com&sz=128"
     },
     {
       "id": "popular-notepadpp",
@@ -1120,7 +1156,8 @@
       "devices": [
         "desktop"
       ],
-      "icon": "💻"
+      "icon": "💻",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=notepad-plus-plus.org&sz=128"
     },
     {
       "id": "network-tailscale",
@@ -1138,7 +1175,8 @@
         "android",
         "desktop"
       ],
-      "icon": "📱"
+      "icon": "📱",
+      "iconUrl": "https://www.google.com/s2/favicons?domain=tailscale.com&sz=128"
     },
     {
       "id": "developer-vscode",
@@ -1155,7 +1193,8 @@
       "desc": "Code editor with extensions, debugging, source control and optional AI features.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=128"
     },
     {
       "id": "developer-vscodium",
@@ -1172,7 +1211,8 @@
       "desc": "Community-built binaries of VS Code without Microsoft branding and telemetry defaults.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=github.com&sz=128"
     },
     {
       "id": "developer-postman",
@@ -1189,7 +1229,8 @@
       "desc": "API platform for sending requests, organizing collections and testing APIs.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=postman.com&sz=128"
     },
     {
       "id": "developer-insomnia",
@@ -1206,7 +1247,8 @@
       "desc": "API client for designing, testing and debugging HTTP and GraphQL APIs.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=insomnia.rest&sz=128"
     },
     {
       "id": "developer-podman-desktop",
@@ -1223,7 +1265,8 @@
       "desc": "Graphical interface for managing containers, images, pods and Kubernetes contexts.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=podman-desktop.io&sz=128"
     },
     {
       "id": "developer-dbeaver",
@@ -1240,7 +1283,8 @@
       "desc": "Open-source database client with SQL editor, data browsing and support for many database engines.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=dbeaver.io&sz=128"
     },
     {
       "id": "productivity-joplin",
@@ -1257,7 +1301,8 @@
       "desc": "Open-source notes and to-do app with synchronization options across devices.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=joplinapp.org&sz=128"
     },
     {
       "id": "productivity-github-desktop",
@@ -1292,7 +1337,8 @@
       "desc": "Research reference manager for collecting, organizing, citing and sharing sources.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=zotero.org&sz=128"
     },
     {
       "id": "education-anki",
@@ -1327,7 +1373,8 @@
       "desc": "E-book library manager and format conversion tool.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=calibre-ebook.com&sz=128"
     },
     {
       "id": "documents-okular",
@@ -1344,7 +1391,8 @@
       "desc": "Document viewer for PDF and many other formats; use the publisher-recommended platform packages.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=okular.kde.org&sz=128"
     },
     {
       "id": "communication-element",
@@ -1451,7 +1499,8 @@
       "desc": "Fast filename search utility for Windows with installer and portable packages.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=voidtools.com&sz=128"
     },
     {
       "id": "system-crystaldiskinfo",
@@ -1468,7 +1517,8 @@
       "desc": "Storage health monitoring utility for supported HDD, SSD and NVMe drives.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=crystalmark.info&sz=128"
     },
     {
       "id": "system-bleachbit",
@@ -1485,7 +1535,8 @@
       "desc": "Open-source disk space and privacy cleanup utility; review each cleanup option before use.",
       "devices": [
         "desktop"
-      ]
+      ],
+      "iconUrl": "https://www.google.com/s2/favicons?domain=bleachbit.org&sz=128"
     }
   ],
   "siteConfig": {
