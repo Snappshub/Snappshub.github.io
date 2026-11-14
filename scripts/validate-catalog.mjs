@@ -18,6 +18,21 @@ for (const [index, category] of catalog.categoryDefinitions.entries()) {
   assert.ok(typeof category.name === 'string' && category.name.trim(), `${label}: category name is required`);
 }
 
+const primarySectorSlugs = ['android', 'androidtv', 'desktop', 'router'];
+assert.deepEqual(catalog.categories, primarySectorSlugs, 'catalogue must expose exactly four primary sectors');
+assert.ok(Array.isArray(catalog.devices), 'catalogue must define the four primary devices');
+assert.deepEqual(catalog.devices.map(device => device.slug), primarySectorSlugs,
+  'primary device order must be Android, Android TV, Desktop, Router');
+const sectorIds = new Set(catalog.devices.map(device => device.id));
+for (const category of catalog.categoryDefinitions) {
+  if (primarySectorSlugs.includes(category.slug)) continue;
+  assert.ok(Array.isArray(category.deviceIds) && category.deviceIds.length > 0,
+    `${category.slug}: subcategory must be assigned to at least one primary sector`);
+  for (const deviceId of category.deviceIds) {
+    assert.ok(primarySectorSlugs.includes(deviceId), `${category.slug}: unknown primary sector ${deviceId}`);
+  }
+}
+
 const ids = new Set();
 const allowedDevices = new Set(['android', 'androidtv', 'desktop', 'router']);
 for (const [index, app] of catalog.apps.entries()) {
@@ -87,6 +102,11 @@ for (const [index, app] of catalog.apps.entries()) {
     }
   }
 }
+
+assert.ok(html.includes('const PRIMARY_SECTORS = [\'android\',\'androidtv\',\'desktop\',\'router\']'),
+  'renderer must use exactly four primary sectors');
+assert.ok(html.includes('validIconSource(item.iconUrl)') && html.includes('validIconSource(item.iconFile)'),
+  'app icon engine must prioritize publisher-owned icon URLs and bundled icon files');
 
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 for (const required of [
