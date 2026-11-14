@@ -1233,8 +1233,17 @@ Join Telegram Community
       const suppliedIcon = String(item.icon || '').trim();
       const fallback = ({android:'📱',androidtv:'📺',desktop:'💻',router:'📡'})[item.category] || '📦';
       // Prefer an explicitly supplied image, except the old broken site-wide favicon URL.
-      if ((/^https:\/\//i.test(suppliedIcon) || /^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(suppliedIcon)) && !/domain=snappshub\.github\.io/i.test(suppliedIcon)) {
-        return '<img src="' + safeText(suppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '">';
+      let safeSuppliedIcon = '';
+      if (/^https:\/\//i.test(suppliedIcon)) {
+        try {
+          const parsedIcon = new URL(suppliedIcon);
+          if (parsedIcon.protocol === 'https:' && parsedIcon.hostname && !parsedIcon.username && !parsedIcon.password) safeSuppliedIcon = parsedIcon.href;
+        } catch (_) {}
+      } else if (/^\.\/assets\/[a-zA-Z0-9._/-]+$/.test(suppliedIcon)) {
+        safeSuppliedIcon = suppliedIcon;
+      }
+      if (safeSuppliedIcon && !/domain=snappshub\.github\.io/i.test(safeSuppliedIcon)) {
+        return '<img src="' + safeText(safeSuppliedIcon) + '" alt="" class="w-10 h-10 rounded-lg object-contain" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.outerHTML=' + JSON.stringify(fallback) + '">';
       }
       const key = Object.keys(AUTO_ICON_DOMAINS).sort((a,b) => b.length-a.length).find(k => title.includes(k));
       let domain = key ? AUTO_ICON_DOMAINS[key] : '';
@@ -1427,7 +1436,7 @@ Join Telegram Community
       document.getElementById('detailAppSha256').textContent = `SHA-256: ${item.sha256 || 'Not supplied by publisher'}`;
       document.getElementById('detailAppDesc').textContent = item.desc || 'Publisher-linked software listing. Verify the publisher and package before installation.';
       document.getElementById('detailArch').textContent = item.arch || 'Multi-platform';
-      document.getElementById('detailBreadcrumb').textContent = `Repository / ${item.category.toUpperCase()} / ${safeText(item.title)}`;
+      document.getElementById('detailBreadcrumb').textContent = `Repository / ${item.category.toUpperCase()} / ${item.title}`;
 
       // Bind button
       const dlBtn = document.getElementById('detailDownloadTriggerBtn');
