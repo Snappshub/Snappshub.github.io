@@ -1586,8 +1586,8 @@ Join Telegram Community
     let downloadTimerToken = 0;
     function getSafePublisherUrl(item) {
       try {
-        const u = new URL(String(item.url || item.mirror1 || ''));
-        if (u.protocol === 'https:' && u.hostname && !u.username && !u.password) return u.href;
+        const parsedUrl = new URL(String(item.url || item.mirror1 || ''));
+        if (parsedUrl.protocol === 'https:' && parsedUrl.hostname && !parsedUrl.username && !parsedUrl.password) return parsedUrl.href;
       } catch (_) {}
       return '';
     }
