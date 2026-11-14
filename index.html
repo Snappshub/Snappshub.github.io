@@ -1348,7 +1348,7 @@ Join Telegram Community
         );
         const selected = activeDeviceCategory[device];
         tabsEl.innerHTML = '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'all\')" class="subcategory-chip ' + (selected === 'all' ? 'active' : '') + '">All</button>' +
-          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\' + device + '\',\'' + cat + '\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '"><span aria-hidden="true">' + safeText(subcategoryIcons[cat] || '📦') + '</span> ' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
+          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'' + cat + '\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '"><span aria-hidden="true">' + safeText(subcategoryIcons[cat] || '📦') + '</span> ' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
         let items = repositoryData.filter(item => (item.devices || [item.category]).includes(device) &&
           (selected === 'all' || item.category === selected) &&
           (activeGlobalCategory === 'all' || item.category === activeGlobalCategory));
