@@ -946,10 +946,10 @@ Join Telegram Community
 <div class="space-y-2">
 <div class="text-white font-semibold uppercase tracking-wider font-mono text-[11px]">Vault Index</div>
 <ul class="space-y-1.5">
-<li><a class="hover:text-amber-400 transition" href="#cat-android">Android Applications</a></li>
-<li><a class="hover:text-amber-400 transition" href="#cat-androidtv">Android TV &amp; Leanback</a></li>
-<li><a class="hover:text-amber-400 transition" href="#cat-desktop">Desktop &amp; Laptop Softwares</a></li>
-<li><a class="hover:text-cyan-400 font-medium transition text-cyan-300" href="#cat-router">Router Firmware Vault (Stock/OpenWrt)</a></li>
+<li><a class="footer-neon-item inline-flex items-center gap-2" href="#cat-android"><span class="footer-neon-icon" aria-hidden="true">📱</span><span>Android Applications</span></a></li>
+<li><a class="footer-neon-item inline-flex items-center gap-2" href="#cat-androidtv"><span class="footer-neon-icon" aria-hidden="true">📺</span><span>Android TV &amp; Leanback</span></a></li>
+<li><a class="footer-neon-item inline-flex items-center gap-2" href="#cat-desktop"><span class="footer-neon-icon" aria-hidden="true">💻</span><span>Desktop &amp; Laptop Software</span></a></li>
+<li><a class="footer-neon-item inline-flex items-center gap-2 text-cyan-300" href="#cat-router"><span class="footer-neon-icon" aria-hidden="true">📡</span><span>Router Firmware Vault</span></a></li>
 </ul>
 </div>
 <!-- Col 3: Direct Official Links -->
@@ -959,6 +959,8 @@ Join Telegram Community
 <li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="https://snappshub.github.io/" aria-label="SnappsHub Website"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.9 12h18.2M12 2.8c2.4 2.5 3.6 5.6 3.6 9.2s-1.2 6.7-3.6 9.2c-2.4-2.5-3.6-5.6-3.6-9.2s1.2-6.7 3.6-9.2Z"/></svg><span>SnappsHub Website</span></a></li>
 <li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="https://t.me/snappshub" target="_blank" rel="noopener noreferrer" aria-label="Telegram Community"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M21.7 4.1 18.5 20c-.24 1.12-.88 1.4-1.78.87l-4.92-3.63-2.38 2.29c-.26.26-.48.48-.98.48l.35-5.01 9.12-8.24c.4-.35-.09-.55-.62-.2L6.02 13.7l-4.85-1.52c-1.05-.33-1.07-1.05.22-1.56L20.36 3.3c.87-.32 1.63.21 1.34.8Z"/></svg><span>Telegram Community</span></a></li>
 <li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="mailto:alaminsaheb2019@gmail.com" aria-label="Email SnappsHub"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 6.5L20.5 6"/></svg><span class="min-w-0">Email support</span></a></li>
+<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="./privacy-policy.html" aria-label="Privacy Policy"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg><span>Privacy Policy</span></a></li>
+<li class="min-w-0"><a class="footer-neon-item flex min-w-0 items-center gap-2" href="./sitemap.html" aria-label="HTML Sitemap"><svg class="footer-neon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6v5H4zM14 5h6v5h-6zM9 17h6v5H9zM7 10v3h10v-3M12 13v4"/></svg><span>Site map</span></a></li>
 
 </ul>
 </div>
@@ -1269,6 +1271,12 @@ Join Telegram Community
       browser:'Browser', security:'Security', popular:'Popular Tools',
       network:'Network Tools', video:'Video Editor', photo:'Photo Editor', developer:'Developer Tools', productivity:'Productivity', education:'Education', documents:'Documents & Reading', communication:'Communication', system:'System Utilities', media:'Media & Gallery'
     };
+    const subcategoryIcons = {
+      android:'📱', androidtv:'📺', desktop:'💻', router:'📡', browser:'🌐',
+      security:'🛡️', popular:'⭐', network:'🛜', video:'🎬', photo:'🖼️',
+      developer:'🧑‍💻', productivity:'📝', education:'🎓', documents:'📚',
+      communication:'💬', system:'🛠️', media:'🖼️'
+    };
 
     function applyPublishedDefinitions(data) {
       const devices = Array.isArray(data.devices) ? data.devices : [];
@@ -1278,6 +1286,7 @@ Join Telegram Community
         const slug = String(category.slug || '');
         if (/^[a-zA-Z0-9_-]+$/.test(slug) && typeof category.name === 'string' && category.name.trim()) {
           subcategoryNames[slug] = category.name.trim();
+          if (typeof category.icon === 'string' && category.icon.trim()) subcategoryIcons[slug] = category.icon.trim();
         }
       });
       Object.keys(deviceCatalogs).forEach(slug => {
@@ -1339,7 +1348,7 @@ Join Telegram Community
         );
         const selected = activeDeviceCategory[device];
         tabsEl.innerHTML = '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'all\')" class="subcategory-chip ' + (selected === 'all' ? 'active' : '') + '">All</button>' +
-          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\'' + device + '\',\'' + cat + '\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '">' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
+          supported.map(cat => '<button type="button" onclick="filterDeviceCategory(\\'' + device + '\\',\\'' + cat + '\\')" class="subcategory-chip ' + (selected === cat ? 'active' : '') + '"><span aria-hidden="true">' + safeText(subcategoryIcons[cat] || '📦') + '</span> ' + safeText(subcategoryNames[cat] || cat) + '</button>').join('');
         let items = repositoryData.filter(item => (item.devices || [item.category]).includes(device) &&
           (selected === 'all' || item.category === selected) &&
           (activeGlobalCategory === 'all' || item.category === activeGlobalCategory));
