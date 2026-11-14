@@ -508,24 +508,14 @@ footer .grid>div:first-child>div:first-child .rounded{animation:footerBrandGlow 
 </header>
 <!-- END: MainHeader -->
 
-<!-- Pinned Software Category Navigation -->
-<nav class="device-nav" aria-label="Pinned software categories">
+<!-- Four Primary Device/Sector Navigation -->
+<nav class="device-nav" aria-label="Primary device sectors">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
     <div class="device-nav-grid">
-      <button type="button" class="device-nav-card active" style="--device-accent:#fbbf24" data-category="all" aria-pressed="true" onclick="filterAllCategory('all')"><span class="device-nav-title">All Apps &amp; Files</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#22d3ee" data-category="browser" aria-pressed="false" onclick="filterAllCategory('browser')"><span class="device-nav-title">Browser</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#a78bfa" data-category="security" aria-pressed="false" onclick="filterAllCategory('security')"><span class="device-nav-title">Security</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#34d399" data-category="popular" aria-pressed="false" onclick="filterAllCategory('popular')"><span class="device-nav-title">Popular Tools</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#38bdf8" data-category="network" aria-pressed="false" onclick="filterAllCategory('network')"><span class="device-nav-title">Network Tools</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#fb7185" data-category="video" aria-pressed="false" onclick="filterAllCategory('video')"><span class="device-nav-title">Video Editor</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#f472b6" data-category="photo" aria-pressed="false" onclick="filterAllCategory('photo')"><span class="device-nav-title">Photo Editor</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#c084fc" data-category="developer" aria-pressed="false" onclick="filterAllCategory('developer')"><span class="device-nav-title">Developer Tools</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#f59e0b" data-category="productivity" aria-pressed="false" onclick="filterAllCategory('productivity')"><span class="device-nav-title">Productivity</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#34d399" data-category="education" aria-pressed="false" onclick="filterAllCategory('education')"><span class="device-nav-title">Education</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#60a5fa" data-category="documents" aria-pressed="false" onclick="filterAllCategory('documents')"><span class="device-nav-title">Documents</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#fb7185" data-category="communication" aria-pressed="false" onclick="filterAllCategory('communication')"><span class="device-nav-title">Communication</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#a3e635" data-category="system" aria-pressed="false" onclick="filterAllCategory('system')"><span class="device-nav-title">System Utilities</span></button>
-      <button type="button" class="device-nav-card" style="--device-accent:#f472b6" data-category="media" aria-pressed="false" onclick="filterAllCategory('media')"><span class="device-nav-title">Media &amp; Gallery</span></button>
+      <button type="button" class="device-nav-card active" style="--device-accent:#22d3ee" data-sector="android" aria-pressed="true" onclick="filterPrimarySector('android')"><span class="device-nav-icon" aria-hidden="true">📱</span><span class="device-nav-title">Android</span></button>
+      <button type="button" class="device-nav-card" style="--device-accent:#a78bfa" data-sector="androidtv" aria-pressed="false" onclick="filterPrimarySector('androidtv')"><span class="device-nav-icon" aria-hidden="true">📺</span><span class="device-nav-title">Android TV</span></button>
+      <button type="button" class="device-nav-card" style="--device-accent:#34d399" data-sector="desktop" aria-pressed="false" onclick="filterPrimarySector('desktop')"><span class="device-nav-icon" aria-hidden="true">💻</span><span class="device-nav-title">Desktop</span></button>
+      <button type="button" class="device-nav-card" style="--device-accent:#f59e0b" data-sector="router" aria-pressed="false" onclick="filterPrimarySector('router')"><span class="device-nav-icon" aria-hidden="true">📡</span><span class="device-nav-title">Router</span></button>
     </div>
   </div>
 </nav>
@@ -1328,6 +1318,7 @@ Join Telegram Community
       });
     }
     const activeDeviceCategory = { android:'all', androidtv:'all', desktop:'all', router:'all' };
+    let activePrimarySector = 'all';
     let activeGlobalCategory = 'all';
     let activeSearchQuery = '';
 
@@ -1343,7 +1334,17 @@ Join Telegram Community
       renderCatalog();
     }
 
+    function filterPrimarySector(sector) {
+      if (!PRIMARY_SECTORS.includes(sector)) return;
+      activePrimarySector = sector;
+      activeGlobalCategory = 'all';
+      Object.keys(activeDeviceCategory).forEach(device => activeDeviceCategory[device] = 'all');
+      Object.keys(categoryLimits).forEach(device => categoryLimits[device] = 8);
+      renderCatalog();
+    }
+
     function filterDeviceCategory(device, category) {
+      activePrimarySector = device;
       activeGlobalCategory = 'all';
       document.querySelectorAll('.device-nav-card[data-category]').forEach(button => {
         const active = button.dataset.category === 'all';
@@ -1381,7 +1382,13 @@ Join Telegram Community
             return searchable.includes(q);
           });
         }
-        if (sectionEl) sectionEl.classList.toggle('hidden', items.length === 0);
+        if (sectionEl) sectionEl.classList.toggle('hidden',
+          items.length === 0 || (activePrimarySector !== 'all' && activePrimarySector !== device));
+        document.querySelectorAll('.device-nav-card[data-sector]').forEach(button => {
+          const active = button.dataset.sector === activePrimarySector || (activePrimarySector === 'all' && button.dataset.sector === 'android');
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
         const limit = categoryLimits[device] || 8;
         const visible = items.slice(0, limit);
         gridEl.innerHTML = visible.map(item => `
@@ -1406,6 +1413,7 @@ Join Telegram Community
 
     function handleUniversalSearch(query) {
       activeSearchQuery = (query || '').trim().toLowerCase();
+      activePrimarySector = 'all';
       activeGlobalCategory = 'all';
       document.querySelectorAll('.device-nav-card[data-category]').forEach(button => {
         const active = button.dataset.category === 'all';
